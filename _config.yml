@@ -6,8 +6,8 @@ logo: 'assets/images/GaunaLogo.png'
 favicon: 'assets/favicon/favicon.ico'
 baseurl: 
 production_url: https://fgauna12.github.io
-disqus: 'justgoodthemes'
-mailchimp_url: '//justgoodthemes.us3.list-manage.com/subscribe/post?u=78f1bab16028354caeb23aecd&amp;id=4a7330d117'
+disqus: 'GaunaCode'
+mailchimp_url: 'https://gmail.us20.list-manage.com/subscribe/post?u=c3b64d95e96a96aad7ceabf79&amp;id=d425788096'
 cover_image: bc_1.jpg
 # Add your GA Tracking Id
 ga_analytics: UA-80721031-1
