@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "Understanding ASP.NET Core Middleware"
-date:   2017-4-14 8:00:00 -0500
+date: 2017-04-14
 categories: ASP.NET Core Middleware
+tags: aspnet-core
 comments: true
 ---
 

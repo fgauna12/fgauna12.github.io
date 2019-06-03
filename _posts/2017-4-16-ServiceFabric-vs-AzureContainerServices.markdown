@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "Service Fabric vs Azure Container Service - Part 1: Introduction"
-date:   2017-4-19 9:00:00 -0500
+date: 2017-04-19
 categories: Azure Service-Fabric Containers Azure
+tags: containers orchestration
 comments: true
 ---
 
