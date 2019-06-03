@@ -33,7 +33,7 @@ All of this applies to Logic Apps too.
 
 **This is a is a big no-no for DevOps**.
 
-## The Solution: pre-compiled functions using VSTS :cow:
+## The Solution: pre-compiled functions using VSTS
 
 ## 1. Setting up the Project
 
@@ -83,13 +83,11 @@ It will be _very_ familiar to deploying an App Service.
 
 #### 1. Deploy the ARM template (Optional)
 
-> The task documentation is found [here](https://github.com/Microsoft/vsts-tasks/blob/master/Tasks/AzureResourceGroupDeployment/README.md)
-
 Start by adding an Azure Resource Group Deployment task to deploy the ARM template that will create the Azure Function Apps and their consumption service plans.
 
 ![]({{site.baseurl}}/assets/2018-2-1/azurefunctions_7.PNG)
 
-#### 2. Use the [App Service deployment task](https://github.com/Microsoft/vsts-tasks/blob/master/Tasks/AzureRmWebAppDeployment/README.md) for each function app
+#### 2. Use the App Service deployment task for each function app
 
 To deploy the function code, for each function app add an App Service deploy task.
 

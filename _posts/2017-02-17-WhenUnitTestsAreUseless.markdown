@@ -11,12 +11,13 @@ Ever wonder if the tests you're writing will pay off? Ever wonder if they'll cat
 When your requirements are just assumptions, your tests are a waste of time.
 
 ## My worst fear: Wasting time
+
+![Testing Pyramid]({{site.baseurl}}/assets/TestingPyramid.png#right) 
+
 When I'm putting extra time towards unit tests, my worst fear is it will be wasted work. **_poof!_** 30-50 tests on a feature... **gone**. Why? Because the feature is not wanted or needed. 
 So why keep the feature? Why keep the tests? It's just more code to maintain.
 While you might not agree that the tests are gone, we can agree that the tests will not prevent defects for features meaningful to the users.
 Therefore, if we don't catch these meaningful defects, then the tests are just pretty green check-marks.
-
-![Testing Pyramid]({{site.baseurl}}/assets/TestingPyramid.png){:.img-center}
 
 ## The Testing Pyramid
 
@@ -34,9 +35,9 @@ If you have more UI tests than integration tests, then regressions will be found
 
 ## Is your pyramid stable?
 
-Even if you had only unit tests as part of your test suite, you are capable of finding a sizable portion of regressions. 
+![Testing Pyramid]({{site.baseurl}}/assets/TestingPyramidWithCustomerValue.png#right)
 
-![Testing Pyramid]({{site.baseurl}}/assets/TestingPyramidWithCustomerValue.png){:.img-center}
+Even if you had only unit tests as part of your test suite, you are capable of finding a sizable portion of regressions. 
 
 ### 1. Volatile Requirements
 

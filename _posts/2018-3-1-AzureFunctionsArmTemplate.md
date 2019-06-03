@@ -11,7 +11,8 @@ Creating Azure functions is easy. Managing them can be a challenge. Much like mi
 This is where _Infrastructure as Code_ can help. Although I don't particularly enjoy creating Azure Resource Manager (ARM) templates, I do enjoy the benefits of ARM.
 **I can confidently say that my development environment is configured like production.**
 
-> :raised_hand: Caution! Today, an azure function app whose plan is _consumption-based_ cannot be created in an existing resource group with a regular app service plan. The **workaround** is to create the consumption app service plan first, then the other app service plans for regular web apps.
+<mark>Caution! Today, an azure function app whose plan is <em>consumption-based</em> cannot be created in an existing resource group with a regular app service plan. The <strong>workaround</strong> is to create the consumption app service plan first, then the other app service plans for regular web apps.
+</mark>
 
 ## The ARM Template
 

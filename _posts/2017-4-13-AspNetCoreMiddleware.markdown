@@ -11,11 +11,11 @@ The more time I spend writing ASP.NET Core applications, the more I begin to exp
 
 ## Just Picture a Pipe
 
+![Middleware Pipeline]({{site.baseurl}}/assets/middleware-pipeline.png#left)
+
 Just picture a pipe. Each segment in the pipe is a middleware component that you wrote or someone else wrote. At the end of the pipe, the request is handled and a response is generated.
 
 But this pipe is a special. This pipe also bi-directional. Meaning each middleware component will get called twice, once for a request coming in and once of the response going out.
-
-![Middleware Pipeline]({{site.baseurl}}/assets/middleware-pipeline.png){:.img-center}
 
 ## Characteristics of the Middleware
 
