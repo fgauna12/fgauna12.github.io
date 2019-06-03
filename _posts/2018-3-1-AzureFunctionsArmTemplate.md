@@ -3,7 +3,7 @@ layout: post
 title:  "Creating an Azure Function ARM template"
 date: 2018-01-03
 categories: Azure Functions ARM Templates Infrastructure as Code DevOps
-tags: ci/cd infrastructure-as-code azure azure-functions
+tags: pipelines infrastructure-as-code azure azure-functions
 comments: true
 ---
 

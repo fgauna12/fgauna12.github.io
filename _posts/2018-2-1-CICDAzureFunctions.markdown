@@ -6,7 +6,7 @@ categories:
     - Azure Functions
     - CI/CD
     - DevOps
-tags: azure azure-functions ci/cd devops
+tags: azure azure-functions pipelines devops
 comments: true
 ---
 
