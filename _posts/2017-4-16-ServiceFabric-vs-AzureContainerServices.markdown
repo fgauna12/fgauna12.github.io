@@ -5,13 +5,17 @@ date: 2017-04-19
 categories: Azure Service-Fabric Containers Azure
 tags: containers orchestration
 comments: true
+featured: true
+hidden: true
+featured_image_thumnail: assets/ACS-vs-SF.png
+featured_image: assets/ACS-vs-SF.png
 ---
-
-![Azure Container Service vs Service Fabric]({{site.baseurl}}/assets/ACS-vs-SF.png){:.img-center}
 
 Companies like Netflix, Spotify, and Uber are poster childs for organizations using microservices successfully. They scale up/down with ease, they add new teams effortlessly, and they experiment with new features without much risk. Meanwhile, we're still developing the same monolithic apps with various layers and numerous design practices. We work hard to abide by best practices to further push off the imminent point of ["diminishing returns"](https://en.wikipedia.org/wiki/Diminishing_returns). _No wonder_, when we learn about these companies accomplishing so much a microservice architecture, we ask ourselves:
 
-> How can I build a microservices with .NET? 
+<!--more-->
+
+> How can I build a microservices with .NET?
 
 At [Nebbia](http://www.nebbiatech.com/), when we first started to think about microservices, we had a lot of interest in [Service Fabric](https://azure.microsoft.com/en-us/services/service-fabric/). I suspect, because it's the first thing that comes up when you search for "Azure" and "microservices." Meanwhile, there's another Azure offering called [Azure Container Service](https://docs.microsoft.com/en-us/azure/container-service/container-service-intro) which allows you to host your microservice architecture with many of the same benefits as Service Fabric. Yes, comparing Service Fabric and Azure Container Service can be like comparing apples and oranges. But, although they're not the same kind but they do solve many of the same problems. 
 

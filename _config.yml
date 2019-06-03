@@ -1,7 +1,7 @@
 # Site setings
-name: 'Gauna Code'
-description: 'Horace is a simple Jekyll theme for writers and bloggers. Explore it yourself.'
-meta_description: 'Jekyll template, minimal style, perfect for bloggers.'
+name: 'Facundo'
+description: "Hello, I'm Facundo. I'm a Cloud Solutions Architect at New Signature. I help companies deliver more through Azure, DevOps, and architecture. Above all, I push towards using technology to innovate and create business value."
+meta_description: ''
 logo: 'assets/images/GaunaLogo.png'
 favicon: 'assets/favicon/favicon.ico'
 baseurl: 
@@ -17,8 +17,8 @@ ga_analytics: UA-80721031-1
 author:
   name: 'Facundo Gauna'
   image: 'myface.jpg'
-  greetings: 'Hi there!'
-  description: "My name is Facundo Gauna."
+  greetings: 'Facundo Gauna'
+  description: "Cloud. DevOps. Architecture"
   bio: 'Facundo is Cloud Solutions Architect at Nebbia Technology. He helps companies get unstuck when delivering software due to processes or unproductive architectures.'
 # Contact form setings
 email: hello@gaunacode.com
