@@ -5,7 +5,7 @@ meta_description: ''
 logo: 'assets/images/GaunaLogo.png'
 favicon: 'assets/favicon/favicon.ico'
 baseurl: https://gaunacode.com
-production_url: https://gaunacode.com
+production_url: 
 disqus: 'GaunaCode'
 mailchimp_url: 'https://gmail.us20.list-manage.com/subscribe/post?u=c3b64d95e96a96aad7ceabf79&amp;id=d425788096'
 cover_image: bc_1.jpg

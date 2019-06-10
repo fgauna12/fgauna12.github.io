@@ -7,7 +7,7 @@ tags: containers orchestration
 comments: true
 featured: false
 hidden: false
-# featured_image_thumnail: assets/ACS-vs-SF.png
+featured_image_thumnail: assets/ACS-vs-SF.png
 featured_image: assets/ACS-vs-SF.png
 ---
 
