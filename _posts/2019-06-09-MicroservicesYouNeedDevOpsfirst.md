@@ -5,12 +5,16 @@ date: 2019-06-09
 categories: DevOps Microservices
 tags: devops microservices
 comments: true
+featured: true
+hidden: true
 featured_image_thumnail: assets/images/posts/2019/devops-1-640.jpg
 featured_image: assets/images/posts/2019/devops-1-1280.jpg
 ---
 
 
 With the rise of new virtualization technologies using containers, people are starting to think more and more about using microservices in their organizations. It’s definitely a topic that has been getting a lot of attention. Many of the top technology companies have attributed some of their recent success to microservices. Some of these companies include Netflix, Amazon, Uber, and Spotify. Every day these companies use hundreds of microservices to power their products and allows them to stay nimble.
+
+<!--more-->
 
 ## Microservices
 
