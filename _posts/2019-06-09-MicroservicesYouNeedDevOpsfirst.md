@@ -7,8 +7,8 @@ tags: devops microservices
 comments: true
 featured: true
 hidden: true
-featured_image_thumnail: assets/images/posts/2019/devops-1-640.jpg
-featured_image: assets/images/posts/2019/devops-1-1280.jpg
+featured_image_thumnail: https://gaunacode.com/assets/images/posts/2019/devops-1-640.jpg
+featured_image: https://gaunacode.com/assets/images/posts/2019/devops-1-1280.jpg
 ---
 
 
