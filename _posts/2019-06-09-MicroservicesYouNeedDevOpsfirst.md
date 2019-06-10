@@ -53,3 +53,5 @@ Teams are encouraged to write unit tests because that’s the quickest way to ge
 Issues are narrowed down to a microservice quickly, reducing the constant need for escalations to get issues resolved.
 Teams become responsible for supporting their own service.
 Teams get encouraged to experiment and improve their services while measuring their performance.
+
+*This post was originally posted by me on the [Nebbia Tech blog](https://www.nebbiatech.com/2017/05/15/thinking-microservices-need-devops-first/)*
