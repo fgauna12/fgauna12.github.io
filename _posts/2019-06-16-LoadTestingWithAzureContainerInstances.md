@@ -128,5 +128,6 @@ You could run your load tests from Azure Pipelines nightly. I'll write a follow-
 
 You could also run many instances of your load test container against your services.
 
-Lastly, are you curious about how much money it costs? Use the Azure Calculator to estimate how much it will cost to run your load tests. For example, for a 5-minute load test nightly on weekdays is will cost around 
+Lastly, are you curious about how much money it costs? Use the Azure Calculator to estimate how much it will cost to run your load tests. For example, for a 5-minute load test nightly from a single container on weekdays is will cost around **$0.08 a month**.
+
 To see the actual amount, the ARM template I provided adds tags that should show up on your bill.
