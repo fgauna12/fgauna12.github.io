@@ -5,7 +5,7 @@ date: 2019-06-09
 categories: DevOps Microservices
 tags: devops microservices
 comments: true
-featured: true
+featured: false
 hidden: true
 featured_image_thumnail: assets/images/posts/2019/logistics-1-640.jpg
 featured_image: assets/images/posts/2019/logistics-1-640.jpg

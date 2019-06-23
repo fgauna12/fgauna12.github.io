@@ -6,8 +6,8 @@ categories: Azure Service-Fabric Containers Azure
 tags: containers orchestration
 comments: true
 featured: false
-hidden: false
-featured_image_thumnail: assets/ACS-vs-SF.png
+hidden: true
+featured_image_thumbnail: assets/ACS-vs-SF.png
 featured_image: assets/ACS-vs-SF.png
 ---
 
