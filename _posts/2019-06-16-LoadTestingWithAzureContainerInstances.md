@@ -4,7 +4,7 @@ title:  "Load Testing with Azure Container Instances"
 date:   2019-06-23 
 categories: Azure Load-Testing Containers
 comments: true
-featured: true
+featured: false
 hidden: false
 featured_image_thumbnail: assets/images/posts/2019/aci-thumbnail.png
 featured_image: /assets/images/posts/2019/artillery-featured.jpg
