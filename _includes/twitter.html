@@ -6,7 +6,7 @@
 {% if page.summary %}
 <meta name="twitter:description" content="{{ page.summary }}">
 {% else %}
-<!-- <meta name="twitter:description" content="{{ site.description }}"> --> 
+<meta name="twitter:description" content="{{ site.description }}">
 {% endif %}
 
 {% if page.featured_image %}
@@ -14,6 +14,6 @@
 <meta name="twitter:image" content="{{ site.url }}/{{ site.baseurl }}{{ page.featured_image }}">
 {% else %}
 <meta name="twitter:card"  content="summary">
-<meta name="twitter:image" content="{{ site.url }}/{{ site.baseurl }}{{ site.author.image }}">
+<meta name="twitter:image" content="{{ site.url }}/{{ site.baseurl }}assets/images/{{ site.author.image }}">
 {% endif %}
 <!-- end of Twitter cards -->
