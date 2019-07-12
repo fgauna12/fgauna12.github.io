@@ -19,7 +19,7 @@ author:
   image: 'myface.jpg'
   greetings: 'Facundo Gauna'
   description: "Cloud. DevOps. Architecture"
-  bio: 'Facundo is Cloud Solutions Architect at Nebbia Technology. His background is on .NET and C#. He specializes in application development using containers on Azure with DevOps practices.'
+  bio: 'Facundo is Cloud Solutions Architect at Nebbia Technology. He specializes in building Cloud-Native applications on Azure with DevOps practices.'
 # Contact form setings
 email: hello@gaunacode.com
 contact_page_description: ""
