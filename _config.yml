@@ -3,7 +3,7 @@ name: 'Facundo'
 description: "Hello, I'm Facundo. I'm a Cloud Solutions Architect at New Signature. I help companies deliver more through Azure, DevOps, and architecture. Above all, I push towards using technology to innovate and create business value."
 meta_description: ''
 logo: 'assets/images/GaunaLogo.png'
-# favicon: 'https://gaunacode.com/assets/favicon/favicon.ico'
+favicon: 'https://gaunacode.com/assets/favicon/favicon.ico'
 baseurl: 
 production_url: https://gaunacode.com/
 disqus: 'GaunaCode'
