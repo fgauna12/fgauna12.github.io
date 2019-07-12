@@ -8,6 +8,7 @@ featured: false
 hidden: false
 featured_image_thumbnail: assets/images/posts/2019/aci-thumbnail.png
 featured_image: assets/images/posts/2019/artillery-featured.jpg
+summary: "Azure DevOps is deprecating their cloud-based load tests. Want a simple alternative?"
 ---
 
 Recently, Microsoft annouced that they're going to be abandoning support for Visual Studio Cloud-based Load Tests. Creating tests through Visual Studio wasn't trivial, but it was cloud-based and there was no need to provision dedicated test harnesses. 

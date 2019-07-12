@@ -8,6 +8,7 @@ featured: true
 hidden: true
 featured_image_thumbnail: assets/images/posts/2019/aci-thumbnail.png
 featured_image: assets/images/posts/2019/artillery-featured.jpg
+summary: "After you spend time creating load tests, make sure anyone can run them."
 ---
 
 In my last post, I blogged about how to use Artillery to run Load Tests from Azure Container Instances. Artillery is easy to use and Azure Container Instances offer a low cost and easy way to run containerized load tests. If cloud-based load tests are cheap and a great way to test your architecture, **how do you get the most out of them?**
