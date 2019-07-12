@@ -4,7 +4,7 @@ description: "Hello, I'm Facundo. I'm a Cloud Solutions Architect at New Signatu
 meta_description: ''
 logo: 'assets/images/GaunaLogo.png'
 favicon: 'assets/favicon/favicon.ico'
-baseurl: https://gaunacode.com/
+baseurl: 
 production_url: https://gaunacode.com/
 disqus: 'GaunaCode'
 mailchimp_url: 'https://gmail.us20.list-manage.com/subscribe/post?u=c3b64d95e96a96aad7ceabf79&amp;id=d425788096'
