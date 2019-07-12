@@ -1,6 +1,6 @@
 # Site setings
 name: 'Facundo'
-description: "Hello, I'm Facundo. I'm a Cloud Solutions Architect at New Signature. I help companies deliver more through Azure, DevOps, and architecture. Above all, I push towards using technology to innovate and create business value."
+description: "Hello, I'm Facundo. I think too many software projects fail. I'd like successful projects to be the norm.
 meta_description: ''
 logo: 'assets/images/GaunaLogo.png'
 favicon: 'assets/favicon/favicon.ico'
@@ -19,7 +19,7 @@ author:
   image: 'myface.jpg'
   greetings: 'Facundo Gauna'
   description: "Cloud. DevOps. Architecture"
-  bio: 'Facundo is Cloud Solutions Architect at Nebbia Technology. He helps companies get unstuck when delivering software due to processes or unproductive architectures.'
+  bio: 'Facundo is Cloud Solutions Architect at Nebbia Technology. His background is on .NET and C#. He specializes in application development using containers on Azure with DevOps practices.'
 # Contact form setings
 email: hello@gaunacode.com
 contact_page_description: ""
