@@ -15,7 +15,7 @@
     {% endif %}
 
     <!-- Site Favicon -->
-    <link rel="shortcut icon" href="{{ site.production_url }}{{ site.favicon }}" type="image/png" />
+    <link rel="shortcut icon" href="{{ site.production_url}}{{ site.favicon }}" type="image/png" />
 
     <!-- Font Embed Code -->
     <link href="https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i" rel="stylesheet" />
@@ -34,7 +34,7 @@
 
         <div class="hero-wrap">
             {% if site.cover_image %}
-            <div class="hero-wrap-bg" style="background-image: url({{ site.production_url }}/assets/images/{{ site.cover_image }})"></div>
+            <div class="hero-wrap-bg" style="background-image: url({{ site.baseurl }}/assets/images/{{ site.cover_image }})"></div>
             {% endif %}
             {% include header.html %}
             <section class="hero outer fadeInDown delay_075s">
