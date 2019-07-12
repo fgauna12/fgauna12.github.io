@@ -16,6 +16,7 @@ ga_analytics: UA-80721031-1
 # Author
 author:
   name: 'Facundo Gauna'
+  short_name: 'Facundo'
   image: 'myface.jpg'
   greetings: 'Facundo Gauna'
   description: "Cloud. DevOps. Architecture"
