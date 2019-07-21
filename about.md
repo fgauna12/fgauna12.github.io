@@ -4,30 +4,16 @@ title: About
 permalink: /about/
 ---
 
-My name is Facundo Gauna. Sometimes I go by Frank. Married young but loving every minute of it.
+My name is Facundo Gauna. Sometimes I go by Frank. 
 
-I'm a Cloud Solutions Architect at [Nebbia Technology](http://nebbiatech.com) in Orlando, FL. I have a degree in Computer Engineering from University of Central Florida.
+I'm a Cloud Solutions Architect at [Nebbia Technology](http://nebbiatech.com) in Orlando, FL. I help companies with various projects centered around Azure, DevOps, and Architecture. Continuous Delivery usually gets companies only so far. Architecture and Cloud are essential to enable DevOps as well. 
 
-You might be able to find me on Slack at [Orlando Devs](http://orlandodevelopers.technology/). 
-Email me or shoot me a message on [LinkedIn](https://www.linkedin.com/in/facundo-gauna-601b8a47) . 
-
-
-I enjoy coding quite a bit and I consider it one of my hobbies. I also like to play table tennis and attend Meetups in the Orlando area.
-Used to be a recreational gamer but I stopped so I could have time for other things. 
+I am constantly on the lookout for a new side project. I attend a couple of meetups in the Orlando area regularly and speak at local events.
 
 ## Where's that name from?
 
 Argentina. I was named after a book about the struggle in Argentina about European modernization in the 1830s. Never read it.
 
-
-<mark>Fun Fact:</mark> If you like Bacardi, the founder's name is [Facundo Bacardi](https://en.wikipedia.org/wiki/Facundo_Bacardi).
-Ask me how I found out.
-
 ![]({{site.baseurl}}/assets/images/facundo.jpg)
-
-## Also, when a Facundo drinks milk
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/S6Eg-Qai6f0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 
 
