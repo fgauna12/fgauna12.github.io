@@ -6,8 +6,8 @@ categories: Containers DevOps
 comments: true
 featured: false
 hidden: true
-featured_image_thumbnail: assets/images/posts/2019/aci-thumbnail.png
-featured_image: /assets/images/posts/2019/artillery-featured.jpg
+featured_image_thumbnail: assets/images/posts/2019/business-1845350_640.jpg
+featured_image: /assets/images/posts/2019/business-1845350_640.jpg
 ---
 
 Sometimes, we want to run a one-time job during our deployments. For example, running an Entity Framework migration. By creating a console application, packaged as a Docker image, we can run these one-time jobs as a Kubernetes Job upon a deployment.
