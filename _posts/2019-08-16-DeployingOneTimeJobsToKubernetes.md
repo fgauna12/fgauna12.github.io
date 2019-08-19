@@ -18,7 +18,7 @@ Sometimes, we want to run a one-time job during our deployments. For example, ru
 
 I created a simple .NET Core console app that will run as a fake one-time job. In following posts, I will show how to run an Entity Framework migration instead.
 
-The example source code can be found [here]().
+The example source code can be found [here](https://github.com/fgauna12/KubernetesOneTimeJob).
 
 ### The Dockerfile
 
