@@ -4,8 +4,8 @@ title:  "Azure Load Tests Part 2: Running Tests from Pipeline"
 date:   2019-06-23 
 categories: Azure Load-Testing Containers DevOps
 comments: true
-featured: true
-hidden: true
+featured: false
+hidden: false
 featured_image_thumbnail: assets/images/posts/2019/aci-thumbnail.png
 featured_image: assets/images/posts/2019/artillery-featured.jpg
 summary: "After you spend time creating load tests, make sure anyone can run them."
