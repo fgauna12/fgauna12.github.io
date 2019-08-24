@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Running one-time jobs against Kubernetes during deployments"
-date:   2019-08-16
+date:   2019-08-24
 categories: Containers DevOps
 comments: true
 featured: false
@@ -157,11 +157,76 @@ hellokubernetesjob-failure-hckhz   0/1     CrashLoopBackOff   2          41s
 
 As expected, the pod will continuously restart **4** times as per the `backoffLimit` setting.
 
+### Optional: Helm
+
+One feature in helm that can be useful for issuing these one time jobs are [deployment hooks](https://github.com/helm/helm/blob/master/docs/charts_hooks.md).
+
+Helm provides hooks in the helm chart lifecycle such as: 
+- _pre-install_
+- _post-install_
+- _pre-rollback_
+
+The deployment hooks allow us to run a job before a deployment using the `pre-install` hook. 
+To declare a job to run before the installation of a helm chart, you would add an annotation:
+
+``` yaml
+
+annotations:
+    "helm.sh/hook": pre-install
+
+```
+
+You can also indicate the order of which hooks have to run using _weights_.
+The lower the number, the sooner it will run.
+
+Lastly, you can clean up these one time jobs and remove the need to create a *runbook* pipeline or script that cleans up these jobs later. 
+The self cleanup is possible using the _hook deletion policies._
+
+``` yaml
+
+annotations:
+  "helm.sh/hook-delete-policy": hook-succeeded
+
+```
+
+#### Putting it all together
+
+{% raw %}
+
+``` yaml
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "{{.Release.Name}}"
+  labels:
+    app.kubernetes.io/managed-by: {{.Release.Service | quote }}
+    app.kubernetes.io/instance: {{.Release.Name | quote }}
+    app.kubernetes.io/version: {{ .Chart.AppVersion }}
+    helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
+  annotations:
+    "helm.sh/hook": pre-install
+    "helm.sh/hook-weight": "1"
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  template:
+    spec:
+      containers:
+      - name: hellokubernetesjob
+        image: nebbiaregistry.azurecr.io/samples/hellokubernetesjob
+      restartPolicy: OnFailure
+  backoffLimit: 4
+
+```
+
+{% endraw %}
+
 ## Next Steps
 
 - Create a pipeline that publishes your job to your container registry
 - From your main deployment pipeline for your application, either: 
    - Include the job as part of your Helm chart and make the job name unique per deployment. For example, you can use the chart release name and a version number.
    - If you don't use Helm, run a `kubectl apply` before the main deployment and also have the job name be unique per deployment
-- Create a runbook (i.e. script or pipeline) that helps you clean up old job deployments to alleviate load on your Kubernetes API server. Maybe you can configure this to run on a timer.
+- If you're not using Helm deployment hooks, create a runbook (i.e. script or pipeline). This will help you clean up old job deployments. Maybe you can configure this to run on a timer.
+
 
