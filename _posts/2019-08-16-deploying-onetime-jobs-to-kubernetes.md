@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Running one-time jobs against Kubernetes during deployments"
+title:  "Running one-time jobs during Kubernetes deployments"
 date:   2019-08-24
 categories: Containers DevOps
 comments: true
