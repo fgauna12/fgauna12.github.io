@@ -21,7 +21,7 @@ collections:
       - { label: "Featured", name: "featured", widget: "boolean", default: false }
       - { label: "Hidden", name: "hidden", widget: "boolean", default: false }
       - { 
-          label: "Featured Image",
+          label: "Featured Thumbnail",
           name: "featured_image_thumbnail",
           widget: "image",
           allow_multiple: false,
