@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "ARM Template Outputs from Azure Pipelines"
-date:   2019-08-27
+title: ARM Template Outputs from Azure Pipelines
 categories: Azure DevOps
+date: 2019-08-27T00:00:00.000Z
+featured: false
+hidden: false
+featured_image_thumbnail: ''
+featured_image: ''
 comments: true
-featured: true
-hidden: true
-featured_image_thumbnail: /assets/images/posts/2019/kubernetes-logo.svg
-featured_image: /assets/images/posts/2019/business-1845350_640.jpg
 ---
 
 Deploying Azure Resource Manager (ARM) templates from Azure DevOps is very powerful. It encourages developers and operators to maintain a declarative file describing the infrastructure on Azure. Also helps prevent pesky environment drifts because of someone clicking from the portal to make changes. But, deploying these ARM templates can be daunting. Here's some tips.
