@@ -15,8 +15,26 @@ collections:
     fields:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
       - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Categories', name: 'categories', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "Hidden", name: "hidden", widget: "boolean", default: false }
+      - { 
+          label: "Featured Image",
+          name: "featured_image_thumbnail",
+          widget: "image",
+          default: "/assets/images/posts/2019/kubernetes-logo.svg",
+          allow_multiple: false            
+        }
+      - { 
+          label: "Featured Image",
+          name: "featured_image",
+          widget: "image",
+          default: "/assets/images/posts/2019/business-1845350_640.jpg",
+          allow_multiple: false            
+        }
+      - { label: "Comments", name: "comments", widget: 'hidden', default: false }
   - name: 'pages'
     label: 'Pages'
     editor:
