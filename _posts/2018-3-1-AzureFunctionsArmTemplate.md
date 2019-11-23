@@ -1,12 +1,13 @@
 ---
 layout: post
-title:  "Creating an Azure Function ARM template"
-date: 2018-01-03
+title: Creating an Azure Function ARM template
 categories: Azure Functions ARM Templates Infrastructure as Code DevOps
-tags: pipelines infrastructure-as-code azure azure-functions
+date: 2018-01-03T00:00:00.000Z
+featured: false
+hidden: false
+featured_image: ''
 comments: true
 ---
-
 Creating Azure functions is easy. Managing them can be a challenge. Much like microservices, functions can get problematic to maintain when having multiple environments. 
 This is where _Infrastructure as Code_ can help. Although I don't particularly enjoy creating Azure Resource Manager (ARM) templates, I do enjoy the benefits of ARM.
 **I can confidently say that my development environment is configured like production.**
@@ -21,17 +22,17 @@ If you're not already familiar with how to create ARM Templates, the [MSFT docs]
 ### The Resources
 
 1. Storage Account
-    - With the following connection strings:
-        - `AzureWebJobsDashboard`
-        - `AzureWebJobsStorage`
-        - `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING`
-        - `WEBSITE_CONTENTSHARE`
+   * With the following connection strings:
+     * `AzureWebJobsDashboard`
+     * `AzureWebJobsStorage`
+     * `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING`
+     * `WEBSITE_CONTENTSHARE`
 2. Site (_kind: function_)
 3. Service Plan (Consumption or App Service)
 
 ### Example
 
-``` json
+```json
 {
         "type": "Microsoft.Storage/storageAccounts",
         "name": "[variables('names-function-storage')]",
@@ -82,10 +83,11 @@ If you're not already familiar with how to create ARM Templates, the [MSFT docs]
 ```
 
 #### Parameters
-- `environment-name` - A prefix that indicates the environment that the function belongs to (e.g. dev, staging, prod)
-- `names-function-apps` - A list of names for the Azure function apps to deploy. (e.g. emails, voting, etc)
 
-``` json
+* `environment-name` - A prefix that indicates the environment that the function belongs to (e.g. dev, staging, prod)
+* `names-function-apps` - A list of names for the Azure function apps to deploy. (e.g. emails, voting, etc)
+
+```json
 {
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
@@ -102,13 +104,13 @@ If you're not already familiar with how to create ARM Templates, the [MSFT docs]
 
 #### Run the ARM Template
 
-I enjoy using the [Azure CLI]. However, you could do the same using Powershell.
+I enjoy using the \[Azure CLI]. However, you could do the same using Powershell.
 
 First login and select your Azure subscription.
 
 Then create a resource group to deploy these functions to. 
 
-``` bash
+```bash
 az group create -n dev-functions-example-rg -l EastUs
 ```
 
@@ -127,7 +129,3 @@ Example using `dev-facundo2` and an environment
 #### The Result
 
 ![]({{site.baseurl}}/assets/2018-2-1/functionsarm_1.PNG)
-
-
-
-
