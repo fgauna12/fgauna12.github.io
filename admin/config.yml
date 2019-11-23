@@ -25,14 +25,16 @@ collections:
           name: "featured_image_thumbnail",
           widget: "image",
           default: "/assets/images/posts/2019/kubernetes-logo.svg",
-          allow_multiple: false            
+          allow_multiple: false,
+          required: false          
         }
       - { 
           label: "Featured Image",
           name: "featured_image",
           widget: "image",
           default: "/assets/images/posts/2019/business-1845350_640.jpg",
-          allow_multiple: false            
+          allow_multiple: false,
+          required: false
         }
       - { label: "Comments", name: "comments", widget: 'hidden', default: false }
   - name: 'pages'
