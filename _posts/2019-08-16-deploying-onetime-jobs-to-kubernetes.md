@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Running one-time jobs during Kubernetes deployments"
-date:   2019-08-24
+title: Running one-time jobs during Kubernetes deployments
 categories: Containers DevOps
-comments: true
+date: 2019-08-24T00:00:00.000Z
 featured: true
 hidden: true
-featured_image_thumbnail: /assets/images/posts/2019/kubernetes-logo.svg
-featured_image: /assets/images/posts/2019/business-1845350_640.jpg
+featured_image_thumbnail: /assets/uploads/kubernetes.svg
+featured_image: /assets/uploads/business-1845350_640-1-.jpg
+comments: true
 ---
 
 Sometimes, we want to run a one-time job during our deployments. For example, running an Entity Framework migration. By creating a console application, packaged as a Docker image, we can run these one-time jobs as a Kubernetes Job upon a deployment.
