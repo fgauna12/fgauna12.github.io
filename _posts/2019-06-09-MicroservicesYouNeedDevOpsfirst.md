@@ -1,15 +1,12 @@
 ---
 layout: post
-title:  "Thinking about microservices? You need DevOps first"
-date: 2019-06-09
+title: Thinking about microservices? You need DevOps first
 categories: DevOps Microservices
-tags: devops microservices
-comments: true
+date: 2019-06-09T00:00:00.000Z
 featured: false
-hidden: true
-featured_image_thumnail: assets/images/posts/2019/logistics-1-640.jpg
+hidden: false
 featured_image: assets/images/posts/2019/logistics-1-640.jpg
-
+comments: true
 ---
 
 
