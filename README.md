@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/aa9b612e-2d52-4842-af61-5acca9364939/deploy-status)](https://app.netlify.com/sites/gaunacode-v2/deploys)
+
 # Horace Jekyll Theme v1.2.0
 
 [Theme Live Demo](https://horace.netlify.com/)
