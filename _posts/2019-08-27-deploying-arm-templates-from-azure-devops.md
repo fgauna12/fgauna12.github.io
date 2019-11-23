@@ -6,7 +6,7 @@ date: 2019-08-27T00:00:00.000Z
 featured: false
 hidden: false
 featured_image_thumbnail: ''
-featured_image: ''
+featured_image: /assets/uploads/quick-start-center.svg
 comments: true
 ---
 
