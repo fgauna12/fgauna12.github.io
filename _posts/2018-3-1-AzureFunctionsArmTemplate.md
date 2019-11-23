@@ -5,7 +5,8 @@ categories: Azure Functions ARM Templates Infrastructure as Code DevOps
 date: 2018-01-03T00:00:00.000Z
 featured: false
 hidden: false
-featured_image: ''
+featured_image_thumbnail: /assets/uploads/function-apps.svg
+featured_image: /assets/uploads/network-2402637_640.jpg
 comments: true
 ---
 Creating Azure functions is easy. Managing them can be a challenge. Much like microservices, functions can get problematic to maintain when having multiple environments. 
