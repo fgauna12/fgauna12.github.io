@@ -1,5 +1,7 @@
 ---
+layout: page
 title: About
+permalink: /about/
 ---
 My name is Facundo Gauna. Sometimes I go by Frank. 
 
