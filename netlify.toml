@@ -2,7 +2,7 @@
   for = "/*"
   [headers.values]
     X-Frame-Options = "SAMEORIGIN"
-    X-Content-Type-Options: "nosniff"
+    X-Content-Type-Options = "nosniff"
     X-XSS-Protection = "1; mode=block"
     Content-Security-Policy = "form-action https:"
     Referrer-Policy = "strict-origin-when-cross-origin"
