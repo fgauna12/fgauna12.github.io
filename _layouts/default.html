@@ -5,15 +5,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     {% include twitter.html %}
 
     {% if site.plugins_dir contains 'jekyll-seo-tag' %}
-        {% include head-seo.html %}
+    {% include head-seo.html %}
     {% else %}
-        <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.name | escape }}{% endif %}</title>
-        <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
-        <link rel="canonical" href="{{ page.url | replace:'index.html', '' | absolute_url }}">
+    <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.name | escape }}{% endif %}</title>
+    <meta name="description"
+        content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html', '' | absolute_url }}">
     {% endif %}
 
     <!-- Site Favicon -->
@@ -24,6 +25,9 @@
 
     <!-- CSS Styles -->
     <link href="{{ site.baseurl }}/assets/css/style.css" rel="stylesheet">
+
+    <!-- Netlify CMS -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
 </head>
 
@@ -36,7 +40,8 @@
 
         <div class="hero-wrap">
             {% if site.cover_image %}
-            <div class="hero-wrap-bg" style="background-image: url({{ site.baseurl }}/assets/images/{{ site.cover_image }})"></div>
+            <div class="hero-wrap-bg"
+                style="background-image: url({{ site.baseurl }}/assets/images/{{ site.cover_image }})"></div>
             {% endif %}
             {% include header.html %}
             <section class="hero outer fadeInDown">
@@ -86,7 +91,17 @@
     <script src="{{ site.baseurl }}/assets/js/jquery-3.3.1.min.js"></script>
     <script src="{{ site.baseurl }}/assets/js/plugins.js"></script>
     <script src="{{ site.baseurl }}/assets/js/custom.js"></script>
-
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
