@@ -5,8 +5,8 @@ categories: Azure DevOps
 date: 2019-08-27T00:00:00.000Z
 featured: false
 hidden: false
-featured_image_thumbnail: ''
-featured_image: ''
+featured_image_thumbnail: /assets/uploads/kubernetes.svg
+featured_image: /assets/uploads/network-2402637_640.jpg
 comments: true
 ---
 
