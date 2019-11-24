@@ -7,12 +7,12 @@
             <a href="{{ post.url | absolute_url }}" rel="bookmark">{{ post.title }}</a>
         </h2>
     </header><!-- .post-header -->
-    {% if post.featured_image_thumbnail and post.featured_image_thumbnail != blank %}
+    {% if post.featured_image_thumbnail and post.featured_image_thumbnail != empty %}
     <a class="post-thumbnail" href="{{ post.url }}">
         <img src="{% if post.featured_image_thumbnail contains ' :// ' %}{{ post.featured_image_thumbnail }}{% else %}{{ post.featured_image_thumbnail | absolute_url }}{% endif %}"
             alt="{{ post.title }}">
     </a>
-    {% elsif post.featured_image and post.featured_image != blank %}
+    {% elsif post.featured_image and post.featured_image != empty %}
     <a class="post-thumbnail" href="{{ post.url }}">
         <img src="{% if post.featured_image contains ' :// ' %}{{ post.featured_image }}{% else %}{{ post.featured_image | absolute_url }}{% endif %}"
             alt="{{ post.title }}">
