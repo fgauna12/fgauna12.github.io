@@ -9,7 +9,6 @@ featured_image_thumbnail: /assets/uploads/quick-start-center.svg
 featured_image: ''
 comments: true
 ---
-
 Deploying Azure Resource Manager (ARM) templates from Azure DevOps is very powerful. It encourages developers and operators to maintain a declarative file describing the infrastructure on Azure. Also helps prevent pesky environment drifts because of someone clicking from the portal to make changes. But, deploying these ARM templates can be daunting. Here's some tips.
 
 <!--more-->
@@ -22,8 +21,7 @@ Assuming you have an ARM template ready and committed to a repository, you'll wa
 
 In YAML, your task could look like this:
 
-``` yaml
-
+```yaml
 - task: AzureResourceGroupDeployment@2
   displayName: Deploy ARM Template to Create CDN
   inputs:
@@ -35,7 +33,6 @@ In YAML, your task could look like this:
     csmFile: '$(Pipeline.Workspace)/drop/arm/cdn-blob.json'
     overrideParameters: '-environment $(environment) -appName $(spaNameNoDashes)'
     deploymentMode: 'Incremental'
-
 ```
 
 ## 2. Reading Output Variables from the ARM template
@@ -43,13 +40,13 @@ In YAML, your task could look like this:
 It's often useful to use ARM template output variables so that you can use those variables from subsequent tasks.
 
 For example:
-- What's the FQDN for a resource that was just created?
-- What's the storage account key that was just created?
+
+* What's the FQDN for a resource that was just created?
+* What's the storage account key that was just created?
 
 After having assigned output variables, you can read them from the pipeline by specifying a name for the `outputVariable`. For instance:
 
-``` yaml
-
+```yaml
 - task: AzureResourceGroupDeployment@2
   displayName: Deploy ARM Template to Create CDN
   inputs:
@@ -68,8 +65,7 @@ After having assigned output variables, you can read them from the pipeline by s
 
 Using Powershell, you could use the following script:
 
-``` powershell
-
+```powershell
 function Convert-ArmOutputToPsObject {
   param (
     [Parameter(Mandatory=$true)]
@@ -100,13 +96,11 @@ function Convert-ArmOutputToPsObject {
       }
   }
 }
-
 ```
 
 So from the pipeline, it could look like this:
 
-``` yaml
-
+```yaml
 - powershell: |
     function Convert-ArmOutputToPsObject {
       param (
@@ -139,18 +133,10 @@ So from the pipeline, it could look like this:
       }
     }
 
-    Convert-ArmOutputToPsObject -ArmOutputString '$(ArmOutputAsString)' -Verbose
+    Convert-ArmOutputToPsObject -ArmOutputString '$(ArmOutputs)' -Verbose
   displayName: "Parsing outputs from ARM deployment to pipeline variables"
-
 ```
-
 
 ## But why?
 
 There is an extension called [Arm Outputs](https://marketplace.visualstudio.com/items?itemName=keesschollaart.arm-outputs). It works by quering the Azure Resource Manager API to see the last deployment and query the outputs from this API. Therefore, theoretically it's possible if multiple pipelines deploy to the same resource group, there could be a race condition.
-
-
-
-
-
-
