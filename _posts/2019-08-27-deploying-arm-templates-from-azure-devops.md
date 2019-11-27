@@ -139,4 +139,4 @@ So from the pipeline, it could look like this:
 
 ## But why?
 
-There is an extension called [Arm Outputs](https://marketplace.visualstudio.com/items?itemName=keesschollaart.arm-outputs). It works by quering the Azure Resource Manager API to see the last deployment and query the outputs from this API. Therefore, theoretically it's possible if multiple pipelines deploy to the same resource group, there could be a race condition.
+There is an extension called [Arm Outputs](https://marketplace.visualstudio.com/items?itemName=keesschollaart.arm-outputs). It works by querying the Azure Resource Manager API to see the last deployment and query the outputs from this API. Therefore, theoretically it's possible if multiple pipelines deploy to the same resource group, there could be a race condition.
