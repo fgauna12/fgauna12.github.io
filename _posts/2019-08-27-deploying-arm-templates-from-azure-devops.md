@@ -58,7 +58,7 @@ After having assigned output variables, you can read them from the pipeline by s
     csmFile: '$(Pipeline.Workspace)/drop/arm/cdn-blob.json'
     overrideParameters: '-environment $(environment) -appName $(spaNameNoDashes)'
     deploymentMode: 'Incremental'
-    outputVariable: 'ArmOutputs'
+    deploymentOutputs: 'ArmOutputs'
 ```
 
 ## 3. Reading the output variables (Powershell)
