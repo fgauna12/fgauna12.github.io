@@ -18,7 +18,7 @@ I remember writing my first blog post. I wrote it and re-wrote it, then re-wrote
 
 Then I started thinking, what would I do differently if I wanted to write a blog post a day?
 
-First, I'd have to make _me_ a priority. Scheduling every minute of my work day - an [Indistractable](https://www.amazon.com/Indistractable-Control-Your-Attention-Choose/dp/194883653X) idea.
+First, I'd have to make _me_ a priority. Scheduling every minute of my day - an [Indistractable](https://www.amazon.com/Indistractable-Control-Your-Attention-Choose/dp/194883653X) idea.<br>
 Secondly, I'd have to make it very simple for me to create a blog post. 
 
 I realized... I had a burial ground of blog posts. It was so cumbersome for me to create a blog post, that I had a few that I never finished!
@@ -33,5 +33,5 @@ So, I invested in moving my blog to Netlify and adding Netlify CMS. Now, it's mu
 And it dawned on me.
 Pushing towards daily blog posts is already changing my habits and mindset. 
 
-How much _more_ would culture and habits change at an **organization** that committed to deploy to production daily?
-[Accelerate](https://www.amazon.com/Accelerate-Software-Performing-Technology-Organizations-ebook/dp/B07B9F83WM/ref=sr_1_1?keywords=accelerate&qid=1574946065&sr=8-1) and State of DevOps Report show us that elite/high-performing organizations deploy to production daily.
+How much _more_ would culture and habits change at an **organization** that committed to deploy to production daily?<br>
+[_Accelerate_](https://www.amazon.com/Accelerate-Software-Performing-Technology-Organizations-ebook/dp/B07B9F83WM/ref=sr_1_1?keywords=accelerate&qid=1574946065&sr=8-1) and State of DevOps Report show us that elite/high-performing organizations deploy to production daily.
