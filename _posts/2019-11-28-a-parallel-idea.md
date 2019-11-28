@@ -21,7 +21,7 @@ Then I started thinking, what would I do differently if I wanted to write a blog
 First, I'd have to make _me_ a priority. Scheduling every minute of my work day - an [Indistractable](https://www.amazon.com/Indistractable-Control-Your-Attention-Choose/dp/194883653X) idea.
 Secondly, I'd have to make it very simple for me to create a blog post. 
 
-I realized... I had a burial ground of blog posts. It was so cumbersome for me to create a blog post, that I had a few that I had started and never finished!
+I realized... I had a burial ground of blog posts. It was so cumbersome for me to create a blog post, that I had a few that I never finished!
 To create a blog post, I had to use my home computer, then start a Jekyll dev server, write markdown, preview it, then pick out images, download them to my drive, commit them to the repo, reference them from the blog post, test to ensure the markdown rendered properly again, ensure I had the right Jekyll front-matter, then commit, wait for publish and ensure I didn't mess anything up. 
 
 Exhausting. 
