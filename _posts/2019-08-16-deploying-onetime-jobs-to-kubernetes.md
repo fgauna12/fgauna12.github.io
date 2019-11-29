@@ -3,8 +3,8 @@ layout: post
 title: Running one-time jobs during Kubernetes deployments
 categories: Containers DevOps
 date: 2019-08-24T00:00:00.000Z
-featured: true
-hidden: true
+featured: false
+hidden: false
 featured_image_thumbnail: /assets/uploads/kubernetes.svg
 featured_image: /assets/uploads/business-1845350_640-1-.jpg
 comments: true
