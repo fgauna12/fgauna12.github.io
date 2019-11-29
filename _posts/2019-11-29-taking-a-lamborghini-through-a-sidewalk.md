@@ -6,7 +6,7 @@ date: 2019-11-29T20:37:06.966Z
 featured: true
 hidden: true
 featured_image_thumbnail: ''
-featured_image: ''
+featured_image: /assets/uploads/lamborghini-2137815_640.jpg
 comments: false
 ---
 The other day I spoke to some folks and they were wondering if they should use Service Fabric - Microsoft's orchestrator. I get it. It powers a sizable chunk of Azure. Microsoft has been successful with it. 
