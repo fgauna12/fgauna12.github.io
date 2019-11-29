@@ -15,6 +15,8 @@ First, I was surprised to hear that some people are still considering Service Fa
 
 Secondly, I was surprised to hear that such a small team was seeing the platform as appealing. They were charmed by the complexity, the power, the bells and whistles, the idea that they too could be like Microsoft. 
 
+<!-- more--> 
+
 Regardless of Kubernetes or Service Fabric, I hear that often. Developers and architects becoming enamored by the complexity of these platforms - even when they don't have the problems these platforms solve. 
 
 Lamborghini's like Service Fabric and Kubernetes are accessible and we get excited. We want to say we drove a Lamborghini. But, we don't stop to think where we need to go and how to best get there.\
