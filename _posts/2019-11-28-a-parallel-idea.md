@@ -35,3 +35,5 @@ Pushing towards daily blog posts is already changing my habits and mindset.
 
 How much _more_ would culture and habits change at an **organization** that committed to deploy to production daily?<br>
 [_Accelerate_](https://www.amazon.com/Accelerate-Software-Performing-Technology-Organizations-ebook/dp/B07B9F83WM/ref=sr_1_1?keywords=accelerate&qid=1574946065&sr=8-1) and State of DevOps Report show us that elite/high-performing organizations deploy to production daily.
+
+What would you change if you had to deploy daily?
