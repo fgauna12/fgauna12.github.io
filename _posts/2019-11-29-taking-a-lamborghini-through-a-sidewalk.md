@@ -19,7 +19,8 @@ Secondly, I was surprised to hear that such a small team finding the platform so
 
 Regardless of Kubernetes or Service Fabric, I see that often. Developers and architects becoming enamored by the complexity of these platforms - even when they don't have the problems these platforms solve. 
 
-Lamborghini's like Service Fabric and Kubernetes are accessible and we get excited. We want to say we drove a Lamborghini. But, we don't stop to think where we need to go and how to best get there. <br>
+Lamborghini's like Service Fabric and Kubernetes are accessible and we get excited. We want to say we drove a Lamborghini. But, we don't stop to think where we need to go and how to best get there. 
+
 But if you read the [Site Reliability Engineering](https://www.amazon.com/Site-Reliability-Engineering-Production-Systems/dp/149192912X/ref=sr_1_4?crid=RGG8BLOCXFXU&keywords=site+reliability+engineering&qid=1575060537&sprefix=site+reliab%2Caps%2C145&sr=8-4) book, you'll understand how Google thinks about running production systems and you'll start to see the ideas that inspired Kubernetes. They want to reduce the repetitive tasks and take a developer's mindset to the operations' job. They understand that 100% availability is impossible and the more available an application is, the more costly and less agile it will become.
 
 So, if the path ahead of you is not a highway, instead it's a sidewalk, don't take a Lamboghini on a sidewalk because you've seen Google and Microsoft racing. If you have a sidewalk, use a skateboard, or a scooter, or just put some running shoes on.
