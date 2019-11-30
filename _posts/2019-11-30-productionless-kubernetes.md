@@ -7,11 +7,13 @@ featured: false
 hidden: false
 comments: false
 ---
-So I found out about greenfield project being developed on Kubernetes. It was a sizable project with microservices and the likes. It has been in development for over a year. 
+So I found out about greenfield project being developed on Kubernetes. It was a sizable project with microservices and the likes. It has been in development for **a year.** 
 
 <!--more-->
 
-> They haven't deployed to production and they won't for the near future.
+> They haven't deployed to production
+
+... and they won't for the near future.
 
 Why? Because it's not done. Because the business is scared to release it. 
 
