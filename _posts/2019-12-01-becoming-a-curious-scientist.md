@@ -21,7 +21,7 @@ So become a curious scientist. It takes practice and after some time, you'll be 
 
 ## A story
 
-We were helping a team move an API to Azure and re-architect along the way. This API has severe technical debt that has accrued for years and no unit tests. The API's main functionality was a query engine that aggregated data from various sources. It was _messy,_ untestable, and bound to break once we touched it.\
+We were helping a team move an API to Azure and re-architect along the way. This API has severe technical debt that has accrued for years and no unit tests. The API's main functionality was a query engine that aggregated data from various sources. It was _messy,_ untestable, and bound to break once we touched it.
 We did some research about how this query engine evolved over time. We then constructed a hypothesis. 
 
 We asked a question: _What if it was easier to read and the queries were done in parallel rather than serially?_
