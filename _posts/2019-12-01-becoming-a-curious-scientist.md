@@ -13,7 +13,7 @@ Conventional wisdom tells us that we have to design big and plan for worst case 
 
 The reality is that real-life is not like school. Unexpected things happen all the time. 
 
-> So how do we ensure that things won't blow up in production?
+> So how do we ensure that things <br> won't blow up in production?
 
 You don't. You embrace it. Make it blow up in a controlled fashion. Why? Because there's no replacement for production. Because creating a mirror of production is often extremely difficult/expensive and even if you accomplish it, chances are you won't follow this process often. 
 
