@@ -11,12 +11,8 @@ Today, we had a culture workshop at work. The workshops have given me a place to
 
 Why should you care?
 
-At Google, they performed a research study called [Aristotle](https://rework.withgoogle.com/print/guides/5721312655835136/) in which they seeked to find what makes up an effective team at Google. What they found might surprise you - it wasn't the team with the rockstar people that made an effective team. Instead, it was more important how a team worked together and for that they exhibited \_psychological safety.\_ 
+At Google, they performed a research study called [Aristotle](https://rework.withgoogle.com/print/guides/5721312655835136/) in which they seeked to find what makes up an effective team at Google. What they found might surprise you - it wasn't the team with the rockstar people that made an effective team. Instead, it was more important how a team worked together and for that they exhibited _psychological safety._ 
 
-> In a team with high psychological safety, teammates feel safe to 
->
-> **take risks**
->
->  around their team members. They feel confident that no one on the team will embarrass or punish anyone else for admitting a mistake, asking a question, or offering a new idea.
+> In a team with high psychological safety, teammates feel safe to **take risks** around their team members. They feel confident that no one on the team will embarrass or punish anyone else for admitting a mistake, asking a question, or offering a new idea.
 
-It feels good to work with smart people. It feels even better when they are not jerks. Working with a jerk and \_putting up\_ with them could be incredibly taxing.
+It feels good to work with smart people. It feels even better when they are not jerks. Working with a jerk and _putting up_ with them could be incredibly taxing.
