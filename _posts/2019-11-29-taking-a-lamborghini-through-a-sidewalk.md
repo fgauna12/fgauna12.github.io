@@ -4,7 +4,7 @@ title: 'Taking a Lamborghini through a sidewalk '
 categories: DevOps Kubernetes
 date: 2019-11-29T20:37:06.966Z
 featured: true
-hidden: true
+hidden: false
 featured_image_thumbnail: ''
 featured_image: /assets/uploads/lamborghini-2137815_640.jpg
 comments: false
