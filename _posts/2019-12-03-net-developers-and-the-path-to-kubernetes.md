@@ -2,7 +2,7 @@
 layout: post
 title: .NET Developers and the Path to Kubernetes
 categories: Kubernetes
-date: 2019-12-04T03:00:00.000Z
+date: 2019-12-04T02:00:00.000Z
 featured: false
 hidden: false
 comments: false
