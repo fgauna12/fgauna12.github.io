@@ -1,0 +1,18 @@
+<meta property="og:title" content="{{ page.title }}" />
+<meta property="og:type" content="article" />
+<meta property="og:article:tag" content="{{ page.tags }}" />
+<meta property="og:article:author" content="{{ site.author.name }}" />
+<meta property="og:url" content="{{ site.url }}/{{ page.url }}" />
+
+{% if page.summary %}
+<meta property="og:description" content="{{ page.summary }}">
+{% else %}
+<meta property="og:description" content="{{ site.description }}">
+{% endif %}
+
+
+{% if page.featured_image %}
+<meta property="og:image" content="{{ site.url }}/{{ site.baseurl }}{{ page.featured_image }}" />
+{% else %}
+<meta property="og:image" content="{{ site.url }}/{{ site.baseurl }}assets/images/{{ site.author.image }}" />
+{% endif %}
