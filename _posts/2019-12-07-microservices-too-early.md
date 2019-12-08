@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Microservices Too Early
-categories: 'Architecture, Microservices'
+categories: []
 date: 2019-12-08T00:23:54.481Z
 featured: false
 hidden: false
