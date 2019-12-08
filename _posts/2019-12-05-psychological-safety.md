@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Psychological Safety
-categories: DevOps
+tags: devops
 date: 2019-12-06T03:00:00.000Z
 featured: false
 hidden: false

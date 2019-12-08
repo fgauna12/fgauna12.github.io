@@ -1,7 +1,9 @@
 ---
 layout: post
 title: ARM Template Outputs from Azure Pipelines
-categories: Azure DevOps
+tags: 
+  - azure
+  - devops
 date: 2019-08-27T00:00:00.000Z
 featured: false
 hidden: false

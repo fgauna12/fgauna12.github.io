@@ -4,6 +4,7 @@ title: Microservices Too Early
 tags:
   - devops
   - architecture
+  - microservices
 date: 2019-12-08T00:23:54.481Z
 featured: false
 hidden: false

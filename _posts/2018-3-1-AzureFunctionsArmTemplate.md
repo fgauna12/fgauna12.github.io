@@ -1,7 +1,9 @@
 ---
 layout: post
 title: Creating an Azure Function ARM template
-categories: Azure Functions ARM Templates Infrastructure as Code DevOps
+tags: 
+  - azure
+  - devops
 date: 2018-01-03T00:00:00.000Z
 featured: false
 hidden: false

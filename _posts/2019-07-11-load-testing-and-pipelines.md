@@ -1,7 +1,11 @@
 ---
 layout: post
 title: 'Azure Load Tests Part 2: Running Tests from Pipeline'
-categories: Azure Load-Testing Containers DevOps
+tags: 
+  - azure
+  - devops
+  - containers
+  - load-tests
 date: 2019-06-23T00:00:00.000Z
 featured: false
 hidden: false

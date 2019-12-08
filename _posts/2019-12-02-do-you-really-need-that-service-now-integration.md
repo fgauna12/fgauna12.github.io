@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Do you really need that Service Now integration?
-categories: DevOps
+tags: devops
 date: 2019-12-02T23:41:57.094Z
 featured: false
 hidden: false

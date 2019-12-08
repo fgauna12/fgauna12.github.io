@@ -2,11 +2,7 @@
 layout: post
 title:  "Creating a CI/CD pipeline for Azure Functions"
 date: 2018-01-02
-categories: 
-    - Azure Functions
-    - CI/CD
-    - DevOps
-tags: azure azure-functions pipelines devops
+tags: azure devops
 comments: true
 ---
 

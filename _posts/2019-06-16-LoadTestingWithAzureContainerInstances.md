@@ -1,7 +1,11 @@
 ---
 layout: post
 title: Load Testing with Azure Container Instances
-categories: Azure Load-Testing Containers
+tags: 
+  - azure
+  - devops
+  - containers
+  - load-tests
 date: 2019-06-23T00:00:00.000Z
 featured: false
 hidden: false

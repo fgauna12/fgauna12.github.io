@@ -1,7 +1,9 @@
 ---
 layout: post
 title: Productionless Kubernetes
-categories: DevOps Kubernetes
+tags: 
+  - devops
+  - kubernetes
 date: 2019-11-30T13:35:05.237Z
 featured: false
 hidden: false

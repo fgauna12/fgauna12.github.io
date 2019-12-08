@@ -1,7 +1,10 @@
 ---
 layout: post
 title: Incremental Path to Kubernetes on Azure
-categories: DevOps Kubernetes
+tags: 
+  - devops
+  - kubernetes
+  - microservices
 date: 2019-12-04T22:26:22.686Z
 featured: false
 hidden: false

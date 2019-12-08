@@ -1,7 +1,9 @@
 ---
 layout: post
 title: Thinking about microservices? You need DevOps first
-categories: DevOps Microservices
+tags: 
+  - devops
+  - microservices
 date: 2019-06-09T00:00:00.000Z
 featured: false
 hidden: false

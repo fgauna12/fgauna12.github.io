@@ -1,7 +1,10 @@
 ---
 layout: post
 title: Becoming a curious scientist
-categories: DevOps Architecture
+tags:
+  - devops
+  - architecture
+  - microservices
 date: 2019-12-01T13:58:53.512Z
 featured: false
 hidden: false

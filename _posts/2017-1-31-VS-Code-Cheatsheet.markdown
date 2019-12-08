@@ -3,7 +3,6 @@ layout: post
 title:  "My VS Code Cheatsheet"
 date: 2017-01-31
 categories: ide
-tags: cheatsheet
 comments: true
 ---
 

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: A Parallel Idea
-categories: DevOps
+tags: 
+  - devops
 date: 2019-11-28T12:34:56.147Z
 featured: false
 hidden: false

@@ -1,7 +1,9 @@
 ---
 layout: post
 title: Courage to Try
-categories: 'Culture, DevOps'
+tags: 
+  - culture
+  - devops
 date: 2019-12-06T22:26:17.090Z
 featured: false
 hidden: false

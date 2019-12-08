@@ -1,7 +1,10 @@
 ---
 layout: post
 title: 'Taking a Lamborghini through a sidewalk '
-categories: DevOps Kubernetes
+tags:
+  - devops
+  - kubernetes
+  - microservices
 date: 2019-11-29T20:37:06.966Z
 featured: true
 hidden: false
