@@ -1,0 +1,13 @@
+<meta property="og:title" content="{{ page.title }}" />
+<meta property="og:type" content="article" />
+{% for tag in page.tags %}
+<meta property="og:article:tag" content="{{ tag }}" />
+{% endfor %}
+<meta property="og:article:author" content="{{ site.author.name }}" />
+<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+
+{% if page.featured_image %}
+<meta property="og:image" content="{{ site.url }}/{{ site.baseurl }}{{ page.featured_image }}" />
+{% else %}
+<meta property="og:image" content="{{ site.url }}/assets/images/{{ site.author.image }}" />
+{% endif %}

@@ -3,12 +3,6 @@
 <meta name="twitter:creator" content="@{{ site.author.name }}">
 <meta name="twitter:title"   content="{{ page.title }}">
 
-{% if page.summary %}
-<meta name="twitter:description" content="{{ page.summary }}">
-{% else %}
-<meta name="twitter:description" content="{{ site.description }}">
-{% endif %}
-
 {% if page.featured_image %}
 <meta name="twitter:card"  content="summary_large_image">
 <meta name="twitter:image" content="{{ site.url }}/{{ site.baseurl }}{{ page.featured_image }}">
