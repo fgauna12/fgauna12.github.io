@@ -2,8 +2,8 @@
 layout: post
 title: Microservices Too Early
 tags:
-  - DevOps
-  - Architecture
+  - devops
+  - architecture
 date: 2019-12-08T00:23:54.481Z
 featured: false
 hidden: false
