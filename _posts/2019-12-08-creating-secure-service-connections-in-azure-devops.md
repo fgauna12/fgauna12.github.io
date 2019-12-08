@@ -5,7 +5,7 @@ tags:
   - devops
 date: 2019-12-08T13:33:21.920Z
 featured: true
-hidden: false
+hidden: true
 featured_image: /assets/uploads/programming-593312_640.jpg
 comments: false
 ---
