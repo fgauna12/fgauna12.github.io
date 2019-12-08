@@ -3,7 +3,6 @@ layout: post
 title:  "When Unit Tests are a Waste of Time"
 date: 2017-02-19
 categories: ide
-tags: unit-testing
 comments: true
 ---
 

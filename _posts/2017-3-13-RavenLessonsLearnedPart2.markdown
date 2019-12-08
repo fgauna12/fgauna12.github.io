@@ -3,7 +3,6 @@ layout: post
 title:  "RavenDB Lessons Learned - Part 2"
 date: 2017-03-13
 categories: RavenDB
-tags: nosql
 comments: true
 ---
 

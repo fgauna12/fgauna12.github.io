@@ -3,7 +3,6 @@ layout: post
 title:  "The Query Object and Repository Pattern"
 date: 2017-01-08
 categories: Unit-Testing Patterns
-tags: unit-testing
 comments: true
 ---
 

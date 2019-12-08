@@ -3,7 +3,6 @@ layout: post
 title:  "Understanding ASP.NET Core Middleware"
 date: 2017-04-14
 categories: ASP.NET Core Middleware
-tags: aspnet-core
 comments: true
 ---
 
