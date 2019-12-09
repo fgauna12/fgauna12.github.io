@@ -14,7 +14,7 @@ What if security was part of the process? Instead of waiting towards the end, we
 
 <!--more-->
 
-## An DevSecOps Pipeline
+## A DevSecOps Pipeline
 
 Here's what it could look like when using containers. 
 
@@ -35,7 +35,5 @@ Lastly, after the application is deployed and in production, what happens when t
 Incidents could happen and it's important to be ready for them. 
 
 Create secret rotation runbooks so that in the event of an exploit, engineers can regenerate secrets. This concept can be applied for sensitive information like Azure service principals, certificate rotation, and database connection strings.
-
-
 
 I hope you see that there's efficient ways to increase security. Processes where you have to request approval to use an open source library are **archaic** and vulnerable. Shift left security.
