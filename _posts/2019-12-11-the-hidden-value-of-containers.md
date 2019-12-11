@@ -28,6 +28,6 @@ Since they are fast to start and they are portable, with some work you can run t
 
 In the example above, we run functional smoke tests against a _docker compose_ version of the application, database and all. You can extend this concept to also run penetration tests as I alluded in my previous [DevSecOps post](https://gaunacode.com/a-devsecops-process). 
 
-What's risky? What fails often? Database changes? API Authentication?\
-\
+What's risky? What fails often? Database changes? API Authentication?
+
 There are things you can probably test with containers without deploying to an environment _and_ spending money on cloud resources.
