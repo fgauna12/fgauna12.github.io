@@ -25,6 +25,6 @@ So low performing organizations are:
 - In case of an outage, on average it takes anywhere between one week and month month to restore service
 - When they do deploy, 46-60% of the deploys fail or require remediation
 
-But, I have heard of companies that spend **over a year** developing a greenfield application and never release to production. Meaning, their deployment frequency is certainly greater than 6 months. 
+> What if someone develops a greenfield system and doesn't deploy within 6 months?
 
 Sometimes there's so much anticipation and investment poured to a project that provides no business value for such a long time. I think they are lower performers than the low performers, regardless of what fancy tech they are using. 
