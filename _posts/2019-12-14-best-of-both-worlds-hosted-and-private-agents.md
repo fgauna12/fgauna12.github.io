@@ -6,8 +6,8 @@ tags:
 date: 2019-12-14T22:51:45.340Z
 featured: true
 hidden: true
-featured_image_thumbnail: /assets/uploads/logistics-1-640.jpg
-featured_image: /assets/uploads/azure-pipelines.svg
+featured_image_thumbnail: /assets/uploads/azure-pipelines.svg
+featured_image: /assets/uploads/logistics-1-640.jpg
 comments: false
 ---
 In Azure DevOps, it's convenient and easy to use one of the hosted agent pools. Microsoft takes the time to update the tooling as new versions of the of SDKs come out - like .NET Core. But, there's one drawback - **performance**.
