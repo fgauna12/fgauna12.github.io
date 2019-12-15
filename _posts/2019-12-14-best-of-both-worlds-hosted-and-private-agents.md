@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Best of both worlds - Hosted and private agents
+title: Best of both worlds
 tags:
   - devops azure
 date: 2019-12-14T22:51:45.340Z
