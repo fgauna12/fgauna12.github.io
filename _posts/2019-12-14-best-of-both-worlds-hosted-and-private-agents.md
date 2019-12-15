@@ -45,7 +45,7 @@ az group create -g 'rg-nebbiademo-shared-001' -l eastus
 
 az container create -g rg-nebbiademo-shared-001 \
        --name az-container-1 \
-       --image mcr.microsoft.com/azure-pipelines/vsts-agent:ubuntu-16.04-docker-18.06.1-ce \
+       --image mcr.microsoft.com/azure-pipelines/vsts-agent:ubuntu-16.04-docker-17.12.0-ce-standard \
        --environment-variables VSTS_ACCOUNT=$AZDO_ACCOUNT \
            VSTS_TOKEN=$AZDO_PAT \
            VSTS_POOL=$AZDO_POOL_NAME \
@@ -63,7 +63,7 @@ az group create -g 'rg-nebbiademo-shared-001' -l eastus
 
 az container create -g rg-nebbiademo-shared-001 `
        --name az-container-1 `
-       --image mcr.microsoft.com/azure-pipelines/vsts-agent:ubuntu-16.04-docker-18.06.1-ce `
+       --image mcr.microsoft.com/azure-pipelines/vsts-agent:ubuntu-16.04-docker-17.12.0-ce-standard `
        --environment-variables VSTS_ACCOUNT=$AZDO_ACCOUNT ` 
           VSTS_TOKEN=$AZDO_PAT `
           VSTS_POOL=$AZDO_POOL_NAME `
@@ -85,7 +85,7 @@ docker run \
 -e VSTS_ACCOUNT=<name> \
 -e VSTS_TOKEN=<pat> \
 -v /var/run/docker.sock:/var/run/docker.sock \
--it mcr.microsoft.com/azure-pipelines/vsts-agent:ubuntu-16.04-docker-17.12.0-ce
+-it mcr.microsoft.com/azure-pipelines/vsts-agent:ubuntu-16.04-docker-17.12.0-ce-standard
 ```
 
 For security reasons, Azure Container Instances doesn't let you do this.
