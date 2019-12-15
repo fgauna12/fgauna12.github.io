@@ -89,3 +89,5 @@ docker run \
 ```
 
 For security reasons, Azure Container Instances doesn't let you do this.
+
+Lastly, doesn't look like Microsoft will continue to maintain these Docker images. The [Git repo has been deprecated](https://github.com/microsoft/vsts-agent-docker). 
