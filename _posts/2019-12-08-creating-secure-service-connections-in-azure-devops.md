@@ -4,8 +4,8 @@ title: Creating Secure Service Connections in Azure DevOps
 tags:
   - devops
 date: 2019-12-08T13:33:21.920Z
-featured: true
-hidden: true
+featured: false
+hidden: false
 featured_image: /assets/uploads/programming-593312_640.jpg
 comments: false
 ---
