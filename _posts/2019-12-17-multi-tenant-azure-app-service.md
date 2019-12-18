@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Multi-tenant Azure app service '
+title: Azure App Service and Network Security
 tags:
   - azure
 date: 2019-12-18T02:03:06.554Z
@@ -12,7 +12,7 @@ Azure App Service Environments are expensive. You do get true network isolation 
 
 <!--more-->
 
-[Application Gateways](https://docs.microsoft.com/en-us/azure/application-gateway/application-gateway-web-app-overview) support multi-tenant backends like Azure App Services. These app gateways serve act as a reverse proxy, provide SSL termination in one place, and give basic WAF functionality (if you so choose). 
+[Application Gateways](https://docs.microsoft.com/en-us/azure/application-gateway/application-gateway-web-app-overview) support multi-tenant backends like Azure App Services. These app gateways serve act as a reverse proxy, provide SSL termination in one place, and give basic **WAF** functionality (if you so choose). 
 
 After traffic is able to reach your Azure App Service, you can also restrict access to that app service from only traffic comming from the Application Gateway. You can do this in two ways: [white-listing the IP](https://docs.microsoft.com/en-us/azure/app-service/app-service-ip-restrictions#adding-ip-address-rules) of the Application Gateway, or allowing traffic only coming from the Application Gateway subnet (preferred). For the latter approach, you'll also have to create a [service endpoint](https://docs.microsoft.com/en-us/azure/app-service/app-service-ip-restrictions#adding-ip-address-rules) on the VNet to be able to allow VNet traffic to the multi-tenant Azure App Service.
 
