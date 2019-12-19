@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The interplay between Agile and DevOps
+title: DevOps or Agile first?
 tags:
   - devops
 date: 2019-12-19T22:09:55.514Z
