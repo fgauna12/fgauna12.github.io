@@ -23,8 +23,7 @@ Once you have the NuGet CLI, upload a test package. Borrowing the instructions f
 
 ```powershell
 nuget install HelloWorld -ExcludeVersion
-nuget push -Source {NuGet package source URL} -ApiKey key HelloWorld\HelloWorld.nupkgnuget.exe install HelloWorld -ExcludeVersion
-nuget.exe push -Source {NuGet package source URL} -ApiKey az HelloWorld\HelloWorld.nupkg
+nuget push -Source {NuGet package source URL} -ApiKey key HelloWorld\HelloWorld.nupkgnuget.exe
 ```
 
 NuGet will probably ask you to login so that it can authenticate against Azure AD to use Azure DevOps. Once authenticated, you'll see the package in the feed. 
@@ -34,5 +33,5 @@ Lastly, you want to find the `.nupkg` file for the package you want to upload. O
 Once you find the `.nupkg`, you can upload the package to Azure DevOps using the same method. 
 
 ```powershell
-nuget.exe push -Source {NuGet package source URL} -ApiKey az {your .nupkg file} 
+nuget push -Source {NuGet package source URL} -ApiKey az {your .nupkg file} 
 ```
