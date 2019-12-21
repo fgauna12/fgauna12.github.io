@@ -2,7 +2,8 @@
 layout: post
 title: Best of both worlds - containerized build agents
 tags:
-  - devops azure
+  - devops
+  - azure
 date: 2019-12-14T22:51:45.340Z
 featured: true
 hidden: true
