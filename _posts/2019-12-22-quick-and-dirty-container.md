@@ -6,8 +6,7 @@ tags:
 date: 2019-12-22T18:19:01.572Z
 featured: false
 hidden: false
-featured_image: ''
-comments: false
+comments: true
 ---
 Want to know how to containerize an ASP.NET Core application the quick and dirty way? You're in the right place.
 
