@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Keeping things DRY in microservices
+title: DRY for the sake of DRY
 tags:
   - architecture
   - microservices
