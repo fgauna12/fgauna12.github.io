@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Azure App Service and Network Security
+title: Azure app service and network security
 tags:
   - azure
 date: 2019-12-18T02:03:06.554Z
