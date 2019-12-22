@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Hidden Costs of Servers
+title: The hidden costs of servers
 tags:
   - devops
   - azure
