@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Microservices Too Early
+title: Microservices too early
 tags:
   - devops
   - architecture
