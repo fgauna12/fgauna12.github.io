@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Hidden Value of Containers
+title: The hidden value of containers
 tags:
   - devops
   - containers
