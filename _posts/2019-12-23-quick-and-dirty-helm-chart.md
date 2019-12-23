@@ -8,7 +8,7 @@ featured: false
 hidden: false
 comments: false
 ---
-Yesterday, I posted about how to create a [quick and dirty container](https://gaunacode.com/quick-and-dirty-container) using Visual Studio and ASP.NET Core.  Today, I will be continuing the demo to show to create a quick helm chart for an ASP.NET Core application.
+Yesterday, I posted about how to create a [quick and dirty container](https://gaunacode.com/quick-and-dirty-container) using Visual Studio and ASP.NET Core.  Today, I will be continuing the demo to show how to create a quick helm chart for an ASP.NET Core application.
 
 <!--more--> 
 
@@ -23,15 +23,15 @@ Yesterday, I posted about how to create a [quick and dirty container](https://ga
 
 ## The Shortcut
 
-Similar to yesterday's topic, I also recommend that you know the fundamentals for Kubernetes and how to issue deployments. Then, it's easier to understand the value that Helm provides and when it's effective to use it. 
+Similar to yesterday's topic, I recommend that you understand the basics first. Kubernetes fundamentals is a great place to start. I really like [this PluralSight course.](https://www.pluralsight.com/courses/getting-started-kubernetes) Secondly, it's a good idea to understand the basics of Helm so that you understand the value it providers and when it's a good use of time. 
 
-Assuming you already believe Helm can solve some painpoints, then this guide will walk you through using Visual Studio to create Helm charts tailored for ASP.NET Core apps.
+This quick post will walk you through using Visual Studio to create Helm charts tailored for ASP.NET Core apps.
 
-First, right-click, select "Add" then "Add Container Orchestrator Support."
+First, right-click, select "**Add**" then "**Add Container Orchestrator Support.**"
 
 ![](/assets/uploads/annotation-2019-12-23-165841.jpg "Right-click add container orchestrator support")
 
-Then, select Kubernetes/Helm.
+Then, select **Kubernetes/Helm.**
 
 ![](/assets/uploads/annotation-2019-12-23-171316.jpg "Selecting Kubernetes")
 
