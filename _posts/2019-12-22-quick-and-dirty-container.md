@@ -15,7 +15,7 @@ Want to know how to containerize an ASP.NET Core application the quick and dirty
 ## Pre-Requisites
 
 * Visual Studio 2017 or greater
-* [Docker Community Edition for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windowshttps://hub.docker.com/editions/community/docker-ce-desktop-windows)
+* [Docker Community Edition for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
 * Windows 10
 
 ## The Shortcut
