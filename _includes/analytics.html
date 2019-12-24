@@ -21,7 +21,10 @@
       ga('send', 'event', {
         eventCategory: 'Engagement',
         eventAction: 'openSidePanel.click',
-        eventLabel: 'Open Sidebar'
+        eventLabel: 'Open Sidebar',
+        hitCallback: function() {
+          console.log('hit sent');
+        }
       });
     }
   </script>
