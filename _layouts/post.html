@@ -48,7 +48,6 @@ post_class: post-template
                     <p class="author-description">{{ site.author.bio }}</p>
                 </div>
             </div>
-            <!-- {% include disqus.html %} -->
         </article>
         <section class="read-next inner">
             <h2 class="read-next-title">Read Next</h2>
@@ -123,6 +122,8 @@ post_class: post-template
         {% if site.mailchimp_url %}
         {% include newsletter-box.html %}
         {% endif %}
-
+        <section>
+            {% include disqus.html %}
+        </section>
     </main><!-- .site-main -->
 </div><!-- .site-content -->
