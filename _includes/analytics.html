@@ -5,26 +5,5 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', '{{ site.ga_analytics }}', { 'anonymize_ip': true });
-
-    function handleNextPostClick(url) {
-      ga('send', 'event', {
-        eventCategory: 'Engagement',
-        eventAction: 'readAnotherPost.click',
-        eventLabel: url,
-        transport: 'beacon'
-      });
-      window.location.href = url;
-    }
-
-    function handleOpenSidePanel() {
-      ga('send', 'event', {
-        eventCategory: 'Engagement',
-        eventAction: 'openSidePanel.click',
-        eventLabel: 'Open Sidebar',
-        hitCallback: function() {
-          console.log('hit sent');
-        }
-      });
-    }
   </script>
 {% endif %}
