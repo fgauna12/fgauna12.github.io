@@ -99,11 +99,9 @@ post_class: post-template
                         {% if page.next.tags.size > 0 %}
                         {% for tag in page.next.tags %}
                         {% if forloop.index == page.next.tags.size %}
-                        <a href='{{ site.baseurl }}/tag/{{ tag | downcase | replace: ' ', '-' }}/'>{{ tag | capitalize
-                            }}</a>
+                        <a href='{{ site.baseurl }}/tag/{{ tag | downcase | replace: ' ', '-' }}/'>{{ tag }}</a>
                         {% else %}
-                        <a href='{{ site.baseurl }}/tag/{{ tag | downcase | replace: ' ', '-' }}/'>{{ tag | capitalize
-                            }}</a>
+                        <a href='{{ site.baseurl }}/tag/{{ tag | downcase | replace: ' ', '-' }}/'>{{ tag }}</a>
                         {% endif %}
                         {% endfor %}
                         {% endif %}
