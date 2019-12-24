@@ -94,7 +94,7 @@ post_class: post-template
                         <time class="published" datetime="{{page.next.date | date: '%B %-d, %Y'}}">{{page.next.date |
                             date: "%B %-d, %Y"}}</time>
                     </div>
-                    <h3 class="post-title"><a href="{{ site.baseurl }}{{page.next.url}}">{{page.next.title}}</a></h3>
+                    <h3 class="post-title"><a href="{{ site.baseurl }}{{page.next.url}}" onclick="handleNextPostClick('{{ site.baseurl }}{{page.next.url}}')">{{page.next.title}}</a></h3>
                     <p class="post-tags">
                         {% if page.next.tags.size > 0 %}
                         {% for tag in page.next.tags %}

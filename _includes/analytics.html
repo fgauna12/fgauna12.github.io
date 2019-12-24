@@ -5,5 +5,15 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', '{{ site.ga_analytics }}', { 'anonymize_ip': true });
+
+    function handleNextPostClick(url) {
+      console.log('tracking click', url)
+      ga('send', 'event', {
+        eventCategory: 'Engagement',
+        eventAction: 'readAnotherPost.click',
+        eventLabel: url,
+        transport: 'beacon'
+      });
+    }
   </script>
 {% endif %}
