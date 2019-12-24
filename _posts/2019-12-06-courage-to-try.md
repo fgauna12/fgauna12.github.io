@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Courage to Try
-tags: 
+title: Courage to try
+tags:
   - culture
   - devops
 date: 2019-12-06T22:26:17.090Z

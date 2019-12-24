@@ -6,7 +6,7 @@ tags:
   - kubernetes
   - microservices
 date: 2019-11-29T20:37:06.966Z
-featured: true
+featured: false
 hidden: false
 featured_image_thumbnail: ''
 featured_image: /assets/uploads/lamborghini-2137815_640.jpg
