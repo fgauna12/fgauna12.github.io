@@ -59,7 +59,7 @@ post_class: post-template
                         <time class="published" datetime="{{page.previous.date | date: '%B %-d, %Y'}}">{{page.previous.date
                             | date: "%B %-d, %Y"}}</time>
                     </div>
-                    <h3 class="post-title"><a href="{{ site.baseurl }}{{page.previous.url}}">{{page.previous.title}}</a>
+                    <h3 class="post-title"><a href="{{ site.baseurl }}{{page.previous.url}}" onclick="handleNextPostClick('{{ site.baseurl }}{{page.previous.url}}')">{{page.previous.title}}</a>
                     </h3>
                     <p class="post-tags">
                         {% if page.previous.tags.size > 0 %}
