@@ -24,7 +24,6 @@
 			$body.toggleClass('sidebar--opened');
 			$(this).blur();
 			e.preventDefault();
-			handleOpenSidePanel();
 		});
 		$('#site-overlay').on('click', function(e){
 			$body.removeClass('sidebar--opened');
