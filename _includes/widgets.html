@@ -55,12 +55,12 @@ endcapture %} {% assign sortedTags = site_tags | split:',' | sort %}
         <p>Get the latest and greatest from {{ site.author.short_name }} delivered straight to your inbox.</p>
         <!-- Begin MailChimp Signup Form -->
         <div id="mc_embed_signup">
-            <form action="{{ site.mailchimp_url }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+            <form action="{{ site.mailchimp_url }}" method="post" id="mc-embedded-subscribe-form-sidepanel" name="mc-embedded-subscribe-form"
                 class="validate gh-subscribe-form" target="_blank" novalidate>
                 <label for="mce-EMAIL" class="screen-reader-text">Email Address</label>
-                <input type="email" value="" name="EMAIL" class="required email subscribe-email" id="mce-EMAIL"
+                <input type="email" value="" name="EMAIL" class="required email subscribe-email" id="mce-EMAIL-sidepanel"
                     placeholder="Your email address">
-                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe-sidepanel" class="button">
             </form>
         </div>
     </div>
