@@ -358,6 +358,18 @@ img {
     max-width: 100%;
 }
 
+.post-content { 
+    font-family: $font-secondary;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $font-primary;
+    }
+}
+
 .post-thumbnail img,
 .post-content img {
     border-radius: 3px;
