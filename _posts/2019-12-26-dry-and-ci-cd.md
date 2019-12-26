@@ -14,7 +14,7 @@ DRY is the well known best-practice of not duplicating code so that code can be 
 
 On first look, many applications have similar steps when they get built and deployed.  At an organization level, one might even use the same stack to build different applications. It often seems reasonable to think we could have a *centralized* set of build and deployment tasks that we could apply to all the applications in an organization. For example, in many cases, we build the source code, we run some tests, we then publish the artifacts, and maybe tag the Git repository with a build number. 
 
-> Why not centralize CI/CD steps so that we don't keep repeating ourselves per application?
+> Why not centralize CI/CD steps <br> so that we don't keep repeating ourselves <br> per application?
 
 It sounds easier to maintain a centralized set of tasks than to maintain several pipelines. But, at a closer look, it is likely that each application has their own value stream. Each application could hold a different priority for the company, a different service level objective, a different infrastructure budget. For instance, it might completely acceptable if a particular application was down during a deployment. So, a major change to the centralized set of tasks, could mean serious implications of the productivity of the entire organization - especially if it pushed capabilities that were not needed like zero-downtime deployments. 
 
