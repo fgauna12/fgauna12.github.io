@@ -8,7 +8,7 @@ featured: false
 hidden: false
 comments: false
 ---
-DRY is the well known best-practice of not duplicating code so that it can be more maintainable and readable. Is this concept applicable to CI/CD?
+DRY is the well known best-practice of not duplicating code so that code can be more maintainable and readable. Is this concept applicable to CI/CD?
 
 <!--more--> 
 
