@@ -33,7 +33,7 @@ From the Azure DevOps organization settings, create a new agent pool.
 
 Follow [these instructions](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page).
 
-### 2. Start an Azure Container Instance with Azure DevOps' Agent Image
+### 3. Start an Azure Container Instance with Azure DevOps' Agent Image
 
 Bash: 
 
@@ -71,7 +71,7 @@ az container create -g rg-nebbiademo-shared-001 `
           VSTS_AGENT='az-container-1'   
 ```
 
-### 3. Profit
+### 4. Profit
 
 That's it! You should see a new agent under the pool.
 
