@@ -137,4 +137,6 @@ Hopefully, you have all the pieces to have full CI/CD to work to this web app fo
 
 ## Side Note
 
-Choosing a container registry is a big decision. It's going to be a central repository for the container images to be deployed and also their various versions. Whether you choose to pick Docker Hub or something like Azure Container Registry, please don't host your own container registry. The implications of hosting your own come down to this: if your container registry goes down, it could be catastrophic to your production and non-production systems. Consider making your container registry highly available, especially after your organization starts adopting containers more and more.
+Choosing a container registry is a big decision. It's going to be a central repository for the container images to be deployed and also their various versions. Whether you choose to pick Docker Hub or something like Azure Container Registry, please don't host your own container registry. 
+
+The implications of hosting your own come down to this: if your container registry goes down, it could be catastrophic to your production and non-production systems. Consider making your container registry highly available, especially after your organization starts adopting containers more and more.
