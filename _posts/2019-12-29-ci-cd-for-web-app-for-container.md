@@ -9,18 +9,18 @@ featured: false
 hidden: false
 comments: false
 ---
-Deploying to an Azure Web App for Container is a bit different than deploying to a traditional Azure Web App. Why? Because when using traditional application deployments, we used to *push* our code to the destination. With containers, we instead *pull* a container that contains our code and framework. The pull also happens from the destination.  
+Deploying to an Azure Web App for Container is a bit different than deploying to a traditional Azure Web App. Why? Because when using traditional application deployments, we *push* our code to the destination. With containers, we instead *pull* a container that contains our code and runtime. 
 
 <!--more--> 
 
 ## The Container Way
 
-When deploying a container, we first ought to upload it to a container registry. A container registry stores container images so that users can pull these images and use them. This distribution model also applies to transferring the image to a deployment location. From the deployment location, we ought to pull the correct version of an image from a container registry. 
+We first ought to upload our container to a container registry. A container registry stores container images so that users can pull these images and use them. This distribution model also applies to transferring the image to our Azure Web App. From the web app, we ought to pull the correct version of an image from a container registry. Our responsibility is to tell Azure what the new image and image tag are so that it can pull it down.
 
-As such, reversing the deployment flow means that there's new practices we want to adopt. For instance,
+Since we're reversing the deployment flow, there's new practices we want to adopt. For instance,
 
-* Run unit tests and automated security tests before you publish to a container registry
-* Tag the image with a build number or git version
+* Run unit tests and automated security tests before you publish to a container registry so that more hardened images are uploaded
+* Tag the image with a build number or git version so that you can pull it down later
 
 ### Continuous Integration
 
@@ -44,7 +44,7 @@ There's a simple task on Azure DevOps to build and push a container image to a c
 
 As promised, instead of deploying code, we will be pulling the right version of the container image from Azure. At this point, we already uploaded a version of a container image and tagged it with the build number. Next, we ought to signify our Azure Web App to pull the correct version. In my experience, the most effective way to do this is by simply using Infrastructure as Code. 
 
-From the pipeline, we can use a task to deploy our ARM template and passing the builder number as a parameter.  This steps assumes that we would have had an ARM template published as part of the build artifacts. 
+From the pipeline, we can use a task to deploy an ARM template and passing the builder number as a parameter.  This steps assumes that we would have had an ARM template published as part of the build artifacts. 
 
 ```yaml
 - download: current
@@ -64,6 +64,11 @@ From the pipeline, we can use a task to deploy our ARM template and passing the 
 ```
 
 ### Infrastructure as Code
+
+For the previous step to work, we must have an ARM template published as a build artifact. 
+Here's an example of what the snippet for an Azure Web App for Containers looks like. 
+Notice the `linuxFxVersion` variable... this is how we control the container image version.
+If you're using a private container registry, then you might have to specify additional app settings with the docker username and password. 
 
 ```json
 {
@@ -106,7 +111,7 @@ Where the variable `linuxFxVersion` looks like this:
 }
 ```
 
-From the pipeline, you can easily upload ARM templates as artifacts using these two steps: 
+From the pipeline, you can easily upload the ARM template as artifacts using these two steps: 
 
 ```yaml
 - task: CopyFiles@2
@@ -122,10 +127,13 @@ From the pipeline, you can easily upload ARM templates as artifacts using these 
     ArtifactName: 'iac'
     publishLocation: 'Container'
 ```
+The _publishLocation_ means that it will be uploaded to Azure DevOps and associated with the pipeline. It has nothing to do Docker containers.
 
 ### Putting it all together
 
 Feel free to take a look at [this repository](https://github.com/onetug/Codecampster/blob/master/pipelines/main.yml) for a completed pipeline publishing to a container registry and issuing an ARM deployment to update the image version. Within that repository, there's an [ARM template](https://github.com/onetug/Codecampster/blob/master/iac/armdeploy.json) you can use to deploy the azure web app. Alternatively, you can use the trick I described [here ](https://gaunacode.com/quick-and-dirty-arm-template)to create a nicely done ARM template.
+
+Hopefully, you have all the pieces to have full CI/CD to work to this web app for container. 
 
 ## Side Note
 
