@@ -3,7 +3,7 @@ layout: post
 title: Think Week Outcome
 tags:
   - culture
-date: 2019-12-30T03:38:47.436Z
+date: 2019-12-30T01:38:47.436Z
 featured: false
 hidden: false
 comments: false
