@@ -16,7 +16,7 @@ Part of what was useful to me, came down to this - <mark>I gave myself permissio
 
 Every year, there are many code camps hosted by grassroots movements around the country. I searched for code camps around major cities and ran into the [Seattle Code Camp](https://seattle.codecamp.us). This website was fairly simple and it also struck me since it's using Sessionize for displaying the schedule and the agenda for the event. For them, they're simply using Squarespace to build the website and then using Sessionize for everything else. I got excited because we are already starting taking speaker submissions through Sessionize this year's code camp. We were already half way there.
 
-**If** I would have tried to squeeze the work in after hours, during the weekends, or during plane rides, I would have put more pressure on myself to accomplish smaller tactical tasks during the small time I had available. In order to "get it done," I would have done a lot of work during the course of time without stopping to ask:
+**If** I would have tried to squeeze the work in after hours, during the weekends, or during plane rides, I would have put more pressure on myself to accomplish smaller tactical tasks during each small time-frame I had available. In order to "get it done," I would have done a lot of work during the course of time without stopping to ask:
 
 > What problem am I trying to solve?
 
