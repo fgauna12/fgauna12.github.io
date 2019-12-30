@@ -8,13 +8,15 @@ featured: false
 hidden: false
 comments: false
 ---
-Earlier [this week](https://gaunacode.com/think-week), I mentioned how I was going to try my own version of a *think week*. During the course of two days after Christmas, I took some PTO to be able to focus and contribute to the Orlando Code Camp website. Although it was not purely thinking and reading like Bill Gates does, it was a refreshing time to think and contribute without disruptions or stress the daily life. I was able to see the problems with a fresh set of eyes. I was surprised how much I was able to accomplish without the meetings, interruptions, and ceremony of updating Scrum boards and such.
+Earlier [this week](https://gaunacode.com/think-week), I mentioned how I was going to try my own version of a *think week*. During the course of two days after Christmas, I took some PTO to be able to focus and contribute to the Orlando Code Camp website. Unlike Bill Gates' think weeks, it was not purely thinking and reading. Instead, it was a refreshing time to think and contribute without disruptions and the stress of the daily life. I managed to see the problems with a fresh set of eyes. In the end, I was surprised how much I was able to accomplish without the meetings, interruptions, and ceremony of updating task boards.
 
 <!--more--> 
 
-Part of what was useful to me, came down to this - I gave myself permission to **not** crank out a bunch of code and show amazing expertise. So, I *stepped back* and looked at how other code camps are solving the problem. Every year, there are many code camps hosted by grassroots movements around the country. I searched for code camps around major cities and ran into the [Seattle Code Camp](https://seattle.codecamp.us). This website was fairly simple and it also struck me since it's using Sessionize for displaying the schedule and the agenda for the event. For them, they're simply using Squarespace. I got excited because we already starting taking speaker submissions through Sessionize this year. We were already half way there.
+Part of what was useful to me, came down to this - <mark>I gave myself permission to **not** crank out a bunch of code and show amazing finesse</mark>. So, I *stepped back* and looked at how other code camps are solving the problem. *Surely*, there was an easy way to do this. 
 
-If I would have tried to squeeze the work in after hours, during the weekends, or during plane rides, I would have put more pressure on myself to accomplish smaller tactical tasks during the small time I had available. In order to "get it done," I would have done a lot of work during the course of time without stopping to ask:
+Every year, there are many code camps hosted by grassroots movements around the country. I searched for code camps around major cities and ran into the [Seattle Code Camp](https://seattle.codecamp.us). This website was fairly simple and it also struck me since it's using Sessionize for displaying the schedule and the agenda for the event. For them, they're simply using Squarespace to build the website and then using Sessionize for everything else. I got excited because we are already starting taking speaker submissions through Sessionize this year's code camp. We were already half way there.
+
+**If** I would have tried to squeeze the work in after hours, during the weekends, or during plane rides, I would have put more pressure on myself to accomplish smaller tactical tasks during the small time I had available. In order to "get it done," I would have done a lot of work during the course of time without stopping to ask:
 
 > What problem am I trying to solve?
 
