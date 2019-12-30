@@ -12,7 +12,7 @@ Earlier [this week](https://gaunacode.com/think-week), I mentioned how I was goi
 
 <!--more--> 
 
-Part of what was useful to me, came down to this - <mark>I gave myself permission to **not** crank out a bunch of code and show amazing finesse</mark>. So, I *stepped back* and looked at how other code camps are solving the problem. *Surely*, there was an easy way to do this. 
+Part of what was useful to me, came down to this - <mark>I gave myself permission to not crank out a bunch of code and show amazing finesse</mark>. So, I *stepped back* and looked at how other code camps are solving the problem. *Surely*, there was an easy way to do this. 
 
 Every year, there are many code camps hosted by grassroots movements around the country. I searched for code camps around major cities and ran into the [Seattle Code Camp](https://seattle.codecamp.us). This website was fairly simple and it also struck me since it's using Sessionize for displaying the schedule and the agenda for the event. For them, they're simply using Squarespace to build the website and then using Sessionize for everything else. I got excited because we are already starting taking speaker submissions through Sessionize this year's code camp. We were already half way there.
 
