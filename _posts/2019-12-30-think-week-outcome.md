@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Think Week Outcome
+title: Think week outcome
 tags:
   - culture
 date: 2019-12-30T01:38:47.436Z
