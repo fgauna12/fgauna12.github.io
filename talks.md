@@ -87,7 +87,6 @@ permalink: /talks/
 ### Feature Flags - The art of deploying often
 
 **Date**: August 29th 2019
-
 **Location**: Tampa Code Camp
 
 **Link**: https://tampacc.org/event/6/speaker/auth0%7C5c1fcb4c26ed35696e83d1ab?year=2017
