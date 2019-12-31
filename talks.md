@@ -6,92 +6,96 @@ permalink: /talks/
 
 ### Lessons Learned on Microservices
 
-**Date**:January 14th 2019
+**Date**: January 14th 2019
 
 **Location**: Orlando Backend Developers
 
 **Link**: https://www.meetup.com/Orlando-Backend-Developers-Meetup/events/257402940/
 
 
-### February 29th 2019 - Lessons Learned on Microservices 
+### Lessons Learned on Microservices 
 
-**Date**:
+**Date**: February 29th 2019
+
 **Location**: South Florida Code Camp
+
 **Link**: No link
 
-### February 29th 2019 - Kubernetes for .NET Developers
 
-**Date**:
+### Kubernetes for .NET Developers
+
+**Date**: February 29th 2019
 
 **Location**: South Florida Code Camp 
 
 **Link**: No link
 
-### March 7th 2019 - Kubernetes on Azure
+### Kubernetes on Azure
+
+**Date**: March 7th 2019
 
 **Location**: Orlando Azure Meetup
 
 **Link**: https://www.meetup.com/Orlando-Azure-users-meet-up/events/259095631/
 
-**Date**:
 
-### March 14th 2019 - Kubernetes for .NET Developers
+### Kubernetes for .NET Developers
 
-**Date**:
+**Date**: March 14th 2019
 
 **Location**: ONETUG Meetup - Orlando
 
 **Link**: https://www.meetup.com/ONETUG/events/258857576/
 
 
-### March 30th 2019 - Lessons Learned on Microservices
+### Lessons Learned on Microservices
 
-**Date**:
+**Date**: March 30th 2019
 
 **Location**: Orlando Code Camp
 
 **Link**: https://2019.orlandocodecamp.com/Sessions/Details/60
 
 
-### March 30th 2019 - Kubernetes for .NET Developers
+### Kubernetes for .NET Developers
 
-**Date**:
+**Date**: March 30th 2019
 
 **Location**: Orlando Code Camp
 
 **Link**: https://2019.orlandocodecamp.com/Sessions/Details/61
 
 
-### April 11th 2019 - Cloud Immersion Experience: The Azure Kubernetes Challenge
+### Cloud Immersion Experience: The Azure Kubernetes Challenge
 
-**Date**:
+**Date**: April 11th 2019
 
 **Location**: Reston MTC
 
 **Link**: https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x6109375abcd
 
 
-### August 29th 2019 - Feature Flags - The art of deploying often
+### Feature Flags - The art of deploying often
 
-**Date**:
+**Date**: August 29th 2019
 
 **Location**: ONETUG Meetup - Orlando
 
 **Link**: https://www.meetup.com/ONETUG/events/263512409/
 
  
-### August 29th 2019 - Feature Flags - The art of deploying often
+### Feature Flags - The art of deploying often
 
-**Date**:
+**Date**: August 29th 2019
 
 **Location**: Tampa Code Camp
 
 **Link**: https://tampacc.org/event/6/speaker/auth0%7C5c1fcb4c26ed35696e83d1ab?year=2017
 
 
-### October 15th 2019 - Modernize Your Application: Breaking Apart the Monolith
+### Modernize Your Application: Breaking Apart the Monolith
 
-**Date**:
+**Date**: October 15th 2019
 
 **Location**: Tampa MTC
 
