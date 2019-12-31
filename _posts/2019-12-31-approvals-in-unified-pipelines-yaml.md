@@ -30,7 +30,6 @@ From an Azure Resource Manager service connection, there's an ellipsis and a but
 
 ![](/assets/uploads/service_connection_approver.png "Approvals at the service connection")
 
-\
 Tada! Now every time the particular service connection is being used, it will request an approval.
 
 ![](/assets/uploads/pipeline_approval.png "Approving a deployment")
