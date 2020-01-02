@@ -48,3 +48,11 @@ collections:
           - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'page' }
           - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/about' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: 'Talks Page'
+        name: 'talks'
+        file: 'talks.md'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'hidden', default: 'Talks' }
+          - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'page' }
+          - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/talks' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
