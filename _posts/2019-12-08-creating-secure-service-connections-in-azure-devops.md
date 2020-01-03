@@ -35,7 +35,7 @@ I created two service connections with Azure DevOps. I scoped these to a `facund
 
 From the IAM blade in `facundo-rg`, there's the service principals created for this team project. 
 
-Although there's two service connections, they have the name names! The name is just a combination of the *Team Project* and the *Subscription ID*.
+Although there's two service connections, they have the same names! The name is just a combination of the *Team Project* and the *Subscription ID*.
 
 It's impossible to see which service principal belongs to which Azure DevOps service connections.
 
