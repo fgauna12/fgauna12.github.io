@@ -35,7 +35,7 @@ Here's what it can look like:
 }
 </code></pre>
 
-Once you are applying the resource group lock, you'll also want to remove any existing locks prior to deployment because otherwise your deployment will fail. You can do this via Azure Powershell or Azure CLI. Using the CLI it's very simple: \`az group lock delete -g myresourcegroup -n readonly\`. Just notice how the name of the lock is \`readonly\` and it's used in both the creation and deletion. 
+Once you are applying the resource group lock, you'll also want to remove any existing locks prior to deployment because otherwise your deployment will fail. You can do this via Azure Powershell or Azure CLI. Using the CLI it's very simple: `az group lock delete -g myresourcegroup -n readonly`. Just notice how the name of the lock is `readonly` and it's used in both the creation and deletion. 
 
 ## Putting it all together
 
