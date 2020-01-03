@@ -45,7 +45,7 @@ So from your pipeline, the flow would be:
 2. Apply any resource group locks 
 3. Perform the deployment
 
-Using YAML, it could look like this:
+Using YAML and an ARM template, it could look like this:
 
 <pre><code class="language-yaml">
 - task: AzureCLI@2
