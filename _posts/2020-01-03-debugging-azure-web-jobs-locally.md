@@ -20,7 +20,7 @@ You also want to ensure you have an environment variable `AzureWebJobsEnv` with 
 
 Don't forget, to ensure that you have the necessary code to initialize any extensions that you might be using through the `Microsoft.Azure.WebJobs.Extensions` package. For example, the following is an example of what I had to use in order to configure the `TimerTrigger`.
 
-<pre><code language="csharp">
+<pre><code class="language-csharp">
 var config = new JobHostConfiguration();
             
 if (config.IsDevelopment)
