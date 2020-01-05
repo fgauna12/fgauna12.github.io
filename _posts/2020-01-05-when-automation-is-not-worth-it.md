@@ -28,4 +28,8 @@ Are you creating an application to streamline the approval processes in your org
 
 Are you trying to create a tool to help you with database deployments?
 
-Those are all cool problems to solve and probably important ones too. <mark>Slow down and think twice about *how* you're solving it</mark>. Don't recreate the wheel, i.e., Docker, Kubernetes, load testing tools, Terraform, Azure DevOps, and so on.
+Those are all cool problems to solve and probably important ones too. Slow down and think twice about how you're solving it. Don't recreate the wheel, i.e., Docker, Kubernetes, load testing tools, Terraform, Azure DevOps, and so on.
+
+I have done it. I've created an event based monitoring solution because I knew how to use pub/sub, create dashboards using Angular, and use APIs. So, I created an admin/troubleshooting tool showing events in the system and it took a lot more work to make it reliable. I didn't know about APM tools back then. 
+
+<mark>Pay attention to what's out there</mark>. To what's being released. Be part of a community. Ask questions. When the moment comes, you'll be in a much better place to solve it differently.
