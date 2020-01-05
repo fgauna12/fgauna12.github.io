@@ -30,6 +30,6 @@ Are you trying to create a tool to help you with database deployments?
 
 Those are all cool problems to solve and probably important ones too. Slow down and think twice about how you're solving it. Don't recreate the wheel, i.e., Docker, Kubernetes, load testing tools, Terraform, Azure DevOps, and so on.
 
-I have done it. I've created an event based monitoring solution because I knew how to use pub/sub, create dashboards using Angular, and use APIs. So, I created an admin/troubleshooting tool showing events in the system and it took a lot more work to make it reliable. I didn't know about APM tools back then. 
+I have done it. I've created an event-based monitoring solution so learn about errors as they happen. I knew how to use pub/sub, create apps using Angular, and use how to write APIs. So, I created an admin/troubleshooting tool showing events in the system. It took a lot more work to make it reliable. I just didn't *know about* APM tools back then. 
 
 <mark>Pay attention to what's out there</mark>. To what's being released. Be part of a community. Ask questions. When the moment comes, you'll be in a much better place to solve it differently.
