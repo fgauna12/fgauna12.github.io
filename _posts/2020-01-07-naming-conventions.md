@@ -8,11 +8,11 @@ featured: false
 hidden: false
 comments: false
 ---
+Like many struggles with naming things, by the time you find a name you actually like, it might be the _nth_ iteration. Because infrastructure is not as easy to rename (sometimes just not possible), it can take time to find a name that you like on Azure. By the time you develop a naming convention, it's probably not your first rodeo.
+
 <!--more-->
 
 > There are only two hard things in Computer Science: cache invalidation and naming things.
-
-Like many struggles with naming things, by the time you find a name you actually like, it might be the _nth_ iteration. Because infrastructure is not as easy to rename (sometimes just not possible), it can take time to find a name that you like on Azure. By the time you develop a naming convention, it's probably not your first rodeo.
 
 What if the name gets dictated by enterprise architects? Well, sometimes architects lack hands-on experience and it's difficult for them to see the drawbacks to their choices. Also, Azure does suffer from weird naming restrictions like on Azure Storage accounts. No symbols, just alphanumeric. Also, there's a short limit of 24 characters.
 
