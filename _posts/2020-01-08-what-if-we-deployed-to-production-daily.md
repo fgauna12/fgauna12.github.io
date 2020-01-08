@@ -22,7 +22,7 @@ Well, each commit would most likely be associated with the version deployed, so 
 
 But what if this happens often? Our users would get pissed. 
 
-Yes, so maybe we should fail faster and have unit tests that run quickly so that we have a higher degree of confidence that we're not introducing regressions. We could also run these tests as part of the pipeline and also as part of code reviews. We could even gather code coverage analysis to see the weak areas in the system so that we can continue to harden the weak areas.
+Yes, so maybe we should fail faster and have unit tests that run quickly so that we have a higher degree of confidence that we're not introducing regressions. We could also run these tests from a pull request so that we gain quicker feedback before deploying anywhere. We could even gather code coverage analysis to see the weak areas in the system so that we can continue to harden the weak areas.
 
 Will unit tests catch everything? 
 
@@ -30,7 +30,7 @@ No probably not. Sometimes, there's issues when integrating modules together, or
 
 What about identifying issues in experience? 
 
-Well, just because we *deploy* something, it doesn't mean that we have to *release* it. When features are first being developed and the user interface is still being worked out, we can leverage feature flags. [Feature flag platforms](https://launchdarkly.com/) allow us to define code blocks that will only execute when a flag is enabled. With many of these platforms, we can conditionally enable these code blocks for only certain users under certain circumstances. If that's the case, we could define feature flags that target internal employees to show these features being developed so that we can continue **deploying daily**. Obviously, if our internal users are able to use the feature in production, we could test the user experience *and* as we gain confidence we can enable these features to a greater audience of users. 
+Well, just because we *deploy* something, it doesn't mean that we have to *release* it. When features are first being developed and the user interface is still being worked out, we can leverage feature flags. [Feature flag platforms](https://launchdarkly.com/) allow us to define code blocks that will only execute when a flag is enabled. With many of these platforms, we can conditionally enable these code blocks for only certain users under certain circumstances. If that's the case, we could define feature flags that target internal employees to show these features being developed so that we can continue **deploying daily**. Obviously, if our internal users are able to use the feature in production, we could test the user experience. Laster, as we gain confidence we can enable these features to a greater audience. 
 
 What about database changes? Those are scary. 
 
@@ -40,4 +40,4 @@ Okay well, sometimes our teams take days or weeks to develop a new feature. We w
 
 Understood. If we had an artificial goal of deploying daily, we would want to ensure that whatever we create that day can be deployed _that same day_. This would mean smaller pull requests. We know that smaller pull requests means less "review fatigue" because there's less changes for a reviewer to comb through and thus more meaningful comments. Also, just because we deploy it doesn't mean that we have to make it available for users. So, even if it takes "week" to finish a feature, we could deploy safely behind a feature flag until it's ready to be tested.
 
-We could go on for a bit more. The point is that many of these challenges have been solved already. There's a book called [Accelerate](https://www.amazon.com/Accelerate-Software-Performing-Technology-Organizations-ebook/dp/B07B9F83WM/ref=sr_1_3?crid=1QEKIY43O044M&keywords=accelerate+book&qid=1578446565&sprefix=accelerate%2Caps%2C185&sr=8-3) and a [yearly report](https://services.google.com/fh/files/misc/state-of-devops-2019.pdf) that highlights that elite and high performers in the IT industry are able to deploy at least once a day to production per developer per day while high degree of stability.
+We could go on for a bit more. The point is that many of these challenges have been solved already. There's a book called [Accelerate](https://www.amazon.com/Accelerate-Software-Performing-Technology-Organizations-ebook/dp/B07B9F83WM/ref=sr_1_3?crid=1QEKIY43O044M&keywords=accelerate+book&qid=1578446565&sprefix=accelerate%2Caps%2C185&sr=8-3) and a [yearly report](https://services.google.com/fh/files/misc/state-of-devops-2019.pdf) that highlights that elite and high performers in the industry are able to deploy at least once a day to production per developer per day while high degree of stability.
