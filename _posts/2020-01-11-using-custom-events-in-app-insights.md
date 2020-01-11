@@ -28,7 +28,9 @@ I recently was moving a set of background jobs to Azure Web Jobs using timers. B
 
 In the end, we have the information needed to troubleshoot and correlate *when* a job was scheduled and also continue to search through the logs. 
 
-![](/assets/uploads/2020-01-10_21-26-29.png "Custom Events") Note: In most cases, log data will be shown as *Trace* and custom events as *Events*.
+![](/assets/uploads/2020-01-10_21-26-29.png "Custom Events") 
+
+Note: In most cases, log data will be shown as *Trace* and custom events as *Events*.
 
 Then, there's also the Events blade.
 
@@ -47,7 +49,7 @@ TelemetryClient.TrackEvent("UserCheckedOut", new Dictionary<string, string>()
   });
 ```
 
-I don't have a pretty chart picture. But, from the Events explorer you would be able to see all the `UserCheckedOut` events over time. Also, you would be able to see a breakdown of the percentage of payment types are `PayPal` vs the others.
+I don't have a pretty chart screenshot. But, from the Events explorer you would be able to see all the `UserCheckedOut` events over time. Also, you would be able to see a breakdown of the percentage of payment types are `PayPal` vs the others.
 
 ## So what
 
