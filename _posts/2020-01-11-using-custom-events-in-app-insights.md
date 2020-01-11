@@ -16,7 +16,7 @@ At first glance, many folks don't realize the leverage in using an Application P
 
 Yes, if you configure your [favorite logger](https://github.com/serilog/serilog-sinks-applicationinsights) to send logs to Application Insights you will be able to [search them later](https://docs.microsoft.com/en-us/azure/azure-monitor/app/diagnostic-search). This is assuming that [adaptive sampling](https://docs.microsoft.com/en-us/azure/azure-monitor/app/sampling) is not kicking on due to a large number of log events. 
 
-There's also availability tests that are similar to products like [Pingdom](https://www.pingdom.com/) so that you are notified when your application fails a *ping* from one or more various regions around the world.
+There's also [availability tests ](https://docs.microsoft.com/en-us/azure/azure-monitor/app/monitor-web-app-availability)that are similar to products like [Pingdom](https://www.pingdom.com/) so that you are notified when your application *fails a ping* from one or more various regions around the world.
 
 ## Taking it further
 
@@ -24,13 +24,17 @@ I really enjoy sending [custom events](https://docs.microsoft.com/en-us/azure/az
 
 For example:
 
-I recently was moving a set of background jobs to Azure Web Jobs using timers. Because Azure Web Jobs have lesser tooling than Azure Functions/Logic Apps, it was hard to see when jobs were being triggered. So to troubleshoot the execution of these scheduled jobs, I added custom events to show when a job was triggered. Because these jobs were being kicked fairly frequently (every few seconds), if I simply logged *when* a job was triggered it would have polluted the logs. 
+I recently was moving a set of background jobs to Azure Web Jobs using timers. Because Azure Web Jobs have lesser tooling than Azure Functions/Logic Apps, it was hard to see when jobs were being triggered. So to troubleshoot the execution of these scheduled jobs, I added custom events to show when a job was triggered. Because these jobs were being kicked fairly frequently (every few seconds), if I simply **logged** *when* a job was triggered it would have polluted the logs. 
 
 In the end, we have the information needed to troubleshoot and correlate *when* a job was scheduled and also continue to search through the logs. 
 
-![](/assets/uploads/2020-01-10_21-26-29.png "Custom Events")
+![](/assets/uploads/2020-01-10_21-26-29.png "Custom Events") Note: In most cases, log data will be shown as *Trace* and custom events as *Events*.
 
-Then from the *Events* blade, you can see the distribution of custom events. If your custom events also have dimensions like properties or metrics to them, then you will also be able to split by your custom dimensions.
+Then, there's also the Events blade.
+
+![](/assets/uploads/2020-01-10_22-37-19.png)
+
+From here, you can see the distribution of custom events. If your custom events also have dimensions like properties or metrics to them, then you will also be able to split by your custom dimensions.
 
 ![](/assets/uploads/2020-01-10_22-00-22.png "Custom events without dimensions")
 
