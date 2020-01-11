@@ -18,7 +18,7 @@ Yes, if you configure your [favorite logger](https://github.com/serilog/serilog-
 
 There's also availability tests that are similar to products like [Pingdom](https://www.pingdom.com/) so that you are notified when your application fails a *ping* from one or more various regions around the world.
 
-## Taking it farther
+## Taking it further
 
 I really enjoy sending [custom events](https://docs.microsoft.com/en-us/azure/azure-monitor/app/api-custom-events-metrics) to Application Insights. Assuming you're willing to *embrace* Application Insights and take a direct dependency on the `TelemetryTracker`, you will be able to write creative queries later when you're troubleshooting something. 
 
@@ -54,6 +54,5 @@ Are there any types of payment that tend to be more problematic?
 Are there certain customers who seem to experience more issues?
 
 What percentage of partners use certain features?
-
 
 Or have you generally wondered how your system is truly being used? Have you found the need to correlate system events to business events to validate your theories? Then take some time to look at custom events.
