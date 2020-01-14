@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Examples of how architectural choices increase agility
+title: Examples of architecture that drives agility
 tags:
   - architecture
 date: 2020-01-14T03:27:26.605Z
@@ -8,11 +8,13 @@ featured: false
 hidden: false
 comments: false
 ---
-Yesterday, I spoke about the value of making architectural decisions to aid agility. Agility requires high deployment frequency (deployments to production per day), and low lead time (time between commit to production deploy). Otherwise, 
+Yesterday, I spoke about the value of making architectural decisions to aid agility. Agility requires high deployment frequency (deployments to production per day), and low lead time (time between commit to production deploy). \
+\
+Today, I want to highlight some technical choices that we can make to streamline the maintainability of systems. To build agility into the architecture. To pick technology that will reduce friction.
 
 ## NoSQL databases
 
-Some NoSQL databases are useful in circumstances where the data needed to be housed is unstructured or semi-structured. Many NoSQL databases like key-value, and document databases don't require formal schema changes because \_there is no schema to change.\_ Speaking from experience, there's a lot of agility to be gained when developers don't have to worry about schema changes, constraints, column sizes, etc.
+Some NoSQL databases are useful in circumstances where the data needed to be housed is unstructured or semi-structured. Many NoSQL databases like key-value, and document databases don't require formal schema changes because *there is no schema to change*. Speaking from experience, there's a lot of agility to be gained when developers don't have to worry about schema changes, constraints, column sizes, etc.
 
 In Azure, this could mean choosing to use a lighter, simpler, cheaper database like Azure Table Storage over the most common choice of Azure SQL. Likewise, if there is a demand for it, Cosmos DB could fulfill a need.
 
