@@ -8,8 +8,8 @@ featured: false
 hidden: false
 comments: false
 ---
-Yesterday, I spoke about the value of making architectural decisions to aid agility. Agility requires high deployment frequency (deployments to production per day), and low lead time (time between commit to production deploy). \
-\
+Yesterday, I spoke about the value of making architectural decisions to aid agility. Agility requires high deployment frequency (deployments to production per day), and low lead time (time between commit to production deploy). 
+
 Today, I want to highlight some technical choices that we can make to streamline the maintainability of systems. To build agility into the architecture. To pick technology that will reduce friction later on.
 
 ## NoSQL databases
