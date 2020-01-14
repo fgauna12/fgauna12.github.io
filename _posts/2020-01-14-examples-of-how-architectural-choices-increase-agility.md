@@ -22,6 +22,6 @@ In Azure, this could mean choosing to use a lighter, simpler, cheaper database l
 
 With the advent of services like [Event Grid](https://docs.microsoft.com/en-us/archive/msdn-magazine/2018/february/azure-event-driven-architecture-in-the-cloud-with-azure-event-grid), it's ever more simple to create event-driven architectures. When components of an architecture react or are "triggered" based on an event, it's easy to replace the component in the future. It's also much easier to extend the architecture unobtrusively since there will be natural extensibility "hooks" for developers to leverage. It's also less likely that the system will grow to be a "big ball of mud" or the infamous monolith in the future, although results may vary.
 
-For example, if there is an event that is published when a *new user registers*, then it's easy for developers to create components that listen for that event and send a welcome email. If at some point in the future, there was a *need* to also send a text-message, it would be a simple addition of a new component that also listens to the same event. \
-\
+For example, if there is an event that is published when a *new user registers*, then it's easy for developers to create components that listen for that event and send a welcome email. If at some point in the future, there was a *need* to also send a text-message, it would be a simple addition of a new component that also listens to the same event. 
+
 Here's a comprehensive comparison of the [various messaging](https://docs.microsoft.com/en-us/azure/event-grid/compare-messaging-services) services on Azure.
