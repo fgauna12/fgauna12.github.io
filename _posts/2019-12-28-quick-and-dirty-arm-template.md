@@ -23,7 +23,7 @@ The crappy way is to look at a resource group and click on the **"Export Templat
 
 ### The better way
 
-The better way is to go through the process to create a resource as you would from the portal and \_before you click "Create"\_ from the confirmation window, you download the ARM template. 
+The better way is to go through the process to create a resource as you would from the portal and *before* you click "Create" from the confirmation window, you download the ARM template. 
 
 ![](/assets/uploads/export_arm_template.png "Download Template")
 
