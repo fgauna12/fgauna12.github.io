@@ -15,8 +15,8 @@ Today, it was a great meetup at [Orlando Azure](https://www.meetup.com/Orlando-A
 
 ![DevOps and Azure at BlueGrace](/assets/uploads/IMG_20200116_202226__01.jpg "DevOps and Azure at BlueGrace")
 
-How do they do it? They lean **heavily** into PaaS. They seek to avoid VMs so that they don't have to worry about extra maintenance. They enable their developers to troubleshoot and the code in production, with a "you build it you run it" mentality. They invest in DevOps practices like Infrastructure as Code, CI/CD pipelines, and automated testing (mostly functional at the moment). They seek to reduce their lead time from commit to production. 
+How do they do it? They lean **heavily** into PaaS. They seek to avoid VMs so that they don't have to worry about extra maintenance. They enable their developers to troubleshoot the code in production with a "you build it you run it" mentality. They invest in DevOps practices like Infrastructure as Code, CI/CD pipelines, and automated testing (mostly functional tests at the moment). They seek to reduce their lead time from commit to production. 
 
-What also strikes me is that they are practical and pragmatic as well. They seek to find choices that will make the most ROI for the business. This method has been working for them. Their company has been scaling at a mind-blowing rate.
+What also strikes me is that they are pragmatic as well. They seek to find choices that will make the most ROI for the business. This method has been working for them. Their company has been scaling at a mind-blowing rate.
 
 Great job Eric and BlueGrace team.
