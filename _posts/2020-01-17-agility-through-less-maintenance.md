@@ -13,8 +13,6 @@ Today, it was a great meetup at [Orlando Azure](https://en.wikipedia.org/wiki/Di
 
 <!--more-->
 
-![](/assets/uploads/600_488215220.jpeg "Azure and DevOps at BlueGrace")
-
 How do they do it? They lean **heavily** into PaaS. They seek to avoid VMs so that they don't have to worry about extra maintenance. They enable their developers to troubleshoot and the code in production, with a "you build it you run it" mentality. They invest in DevOps practices like Infrastructure as Code, CI/CD pipelines, and automated testing (mostly functional at the moment). They seek to reduce their lead time from commit to production. 
 
 What also strikes me is that they are practical and pragmatic as well. They seek to find choices that will make the most ROI for the business. This method has been working for them. Their company has been scaling at a mind-blowing rate.
