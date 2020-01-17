@@ -9,7 +9,7 @@ featured: false
 hidden: false
 comments: false
 ---
-Today, it was a great meetup at [Orlando Azure](https://en.wikipedia.org/wiki/Disney_utilidor_system). Eric gave a fantastic presentation. He has been working for BlueGrace Logistics for 5 years to date as a DevOps engineer. So far, what they've been able to do is astonishing. Today, he's supporting 170+ Azure App Services, 38 function apps, and 32 Azure SQL databases. Embodying a DevOps mindset. Over 40 developers. Some DBAs. One automated tester. **No Ops.**
+Today, it was a great meetup at [Orlando Azure](https://www.meetup.com/Orlando-Azure-users-meet-up/events/267621561/). Eric gave a fantastic presentation. He has been working for BlueGrace Logistics for 5 years to date as a DevOps engineer. So far, what they've been able to do is astonishing. Today, he's supporting 170+ Azure App Services, 38 function apps, and 32 Azure SQL databases. Embodying a DevOps mindset. Over 40 developers. Some DBAs. One automated tester. **No Ops.**
 
 <!--more-->
 
