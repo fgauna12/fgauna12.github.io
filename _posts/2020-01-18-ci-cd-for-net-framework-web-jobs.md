@@ -45,7 +45,7 @@ The main takeaways:
 
 ### The tasks
 
-First build the solution with the following MSBuild arguments. They should be the same you would use to create a Web Deploy package for traditional Windows-based App Service deployments
+First, build the solution with the following MSBuild arguments. They should be the same you would use to create a Web Deploy package for traditional Windows-based App Service deployments
 
 ```yaml
 - task: VSBuild@1
