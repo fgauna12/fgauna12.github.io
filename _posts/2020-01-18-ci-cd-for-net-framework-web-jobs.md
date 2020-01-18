@@ -19,7 +19,7 @@ I wanted to move a .NET Framework 4.7 Windows Service to Azure using a Web Job. 
 
 So, I solved it by creating a .NET Framework Web Job using File -> New Project -> Web Job. This is assuming you have the Azure Developer Pack installed to Visual Studio. From here, I created a *continuous* web job and installed the [web job extensions](https://github.com/Azure/azure-webjobs-sdk-extensions) that I could use a `TimerTrigger`.
 
-## The hard part
+## The pipeline
 
 The hard part was creating the CI/CD pipeline. Turns out that the new, short, sweet `.csproj` don't play nice with the older v1 web job tooling.
 
@@ -43,7 +43,7 @@ The main takeaways:
   </PropertyGroup>
   ```
 
-### The pipeline
+### The tasks
 
 First build the solution with the following MSBuild arguments. They should be the same you would use to create a Web Deploy package for traditional Windows-based App Service deployments
 
