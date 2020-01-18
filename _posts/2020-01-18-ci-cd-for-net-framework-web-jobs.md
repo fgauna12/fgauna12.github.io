@@ -61,7 +61,7 @@ Then, when you're wanting to deploy, use the older `AzureRmWebAppDeployment@4` t
 
 ```yaml
 - task: AzureRmWebAppDeployment@4
-  displayName: 'Deploy ZAK'
+  displayName: 'Deploy Web Job'
   inputs:
     azureSubscription: 'my-subscription-service-connection'
     WebAppName: 'azapp-myapp-dev-001'
