@@ -63,7 +63,7 @@ Then, when you're wanting to deploy, use the older `AzureRmWebAppDeployment@4` t
 - task: AzureRmWebAppDeployment@4
   displayName: 'Deploy ZAK'
   inputs:
-    azureSubscription: 'render-nonprod'
+    azureSubscription: 'my-subscription-service-connection'
     WebAppName: 'azapp-myapp-dev-001'
     package: '$(Pipeline.Workspace)/**/MyWebJob.zip'
 ```
