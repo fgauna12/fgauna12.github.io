@@ -20,4 +20,4 @@ But, they recently announced a new plan for Azure functions - [premium plan](htt
 - No coldstart issue
 - Better hardware
 
-So, is there a need to create Azure webjobs anymore? Probably not. There are a few small circumstances, such as the need for file system trigger. Other than that, the only other usecase I can think of is something I needed recently: less outbound IPs. I had a situation in which I had to whitelist my service so having a webjob made the list of possible outbound IPs much smaller than a consumption-based azure function. For a consumption azure function, I would have to whitelist the entire datacenter.
+So, is there a need to create Azure webjobs anymore? Probably not. There are a few small circumstances, such as the need for file system trigger. Other than that, the only other usecase I can think of is something I needed recently: less outbound IPs. I had a situation in which I had to whitelist my service so having a webjob made the list of possible outbound IPs much smaller than a consumption-based azure function. For a consumption-based azure function, I would have to whitelist the entire datacenter.
