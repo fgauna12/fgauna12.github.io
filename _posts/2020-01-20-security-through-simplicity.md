@@ -30,5 +30,5 @@ Another similar innovation is Helm 3.0. Helm is a package manager for Kubernetes
 
 With creativity and with hard-work, solutions can become simple. I love that quote a lot. It's not easy to make "simple" solutions. Let the client, the user, your peers be the judge of "simple". If an engineer is looking for a quick win, for the fastest path, that's a hack. Just like Helm and GitOps, it took a couple of iterations to arrive at a "simple" solution.
 
-Don't build your own authentication system if you don't have to. \
+Don't build your own authentication system if you don't have to.
 Keep the authorization in your app as simple as possible. It will take work.
