@@ -14,7 +14,7 @@ I find Azure great for many things like Kubernetes, Serverless, PaaS, IaaS, and 
 
 Should you look elsewhere? In my honest opinion, there's a few of these.The biggest one being the world of JAMStack.
 
-[JAMStack](https://jamstack.org/) is an architecture in which you build web applications by creating static pages that are optimized to have data baked into them at build time. Therefore, if we can rely on our CI/CD pipeline to build our application often, we can push many of our concerns to *build time.* This blog is a great example of a JAMStack app. The blog posts are Markdown that get compiled to HTML at *build time* by [Netlify](https://www.netlify.com/). So, there's no need for me to have a Wordpress instance that leverages a database. I have no database for this blog. 
+[JAMStack](https://jamstack.org/) is an architecture in which you build web applications by creating static pages that are optimized to have data baked into them at build time. This blog is an example of a JAMStack app. The blog posts are Markdown that get compiled to HTML at *build time* by [Netlify](https://www.netlify.com/). So, there's no need for me to have a Wordpress website that leverages a database. I have no database for this blog. 
 
 Great, so what's it like to create a JAMStack app on Azure? It's doable and it's not *too hard*. First, you ought to make a storage account with blob storage with [static website hosting enabled](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website). Secondly, you want to make a CI/CD pipeline probably using Azure DevOps. 
 
