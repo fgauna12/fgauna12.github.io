@@ -24,7 +24,7 @@ The pipeline would have to:
 * Create a release pipeline that copies files to Azure Blob Storage.
 * If you're using a CDN, you might want to purge the CDN too.
 
-It's not a terrible amount of work and I'll probably write a blog post on how to do it in the future. **But**, when compared to how easy it is to do with Netlify, it's very cumbersome and painful. 
+It's not a terrible amount of work and I'll probably write a blog post on how to do it in the future. **But**, when compared to how easy it is to do with Netlify, it takes a **lot** more time.
 
 With the power of open source and Netlify, you can pick a starter template, create a pipeline, and push to your new Netlify-hosted website in less than 5 minutes. In my experience, it's mind-blowing fast and absurd how much easier it is than putting the pieces together on Azure. Also, Netlify is free.
 
