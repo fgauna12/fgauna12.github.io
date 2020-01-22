@@ -27,7 +27,7 @@ The list goes on. But, it's also about being able to **deploy frequently** witho
 
 Want to deploy your application during business hours? Without affecting your users? Well, rolling updates are a first-class citizen in Kubernetes (the tricky part is creating database migrations so that you can rollback).
 
-So, in other words and to put it bluntly, <mark>if you're not deploying to production there's nothing for Kubernetes to orchestrate</mark>. There's nothing for Kubenetes to keep alive. Not saving you and your teams time. Not lessening unplanned work.
+So, in other words and to put it bluntly, <mark>if you're not deploying to production there's nothing for Kubernetes to orchestrate</mark>. There's nothing for Kubenetes to keep alive. I'ts not saving you and your teams time. It's not lessening unplanned work.
 
 Even if you had something in production, but you had a *low deployment frequency*, then you won't be maximizing the benefits of rolling upgrades (zero downtime deployments). To get the most out of zero downtime deployments, use them often.
 
