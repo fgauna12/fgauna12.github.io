@@ -24,6 +24,10 @@ Recently, I noticed a new feature. Being able to associate approvers to a *servi
 
 From an Azure Resource Manager service connection, there's an ellipsis and a button for "Approvals and Checks"
 
+![](/assets/uploads/project-settings-azure-devops.jpg "Project Settings")
+
+![](/assets/uploads/service_connections.png "Service Connections")
+
 ![](/assets/uploads/service_connection_ellipsis.png "Service connection ellipsis")
 
 ![](/assets/uploads/service_connection_approvals_and_checks.png "Approvals and checks")
