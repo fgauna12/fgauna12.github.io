@@ -14,9 +14,7 @@ Every now and then, there's a lot of manual work to do to introduce automation. 
 
 This can be especially true for items like *configuration settings*. One application can have many application settings. When implementing CD, you might move these settings out of source control and make them part of the pipeline. Alternatively, you might choose to publish them to a secret store like Azure Key Vault. This process can be quite mind-numbing and error-prone. 
 
-For example, I recently had to move two older web ASP.NET applications to Azure App Services. They *each* had a large number of app settings in their `web.config` configuration files. They also shared some configuration values. 
-
-I found myself mind-numbingly writing the same json/yaml snippets to parameterize these configuration settings for these apps. So, I chose to try something. I created a Powershell script to generate code snippets so that I could paste them into my Infrastructure as Code templates, and pipelines. I later evolved them to upload them to the config store (Azure DevOps Variable Groups).
+For example, I recently had to move two older web ASP.NET applications to Azure App Services. They *each* had a large number of app settings in their `web.config` configuration files. So, I found myself mind-numbingly writing the same json/yaml snippets to parameterize these config settings. So, I chose to try something. I created a Powershell script to generate code snippets based on the existing config settings on the old config files so that I could paste them into my ARM templates, and pipelines. I later evolved them to upload them to the config store (Azure DevOps Variable Groups).
 
 It took me the rest of the workday to complete the script and finish the parameterization of all the config settings programatically. If I did it manually, it might have taken me the rest of the day too. The difference is that now I have a *script* that I can run again to true-up and reload all the settings as they should be. Also, it lessened the likelyhood of making manual mistakes (I wrote *some* unit tests for these scripts).
 
