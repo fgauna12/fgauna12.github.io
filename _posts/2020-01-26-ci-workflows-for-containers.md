@@ -32,7 +32,7 @@ You'll probably find some friction trying to reuse the same pipeline from your m
 
 What's the danger? 
 
-The danger of pushing half-baked images to your container registry is that someone could pull and run the image. If there's a vulnerability, someone can pull it. If your QA folks can theoretically pull down latest and test it, they will be less productive. Lastly, you probably want to use a hosted container registry anyway, so the more images you push, the more money it will cost.
+The danger of pushing half-baked images to your container registry is that someone could pull and run the image. There could be a vulnerability or it could be highly unstable. If someone in your team pulls down these images often for testing, they will be much less productive. Lastly, you probably want to use a [hosted container registry](https://azure.microsoft.com/en-us/services/container-registry/) anyway, so the more images you push, the more money it will cost.
 
 ## Putting it all together
 
