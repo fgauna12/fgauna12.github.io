@@ -22,7 +22,7 @@ Of course, this process usually happened against the main branch in source contr
 
 With containers, things change significantly. From a deployment location, we kill the old container and we *pull-down* the new version from a container registry. This method of *pulling* changes from the deployment location, means we have to do things differently in a CI/CD pipeline.
 
-First, it's the matter of how to build the Dockerfile. When leveraging multi-stage container builds, we can have small container images that are built and tested with a `docker build` command.
+First, it's the matter of how to build the Dockerfile. We won't be deploying binaries or source files anymore, we will be instantiating containers that contain our artifacts. So, It's important that Dockerfile are thought out and understood. For example, if you're worried about having fast & lightweight containers, then look at creating multi-stage docker builds.
 
 Once we have working Docker build process, we can start to think about how to design our main pipeline. The main pipeline will trigger from your main branch and build, test, then *publish* the final image to the container registry of choice. Later, you can take a step further and also run integration tests, acceptance tests, and container image scans *before* you publish to a container registry.
 
@@ -49,7 +49,7 @@ In the end, if you're open to creating separate pipelines for build and validati
   * Run [credscan](https://secdevtools.azurewebsites.net/helpcredscan.html)
 * Upon merge to `master`, run the *main pipeline*
 
-  * Build the container which source code and runs unit-tests (using Docker multi-stage)
+  * Build the container which source code and runs unit-tests (using Docker multi-stage docker build)
   * After container is built, tag it
   * Run [container image scan](https://www.aquasec.com/integrations/) on your image
   * Once scan passes, you can run some acceptance tests/integration tests
