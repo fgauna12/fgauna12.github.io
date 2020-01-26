@@ -16,11 +16,11 @@ When dealing with containers, our usual CI/CD processes start to change. Before 
 
 In traditional deployment model of many apps, there was a concept of a *build* and *release* stages as part of a CI/CD pipeline. During the *build*, we built the source code, ran some unit tests, maybe some integration tests, and then published the artifacts to some location. From a *release*, we pulled these packaged artifacts and we pushed them to a deployment location, perhaps a server or perhaps the cloud.
 
-Of course, this process usually happened against the main branch in source control. Build once and deploy many times (different environments). So, in order to fail faster and avoid bad code entering the main branch (like `master`) then we could also run validation builds when pull requests were opened (if you were using Git).These validation builds were often also the same builds that were triggered upon master.
+Of course, this process usually happened against `master`. Build once and deploy many times (different environments). So, in order to fail faster and avoid bad code entering `master`, we could also run builds when pull requests were opened. These validation builds could _often_ be the same builds that were triggered upon `master`.
 
 ## The container age
 
-With containers, things change significantly. From a deployment location, we kill the old container and we *pull-down* the new version from a container registry. This method of *pulling* changes from the deployment location, means we have to do things differently in a CI/CD pipeline.
+With containers, things change significantly. From a deployment location, we kill the old container and we *pull-down* the new version from our container registry. This method of *pulling* changes from the deployment location, means new changes in our pipelines.
 
 First, it's the matter of how to build the Dockerfile. We won't be deploying binaries or source files anymore, we will be instantiating containers that contain our artifacts. So, It's important that Dockerfile are thought out and understood. For example, if you're worried about having fast & lightweight containers, then look at creating multi-stage docker builds.
 
@@ -28,10 +28,10 @@ Once we have working Docker build process, we can start to think about how to de
 
 What about pull requests?
 
-You'll probably find some friction trying to reuse the same pipeline from your main branch. Why? Because there's no clean way to avoid publishing a container to the registry from your pull-request pipeline. Also, it's a bit more quirky to pull code coverage results from a container that is running the unit tests. In my experience, it's more effective to simply create a separate pipeline that runs on pull-requests.\
-\
-What's the danger? \
-\
+You'll probably find some friction trying to reuse the same pipeline from your main branch. Why? Because there's no clean way to avoid publishing a container to the registry from your pull-request pipeline. Also, it's a bit more quirky to pull code coverage results from a container that is running the unit tests. In my experience, it's more effective to simply create a separate pipeline that runs on pull-requests.
+
+What's the danger? 
+
 The danger of pushing half-baked images to your container registry is that someone could pull and run the image. If there's a vulnerability, someone can pull it. If your QA folks can theoretically pull down latest and test it, they will be less productive. Lastly, you probably want to use a hosted container registry anyway, so the more images you push, the more money it will cost.
 
 ## Putting it all together
