@@ -12,7 +12,7 @@ There's a [great book](https://www.infoq.com/minibooks/kanban-scrum-minibook/) c
 
 <!--more--> 
 
-Here are the similarities, according to the book (<cite>Kanban and Scrum: Making the Best of Both</cite>: 
+Here are the similarities, according to the book (<cite>Kanban and Scrum: Making the Best of Both</cite>): 
 
 * Both are Lean and Agile
 * Both use pull scheduling
