@@ -24,4 +24,4 @@ Deploying early and often to production is one way to *control wip*. By deployin
 
 There's also less waste. Have you ever tried to fix a bug for code that you wrote a couple of months ago and you don't remember the decisions you made? What about fixing a bug for code you wrote yesterday? Wasn't it much more fresh in your mind? Did you waste less time?
 
-If you haven't already, I recommend that you read the <cite>The Pheonix Project</cite>. It's a great book that conveys abstract ideas like this one in a fun-to-read fable.
+*If you haven't already, I recommend that you read the <cite>The Pheonix Project</cite>. It's a great book that conveys abstract ideas like this one in a fun-to-read fable.*
