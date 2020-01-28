@@ -8,7 +8,7 @@ featured: false
 hidden: false
 comments: false
 ---
-There's a [great book](https://www.infoq.com/minibooks/kanban-scrum-minibook/) comparing Scrum and Kanban flavors of Agile software development. Scrum is more prescriptive than Kanban and it's probably more widely adapted by software teams. Kanban is much more lenient. Both are ways to manage wip through process. 
+There's a [great book](https://www.infoq.com/minibooks/kanban-scrum-minibook/) comparing Scrum and Kanban flavors of Agile software development. Scrum is more prescriptive than Kanban and it's probably more widely adapted by software teams. Kanban is much more lenient. Both are ways to manage wip (work in progress) through process. 
 
 <!--more--> 
 
