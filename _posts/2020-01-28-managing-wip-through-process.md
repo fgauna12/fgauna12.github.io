@@ -12,7 +12,7 @@ There's a [great book](https://www.infoq.com/minibooks/kanban-scrum-minibook/) c
 
 <!--more--> 
 
-Here are the similarities, according to the book (<cite>Kanban and Scrum: Making the Best of Both</cite>): 
+Here are the similarities, according to the book, <cite>Kanban and Scrum: Making the Best of Both</cite>: 
 
 * Both are Lean and Agile
 * Both use pull scheduling
@@ -27,7 +27,7 @@ Here are the similarities, according to the book (<cite>Kanban and Scrum: Making
 
 In Kanban, wip is managed directly because it's limited to a workflow state.
 
-{% include image-caption.html imageurl="/assets/uploads/backlog_kanban.png" title="An example kanban board - Credits to Henrik Kniberg & Mattias Skarin" caption="The numbers 2 and 3 are the wip limits for the corresponding columns. The wip for the 'develop' state is shared between OnGoing and Done" %}
+{% include image-caption.html imageurl="/assets/uploads/backlog_kanban.png" title="An example kanban board - Credits to Henrik Kniberg & Mattias Skarin" caption="The numbers 2 and 3 are the wip limits for the corresponding columns. The wip for the 'develop' state is shared between OnGoing and Done. Credits to Kanban and Scrum: Making the Best of Both" %}
 
 
 There's a lot to be learned from Kanban. Kanban is talked about in length in [The Pheonix Project](https://www.amazon.com/dp/B078Y98RG8/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1). Many teams could use some Kanban practices to help improve flow and value delivery. For example, it's easy to apply [wip limits using Azure boards](https://docs.microsoft.com/en-us/azure/devops/boards/boards/wip-limits?view=azure-devops).
