@@ -28,7 +28,7 @@ Here's a Gist inspired by [this one](https://gist.github.com/eNeRGy164/0ff063f03
 
 ## The pipeline
 
-Using Azure DevOps, we can deploy the website to the *subsite* by being more specific in the site name.
+Using Azure DevOps, we can deploy to the *subsite* by being more specific in the site name from the deploy task.
 
 ```yaml
 - task: AzureRmWebAppDeployment@4
@@ -40,6 +40,5 @@ Using Azure DevOps, we can deploy the website to the *subsite* by being more spe
 ```
 
 Notice how we're adding a `/v1` that matches the name of the nested application as defined by our arm template.
-
 
 If you want to know how to deploy from Visual Studio, then you can see [this link](https://dotnetthoughts.net/deploying-multiple-application-in-webapp/)
