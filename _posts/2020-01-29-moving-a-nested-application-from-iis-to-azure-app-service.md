@@ -35,10 +35,11 @@ Using Azure DevOps, we can deploy to the *subsite* by being more specific in the
   displayName: 'Deploy My Subsite'
   inputs:
     azureSubscription: 'my-subscription-service-connection'
-    WebAppName: $(WebAppName)/v1
+    WebAppName: $(WebAppName)
+    VirtualApplication: v1
     package: '$(Pipeline.Workspace)/**/MySitePackage.zip'
 ```
 
-Notice how we're adding a `/v1` to the `WebAppName` parameter. It matches the name of the nested application as defined by our arm template (or portal).
+Notice how we're adding an attribute `VirtualApplication` to the task. It matches the name of the nested application as defined by our arm template (or portal).
 
 If you want to know how to deploy from Visual Studio, then you can see [this link](https://dotnetthoughts.net/deploying-multiple-application-in-webapp/)
