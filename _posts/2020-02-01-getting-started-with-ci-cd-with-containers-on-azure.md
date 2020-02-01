@@ -16,14 +16,14 @@ I remember the first time trying to learn containers. They were fairly new in th
 Now, there's an overwhelming list of permutations: 
 
 * Containers without Kubernetes
-* [Azure Functions running Containers](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-linux-custom-image?tabs=portal%2Cbash&pivots=programming-language-powershell)
+* Azure Functions running Containers
 * Flavors of Kubernetes
 * GitOps
 * Service Meshes
 * Application Performance Monitoring and Log Aggregation
 * Container Security
 
-> How do you even begin?
+How do you even begin?
 
 There's a lot to learn if you're starting from the bottom. Don't worry you're not alone. 
 
@@ -31,7 +31,7 @@ There's a lot to learn if you're starting from the bottom. Don't worry you're no
 
 Building containers using Docker is a must. Probably obvious. There's some great courses on PluralSight which I highly recommend called ["Getting Started with Docker"](https://app.pluralsight.com/library/courses/docker-getting-started/table-of-contents) by Nigel Poulton. 
 
-### Practice makes perfect
+Practice makes perfect.
 
 Get the hang of building and developing containers. You can practice some of these skills through labs on [Katacoda](https://katacoda.com/courses/container-runtimes).
 
