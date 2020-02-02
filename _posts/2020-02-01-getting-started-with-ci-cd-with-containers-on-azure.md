@@ -52,3 +52,5 @@ Kubernetes is complex and also intriguing. I _know_ you'll get the itch to learn
 There's another great course on [PluralSight](https://app.pluralsight.com/library/courses/docker-kubernetes-big-picture/table-of-contents) by Nigel on Kubernetes.
 
 [Katacoda](https://www.katacoda.com/courses/kubernetes) also has great labs for Kubernetes as well. These labs are especially useful because you don't have to spend money on a cluster running on the cloud or spend time configuring MiniKube locally.
+
+Lastly, there's this [50-day Kubernetes learning](https://azure.microsoft.com/mediahandler/files/resourcefiles/kubernetes-learning-path/Kubernetes%20Learning%20Path_Version%202.0.pdf) path by Microsoft. Very well put together.
