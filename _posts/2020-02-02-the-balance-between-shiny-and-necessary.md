@@ -12,13 +12,13 @@ We're often faced with choices. Do we try the new thing? Or do we stick with wha
 
 <!--more-->
 
-We all know what happens when we don't try new things. Technology moves on. When the world moves on, it's hard to attract new talent to innovate. When businesses stop innovating, there's risk of becoming irrelevant (if it's a competitive market). 
+We all know what happens when we don't try new things. Technology moves on. When the world moves on, it's hard to attract new talent to innovate. When businesses stop improving, there's risk of becoming irrelevant (if it's a competitive market). 
 
 If we stick to what works all the time, if we don't take small risks and try something out, we don't continue to learn and we risk stagnation. 
 
 Job safety in technology is to always be learning.
 
-On the other hand, if we learn new things all the time, if we chase the shiny things _all the time_, it can be disastrous. The risk of always pushing the envelope over business priorities is *career stagnation*. Businesses like to promote individuals who bring business results. Sometimes, the better choice is to stick with something more mature. 
+On the other hand, if we learn new things all the time, if we chase the shiny things *all the time*, it can be disastrous. The risk of always pushing the envelope over business priorities is *career stagnation*. Businesses like to promote individuals who bring business results. Sometimes, the better choice is to stick with something more [mature](https://basecamp.com/about). 
 
 "Choose the hill you want to die on."
 
