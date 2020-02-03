@@ -44,7 +44,7 @@ If you need more help on setting an app setting on an azure web app, here's the 
 
 `APPINSIGHTS_INSTRUMENTATIONKEY` <mark>app setting will get translated to an environment variable when the container spins up in the app service</mark>. The sdk that you'll be adding will know too look for an instrumentation key based on an environment variable with the name `APPINSIGHTS_INSTRUMENTATIONKEY` or `ApplicationInsights:InstrumentationKey`
 
-## Adding app insights
+## Adding app insights through the sdk
 
 There's two main ways to add app insights. The codeless way or through the sdk. I prefer the sdk for greater control and flexibility later.
 
