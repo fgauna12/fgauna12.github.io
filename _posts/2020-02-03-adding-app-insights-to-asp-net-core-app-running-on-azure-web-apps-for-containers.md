@@ -4,7 +4,7 @@ title: >-
   Adding app insights to asp.net core app running on azure web apps for
   containers
 tags:
-  - devops
+  - azure
 date: 2020-02-03T04:22:30.332Z
 featured: false
 hidden: false
