@@ -28,7 +28,7 @@ Using ARM, create an application insights resource like this:
 }	        
 ```
 
-Using an \`appSetting\`, you can also populate the instrumentation key onto the app service. You'll also need a \`dependsOn\` declaration.
+Using an `appSetting`, you can also populate the instrumentation key onto the app service. You'll also need a `dependsOn` declaration.
 
 ```json
 "appSettings": [
