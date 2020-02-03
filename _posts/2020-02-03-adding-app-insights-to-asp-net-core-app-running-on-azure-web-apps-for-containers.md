@@ -14,7 +14,7 @@ comments: false
 
 ## Infrastructure as Code
 
-Using ARM, the snippet to create an app insights resource is like this:
+Using ARM, create an application insights resource like this:
 
 ```json
 {
@@ -28,8 +28,7 @@ Using ARM, the snippet to create an app insights resource is like this:
 }	        
 ```
 
-Then you can also populate the instrumentation key required for app insights to work. This can be an app setting. \
-Add an \`appSetting\` to the Azure web app for container for the application insights instrumentation key. You'll also need a \`dependsOn\` declaration.
+Using an \`appSetting\`, you can also populate the instrumentation key onto the app service. You'll also need a \`dependsOn\` declaration.
 
 ```json
 "appSettings": [
@@ -40,9 +39,10 @@ Add an \`appSetting\` to the Azure web app for container for the application ins
   ]
 ```
 
-Here's the [arm schema](https://docs.microsoft.com/en-us/azure/templates/Microsoft.Web/2019-08-01/sites) for azure web apps. 
+The instrumentation key is the only setting required by the app insights sdk to be able to work correctly.
+If you need more help on setting an app setting on an azure web app, here's the [arm schema](https://docs.microsoft.com/en-us/azure/templates/Microsoft.Web/2019-08-01/sites). 
 
-`APPINSIGHTS_INSTRUMENTATIONKEY` app setting will get translated to an environment variable when the container spins up as part of the app service. The SDK that you'll be adding will know too look for an instrumentation key based on an environment variable with the name `APPINSIGHTS_INSTRUMENTATIONKEY` or `ApplicationInsights:InstrumentationKey`
+`APPINSIGHTS_INSTRUMENTATIONKEY` <mark>app setting will get translated to an environment variable when the container spins up in the app service</mark>. The sdk that you'll be adding will know too look for an instrumentation key based on an environment variable with the name `APPINSIGHTS_INSTRUMENTATIONKEY` or `ApplicationInsights:InstrumentationKey`
 
 ## Adding app insights
 
@@ -65,8 +65,10 @@ You'll notice that it adds references to a new NuGet package. Also, it makes sma
 Now before deploying, deploy your arm template. Do always consider deploying your arm templates through a pipeline. 
 
 To recap:
-- Use an arm template to create the application insights resource
-- Use the same arm template to auto-configure the app setting in the azure web app with the application insights instrumentation key to use
-- Add the application insights sdk through code using Visual Studio
+
+* Use an arm template to create the application insights resource
+* Use the same arm template to auto-configure the app setting in the azure web app with the application insights instrumentation key to use
+* Add the application insights sdk through code using Visual Studio
 
 To get a more detailed example of what it should look like, check out [this pull request](https://github.com/onetug/Codecampster/pull/67).
+Also, here's [another link](https://docs.microsoft.com/en-us/azure/azure-monitor/app/asp-net-core) for the official guide by Microsoft.
