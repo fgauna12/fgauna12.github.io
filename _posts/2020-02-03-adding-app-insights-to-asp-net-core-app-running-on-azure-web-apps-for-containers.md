@@ -1,7 +1,7 @@
 ---
 layout: post
 title: >-
-  Adding app insights to asp.net core app running on azure web apps for
+  Adding app insights to asp.net core web app running on azure web apps for
   containers
 tags:
   - azure
