@@ -53,7 +53,7 @@ Lastly, because it's not mature there's also no support for .NET Framework. Mean
 
 Although it's an Azure product and there is an Azure DevOps extension, there is no ARM template support. No infrastructure as code support.
 
-In my opinion, because it's free it could be effective for prototyping. It's unclear what the future holds for this service. Because feature flags are critical dependency, I value solutions that are reliable and have an opportunity to reduce manual mistakes through automation.\
+In my opinion, because it's free it could be effective for prototyping. It's unclear what the future holds for this service. Because feature flags are critical dependency, I value solutions that are mature/reliable and have an opportunity to reduce manual mistakes through automation.\
 \
 *Edit*: they might have support for \[JavaScript and Python](<https://github.com/Azure/AppConfiguration#rest-api-reference>) based on their GitHub repo. It's just not documented yet. Possibly not released either.
 
