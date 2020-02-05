@@ -4,6 +4,7 @@ title: Choosing a feature flag platform
 tags:
   - devops
   - architecture
+  - azure
 date: 2020-02-05T03:09:18.760Z
 featured: false
 hidden: false
