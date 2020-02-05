@@ -62,6 +62,6 @@ In my opinion, because it's free it could be effective for prototyping. It's unc
 
 ## Conclusion
 
-Don't roll your own feature flag platform. When we take a dependency on a feature flag platform, our applications are likely going to see downtime if there's degraded services in our feature flag platform. Unless of course, the provider has circuit-breaking patterns built into their SDKs. 
+Don't roll your own feature flag platform. <mark>When we take a dependency on a feature flag platform, our applications are likely going to see downtime if there's degraded services in the provider.</mark> Unless of course, the provider has circuit-breaking patterns built into their SDKs. 
 
 Be smart about the risk. Choose a mature feature flag platform. It's a big decision. The ultimate value is worth it: being able to test in production, deploy often and safely, and releasing when you're ready.
