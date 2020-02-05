@@ -50,7 +50,7 @@ Azure App Configuration is a new service on Azure. It's still in Preview. It's f
 
 It's nice that it's on Azure. Less tools to use. The SDK is well-built because it was made by Microsoft. It also works well side by side with Azure KeyVault.
 
-The main drawback with this service: it's not _mature_. Meaning, there's no support in other languages, especially JavaScript. Many applications today are built using Single Page Apps with back-end APIs. With Azure App Configuration, there's no chance to have SPAs leverage feature flags. From experience, this is extremely useful when having this type of architecture. 
+The main drawback with this service: it's not _mature_. Meaning, there's no support in other languages, especially JavaScript. Many applications today are built using Single Page Apps with back-end APIs. With Azure App Configuration, you can use feature flags from SPAs. From experience, this is extremely useful when having this type of architecture. 
 
 Lastly, because it's not mature there's also no support for .NET Framework. Meaning, you won't be able to use this service unless you build your own class library to interact with the REST API. 
 
