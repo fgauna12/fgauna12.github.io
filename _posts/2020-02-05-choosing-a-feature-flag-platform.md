@@ -48,7 +48,7 @@ LaunchDarkly is not free. They have a 30-day trial. They offer an SLA for the en
 
 Azure App Configuration is a new service on Azure. It's still in Preview. It's free during the Preview. It also has no SLA. 
 
-It's nice that it's on Azure. Less tools to use. The SDK is well-built because it was made by Microsoft. It also works well side by side with Azure KeyVault.
+It's nice that it's on Azure. Less tools to use. The .NET SDK is well-built because it was made by Microsoft. It also works well side by side with Azure KeyVault.
 
 The main drawback with this service: it's not _mature_. Meaning, there's no support in other languages, especially JavaScript. Many applications today are built using Single Page Apps with back-end APIs. With Azure App Configuration, you can use feature flags from SPAs. From experience, this is extremely useful when having this type of architecture. 
 
