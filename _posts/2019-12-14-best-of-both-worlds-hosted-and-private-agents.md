@@ -5,8 +5,8 @@ tags:
   - devops
   - azure
 date: 2019-12-14T22:51:45.340Z
-featured: true
-hidden: true
+featured: false
+hidden: false
 featured_image_thumbnail: /assets/uploads/azure-pipelines.svg
 featured_image: /assets/uploads/logistics-1-640.jpg
 comments: false
