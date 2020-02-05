@@ -6,8 +6,10 @@ tags:
   - architecture
   - azure
 date: 2020-02-05T03:09:18.760Z
-featured: false
-hidden: false
+featured: true
+hidden: true
+featured_image_thumbnail: ''
+featured_image: /assets/uploads/fidget-cube-2746300_640.jpg
 comments: false
 ---
 Yes, as more and more companies embrace Continuous Deployment, feature flags platform are becoming much more popular. I love feature flags, it's one of the coolest and more demonstrable aspects of DevOps. 
