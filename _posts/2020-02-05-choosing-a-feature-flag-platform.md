@@ -54,7 +54,7 @@ The main drawback with this service: it's not _mature_. Meaning, there's no supp
 
 Lastly, because it's not mature there's also no support for .NET Framework. Meaning, you won't be able to use this service unless you build your own class library to interact with the REST API. 
 
-Although it's an Azure product and there is an Azure DevOps extension, there is no ARM template support. No infrastructure as code support.
+Although it's an Azure product and there is an Azure DevOps extension, there is no ARM template support. 
 
 In my opinion, because it's free it could be effective for prototyping. It's unclear what the future holds for this service. Because feature flags are critical dependency, I value solutions that are mature/reliable and have an opportunity to reduce manual mistakes through automation.
 
@@ -62,6 +62,6 @@ In my opinion, because it's free it could be effective for prototyping. It's unc
 
 ## Conclusion
 
-Don't roll your own feature flag platform. When we take a dependency on a feature flag platform, our applications are likely going to see downtime if there's degraded services in the feature flag platform. The trade-off of taking this risk is the ability to test in production, deploy often, and release when you're ready. 
+Don't roll your own feature flag platform. When we take a dependency on a feature flag platform, our applications are likely going to see downtime if there's degraded services in our feature flag platform. Unless of course, the provider has circuit-breaking patterns built into their SDKs. 
 
-Be smart about the risk. Choose a mature feature flag platform. It's a big decision.
+Be smart about the risk. Choose a mature feature flag platform. It's a big decision. The ultimate value is worth it: being able to test in production, deploy often and safely, and releasing when you're ready.
