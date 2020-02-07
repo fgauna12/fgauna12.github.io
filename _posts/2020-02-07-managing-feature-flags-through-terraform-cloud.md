@@ -56,7 +56,7 @@ Next, for Terraform Cloud to be able to talk to Launch Darkly, you ought to crea
 
 Go to your user profile on Launch Darkly. 
 
-Then _Authorization_ and create your own API Token.
+Then _Authorization_ and create a new _Token_.
 
 ![Create Launch Darkly API Token](/assets/uploads/create_launchdarkly_apikey.png "Create Launch Darkly API Token")
 
