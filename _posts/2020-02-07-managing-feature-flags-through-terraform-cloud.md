@@ -38,7 +38,7 @@ In this sample project, we'll use this [sample repo](https://github.com/fgauna12
 
 ### The Steps
 
-![Terraform Cloud Launch Darkly Create Workspace](/assets/uploads/terraform-cloud-launchdarkly.gif "Terraform Cloud Launch Darkly Create Workspace")
+![Terraform Cloud Launch Darkly Create Workspace](/assets/uploads/terraform-cloud-launchdarkly.gif#wide "Terraform Cloud Launch Darkly Create Workspace")
 
 First, create the workspace as show above. 
 
