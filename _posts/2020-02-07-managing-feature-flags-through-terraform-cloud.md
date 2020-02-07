@@ -41,10 +41,13 @@ In this sample project, we'll use this [sample repo](https://github.com/fgauna12
 ![Terraform Cloud Launch Darkly Create Workspace](/assets/uploads/terraform-cloud-launchdarkly.gif "Terraform Cloud Launch Darkly Create Workspace")
 
 First, create the workspace as show above. 
+
 Select GitHub as the Version Control System. 
+
 Choose the repository you forked from above. 
 
 Then give the workspace a new and create. 
+
 It will take a minute.
 
 ### Configuring LaunchDarkly
