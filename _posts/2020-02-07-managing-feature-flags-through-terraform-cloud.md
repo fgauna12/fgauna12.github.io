@@ -74,11 +74,11 @@ Configure a terraform variable called `launchdarkly_access_token` with the value
 
 Lastly, go to *Settings* then *General*. 
 
-![](/assets/uploads/ld_terraform_settings.png "Terraform Cloud General Settings")
+![](/assets/uploads/ld_terraform_settings.png#center "Terraform Cloud General Settings")
 
 Set the Terraform working directory to `iac`.
 
-![](/assets/uploads/ld_working_directory.png "Set working directory")
+![](/assets/uploads/ld_working_directory.png#center "Set working directory")
 
 This will make sure that Terraform Cloud is only watching the `iac` directory. The example GitHub repo has all the Terraform files under an `iac` subdirectory.
 
@@ -86,14 +86,14 @@ This will make sure that Terraform Cloud is only watching the `iac` directory. T
 
 Queue the plan.
 
-![](/assets/uploads/ld_queue_plan.png "Terraform Queue Plan")
+![](/assets/uploads/ld_queue_plan.png#center "Terraform Queue Plan")
 
 Confirm and apply when it asks you if you want to continue.
 
-![](/assets/uploads/ld_confirm_apply.png "Terraform Cloud Confirm and Apply")
+![](/assets/uploads/ld_confirm_apply.png#wide "Terraform Cloud Confirm and Apply")
 
 Check LaunchDarkly, you should have a new project, environment, and feature flag that's on!
 
-![](/assets/uploads/ld_final_result.png "LaunchDarkly Final")
+![](/assets/uploads/ld_final_result.png#wide "LaunchDarkly Final")
 
 Stretch goal - Turn off your feature flag by committing to the repo. Terraform Cloud will pick up the change and apply it. That goes for any change you make!
