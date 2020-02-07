@@ -56,7 +56,7 @@ Next, for Terraform Cloud to be able to talk to Launch Darkly, you ought to crea
 
 Go to your user profile on Launch Darkly. 
 
-Then _Authorization_ and create a new _Token_.
+Then *Authorization* and create a new *Token*.
 
 ![Create Launch Darkly API Token](/assets/uploads/create_launchdarkly_apikey.png "Create Launch Darkly API Token")
 
@@ -68,8 +68,7 @@ Copy the API Token to your clipboard.
 
 ### Back to Terraform Cloud
 
-Configure a terraform variable called `launchdarkly_access_token` with the value from the API Token. 
-Feel free to mark it as *Sensitive*.
+Configure a terraform variable called `launchdarkly_access_token` with the value from the API Token.  Feel free to mark it as *Sensitive*.
 
 ![](/assets/uploads/ld_secret.png#wide "Terraform Cloud Variable")
 
@@ -86,6 +85,8 @@ This will make sure that Terraform Cloud is only watching the `iac` directory. T
 ### Give it a go
 
 Queue the plan.
+
+![](/assets/uploads/ld_queue_plan.png "Terraform Queue Plan")
 
 Confirm and apply when it asks you if you want to continue.
 
