@@ -71,7 +71,7 @@ Copy the API Token to your clipboard.
 Configure a terraform variable called `launchdarkly_access_token` with the value from the API Token. 
 Feel free to mark it as *Sensitive*.
 
-![](/assets/uploads/ld_secret.png "Terraform Cloud Variable")
+![](/assets/uploads/ld_secret.png#wide "Terraform Cloud Variable")
 
 Lastly, go to *Settings* then *General*. 
 
