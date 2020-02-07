@@ -44,9 +44,9 @@ First, create the workspace as show above.
 
 Select GitHub as the Version Control System. 
 
-Choose the repository you forked from above. 
+Choose the repository you forked.
 
-Then give the workspace a new and create. 
+Then give the workspace a name and create. 
 
 It will take a minute.
 
