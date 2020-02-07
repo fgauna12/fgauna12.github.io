@@ -18,15 +18,15 @@ Have worked on a project where it was hard to test because it used other SaaS pr
 
 The promise of using Terraform besides how well-built and easy it is to use, is the power of creating infrastructure across various providers. With this Launch Darkly provider, developers could get easily on-boarded and each of them could have their own feature flag environment.
 
-I certainly had limitations with ARM templates. One of them being that I can't provision things outside of Azure, like DNS.
-
-Here's a great blog post by the Launch Darkly folks talking more about the *why* and some other examples.
+Here's a [great blog post](https://launchdarkly.com/blog/managing-feature-flags-with-terraform/) by the Launch Darkly folks talking more about the *why* and some other examples.
 
 ## Simple project
 
 If you don't have a Terraform Cloud account, it's easy enough to get one. You don't have to pay anything to get started.
 
-When using Terraform Cloud, you create a workspace and configure a GitHub account to watch.  Terraform Cloud will `plan` the changes from the infrastructure as code and ask for confirmation. Then it will `apply` them. For Launch Darkly, we'll just have to set an environment variable so that Terraform can use your account. 
+When using Terraform Cloud, you create a workspace and configure a GitHub account to watch.  Terraform Cloud will `plan` the changes from the infrastructure as code and ask for confirmation. Then it will `apply` them. 
+
+For Launch Darkly, we'll just have to set an environment variable so that Terraform can use your account. 
 
 In this sample project, we'll use this [sample repo](https://github.com/fgauna12/HelloTerraformLaunchDarkly) containing a miniature Launch Darkly environment and use Terraform Cloud to provision it. 
 
@@ -40,9 +40,12 @@ In this sample project, we'll use this [sample repo](https://github.com/fgauna12
 
 ![Terraform Cloud Launch Darkly Create Workspace](/assets/uploads/terraform-cloud-launchdarkly.gif "Terraform Cloud Launch Darkly Create Workspace")
 
-First, create the workspace as show above. Select GitHub as the Version Control System. Choose the repository you forked from above. 
+First, create the workspace as show above. 
+Select GitHub as the Version Control System. 
+Choose the repository you forked from above. 
 
-Then give the workspace a new and create. It will take a minute.
+Then give the workspace a new and create. 
+It will take a minute.
 
 ### Configuring LaunchDarkly
 
@@ -50,15 +53,20 @@ Next, for Terraform Cloud to be able to talk to Launch Darkly, you ought to crea
 
 ![Create Launch Darkly API Token](/assets/uploads/create_launchdarkly_apikey.png "Create Launch Darkly API Token")
 
-Go to your user profile on Launch Darkly. Then Authorization and create your own API Token.
+Go to your user profile on Launch Darkly. 
 
-Give the API Token a name and choose role of *Admin*. Create the API Token. 
+Then Authorization and create your own API Token.
+
+Give the API Token a name and choose role of *Admin*. 
+
+Create the API Token. 
 
 Copy the API Token to your clipboard.
 
 ### Back to Terraform Cloud
 
-Configure a terraform variable called `launchdarkly_access_token` with the value from the API Token. Feel free to mark it as *Sensitive*.
+Configure a terraform variable called `launchdarkly_access_token` with the value from the API Token. 
+Feel free to mark it as *Sensitive*.
 
 ![](/assets/uploads/ld_secret.png "Terraform Cloud Variable")
 
@@ -66,13 +74,14 @@ Lastly, go to *Settings* then *General*.
 
 ![](/assets/uploads/ld_terraform_settings.png "Terraform Cloud General Settings")
 
-Set the Terraform working directory to `iac`
+Set the Terraform working directory to `iac`.
 
 ![](/assets/uploads/ld_working_directory.png "Set working directory")
 
 ### Give it a go
 
-Queue the plan.\
+Queue the plan.
+
 Confirm and apply when it asks you if you want to continue.
 
 ![](/assets/uploads/ld_confirm_apply.png "Terraform Cloud Confirm and Apply")
