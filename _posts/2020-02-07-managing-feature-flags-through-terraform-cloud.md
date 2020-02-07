@@ -54,11 +54,11 @@ It will take a minute.
 
 Next, for Terraform Cloud to be able to talk to Launch Darkly, you ought to create an API key.
 
-![Create Launch Darkly API Token](/assets/uploads/create_launchdarkly_apikey.png "Create Launch Darkly API Token")
-
 Go to your user profile on Launch Darkly. 
 
 Then Authorization and create your own API Token.
+
+![Create Launch Darkly API Token](/assets/uploads/create_launchdarkly_apikey.png "Create Launch Darkly API Token")
 
 Give the API Token a name and choose role of *Admin*. 
 
