@@ -44,7 +44,7 @@ First, create the workspace as show above. Select GitHub as the Version Control 
 
 Then give the workspace a new and create. It will take a minute.
 
-### Configuring launch darkly
+### Configuring LaunchDarkly
 
 Next, for Terraform Cloud to be able to talk to Launch Darkly, you ought to create an API key.
 
