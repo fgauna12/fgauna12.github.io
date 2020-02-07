@@ -81,6 +81,8 @@ Set the Terraform working directory to `iac`.
 
 ![](/assets/uploads/ld_working_directory.png "Set working directory")
 
+This will make sure that Terraform Cloud is only watching the `iac` directory. The example GitHub repo has all the Terraform files under an `iac` subdirectory.
+
 ### Give it a go
 
 Queue the plan.
