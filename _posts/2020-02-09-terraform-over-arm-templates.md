@@ -9,7 +9,7 @@ featured: false
 hidden: false
 comments: false
 ---
-I work strictly on Azure. I don't use other cloud providers except when I'm helping clients move away from say... AWS. For many years, I've used ARM templates as the Infrastructure as Code tool of choice. They're powerful and they do the job. But, lately others have been telling me about the amazingness of Terraform... even for when just using Azure. 
+I work strictly on Azure. I don't use other cloud providers except when I'm helping clients move away from AWS. For many years, I've used ARM templates as the Infrastructure as Code tool of choice. They're powerful and they do the job. But, lately others have been telling me about the amazingness of Terraform... even for when just using Azure. 
 
 <!--more-->
 
