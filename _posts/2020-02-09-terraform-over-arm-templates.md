@@ -40,4 +40,5 @@ It can be a double edged sword. But Terraform keeps track of all the resources i
 `terraform destroy`
 
 Destroy all the resources created by Terraform? What!
+
 With ARM you have to delete the entire resource group.
