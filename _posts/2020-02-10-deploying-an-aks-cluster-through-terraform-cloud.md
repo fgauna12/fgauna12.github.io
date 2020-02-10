@@ -139,8 +139,8 @@ Create a new workspace. Choose the source. It should be the newly created repo.
 
 ![](/assets/uploads/terraform_create_workspace.png "Terraform create workspace")
 
-Once it finishes creating, select "Configure Variables".\
-\
+Once it finishes creating, select "Configure Variables".
+
 These are all the variables you'll need.
 
 ![](/assets/uploads/aks_terraform_cloud.png#wide "Variable to use in Terraform Cloud")
