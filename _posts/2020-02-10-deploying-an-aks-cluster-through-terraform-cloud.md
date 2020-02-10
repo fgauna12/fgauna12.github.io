@@ -152,7 +152,7 @@ Sorry about the fancy... but the value should look like this:
 { client_id = "[application id from second sp]", client_secret = "[password of the second sp]" }
 ```
 
-\*\*Also\*\*, you want to ensure that you check off `HCL` and `Sensitive.`
+**Also**, you want to ensure that you check off `HCL` and `Sensitive.`
 
 #### Environment Variables
 
