@@ -27,7 +27,9 @@ There's already a [nice guide by Microsoft](https://docs.microsoft.com/en-us/azu
 
 If you need more help creating service principals, here's [a guide](https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest). You do need significant access in Azure AD and an Azure subscription to do this.
 
-## The Main File
+## The Files
+
+### The Main File
 
 Create a file called `main.tf`. This file will set the Azure provider for Terraform and also declare the AKS cluster and the resource group.
 
@@ -68,7 +70,7 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
 
 As you can see, there will be some variable that will be required. 
 
-## The Variables
+### The Variables
 
 Next define a file called `variables.tf`. It will define the input variables to this terraform sample we're building.
 
@@ -113,7 +115,7 @@ variable dns_prefix {
 
 Notice how we're being fancy and the `service_principal` is a complex object. This will be the service principal used by the AKS cluster. You also have another one that will be used by Terraform Cloud using the Azure provider to authenticate and deploy the infrastructure.
 
-## The Outputs
+### The Outputs
 
 For the last file, create a `outputs.tf` file. It will hold the output variables. We won't really use them in this example. With these variables, you'll be able to use this to issue `kubectl` commands on your cluster after creation.
 
