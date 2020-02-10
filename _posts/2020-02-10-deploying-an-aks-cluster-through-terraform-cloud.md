@@ -171,6 +171,8 @@ Sorry about the fancy... but the value should look like this:
 
 ### Give it a go
 
-Queue up a plan. Confirm and apply. You should have a brand new AKS cluster with 3 nodes. Also, every time you commit to the repo, it will re-issue a deployment.
+Queue up a plan. Confirm and apply. It will take several minutes.
+
+You should have a brand new AKS cluster with 3 nodes. Also, every time you commit to the repo, it will re-issue a deployment.
 
 ![](/assets/uploads/terraform_aks_cloud_complete.png#wide "Terraform Cloud provisioned AKS")
