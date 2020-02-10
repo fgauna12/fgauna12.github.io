@@ -145,7 +145,7 @@ These are all the variables you'll need.
 
 ![](/assets/uploads/aks_terraform_cloud.png#wide "Variable to use in Terraform Cloud")
 
-#### Terraform Variables
+##### Terraform Variables
 
 * `resource_group_name` - The name of the resource group to create (ex. `rg-jimmy-aks-test-001`)
 * `cluster_name` - The name of the AKS cluster (eg. `aks-jimmy-test-001`)
@@ -162,7 +162,7 @@ Sorry about the fancy... but the value should look like this:
 
 **Also**, you want to ensure that you check off `HCL` and `Sensitive.`
 
-#### Environment Variables
+##### Environment Variables
 
 * `ARM_SUBSCRIPTION_ID` - The subscription ID to deploy too. Also, both service principals you created should be in this subscription.
 * `ARM_CLIENT_ID` - The `applicationId` of the first service principal
