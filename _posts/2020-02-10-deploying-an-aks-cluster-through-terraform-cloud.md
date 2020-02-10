@@ -18,11 +18,13 @@ There's already a [nice guide by Microsoft](https://docs.microsoft.com/en-us/azu
 
 * Visual Studio Code and Terraform Extension
 * Create a new directory to put your files
-* Create a service principal for Terraform (`az ad sp create-for-rbac --name [sample name here]`)
+* Create a service principal for Terraform 
 
+  * `az ad sp create-for-rbac --name [choose a name for terraform sp]`
   * Keep track of the `appId` and `password` and `tenant`
-* Create another service principal for AKS (`az ad sp create-for-rbac --name [sample name here]`)
+* Create another service principal for AKS
 
+  * `az ad sp create-for-rbac --name [choose a name for aks sp]`
   * Keep track of the `appId` and `password` and `tenant`
 
 If you need more help creating service principals, here's [a guide](https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest). You do need significant access in Azure AD and an Azure subscription to do this.
@@ -65,6 +67,8 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   }
 }
 ```
+
+As you can see, there will be some variable that will be required. 
 
 ## The Variables
 
@@ -113,7 +117,7 @@ Notice how we're being fancy and the `service_principal` is a complex object. Th
 
 ## The Outputs
 
-For the last file, create a `outputs.tf` file. It will hold the output variables. We won't really use them in this example. You'd be able to use this to issue `kubectl` commands on your cluster after creation.
+For the last file, create a `outputs.tf` file. It will hold the output variables. We won't really use them in this example. With these variables, you'll be able to use this to issue `kubectl` commands on your cluster after creation.
 
 ```hcl
 output "client_certificate" {
@@ -131,11 +135,15 @@ If you haven't already, commit your files to a new GitHub repo of your choice. W
 
 ### Terraform Cloud
 
-Create a new workspace.
+Create a new workspace. Choose the source. It should be the newly created repo.
 
-Choose the source. It should be the newly created repo.
+![](/assets/uploads/terraform_create_workspace.png "Terraform create workspace")
 
-![](/assets/uploads/aks_terraform_cloud.png "Variable to use in Terraform Cloud")
+Once it finishes creating, select "Configure Variables".\
+\
+These are all the variables you'll need.
+
+![](/assets/uploads/aks_terraform_cloud.png#wide "Variable to use in Terraform Cloud")
 
 #### Terraform Variables
 
@@ -165,4 +173,4 @@ Sorry about the fancy... but the value should look like this:
 
 Queue up a plan. Confirm and apply. You should have a brand new AKS cluster with 3 nodes. Also, every time you commit to the repo, it will re-issue a deployment.
 
-![](/assets/uploads/terraform_aks_cloud_complete.png "Terraform Cloud provisioned AKS")
+![](/assets/uploads/terraform_aks_cloud_complete.png#wide "Terraform Cloud provisioned AKS")
