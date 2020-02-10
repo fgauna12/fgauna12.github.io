@@ -18,12 +18,10 @@ There's already a [nice guide by Microsoft](https://docs.microsoft.com/en-us/azu
 
 * Visual Studio Code and Terraform Extension
 * Create a new directory to put your files
-* Create a service principal for Terraform 
-
+* Create a service principal for Terraform
   * `az ad sp create-for-rbac --name [choose a name for terraform sp]`
   * Keep track of the `appId` and `password` and `tenant`
 * Create another service principal for AKS
-
   * `az ad sp create-for-rbac --name [choose a name for aks sp]`
   * Keep track of the `appId` and `password` and `tenant`
 
