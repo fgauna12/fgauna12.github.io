@@ -169,6 +169,8 @@ Sorry about the fancy... but the value should look like this:
 * `ARM_TENANT_ID` - The `tenant` of the first service principal
 * `ARM_CLIENT_SECRET` - The `password of the first service principal
 
+These environment variables are used by the Azure provider for Terraform. You can read more in-depth in [these docs](https://www.terraform.io/docs/providers/azurerm/guides/service_principal_client_secret.html)
+
 ### Give it a go
 
 Queue up a plan. Confirm and apply. It will take several minutes.
