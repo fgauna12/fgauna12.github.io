@@ -67,8 +67,8 @@ steps:
 
 ### So, why Powershell/Pester?
 
-When using something like Postman, it's limited to only testing API calls. Also, in my experience it's easy to create Postman tests that they only use for local development. They're easy to forget about and hard to maintain. Even more so, it's rare that they're incorporated into CI/CD pipelines. \
-\
+When using something like Postman, it's limited to only testing API calls. Also, in my experience it's easy to create Postman tests that they only use for local development. They're easy to forget about and hard to maintain. Even more so, it's rare that they're incorporated into CI/CD pipelines. 
+
 Creating Powershell tests is a niche. Certainly, won't be effective for all .NET teams. 
 
 If you're unfamiliar with Powershell, here's a great [PluralSight course](https://app.pluralsight.com/library/courses/everyday-ps/table-of-contents) that helped me.
