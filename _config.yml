@@ -1,6 +1,6 @@
 # Site setings
 name: 'Gauna Code'
-description: "Hello, I'm Facundo. I think too many software projects fail. I'd like successful projects to be the norm."
+description: "Hello, I'm Facundo. I help .NET teams deliver more value to their customers through Azure and DevOps."
 meta_description: ''
 logo: 'assets/images/GaunaLogo.png'
 favicon: 'assets/favicon/favicon.ico'
@@ -22,8 +22,8 @@ author:
   short_name: 'Facundo'
   image: 'myface.jpg'
   greetings: 'Facundo Gauna'
-  description: "Cloud. DevOps. Architecture"
-  bio: 'Facundo is Cloud Solutions Architect at Nebbia Technology. He specializes in building Cloud-Native applications on Azure with DevOps practices.'
+  description: "Azure. DevOps. Kubernetes"
+  bio: 'Facundo is Cloud Solutions Architect at New Signature. He specializes in building Cloud-Native applications on Azure with DevOps practices.'
 # Contact form setings
 email: 
 contact_page_description: ""
