@@ -1,6 +1,6 @@
 ---
 layout: post
-title: An alternate to Postman for API tests
+title: An alternative to Postman for API tests
 tags:
   - devops
 date: 2020-02-11T02:06:36.536Z
@@ -8,7 +8,7 @@ featured: false
 hidden: false
 comments: false
 ---
-[Pester](https://github.com/Pester/Pester) is a unit testing library for Powershell. With some creativity, Pester can be a great tool to write API tests. Perhaps, it can be more effective than Postman for .NET developers and those in the Windows ecosystem.
+[Pester](https://github.com/Pester/Pester) is a unit testing module for Powershell. With some creativity, Pester can be a great tool to write API tests. Perhaps, it can be more effective than Postman for .NET developers and those in the Windows ecosystem.
 
 <!--more-->
 
@@ -50,7 +50,7 @@ Describe "Get Orders" {
 
 Here this test verifies that the data coming back has orders and that the values are not empty. Fairly simplistic. The API data would be something like `{ values: [{...}], total: 5 }`
 
-The assertion happens through the `Should` function. It allows us to check Here's all the [assertions](https://pester.dev/docs/usage/assertions/) possible through Pester.
+The assertion happens through the `Should` function. Here's all the [assertions](https://pester.dev/docs/usage/assertions/) possible through Pester.
 
 ### Test from the pipeline
 
@@ -64,8 +64,6 @@ steps:
      Install-Module -Name Pester -Force
      Invoke-Pester -EnableExit
 ```
-
-
 
 ### So, why Powershell/Pester?
 
