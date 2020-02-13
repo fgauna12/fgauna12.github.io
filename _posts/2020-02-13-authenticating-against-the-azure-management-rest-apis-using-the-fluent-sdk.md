@@ -25,7 +25,7 @@ But, what if you want to issue an API call to the Azure Management API to invoke
 
 ### Example
 
-We had this need were we were scaling out virtual machine scale sets based on demand to a batch system. We were having to use custom decision to determine when to scale out. Very different your typical web-application scenario based on website load. We also had to scale the scale sets in when the system had lower demands.
+We had this need. We wanted to scale out virtual machine scale sets based on demand to a batch system. We were having to use custom decision to determine when to scale out. Very different your typical web-application scenario based on website load. We also had to scale the scale sets in when the system had lower demands.
 
 So, we had to use a preview feature. We had to protect a virtual machine that's part of a scale set from a *scale-down operation*. We didn't want an active/non-idle instance to be de-provisioned for the batch jobs they were performing. 
 
