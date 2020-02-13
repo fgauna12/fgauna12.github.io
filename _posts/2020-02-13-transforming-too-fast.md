@@ -10,7 +10,8 @@ comments: false
 ---
 It's good to learn new things. It's good to have a *growth* mindset. Is too much *new* a bad thing?
 
-<!--more-->\
+<!--more-->
+
 \
 It happens from time to time. Helping people where they are so eager to pay off technical debt because of the opportunity to work new things. I believe as human beings we have a cap on how much we're able to absorb change. If we take on too much, we also absorb a bunch of risk.\
 \
