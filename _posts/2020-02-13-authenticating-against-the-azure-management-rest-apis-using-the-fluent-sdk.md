@@ -21,7 +21,7 @@ AzureCredentials _azureCredentials =
 
 This works great for most usecases. To issue commands exposed through the Fluent SDK. 
 
-But, what if you want to issue an API call for a preview feature?
+But, what if you want to issue an API call to the Azure Management API to invoke a newer feature? 
 
 ### Example
 
