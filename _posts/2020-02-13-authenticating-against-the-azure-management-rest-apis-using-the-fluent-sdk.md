@@ -58,7 +58,7 @@ var protectionResponse =  await httpClient.SendAsync(request, CancellationToken.
 ```
 
 
-Besides building a normal HTTP request and sending it through an `HttpClient`, we had to add an `Authorization` header using the same mechanism that the Fluent SDK uses underneath. 
+Besides building a normal HTTP request and sending it through an `HttpClient`, we had to add an `Authorization` header to the http request. 
 
 It took some perusing through the open source repo for the fluent SDK, but ultimately it came down to this line:
 
