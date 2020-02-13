@@ -42,7 +42,7 @@ var body = new StringContent(@"
 {
   ""properties"": {
     ""protectionPolicy"": {
-      ""protectFromScaleIn"": false
+      ""protectFromScaleIn"": true
     }
   }        
 }
@@ -57,13 +57,13 @@ await _azureCredentials.ProcessHttpRequestAsync(request, CancellationToken.None)
 var protectionResponse =  await httpClient.SendAsync(request, CancellationToken.None);
 ```
 
-\
-Besides building a normal HTTP request and sending it through an \`HttpClient\`, we had to add an \`Authorization\` header using the same mechanism that the Fluent SDK uses underneath. \
-\
-It took some perusing through the open source repo for the fluent SDK, but ultimately it came down to this line:\
-\
-\`await _azureCredentials.ProcessHttpRequestAsync(request, CancellationToken.None);\`
 
-The main \`AzureCredentials\` class used to authenticate with the fluent SDK has a method to decorate an \`HttpRequest\` object with the proper headers. \
-\
+Besides building a normal HTTP request and sending it through an `HttpClient`, we had to add an `Authorization` header using the same mechanism that the Fluent SDK uses underneath. 
+
+It took some perusing through the open source repo for the fluent SDK, but ultimately it came down to this line:
+
+`await _azureCredentials.ProcessHttpRequestAsync(request, CancellationToken.None);`
+
+The main `AzureCredentials` class used to authenticate with the fluent SDK has a method to decorate an `HttpRequest` object with the proper headers. 
+
 That's it!
