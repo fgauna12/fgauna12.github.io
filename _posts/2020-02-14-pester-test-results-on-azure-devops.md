@@ -39,5 +39,3 @@ Then, once the NUnit test results are generated, use the `PublishTestResults` ta
 Tada! 
 
 That's it.
-
-Now imagine running API tests against an ephemeral environment spun-up with containers, then publishing the test results to Azure DevOps, and tearing down the ephemeral integration environment. Sweet sweet functional/smoke tests.
