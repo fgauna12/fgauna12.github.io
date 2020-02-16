@@ -83,6 +83,8 @@ provider "kubernetes" {
 
 ### Installing apps
 
+<mark><em>Edit</em>: If you try the approaches below, you will have to do them from a seperate Terraform plan. Because, if you try to deploy using the Kubernetes or Helm provider without an existing cluster, then validation will fail due <a href="https://github.com/hashicorp/terraform/issues/10462">this limitation</a> and <a href="https://github.com/hashicorp/terraform/issues/2430">this limitation</a>.</mark>
+
 Once the connection is establish, the hard part if over. You can use the kubernetes provider to create namespaces.
 
 ```hcl
