@@ -54,7 +54,7 @@ Then, let's set-up the Azure backend
 steps:
 - task: AzureCLI@2
   inputs:
-    azureSubscription: 'nebbia-partner-service-connection'
+    azureSubscription: '[name of your service connection]'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
@@ -104,7 +104,11 @@ Now, initialize Terraform.
 
 You'll want to ensure that your working directory points to the root of your Terraform module. In my case, I'm storing the Terraform configuration under the `iac` directory in my repository.
 
+The environment variable `ARM_ACCESS_KEY` will be used by the Terraform Azure back-end provider to connect to the Storage Account. You can read more about it [here](https://www.terraform.io/docs/backends/types/azurerm.html#configuration-variables). I've had issues authenticating with just the service principal.
+
 Once is Terraform is initialized, you'll ready to create infrastructure.
+
+![](/assets/uploads/2020-02-16_21-38-22.png "Terraform initialized")
 
 ### Apply
 
@@ -117,7 +121,7 @@ When you apply, it's when the magic happens.
     provider: 'azurerm'
     command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)/iac/staging/'
-    environmentServiceNameAzureRM: 'nebbia-partner-service-connection'
+    environmentServiceNameAzureRM: '[name of your service connection]'
     commandOptions: |
       -var "some_key=$(SomeValue)"
 ```
@@ -127,3 +131,5 @@ Now your Terraform plan will get executed and your state will be updated.
 By the way, using the `commandOptions` you can also pass in input variables. But a cleaner way would be to use [environment variables](https://www.terraform.io/docs/configuration/variables.html#environment-variables). Any time you have a pipeline variable on Azure DevOps, it gets mapped to an environment variable. So, if you have a variable group with names that start with `TF_VAR` then Terraform will pick it up and pass the value to the input variable.
 
 Save. Queue. Run!
+
+![](/assets/uploads/2020-02-16_21-39-04.png "Terraform applied")
