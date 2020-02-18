@@ -9,8 +9,8 @@ featured: false
 hidden: false
 comments: false
 ---
-I am a believer of PaaS. In my experience, PaaS on Azure is very easy to use and there's a lot of bang for the buck. I get to worry less about the infrastructure and worry more about the application itself. \
-\
+I am a believer of PaaS. In my experience, PaaS on Azure is very easy to use and there's a lot of bang for the buck. I get to worry less about the infrastructure and focus more about the application itself. 
+
 Kubernetes has the same promise, except at a bigger scale. There's many benefits of Kubernetes that in my opinion make it more of a Lamborghini compared to modern PaaS. Kubernetes has no doubt taken the world by a storm and it's the future. So what are the hidden costs? Surely it's not all fun and roses. 
 
 \## Learning curve
