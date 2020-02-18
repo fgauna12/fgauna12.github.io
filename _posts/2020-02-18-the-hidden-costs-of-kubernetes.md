@@ -17,7 +17,7 @@ Kubernetes has the same promise, except at a bigger scale. There's many benefits
 
 It's huge for someone who's not familiar with containers. It's gigantic for those not familiar with Linux. The key for a successful adoption is being strategic about when to deliver and release and when to embrace Kubernetes. Taking it bit by bit. For example, here's more on a path towards [Kubernetes for .NET Developers](https://gaunacode.com/net-developers-and-the-path-to-kubernetes).
 
-But it's more than just the learning curve for developers. In many cases, operators in .NET shops only know about operations of Windows-based systems. Kubernetes is far from the typical infrastructure. In some cases, a Kubernetes cluster could be the company's first cloud project. That's why it's important to release to production a Minimum Viable Feature with Kubernetes so that it gives operators a chance to learn how to maintain a production-grade cluster. Let's not throw over the wall a cluster to the poor team.
+But it's more than just the learning curve for developers. In many cases, operators in .NET shops only know about operations of Windows-based systems. Kubernetes is far from the typical infrastructure. In some cases, a Kubernetes cluster could be the company's first cloud project. That's why it's important to release to production a Minimum Viable Feature with Kubernetes so that it gives operators a chance to learn how to maintain a production-grade cluster. Let's not throw it over the _wall_.
 
 ## More moving parts
 
