@@ -12,7 +12,7 @@ A lot of people don't know, I certainly didn't for a while. There's monetary inc
 
 <!--more--> 
 
-Public team projects can also be a great way to house prototype/demo code. Great for proof of concepts and I use them all the time. As long as I keep out proprietary information from them. Why? Because there's a nice incentive. 
+Public team projects can also be a great way to house prototype/demo projects. I use them all the time. Of course, I keep out proprietary information. Why? Because there's a nice incentive. 
 
 Free and *unlimited* build minutes.  (Usually you get 1800/month for free)
 
