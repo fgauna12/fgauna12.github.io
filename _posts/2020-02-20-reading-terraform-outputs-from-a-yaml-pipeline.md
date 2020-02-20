@@ -30,13 +30,13 @@ For example, here's an example using bash reading the `cluster_name` and the `re
 ``` yaml
 
 - bash: |
-    CLUSTER_NAME=$(cat $(TerraformCluster.jsonOutputVariablesPath) | jq '.cluster_name.value' -r)
-    RESOURCE_GROUP_NAME=$(cat $(TerraformCluster.jsonOutputVariablesPath) | jq '.resource_group_name.value' -r)
+    CLUSTER_NAME=$(cat $(TerraformOutputs.jsonOutputVariablesPath) | jq '.cluster_name.value' -r)
+    RESOURCE_GROUP_NAME=$(cat $(TerraformOutputs.jsonOutputVariablesPath) | jq '.resource_group_name.value' -r)
 
 ```
 
 How this works is this:
-- Using bash, we use the `cat` function to read the contents of the file
+- Using bash, we use `cat` to read the contents of the file
 - Then, we _pipe_ the output to an utility called **jq** which will parse the raw string to json and allow us to filter its values
 - Applying a **jq** filter, we look for the _raw value_ of those variables. For example: [see this snippet](https://jqplay.org/s/5PXsqvY2UQ)
 - We assign the filtered value to a variable
