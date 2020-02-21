@@ -9,7 +9,7 @@ featured: false
 hidden: false
 comments: false
 ---
-Due to the nature of containers, environments have to *pull* a given image tag from a container registry to get the new bits. In other words, there's no code *pushed* to environments. The easy and dangerous way is to have your environments reference the *latest* tag. It works for POCs but in practice it can be quite dangerous. 
+Due to the nature of containers, to deploy changes to an environment, these environments have to *pull* a chosen image tag from a container registry. In other words, there's no code *pushed* to environments. The easy and dangerous way is to have your environments reference the *latest* tag. It works for POCs but in practice it can be quite dangerous. 
 
 <!--more--> 
 
