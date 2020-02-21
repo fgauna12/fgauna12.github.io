@@ -17,7 +17,7 @@ First, you want to your CI pipeline to build a container and tag it with somethi
 
 Then, comes the more interesting question. 
 
-How many container registries do you have?
+How many container registries are appropriate?
 
 It depends. One option could be to have a single container registry, as long it's following best-practices while having the discipline of only deploying to production through automation and referencing explicit *image tags*. For small teams/shops, this could be sufficient. 
 
