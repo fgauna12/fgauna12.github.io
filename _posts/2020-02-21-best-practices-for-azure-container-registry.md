@@ -15,12 +15,8 @@ It's easy to create a private container registry on Azure. It'd be a private reg
 
 ### Availability
 
-Especially when using Kubernetes, there will a lot more usage of a container registry. 
-
 When services scale out due to Horizontal Pod Autoscaler. 
-
 Whenever pods exceed quotas, they are killed and spawn up again by Kubernetes. 
-
 Whenever a node dies, those pods that lived on those nodes will be re-instantiated elsewhere.
 
 And of course, when there's a new deployment. 
