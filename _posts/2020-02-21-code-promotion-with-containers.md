@@ -19,7 +19,7 @@ Then, comes the more interesting question.
 
 How many container registries are appropriate?
 
-It depends. One option could be to have a single container registry, as long it's following best-practices while having the discipline of only deploying to production through automation and referencing explicit *image tags*. For small teams/shops, this could be sufficient. 
+It depends. One option could be to have a single container registry, as long it's following [best-practices](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-best-practices) while having the discipline of only deploying to production through automation and referencing explicit *image tags*. For small teams/shops, this could be sufficient. 
 
 In more regulated environments, especially when you're looking to add additional controls like firewall restrictions of what IPs can interact with a container registry, then it could be more productive to have multiple container registries. Here, you could have a dev registry where developers can iterate quickly and deploy often. Then, once an image is tested and validated it can be *promoted* to a *production* container registry through a CD process. 
 
