@@ -16,10 +16,9 @@ Here's a quick guide on how to provision an Azure Container Register with Terraf
 
 ### Creating the registry
 
-First, what I like to do is specify my naming convention using _locals_.
+First, what I like to do is specify my naming convention using *locals*.
 
-``` hcl
-
+```hcl
 provider "azurerm" {
   version = "~>1.43"
 }
@@ -34,7 +33,7 @@ locals {
 
 Then, using the variables specified above, create the resource group and the container registry.
 
-``` hcl
+```hcl
 resource "azurerm_resource_group" "rg" {
   name     = local.resource_group_name
   location = local.location
@@ -47,16 +46,15 @@ resource "azurerm_container_registry" "acr" {
   sku                      = "Standard"
   admin_enabled            = false
 }
-
 ```
 
-You'll also have access to an `id` attribute on the container registry once it's created. It will be the _resource id_ in Azure. You will need this `id` in order to create a role assignment for an AKS cluster to read from this container registry.
+You'll also have access to an `id` attribute on the container registry once it's created. It will be the *resource id* in Azure. You will need this `id` in order to create a role assignment for an AKS cluster to read from this container registry.
 
 ### Permitting an AKS cluster
 
 Let's say you're creating an AKS cluster like the following.
 
-``` hcl
+```hcl
 resource "azurerm_kubernetes_cluster" "aks_cluster" {
   name                = var.cluster_name
 
@@ -65,8 +63,8 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
     client_secret = var.aks_service_principal_client_secret
   }
 }
-
 ```
+
 (Removed some attributes for brevity)
 
 Given that you're also creating a service principal for this AKS cluster, then you can grant permissions to the service principal that AKS will use so that it can read from the container registry. There's a built-in group of [acr pull](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-roles).
@@ -77,7 +75,7 @@ First, you have to find out the object id of the service principal. This is diff
 
 You do this by using a data source and querying for it. <mark>You'll have to use the Azure AD provider.</mark>
 
-``` hcl
+```hcl
 provider "azuread" {
   version = "~>0.7"
 }
@@ -86,11 +84,14 @@ data "azuread_service_principal" "aks_principal" {
   application_id = var.aks_service_principal_client_id
 }
 ```
-<mark><em>Note:</em>If you're running your Terraform plan using a service principal, make sure it has the necessary permissions for Azure AD</mark>. [Read more here.](https://www.terraform.io/docs/providers/azuread/d/service_principal.html)
+
+<mark><em>Note:</em>If you're running your Terraform plan using a service principal, make sure it has the necessary permissions to read applications from Azure AD</mark>. [Read more here.](https://www.terraform.io/docs/providers/azuread/d/service_principal.html)
+
+![](/assets/uploads/azuread-applications.png "Granting permission to service principal running Terraform")
 
 Then you can create a role-assignment on the container registry for the built-in role of `AcrPull`.
 
-``` hcl
+```hcl
 resource "azurerm_role_assignment" "acrpull_role" {
   scope                            = azurerm_container_registry.acr.id
   role_definition_name             = "AcrPull"
