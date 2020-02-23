@@ -85,7 +85,7 @@ data "azuread_service_principal" "aks_principal" {
 }
 ```
 
-<mark><em>Note:</em>If you're running your Terraform plan using a service principal, make sure it has the necessary permissions to read applications from Azure AD</mark>. [Read more here.](https://www.terraform.io/docs/providers/azuread/d/service_principal.html)
+<mark><em>Note:</em> If you're running your Terraform plan using a service principal, make sure it has the necessary permissions to read applications from Azure AD</mark>. [Read more here.](https://www.terraform.io/docs/providers/azuread/d/service_principal.html)
 
 ![](/assets/uploads/azuread-applications.png "Granting permission to service principal running Terraform")
 
