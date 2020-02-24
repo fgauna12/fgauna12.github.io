@@ -11,6 +11,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'jemoji'
 
+gem 'rouge'
+
 group :jekyll_plugins do
   gem 'jekyll-paginate'
   gem 'jekyll-tagsgenerator'
