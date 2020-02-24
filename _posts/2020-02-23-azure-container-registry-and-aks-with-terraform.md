@@ -85,9 +85,9 @@ data "azuread_service_principal" "aks_principal" {
 }
 ```
 
-<mark><em>Note:</em> If you're running your Terraform plan using a service principal, make sure it has the necessary permissions to read applications from Azure AD</mark>. [Read more here.](https://www.terraform.io/docs/providers/azuread/d/service_principal.html)
+<mark><em>Note:</em> If you're running your Terraform plan using a service principal, make sure it has the necessary permissions to read applications from Azure AD</mark>. 
 
-![](/assets/uploads/azuread-applications.png "Granting permission to service principal running Terraform")
+[Read more here](https://gaunacode.com/azure-ad-permissions-to-read-service-principals) on how to grant permissions the necessary permissions to the service principal to Azure AD.
 
 Then you can create a role-assignment on the container registry for the built-in role of `AcrPull`.
 
