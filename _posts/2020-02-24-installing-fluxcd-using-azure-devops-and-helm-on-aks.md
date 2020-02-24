@@ -30,9 +30,9 @@ Step zero, you'll want to ensure that the running agent has Helm 3 installed.
     helmVersionToInstall: 'latest'
 ```
 
-#### The prep
+#### The Prep
 
-First, you'll want to use the Azure CLI task (`AzureCLI@). We'll be using this to manually connect to the AKS cluster to issue `kubectl` and `helm` commands from the script. 
+First, you'll want to use the Azure CLI task (`AzureCLI@2`). We'll be using this to manually connect to the AKS cluster to issue `kubectl` and `helm` commands from the script. 
 
 ``` yaml
 - task: AzureCLI@2
