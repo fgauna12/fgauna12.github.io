@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Installing fluxcd using Azure DevOps and Helm on AKS
+title: Installing Flux using Azure DevOps and Helm on AKS
 tags:
   - devops
   - kubernetes
