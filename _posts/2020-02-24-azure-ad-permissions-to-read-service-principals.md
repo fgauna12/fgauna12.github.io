@@ -19,11 +19,11 @@ comments: false
 
 The Terraform documentation also warns you that your service principal will need additional rights to be able to read from Active Directory.
 
-![](/assets/uploads/2020-02-23_20-45-52.png#center "Terraform documentation warning")
+{% include image-caption.html imageurl="/assets/uploads/2020-02-23_20-45-52.png#center" title="Terraform documentation warning" caption="From Terraform docs" %}
 
 Otherwise, this would happen.
 
-![](/assets/uploads/2020-02-23_20-48-47.png#center "Sample error message")
+![](/assets/uploads/2020-02-23_20-48-47.png#wide"Sample error message")
 
 ```
 Error: Error listing Service Principals: graphrbac.ServicePrincipalsClient#List: Failure responding to request: StatusCode=403 -- Original Error: autorest/azure: Service returned an error. Status=403 Code="Unknown" Message="Unknown service error" Details=[{"odata.error":{"code":"Authorization_RequestDenied","date":"2020-02-23T05:10:39","message":{"lang":"en","value":"Insufficient privileges to complete the operation."},"requestId":"bla blah"}}]
