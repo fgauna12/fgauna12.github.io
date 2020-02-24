@@ -96,7 +96,9 @@ echo "##vso[task.setvariable variable=Staging.Flux.SshPublicKey;issecret=true]$S
 
 ```
 
-That's it! As shown above, I am also assigning the public ssh key to a pipeline variable. This later allows me to configure GitHub with a new deploy key for the repo being watched.
+That's it! 
+
+As shown above, I am also assigning the public ssh key to a pipeline variable. This later allows me to configure GitHub with a new deploy key for the repo being watched.
 
 ### By the way
 
