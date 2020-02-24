@@ -9,7 +9,9 @@ featured: false
 hidden: false
 comments: false
 ---
-[Yesterday](https://gaunacode.com/azure-container-registry-and-aks-with-terraform), I wrote a guide on configuring an AKS cluster to pull down images from a private Azure Container Registry. I demonstrated this using Terraform. If you're like me, you'll want to run any automation using a pipeline so that there's no chance for manual mistakes. The problem: you'll need a service principal and there's a high chance service principal won't have enough permissions to interact with Azure AD.
+[Yesterday](https://gaunacode.com/azure-container-registry-and-aks-with-terraform), I wrote a guide on configuring an AKS cluster to pull down images from a private Azure Container Registry. I demonstrated this using Terraform. If you're like me, you'll want to run any automation using a pipeline so that there's no chance for manual mistakes. 
+
+**The problem**: you'll need a service principal and there's a high chance service principal won't have enough permissions to interact with Azure AD.
 
 <!--more-->
 
@@ -45,4 +47,4 @@ Out of the box, much like guest users in Azure AD, service principals can't list
 
 If you're looking to create service principals (i.e. app registrations), then you can also add this service principal to the **Application Administrator** group.
 
-![](/assets/uploads/2020-02-23_20-39-03.png "Application administrator")
+![](/assets/uploads/2020-02-23_20-39-03.png#wide "Application administrator")
