@@ -24,11 +24,11 @@ Here's the [official documentation](https://docs.fluxcd.io/en/1.18.0/tutorials/g
 
 Step zero, you'll want to ensure that the running agent has Helm 3 installed.
 
-{% highlight yaml %}
+``` yaml
 - task: HelmInstaller@1
   inputs:
     helmVersionToInstall: 'latest'
-{% endhighlight %}
+```
 
 #### The Prep
 
