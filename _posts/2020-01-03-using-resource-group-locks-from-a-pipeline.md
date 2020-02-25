@@ -19,7 +19,7 @@ After you have a service connection using a service principal with Owner rights,
 
 Here's what it can look like: 
 
-<pre><code class="language-json">
+``` json
 {
     "type": "Microsoft.Authorization/locks",
     "apiVersion": "2016-09-01",
@@ -33,7 +33,7 @@ Here's what it can look like:
         "notes": "Resource group is readonly"
     }
 }
-</code></pre>
+```
 
 Once you are applying the resource group lock, you'll also want to remove any existing locks prior to deployment because otherwise your deployment will fail. You can do this via Azure Powershell or Azure CLI. Using the CLI it's very simple: `az group lock delete -g myresourcegroup -n readonly`. Just notice how the name of the lock is `readonly` and it's used in both the creation and deletion. 
 
@@ -47,7 +47,7 @@ So from your pipeline, the flow would be:
 
 Using YAML and an ARM template, it could look like this:
 
-<pre><code class="language-yaml">
+``` yaml
 - task: AzureCLI@2
   displayName: "Delete resource group lock"
   inputs:
@@ -70,6 +70,6 @@ Using YAML and an ARM template, it could look like this:
                         -hostingPlanName azapp-codecampster-$(Environment)-001-sp
                         -fullImageTag $(FullImageTag)"
     deploymentMode: 'Incremental'
-</code></pre>
+```
 
 You can see the full pipeline example [here](https://github.com/onetug/Codecampster/blob/master/pipelines/main.yml)
