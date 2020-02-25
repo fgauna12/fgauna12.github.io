@@ -20,7 +20,7 @@ You also want to ensure you have an environment variable `AzureWebJobsEnv` with 
 
 Don't forget, to ensure that you have the necessary code to initialize any extensions that you might be using through the `Microsoft.Azure.WebJobs.Extensions` package. For example, the following is an example of what I had to use in order to configure the `TimerTrigger`.
 
-<pre><code class="language-csharp">
+``` csharp
 var config = new JobHostConfiguration();
             
 if (config.IsDevelopment)
@@ -34,7 +34,7 @@ config.UseTimers();
 var host = new JobHost(config);
 // The following code ensures that the WebJob will be running continuously
 host.RunAndBlock();
-</code></pre>
+```
 
 Notice how in _development mode_ you can also set the `config.Singleton.ListenerLockPeriod` to 15 seconds. This is a tip per the wiki shared above.
 
