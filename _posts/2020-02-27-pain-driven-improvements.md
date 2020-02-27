@@ -34,7 +34,7 @@ Today, my co-worker had a trouble finding a post that he found useful. I've had 
 
 Using Google operators, I can limit the search to only my blog. 
 
-Now, I have a lot more content and I have a lot more visitors, I can't assume that they know about this feature in Google.
-This is causing enough pain that I feel comfortable improving it. I need it.
+Now, I have a lot more content and I have a lot more visitors. I can't assume that they know about this feature in Google.
+This is causing enough pain that I feel comfortable improving it. It's going to be useful. It will provide value.
 
 <mark>What about in your current processes or infrastructure is truly causing pain? What are you trying to preempt?</mark>
