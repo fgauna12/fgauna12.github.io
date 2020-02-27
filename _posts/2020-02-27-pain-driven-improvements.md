@@ -10,9 +10,7 @@ comments: false
 ---
 As of today, my blog does not have a search feature. I've been blogging daily and so far I've written 90 posts. I can't tell you what all they were and I find myself referring back to them. I read them for myself, to share to other people, or for continuing an idea. 
 
-Today my co-worker texted me: 
-
-"You need a search feature on your blog. I can't find a post."
+Today my co-worker texted me: "You need a search feature on your blog. I can't find a post."
 
 <!--more-->
 
