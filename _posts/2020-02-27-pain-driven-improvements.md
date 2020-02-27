@@ -16,9 +16,7 @@ Today my co-worker texted me:
 
 <!--more-->
 
-> Pain Driven Development, or PDD, is the practice of writing software in such a way that you only "fix" problems when they are causing pain, rather than trying to preempt every possible issue.
-
-<cite>― Steve Smith (@ardalis) ―</cite>
+> Pain Driven Development, or PDD, is the practice of writing software in such a way that you only "fix" problems when they are causing pain, rather than trying to preempt every possible issue. <cite>― Steve Smith (@ardalis) ―</cite>
 
 I can't tell you how many times in the last 3 years I've thought about adding a search feature on my blog. I've researched over and over. Then, I wouldn't get around to implementing it. I might have added it to a backlog and prioritized it. Months later, the idea would come back to my head and I would research it again. Maybe I would take take a bit more action on it. 
 
@@ -37,4 +35,4 @@ Using Google operators, I can limit the search to only my blog.
 Now, I have a lot more content and I have a lot more visitors. I can't assume that they know about this feature in Google.
 This is causing enough pain that I feel comfortable improving it. It's going to be useful. It will provide value.
 
-<mark>What about in your current processes or infrastructure is truly causing pain? What are you trying to preempt?</mark>
+<mark>What about in your current processes or infrastructure is truly causing pain? And what are you trying to preempt?</mark>
