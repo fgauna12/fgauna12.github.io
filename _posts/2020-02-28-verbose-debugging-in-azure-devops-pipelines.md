@@ -11,8 +11,6 @@ comments: false
 ---
 You might already know about the easy button. The diagnostics option when you manually trigger a pipeline. Are you debugging a pesky pipeline and tired of manually triggering it?
 
-Here's a quick tip.
-
 <!--more-->
 
 ### Background
@@ -25,8 +23,6 @@ Then from the pipeline output, you can see more verbose logs in pretty colors.
 
 ![](/assets/uploads/2020-02-28_18-21-28.png)
 
-\
-\
 Again, but it can be quite tedious when troubleshooting something intensely.
 
 ### Permanently
