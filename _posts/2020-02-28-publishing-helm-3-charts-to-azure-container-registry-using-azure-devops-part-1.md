@@ -24,7 +24,7 @@ In Helm 2, you needed to install Tiller on your Kubernetes cluster in order to d
 
 In Helm 3, there's no more Tiller. That's great! Makes things much simpler. We only need the client side tool. 
 
-There's also a new standard for uploading artifacts to a container registry other than containers. In cloud native applications, applications are usually more involved than just container images. There's Helm charts, there's Terraform, maybe ARM, and other file-based artifacts. 
+There's also a new standard for uploading artifacts to a container registry other than containers. The standard is Open Container Initiative (OCI) artifacts. In cloud native applications, applications are usually more involved than just container images. There's Helm charts, there's Terraform, maybe ARM, and other file-based artifacts. 
 
 If you're curious about the background, there's this [great blog post](https://stevelasker.blog/2019/01/25/cloud-native-artifact-stores-evolve-from-container-registries/) from a Microsoft engineer.
 
@@ -36,16 +36,16 @@ Also, this blog post has been inspired by [this doc](https://docs.microsoft.com/
 * A service connection to an Azure Subscription
 * A service connection to the container registry
 
-First, you want to install OCI.
+First, you want to install [Oras](https://github.com/deislabs/oras), a CLI tool for managing OCI artifacts.
 
 ```yaml
 - bash: |
-        set -e
-        curl -LO https://github.com/deislabs/oras/releases/download/v0.8.1/oras_0.8.1_linux_amd64.tar.gz
-        mkdir -p oras-install/
-        tar -zxf oras_0.8.1_*.tar.gz -C oras-install/
-        sudo mv oras-install/oras /usr/local/bin/
-        sudo rm -rf oras_0.8.1_*.tar.gz oras-install/
+    set -e
+    curl -LO https://github.com/deislabs/oras/releases/download/v0.8.1/oras_0.8.1_linux_amd64.tar.gz
+    mkdir -p oras-install/
+    tar -zxf oras_0.8.1_*.tar.gz -C oras-install/
+    sudo mv oras-install/oras /usr/local/bin/
+    sudo rm -rf oras_0.8.1_*.tar.gz oras-install/
 ```
 
 The first line `set -e` forces the Bash script to fail the build in the event of an error. 
@@ -54,26 +54,26 @@ Once Oras is installed, you want to authenticate against the Azure Container Reg
 
 ```yaml
 - task: AzureCLI@2
-      displayName: Login to ACR
-      inputs:
-        azureSubscription: "$(Azure.ServiceConnection)"
-        scriptType: bash
-        scriptLocation: inlineScript
-        inlineScript: |
-            az --version
-            az acr login --name $(ACR.Name)
+  displayName: Login to ACR
+  inputs:
+    azureSubscription: "$(Azure.ServiceConnection)"
+    scriptType: bash
+    scriptLocation: inlineScript
+    inlineScript: |
+        az --version
+        az acr login --name $(ACR.Name)
 ```
 
 Now, that you have Azure CLI installed, you are ready to issue commands to upload your OCI artifacts. I'm going to bash to showcase how to upload a dummy file.
 
 ```yaml
 - bash: |
-        echo "Here is an artifact!" > artifact.txt
+    echo "Here is an artifact!" > artifact.txt
 
-        oras push $(ACR.Name).azurecr.io/samples/artifact:$(Build.BuildNumber) \
-          --manifest-config /dev/null:application/vnd.unknown.config.v1+json \
-          ./artifact.txt:application/vnd.unknown.layer.v1+txt
-      displayName: "Uploading dummy artifact"
+    oras push $(ACR.Name).azurecr.io/samples/artifact:$(Build.BuildNumber) \
+      --manifest-config /dev/null:application/vnd.unknown.config.v1+json \
+      ./artifact.txt:application/vnd.unknown.layer.v1+txt
+  displayName: "Uploading dummy artifact"
 ```
 
 This bash script creates a dummy file called `artifact.txt`. Then it pushes it to a new repository on ACR. Most importantly, we're able to tag it with the `Build.BuildNumber` from the current build.
