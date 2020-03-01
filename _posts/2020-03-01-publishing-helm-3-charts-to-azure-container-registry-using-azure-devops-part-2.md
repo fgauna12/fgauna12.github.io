@@ -82,8 +82,8 @@ Lastly, save the chart and push it using Bash.
 Notice how it's also pushing the the chart to a `charts/realworld-backend` repository on ACR.
 
 ```
-The push refers to repository [realworld.azurecr.io/charts/realworld-backend]
-ref:     realworld.azurecr.io/charts/realworld-backend:latest
+The push refers to repository [yourregistry.azurecr.io/charts/realworld-backend]
+ref:     yourregistry.azurecr.io/charts/realworld-backend:latest
 digest:  asdfsdfasdfsadfasdfasdfasdfasdfasdfasdfsdfsdfsdfsdfsdf
 size:    3.2 KiB
 name:    realworld-backend
