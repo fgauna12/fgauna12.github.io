@@ -32,7 +32,7 @@ Microsoft already has [good documentation](https://docs.microsoft.com/en-us/azur
 
 Helm 3 support for Azure Container Registry is still a preview feature. Even the support from the Helm CLI is still experimental.
 
-## Publishing using Helm
+## The main way
 
 First, define an environment variable of `HELM_EXPERIMENTAL_OCI`. Any pipeline variable gets mapped to an environment variable on the agent. 
 
