@@ -20,7 +20,7 @@ In part 1, I covered the what's happening underneath the covers with the usage o
 
 Microsoft recommends that when using Helm 3 charts, that you use the native `helm chart` commands so to manage the charts as OCI artifacts. 
 
-Microsoft already has [good documentation](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-helm-repos) on how to do this. 
+Microsoft already has [good documentation](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-helm-repos) on how to do this using just terminal commands. This guide is more geared towards applying it with Azure DevOps.
 
 ### Pre-Requisites
 
@@ -34,7 +34,9 @@ Helm 3 support for Azure Container Registry is still a preview feature. Even the
 
 ## Publishing using Helm
 
-First, define an environment variable of `HELM_EXPERIMENTAL_OCI`. Any pipeline variable gets mapped to an environment variable on the agent. So just define one like so:
+First, define an environment variable of `HELM_EXPERIMENTAL_OCI`. Any pipeline variable gets mapped to an environment variable on the agent. 
+
+So just define one like so:
 
 ```yaml
 variables:
@@ -89,7 +91,7 @@ version: 0.1.0
 latest: pushed to remote (1 layer, 3.2 KiB total)
 ```
 
-![](/assets/uploads/2020-02-29_23-05-58.png "Uploaded Chart to Container Registry")
+![](/assets/uploads/2020-02-29_23-05-58.png#wide "Uploaded Chart to Container Registry")
 
 ## Open Issue
 
