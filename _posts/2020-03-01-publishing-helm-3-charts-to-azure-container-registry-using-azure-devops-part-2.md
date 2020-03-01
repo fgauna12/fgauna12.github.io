@@ -30,7 +30,7 @@ Microsoft already has [good documentation](https://docs.microsoft.com/en-us/azur
 
 ### Disclosure
 
-Helm 3 support for Azure Container Registry is still a preview feature. Even the support from the Helm CLI is still experimental.
+Helm 3 support for Azure Container Registry is still a <mark>preview feature</mark>. Even the support from the Helm CLI is still experimental.
 
 ## The main way
 
