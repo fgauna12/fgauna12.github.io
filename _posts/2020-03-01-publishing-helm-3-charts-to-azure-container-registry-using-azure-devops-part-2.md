@@ -81,17 +81,45 @@ Lastly, save the chart and push it using Bash.
 
 Notice how it's also pushing the the chart to a `charts/realworld-backend` repository on ACR.
 
-```
-The push refers to repository [yourregistry.azurecr.io/charts/realworld-backend]
-ref:     yourregistry.azurecr.io/charts/realworld-backend:latest
-digest:  asdfsdfasdfsadfasdfasdfasdfasdfasdfasdfsdfsdfsdfsdfsdf
-size:    3.2 KiB
-name:    realworld-backend
-version: 0.1.0
-latest: pushed to remote (1 layer, 3.2 KiB total)
-```
-
 ![](/assets/uploads/2020-02-29_23-05-58.png#wide "Uploaded Chart to Container Registry")
+
+### Putting it all together
+
+``` yaml
+trigger:
+- master
+
+pr: none
+
+variables:
+  HELM_EXPERIMENTAL_OCI: 1
+  ACR.Name: '[Your azure container registry name]'
+  Azure.ServiceConnection: '[your azure service connection]'
+
+stages:
+- stage: build
+  displayName: Build and Push
+  jobs:  
+  - job: job_helm
+    displayName: Helm Publish
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: AzureCLI@2
+      displayName: Login to Azure Container Registry
+      inputs:
+        azureSubscription: "$(Azure.ServiceConnection)"
+        scriptType: bash
+        scriptLocation: inlineScript
+        inlineScript: |
+          az acr login --name $(ACR.Name)
+    - task: HelmInstaller@1
+      inputs:
+        helmVersionToInstall: 'latest'
+    - bash: |
+        helm chart save ./k8s/realworld-backend/ $(ACR.Name).azurecr.io/charts/realworld-backend:latest
+        helm chart push $(ACR.Name).azurecr.io/charts/realworld-backend:latest
+```
 
 ## Open Issue
 
