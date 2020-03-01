@@ -163,6 +163,10 @@ First, we package the Helm chart using Helm 2 commands. We also override the app
 
 Secondly, we move the packaged helm chart to the staging directory. It could be useful to publish it as a build artifact. 
 
-Lastly, we push the Helm chart using the Azure CLI ACR Helm commands. 
+Lastly, we push the Helm chart using the Azure CLI ACR Helm commands. And, we're done.
 
-Note
+
+
+So, although it looks easy, you might run into some snags because of the preview nature. \
+\
+Best of luck.
