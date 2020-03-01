@@ -131,6 +131,8 @@ Error: failed to authorize: failed to fetch anonymous token: unexpected status: 
 
 ![](/assets/uploads/2020-02-29_23-12-19.png "Helm chart push issue")
 
+I pretty much ruled out it was not an authentication issue by replicating the issue using my user account on my Linux workstation. It worked on my Windows workstation.
+
 ## Fallback
 
 If you're running into the same issues as above, you can try the legacy approach. Instead of issuing `helm chart` commands, we'll use the `az acr helm` commands.
