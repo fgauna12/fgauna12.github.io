@@ -85,7 +85,7 @@ Notice how it's also pushing the the chart to a `charts/realworld-backend` repos
 
 ### Putting it all together
 
-``` yaml
+```yaml
 trigger:
 - master
 
