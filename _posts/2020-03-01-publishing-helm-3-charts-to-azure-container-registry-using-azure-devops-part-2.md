@@ -36,8 +36,6 @@ Helm 3 support for Azure Container Registry is still a <mark>preview feature</ma
 
 First, define an environment variable of `HELM_EXPERIMENTAL_OCI`. Any pipeline variable gets mapped to an environment variable on the agent. 
 
-So just define one like so:
-
 ```yaml
 variables:
   HELM_EXPERIMENTAL_OCI: 1
