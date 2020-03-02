@@ -70,7 +70,7 @@ We **must** provide:
 1. The repo name. 
 2. The client id of a service principal that has at least `AcrPull` rights to your ACR
 3. The client secret of that service principal
-4. The url of your ACR Helm endpoint. <mark>It must end with /</mark>
+4. The url of your ACR Helm endpoint. <mark>It must end with a slash.</mark>
 
 Thankfully, the Helm chart to install the Helm operator supports this.
 
