@@ -10,11 +10,29 @@ featured: false
 hidden: false
 comments: false
 ---
-The way Flux works, is it watches a Git repository containing Kubernetes manifests and it applies changes to the cluster. Realistically, you will most likely also use Helm charts. When using Flux, you can install the Helm operator so that you can leverage a Custom Resource Definition to declaratively state what Helm charts should be installed. 
-
-This is a quick guide on how to configure Flux so that it applies custom charts uploaded to an Azure Container Registry.
+Flux watches a Git repository containing Kubernetes manifests and it applies changes to the cluster. Realistically, you will also use Helm charts. You can install the Flux Helm operator so that you can declare what Helm charts should be installed on the cluster.
 
 <!--more--> 
+
+For example, install the Helm chart `realworld-backend` version 0.1.0 that is stored in my Azure container Registry.
+
+```yaml
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: realworld-backend
+  namespace: realworld
+spec:
+  releaseName: realworld-backend
+  chart:
+    repository: https://[your registry].azurecr.io/helm/v1/repo/
+    name: realworld-backend
+    version: 0.1.0
+  values:
+    image:
+      repository: [your registry].azurecr.io/backend/realworld-backend
+      tag: 20200301.5
+```
 
 ### Background
 
@@ -22,7 +40,7 @@ I wrote a [blog post](https://gaunacode.com/installing-fluxcd-using-azure-devops
 
 Also, yesterday I wrote a guide on how to publish a Helm chart to an Azure Container Registry. See [Part 1](https://gaunacode.com/publishing-helm-3-charts-to-azure-container-registry-using-azure-devops-part-1) and [Part 2](https://gaunacode.com/publishing-helm-3-charts-to-azure-container-registry-using-azure-devops-part-2).
 
-## The guide
+## Configuring Flux
 
 Here's the thing. It's a bit quirky. Thankfully, other people have ran into this before. With luck, you will too.
 
@@ -49,12 +67,12 @@ repositories:
 
 We **must** provide:
 
-* The repo name. 
-* The client id of a service principal that has at least `AcrPull` rights to your ACR
-* The client secret of that service principal
-* The url of your ACR Helm endpoint. <mark>It must end with /</mark>
+1. The repo name. 
+2. The client id of a service principal that has at least `AcrPull` rights to your ACR
+3. The client secret of that service principal
+4. The url of your ACR Helm endpoint. <mark>It must end with /</mark>
 
-Thankfully the Helm chart to install the Helm operator supports this.
+Thankfully, the Helm chart to install the Helm operator supports this.
 
 This is are the [possible values](https://github.com/fluxcd/helm-operator/blob/master/chart/helm-operator/values.yaml) for Flux's Helm chart operator.
 
@@ -96,36 +114,17 @@ That's it, this should work. I am assuming you already have a service principal 
 
 Now, from your manifests repo, you should be able to declare custom Helm charts that reside in your very own Azure Container Registry.
 
-``` yaml
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  name: realworld-backend
-  namespace: realworld
-spec:
-  releaseName: realworld-backend
-  chart:
-    repository: https://[your registry].azurecr.io/helm/v1/repo/
-    name: realworld-backend
-    version: 0.1.0
-  values:
-    image:
-      repository: [your registry].azurecr.io/backend/realworld-backend
-      tag: 20200301.5
-```
-
 Then Flux will ensure this Helm chart with this specific version is on the cluster.
 
 **Tada!**
 
 #### Service Principal
 
-If you don't have a service principal, you can create one using the Azure CLI.
-This Microsoft [docs page](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-auth-service-principal#create-a-service-principal) can be very useful to you.
+If you don't have a service principal, you can create one using the Azure CLI. This Microsoft [docs page](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-auth-service-principal#create-a-service-principal) can be very useful to you.
 
 Based on the Microsoft docs. Here's a script. Your `--role` could be just `acrpull` since Flux will only need to pull Helm charts down.
 
-``` bash
+```bash
 #!/bin/bash
 
 # Modify for your environment.
