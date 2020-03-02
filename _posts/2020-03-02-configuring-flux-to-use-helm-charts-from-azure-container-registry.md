@@ -110,7 +110,11 @@ First, we set `configureRepositories.enable` to true.
 
 Then we specify the `name`, `url`, `username`, and `password` of the repository configuration. We use an array notation because there can be multiple repository configurations.
 
-That's it, this should work. I am assuming you already have a service principal you can use to pull the helm charts from the container registry. If you don't, see the section below.
+That's it. Install/upgrade Flux's Helm operator.
+
+Flux should have the necessary information to authenticate against Azure Container Registry to pull down any Helm charts you might have stored there.
+
+I am assuming you already have a service principal to plug in. It must have at least `AcrPull` access to the registry. **If you don't have a service principal, see the section below.**
 
 Now, from your manifests repo, you should be able to declare custom Helm charts that reside in your very own Azure Container Registry.
 
