@@ -122,4 +122,4 @@ I discovered the characteristics of the code. Here's the kicker. I ended up with
 
 I working **down** from the testing pyramid. First, understood vaguely how the app worked and how the module came into play. Then, I discovered the characteristics and ended up with some integration tests. Now, I had test coverage to help me refactor the code underneath so that it's more testable. Lastly, I could add unit tests.
 
-![Testing Pyramid](assets/TestingPyramid.png#center)
+![Testing Pyramid](assets/TestingPyramid.png#right)
