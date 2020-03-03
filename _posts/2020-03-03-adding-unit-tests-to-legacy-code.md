@@ -112,7 +112,7 @@ For example, I asked
 
 * What would happen if I sent no arguments?
 * What would happen if I sent invalid arguments?
-* What does the data coming back look like?
+* What does the response look like?
 * Is the data coming back similar tie into other methods in this module?
 * Let me watch the AWS console while I invoke this module with these arguments
 
