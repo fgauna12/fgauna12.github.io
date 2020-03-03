@@ -21,7 +21,7 @@ Think about it this way. When creating unit, integration, functional tests you a
 
 [Characterization tests](https://michaelfeathers.silvrback.com/characterization-testing) is a way to apply more of the scientific method to discover the "characteristics" of some legacy code that you don't yet understand. 
 
-First, you are going to have to figure out how to execute the code path you're looking to discover. Your goal should to iterate quickly and have a quick feedback loop so that you design many small experiments. 
+First, you are going to have to figure out how to execute the code path you're looking to discover. Your goal should to iterate quickly and have a quick feedback loop so that you design many small experiments to test your small hypothesis. 
 
 Then, after several iterations and having formed many hypothesis, you will have effectively found characteristics and designed integration tests for them. <mark>You will end up with <em>some code coverage</em> to which you can start to refactor and start creating the first unit tests.</mark>
 
