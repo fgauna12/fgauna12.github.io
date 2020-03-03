@@ -80,7 +80,7 @@ Once I got it to work without blowing up, I learned:
 * How the module needs to be constructed
 * What the first results looked like
 
-From observing the first results (since I was outputting them to the console), I also learned that `IsSuccess` was always **false**. After looking at the implementation, I traced the code path and yes... all the code paths never set that flag to true. 
+From observing the first results (since I was outputting them to the console), I also learned that `IsSuccess` was always **false**. After looking at the implementation, I traced the code path and yes... all the code paths were never set that flag to true. 
 
 Great. Critical lesson of characterization tests. <mark>Resist the urge to fix bugs in the legacy code.</mark> Why? Because users might be used to this bug and if you tackle this work, it would be *unplanned work*. The code is already in production and its fix should be prioritized and tested accordingly. Not on the fly like this.
 
