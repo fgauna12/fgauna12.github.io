@@ -55,7 +55,7 @@ Even if I had the time, I would have to re-write the entire module using Azure a
 
 And.. the result would be a **huge** pull request. Large batches and a lot of WIP are [productivity killers](https://gaunacode.com/wip-the-silent-killer).
 
-So, I wrote some characterization tests. I iterated quickly through a unit test runner. In the end, they happened to look like integration tests but of coming up with them was different. 
+So, I wrote some characterization tests. I iterated quickly through a unit test runner. In the end, they happened to look like integration tests but of creating them was different.
 
 First, attempt to invoke the module.
 
