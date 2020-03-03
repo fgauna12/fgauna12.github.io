@@ -57,7 +57,7 @@ And.. the result would be a **huge** pull request. Large batches and a lot of WI
 
 So, I wrote some characterization tests. I iterated quickly through a unit test runner. In the end, they happened to look like integration tests but of creating them was different.
 
-First, attempt to invoke the module.
+First, I attempted to invoke the module.
 
 ```csharp
 [TestClass]
