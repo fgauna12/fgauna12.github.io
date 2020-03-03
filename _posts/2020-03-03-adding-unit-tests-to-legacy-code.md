@@ -114,7 +114,7 @@ For example, I asked
 * What would happen if I sent invalid arguments?
 * What does the response look like?
 * Is the data coming back similar tie into other methods in this module?
-* Let me watch the AWS console while I invoke this module with these arguments
+* Let me watch the AWS console while I invoke this module with these arguments.
 
 In the end, I ended up with a suite of test cases of characteristics I learned about the code. 
 
