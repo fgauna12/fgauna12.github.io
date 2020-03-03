@@ -33,7 +33,7 @@ I recently worked on a project that had a module that spun up compute on AWS usi
 public class SpinUpCompute
 {
     ...
-    //many args here
+    //many complex properties here
 }
 
 public class SpinUpComputeResponse 
