@@ -9,13 +9,21 @@ featured: false
 hidden: false
 comments: false
 ---
-Let's face it. Unit tests can be rare. So, what are your choices to start introducing unit tests? Well, yes... you *could* wait until a rewrite of the app. Re-build the app the "right" way. The problem with that is that you until then, you won't get a chance to polish your skills. The other way is to use *characterization tests*.
+Let's face it. Unit tests are rare. What are your choices for adding unit tests to legacy code that doesn't have any? 
+
+Well, yes... you *could* wait until a rewrite of the app. The problem with that is that you'll likely not get better at unit tests. Also, the time might never come when you rewrite the app. 
+
+Another way is to create *characterization tests*.
 
 <!--more--> 
 
-Think about it this way. When creating unit, integration, functional tests you are testing that the code you wrote is working as you expected it to work. You *wrote* the code and now there's automated tests being created as part of the process (or soon after). 
+Think about it this way. When creating unit, integration, functional tests you are testing that code and have some expectations on what it should do.  
 
-Characterization tests is a way to apply more of the scientific method to discover the "characteristics" of some legacy code that you don't yet understand. First, you are going to have to figure out how to execute the code path you're looking to discover. Your goal should to iterate quickly and have a quick feedback loop so that you design many small experiments. 
+Characterization tests is a way to apply more of the scientific method to discover the "characteristics" of some legacy code that you don't yet understand. 
+
+First, you are going to have to figure out how to execute the code path you're looking to discover. Your goal should to iterate quickly and have a quick feedback loop so that you design many small experiments. 
+
+Then, after several iterations and having formed many hypothesis, you will have effectively found characteristics and designed integration tests for them. <mark>You will end up with <em>some code coverage</em> to which you can start to refactor and start creating the first unit tests.</mark>
 
 ## A case study
 
