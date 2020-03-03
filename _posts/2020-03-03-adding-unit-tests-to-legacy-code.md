@@ -120,6 +120,5 @@ In the end, I ended up with a suite of test cases of characteristics I learned a
 
 I discovered the characteristics of the code. Here's the kicker. I ended up with integration tests. <mark>Now that I had some test coverage, I could start doing small re-factorings to add unit tests.</mark>
 
-I working **down** from the testing pyramid. First, understood vaguely how the app worked and how the module came into play. Then, I discovered the characteristics and ended up with some integration tests. Now, I had test coverage to help me refactor the code underneath so that it's more testable. Lastly, I could add unit tests.
-
 ![Testing Pyramid](assets/TestingPyramid.png#right)
+I working **down** from the testing pyramid. First, understood vaguely how the app worked and how the module came into play. Then, I discovered the characteristics and ended up with some integration tests. Now, I had test coverage to help me refactor the code underneath so that it's more testable. Lastly, I could add unit tests.
