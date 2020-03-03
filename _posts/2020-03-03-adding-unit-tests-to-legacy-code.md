@@ -19,7 +19,7 @@ Another way is to create *characterization tests*.
 
 Think about it this way. When creating unit, integration, functional tests you are testing that code and have some expectations on what it should do.  
 
-Characterization tests is a way to apply more of the scientific method to discover the "characteristics" of some legacy code that you don't yet understand. 
+[Characterization tests](https://michaelfeathers.silvrback.com/characterization-testing) is a way to apply more of the scientific method to discover the "characteristics" of some legacy code that you don't yet understand. 
 
 First, you are going to have to figure out how to execute the code path you're looking to discover. Your goal should to iterate quickly and have a quick feedback loop so that you design many small experiments. 
 
@@ -51,7 +51,9 @@ public class AwsModule {
 
 There were many moving parts that interacted with this module. And, I yet did not understand how the other moving parts worked. So, I did not really understand how to test this module effectively with the user interface.
 
-Even if I had the time, I would have to re-write the entire module using Azure and re-run my manual integration tests. It would be a huge pull request. Large batches and a lot of WIP are productivity killers.
+Even if I had the time, I would have to re-write the entire module using Azure and re-run my manual integration tests to test again using the user-interface. 
+
+And.. it would be a **huge** pull request. Large batches and a lot of WIP are [productivity killers](https://gaunacode.com/wip-the-silent-killer).
 
 So, I wrote some characterization tests. I iterated quickly through a unit test runner. In the end, they happened to look like integration tests but of coming up with them was different. 
 
