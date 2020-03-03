@@ -27,7 +27,7 @@ Then, after several iterations and having formed many hypothesis, you will have 
 
 ## A case study
 
-I recently worked on a project that had a module that spun up compute on AWS using EC2 instances. We were looking to rebuild this module so that it works with Azure Virtual Machine Scale Sets. The challenges were significant. No unit tests and the original developers that created this module no longer worked there. So we had to figure out how to translate this to Azure.
+I recently worked on a project that had a module that spun up compute on AWS using EC2 instances. We were looking to rebuild this module so it uses Azure Virtual Machine Scale Sets instead. The challenges were significant. No unit tests and the original developers that created this module no longer worked there. 
 
 ```csharp
 public class SpinUpCompute
