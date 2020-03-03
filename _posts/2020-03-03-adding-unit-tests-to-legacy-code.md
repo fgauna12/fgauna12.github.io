@@ -118,7 +118,7 @@ For example, I asked
 
 In the end, I ended up with a suite of test cases of characteristics I learned about the code. 
 
-Here's the kicker. I effectively discovered integration tests. <mark>Now that I had some test coverage, I could start doing small re-factorings to add unit tests.</mark>
+Here's the kicker. I effectively ended up with integration tests. <mark>Now that I had some test coverage, I could start doing small re-factorings to add unit tests.</mark>
 
 Effectively working **down** from the testing pyramid.
 
