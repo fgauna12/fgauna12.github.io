@@ -49,9 +49,7 @@ public class AwsModule {
 }
 ```
 
-The challenges were significant. First, there were many moving parts that interacted with this module.
-
-I yet did not understand how the other moving parts worked. So I did not really understand test this module effectively with the user interface
+There were many moving parts that interacted with this module. And, I yet did not understand how the other moving parts worked. So, I did not really understand how to test this module effectively with the user interface.
 
 Even if I had the time, I would have to re-write the entire module using Azure and re-run my manual integration tests. It would be a huge pull request. Large batches and a lot of WIP are productivity killers.
 
