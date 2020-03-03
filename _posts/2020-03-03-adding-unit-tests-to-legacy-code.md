@@ -53,7 +53,7 @@ There were many moving parts that interacted with this module. And, I yet did no
 
 Even if I had the time, I would have to re-write the entire module using Azure and re-run my manual test cases using the user-interface. 
 
-And.. it would be a **huge** pull request. Large batches and a lot of WIP are [productivity killers](https://gaunacode.com/wip-the-silent-killer).
+And.. the result would be a **huge** pull request. Large batches and a lot of WIP are [productivity killers](https://gaunacode.com/wip-the-silent-killer).
 
 So, I wrote some characterization tests. I iterated quickly through a unit test runner. In the end, they happened to look like integration tests but of coming up with them was different. 
 
