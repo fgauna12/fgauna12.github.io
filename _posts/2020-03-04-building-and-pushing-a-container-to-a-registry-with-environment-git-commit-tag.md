@@ -46,10 +46,10 @@ Stages support variable definitions as well, so it's just a matter of defining v
 
 Using this approach, define a `DockerTag` variable that is composed of another `Environment` variable and a pre-defined pipeline variable for the Git Commit Id.
 
-``` yaml
+```yaml
 variables: 
-    Environment: stg
-    DockerTag: "$(Environment)-$(Build.SourceVersion)"
+  Environment: stg
+  DockerTag: "$(Environment)-$(Build.SourceVersion)"
 ```
 
 So, putting it all together, looks like this:
