@@ -66,6 +66,25 @@ Then, you'll be ready to install Flux.
 
 #### Finally installing Flux
 
+First, create the flux namespace.
+
+``` bash
+kubectl apply -f flux.yaml
+```
+
+Where the contents of the `flux.yaml` file are
+
+``` yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name:  flux
+```
+
+With this approach, we can apply this configuration file and it won't fail if the namespace already exist.
+
+Next, use Helm to install Flux.
+
 ``` bash
 helm repo add fluxcd https://charts.fluxcd.io
 
