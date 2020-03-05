@@ -20,7 +20,7 @@ Similar to a previous [post](https://gaunacode.com/installing-fluxcd-using-azure
 
 ### Installing Linkerd
 
-Define some pipeline variables. We'll define a variable for the version of Linkerd we'll use.
+First, define a pipeline variable for the version of Linkerd to use.
 
 ```yaml
 variables:  
