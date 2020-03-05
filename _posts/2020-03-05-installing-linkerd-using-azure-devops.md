@@ -48,9 +48,9 @@ We will use instructions from the official [Microsoft docs](https://docs.microso
 
 The first line, `set -e`, will ensure that the pipeline fails when there's an error in the bash script.
 
-These steps will ensure that the Linkerd CLI is installed on the agent running the pipeline.
+The next steps ensure that the Linkerd CLI is installed on the agent running the pipeline. We'll use the Linkerd CLI to install Linkerd itself.
 
-Next, check to see if Linkerd is already installed. The reason for this is because we'll run some pre-installation checks if Linkerd is truly not installed on the cluster. We'll also install Linkerd if it's not already installed. Without checking that it's already installed, the pipeline would fail for clusters in which Linkerd exists.
+But first, check to see if Linkerd is already installed. The reason for this is because we'll run some pre-installation checks if Linkerd is truly not installed on the cluster. We'll also install Linkerd if it's not already installed. Without checking that it's already installed, the pipeline would fail for clusters in which Linkerd exists.
 
 To verify if it's installed, we'll check to see if there's a `linkerd` namespace using [jq](https://stedolan.github.io/jq/).
 
