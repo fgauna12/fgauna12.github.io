@@ -107,3 +107,5 @@ linkerd check
     linkerd check
   continueOnError: false
 ```
+
+That's it!
