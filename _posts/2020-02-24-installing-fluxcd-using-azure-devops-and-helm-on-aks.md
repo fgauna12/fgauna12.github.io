@@ -24,7 +24,7 @@ Here's the [official documentation](https://docs.fluxcd.io/en/1.18.0/tutorials/g
 
 Step zero, you'll want to ensure that the running agent has Helm 3 installed.
 
-``` yaml
+```yaml
 - task: HelmInstaller@1
   inputs:
     helmVersionToInstall: 'latest'
@@ -34,7 +34,7 @@ Step zero, you'll want to ensure that the running agent has Helm 3 installed.
 
 First, you'll want to use the Azure CLI task (`AzureCLI@2`). We'll be using this to manually connect to the AKS cluster to issue `kubectl` and `helm` commands from the script. 
 
-``` yaml
+```yaml
 - task: AzureCLI@2
   displayName: Install Fluxctl
   inputs:
@@ -50,13 +50,13 @@ First, you'll want to use the Azure CLI task (`AzureCLI@2`). We'll be using this
 
 Next, you'll want to install `fluxctl`.
 
-```bash 
+```bash
 sudo snap install fluxctl --classic
 ```
 
 Then, connect to the AKS cluster. If you're running from an agent that's already has working `kubectl` commands, then you won't need this step. The purpose of the following command is to be able to use `kubectl` and `helm` command line.
 
-``` bash
+```bash
 az aks get-credentials -n $CLUSTER_NAME -g $RESOURCE_GROUP_NAME
 ```
 
@@ -68,13 +68,13 @@ Then, you'll be ready to install Flux.
 
 First, create the flux namespace.
 
-``` bash
+```bash
 kubectl apply -f flux.yaml
 ```
 
 Where the contents of the `flux.yaml` file are
 
-``` yaml
+```yaml
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -85,7 +85,7 @@ With this approach, we can apply this configuration file and it won't fail if th
 
 Next, use Helm to install Flux.
 
-``` bash
+```bash
 helm repo add fluxcd https://charts.fluxcd.io
 
 helm upgrade -i flux fluxcd/flux \
@@ -97,7 +97,7 @@ helm upgrade -i flux fluxcd/flux \
 
 Next, install the helm operator.
 
-``` bash
+```bash
 helm upgrade -i helm-operator fluxcd/helm-operator \
         --set git.ssh.secretName=flux-git-deploy \
         --namespace flux \
@@ -108,11 +108,9 @@ Since I am not using Helm v2, I am specific about only using Helm 3 by specifyin
 
 Lastly, you'll want to get the SSH public key the flux operator so that it can interact with the Git repository. For this, we'll use `fluxctl` to get the "identity."
 
-``` bash
-
+```bash
 STAGING_SSH_PUBLIC_KEY=$(fluxctl identity --k8s-fwd-ns flux)
 echo "##vso[task.setvariable variable=Staging.Flux.SshPublicKey;issecret=true]$STAGING_SSH_PUBLIC_KEY"
-
 ```
 
 That's it! 
@@ -123,7 +121,7 @@ As shown above, I am also assigning the public ssh key to a pipeline variable. T
 
 Here's what it looks like all together
 
-``` bash
+```bash
 - task: AzureCLI@2
   displayName: Install Fluxctl
   inputs:
@@ -141,6 +139,9 @@ Here's what it looks like all together
 
       echo "acquiring credentials for cluster"
       az aks get-credentials -n $CLUSTER_NAME -g $RESOURCE_GROUP_NAME
+
+      echo "ensuring flux namespace exists"
+      kubectl apply -f k8s/flux.yml
 
       echo "installing flux. adding fluxcd helm repo"
       helm repo add fluxcd https://charts.fluxcd.io
