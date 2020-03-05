@@ -46,7 +46,7 @@ We will use instructions from the official [Microsoft docs](https://docs.microso
     sudo chmod +x /usr/local/bin/linkerd
 ```
 
-The first line, `set -e` will ensure that the pipeline fails in case there's an error.
+The first line, `set -e`, will ensure that the pipeline fails in case there's an error.
 
 These steps will ensure that the Linkerd CLI is installed on the agent running the pipeline.
 
