@@ -78,6 +78,7 @@ linkerd check
 
 ### Putting it all together
 
+``` yaml
 - bash: |
     set -e
 
@@ -105,3 +106,5 @@ linkerd check
     echo "Checking installation"
     linkerd check
   continueOnError: false
+
+```
