@@ -16,7 +16,7 @@ Similar to a previous [post](https://gaunacode.com/installing-fluxcd-using-azure
 ### Pre-Requisites
 
 * A YAML pipeline
-* A pipeline that can issue `kubectl` commands. This post has [some clues](https://gaunacode.com/installing-fluxcd-using-azure-devops-and-helm-on-aks) on how to connect to an AKS cluster.
+* A pipeline that can issue `kubectl` commands. This post has [some clues](https://gaunacode.com/installing-fluxcd-using-azure-devops-and-helm-on-aks) on how to connect to an AKS cluster using the Azure CLI.
 
 ### Installing Linkerd
 
