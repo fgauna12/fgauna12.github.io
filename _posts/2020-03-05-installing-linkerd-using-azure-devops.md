@@ -69,7 +69,7 @@ else
 fi
 ```
 
-Lastly, we'll run some checks to verify the health of the installation.
+Lastly, we'll run some checks to verify the health of the installation. Probably a good idea to run regardless if the pipeline installed Linkerd.
 
 ```bash
 echo "Checking installation"
