@@ -1,6 +1,6 @@
 ---
 layout: post
-title: User Assigned Identity using an ARM template
+title: User Assigned Identity using an ARM template for an App Service
 tags:
   - azure
 date: 2020-03-06T02:56:55.604Z
