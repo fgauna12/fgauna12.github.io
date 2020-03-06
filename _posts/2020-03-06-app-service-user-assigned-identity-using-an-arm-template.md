@@ -8,7 +8,9 @@ featured: false
 hidden: false
 comments: false
 ---
-Managed Identity on Azure are great. No need to store client secrets corresponding to a service principal, instead we let Azure worry about that. With managed identity, we let app services and other compute resources authenticate against Azure AD to use other app resources securely. There's two flavors of managed identity. *User assigned* and *system assigned* managed identity. The main difference is that with *system assigned* identity only lives with the lifetime of the associated resources. With *user assigned* identity, the identity lives on regardless if the main resource gets destroyed. 
+[Managed identities](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview) on Azure are great. No need to store client secrets corresponding to a service principal. Instead, we let Azure worry about that. We can let compute resources (like app services) authenticate against Azure AD to use other Azure resources securely. 
+
+There's [two flavors](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview#how-does-the-managed-identities-for-azure-resources-work) of managed identity. *User assigned* and *system assigned* managed identity. The main difference is that with *system assigned* identity only lives with the lifetime of the associated resources. With *user assigned* identity, the identity lives on regardless if the main resource gets destroyed. 
 
 Here's a quick guide on how to use *user assigned* with an app service through an ARM template.
 
@@ -42,7 +44,7 @@ Then, create the user assigned managed identity resource.
 }
 ```
 
-Then, from the app service (`Microsoft.Web/sites`, reference the value of the managed identity. Note, you'll have to ensure you have a `dependsOn` attribute to signal Azure to daisy chain the creation of the resources. Next, you'll have to specify a `identity` object on the app service resource.
+Then, from the app service (`Microsoft.Web/sites`), reference the value of the managed identity. Note, you'll have to ensure you have a `dependsOn` attribute to signal Azure to daisy chain the creation of the resources. Next, you'll have to specify a `identity` object on the app service resource.
 
 ```json
 {
