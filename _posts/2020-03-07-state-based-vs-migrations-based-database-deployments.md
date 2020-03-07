@@ -8,7 +8,7 @@ featured: false
 hidden: false
 comments: false
 ---
-There's a lot of great tools available to help with automated database deployments. Ultimately, there's two main paradigms available in these tools. There are migration-based database deployments and state-based database deployments.
+In the world of SQL, there's a lot of great tools available to help with automated database deployments. Ultimately, there's two main paradigms available in these tools. There are migration-based database deployments and state-based database deployments.
 
 <!--more-->
 
