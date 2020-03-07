@@ -1,6 +1,6 @@
 ---
 layout: post
-title: State-based vs migrations-based database deployments
+title: State-based vs migration-based database deployments
 tags:
   - devops
 date: 2020-03-07T02:08:15.914Z
