@@ -145,7 +145,7 @@ steps:
     inputs:
       helmVersionToInstall: 'latest'
   - bash: |
-      helm package k8s/realworld-backend/ --app-version $(Build.BuildNumber) --version $(Build.BuildNumber)
+      helm package k8s/realworld-backend/ --app-version $(Build.BuildNumber)
       mv realworld-backend-$(Build.BuildNumber).tgz $(Build.ArtifactStagingDirectory)/
   - task: AzureCLI@1
     displayName: 'Push helm chart'
@@ -159,14 +159,10 @@ steps:
 
 But, this is what happens here.
 
-First, we package the Helm chart using Helm 2 commands. We also override the app version and the chart version with the build number to be fancy. It would be useful to know from which build this chart was generated. Although, it might be wiser to have a SemVer version.
+First, we package the Helm chart using Helm 2 commands. We also override the app version with the build number. It would be useful to know from which build this chart was generated. For the chart version, it would be up to the authors to change it using a SemVer version.
 
-Secondly, we move the packaged helm chart to the staging directory. It could be useful to publish it as a build artifact. 
+Secondly, we move the packaged helm chart to the staging directory. Then, we push the Helm chart using the Azure CLI ACR Helm commands. 
 
-Lastly, we push the Helm chart using the Azure CLI ACR Helm commands. And, we're done.
+So, although it looks easy, you might run into some snags because of the preview nature. 
 
-
-
-So, although it looks easy, you might run into some snags because of the preview nature. \
-\
 Best of luck.
