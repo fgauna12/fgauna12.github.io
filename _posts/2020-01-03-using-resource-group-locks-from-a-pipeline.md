@@ -15,7 +15,7 @@ A few days ago, I talked about one of [the most underutilized features](https://
 
 First, create a service principal that has `Owner` rights on the subscription. It's by design that only owners can apply and remove resource group locks. Once you have a service principal, create an Azure Resource Manager service connection in Azure DevOps. You can try do it backwards and grant an auto-generated service principal *Owner* rights. I prefer to use a script like [this one](https://gaunacode.com/admin/#/collections/blog/entries/2019-12-08-creating-secure-service-connections-in-azure-devops) to create the service connection and service principal.
 
-After you have a service connection using a service principal with Owner rights, you will be able to apply a resource group lock using Powershell, ARM Template, or Azure CLI. My preferred way is to use the ARM Template. 
+After you have a service connection using a service principal with Owner rights, you will be able to apply a resource group lock using Powershell, ARM Template, or Azure CLI. My preferred way is to use the ARM Template <mark>when I'm already using an ARM template to provision the infrastructure.</mark> Otherwise, just keep it consistent and use the Azure CLI.
 
 Here's what it can look like: 
 
