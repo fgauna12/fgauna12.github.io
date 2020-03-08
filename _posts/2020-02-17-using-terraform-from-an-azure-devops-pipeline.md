@@ -33,7 +33,7 @@ The lab mentioned above, makes you create the storage account that will persist 
 
 ### Set-up
 
-First define the following variables
+First define the following variables in your pipeline. <mark> It can be useful to apply all these steps to the same pipeline that you use to deploy your code from.</mark> Assuming, of course, that you're using the Terraform config files to provision some infrastructure for applications.
 
 ```yaml
 variables: 
@@ -116,7 +116,7 @@ When you apply, it's when the magic happens.
 
 ```yaml
 - task: TerraformTaskV1@0
-  displayName: "Terraform Apply Cluster GitOps"
+  displayName: "Terraform Apply"
   inputs:
     provider: 'azurerm'
     command: 'apply'
@@ -133,3 +133,13 @@ By the way, using the `commandOptions` you can also pass in input variables. But
 Save. Queue. Run!
 
 ![](/assets/uploads/2020-02-16_21-39-04.png "Terraform applied")
+
+## Putting it all together
+
+In the end, a CI/CD pipeline for an application/API could have the following steps.
+ 
+1. Ensure Terraform is set-up (backend storage account)
+2. Ensure Terraform CLI is installed on the pipeline agent
+3. Ensure Terraform is initialized
+4. Apply the Terraform files
+5. Deploy the application
