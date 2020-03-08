@@ -55,8 +55,8 @@ But first, check to see if Linkerd is already installed. Because we'll run some 
 We'll check pre-existing installation with `kubectl` and [jq](https://stedolan.github.io/jq/) to see if there's already a `linkerd` namespace.
 
 ```bash
-FLUX_NAMESPACE=$(kubectl get ns -o json | jq '.items[].metadata.name | select(.=="flux")')
-if [ -z "$FLUX_NAMESPACE" ]
+LINKERD_NAMESPACE=$(kubectl get ns -o json | jq '.items[].metadata.name | select(.=="linkerd")')
+if [ -z "$LINKERD_NAMESPACE" ]
 then
   echo "Linkerd not installed. Installing Linkerd"
   echo "Running pre-checks with Linkerd"
