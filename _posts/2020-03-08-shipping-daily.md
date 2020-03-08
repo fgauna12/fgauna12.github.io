@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Shipping daily
+title: 100 blogs in 100 days
 tags:
   - culture
 date: 2020-03-08T03:52:59.134Z
