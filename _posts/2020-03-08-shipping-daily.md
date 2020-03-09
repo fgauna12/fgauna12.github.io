@@ -25,5 +25,3 @@ Being a consultant, I didn't do this enough. I didn't help without payment. It w
 I also didn't do this for the likes, the claps, the retweets, the fancy badges. In fact, many people did not know I was doing this daily and they were surprised when I told them. I can't say I didn't fall into it. At one point, I was checking my Google Analytics everyday. I've since uninstalled the app from my phone.
 
 The best way that I can describe this experience is that I'm not learning and I am not helping then I'm not sharing. 
-
-So, here's to 365 days.
