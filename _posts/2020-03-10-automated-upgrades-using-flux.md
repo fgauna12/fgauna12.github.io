@@ -10,7 +10,9 @@ featured: false
 hidden: false
 comments: false
 ---
-GitOps allows us describe our running environment from a Git repo. We are able to state the deployments and the Helm charts that should be part of a Kubernetes cluster. As such, we can specify the version of these deployments and charts. But, throughout development, it would be cumbersome to continue to increment image tags described in a git repository to force the deploy to a non-production environment. Automated upgrades help with this. 
+GitOps allows us describe our running environment from a Git repo. We are able to state the deployments and the Helm charts that should be part of a Kubernetes cluster. As such, we can declaratively specify the version of these deployments and charts that ought to exist in the cluster. 
+
+But, throughout development, it would be cumbersome to continue to increment image tags each time we want to deploy to a non-prod environment. And, we might not even want to do this for production either. Flux automated upgrades help with this. 
 
 <!--more-->
 
