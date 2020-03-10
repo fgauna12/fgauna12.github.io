@@ -90,8 +90,10 @@ helm repo add fluxcd https://charts.fluxcd.io
 
 helm upgrade -i flux fluxcd/flux \
         --set git.url=$(ManifestsRepoUrl) \
-        --namespace flux
+        --namespace flux \
+        --wait
 ```
+_Note:_ If you're using Azure Container Registry, then you'll want to set `registry.acr.enabled` to `true`. This way, Flux will be able to authenticate against Azure Container Registry and have [automated upgrades](https://helm.workshop.flagger.dev/helm/#automated-upgrade)
 
 `$(ManifestsRepoUrl)` is the variable that points to the Git repo URL for the main repository to be used by Flux.
 
@@ -101,7 +103,8 @@ Next, install the helm operator.
 helm upgrade -i helm-operator fluxcd/helm-operator \
         --set git.ssh.secretName=flux-git-deploy \
         --namespace flux \
-        --set helm.versions=v3
+        --set helm.versions=v3 \
+        --wait
 ```
 
 Since I am not using Helm v2, I am specific about only using Helm 3 by specifying the `helm.versions` value in the Helm chart.
