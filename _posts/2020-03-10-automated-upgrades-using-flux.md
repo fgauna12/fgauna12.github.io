@@ -18,14 +18,13 @@ GitOps allows us describe our running environment from a Git repo. We are able t
 
 * Flux installed on the cluster
 * Helm operator installed on the cluster (optional)
-
   * If you're using Azure Container Register to store helm charts, see [here](https://gaunacode.com/configuring-flux-to-use-helm-charts-from-azure-container-registry)
 
 When you install Flux, ensure you have added the public key for Flux as a *deploy key* to the Git repo so that the Flux operator can write and commit.
 
 Also, if you're using Azure Container Registry, ensure you have installed Flux with `registry.acr.enabled=true` option. This is necessary so that Flux can authenticate against Azure Container Registry and get the list of tags for a container image. Role of `AcrPull` should be enough.
 
-```yaml
+``` bash
 helm upgrade -i flux fluxcd/flux \
         --set git.url=[some repo url] \
         --set registry.acr.enabled=true \
@@ -64,4 +63,4 @@ Here, any new tags pushed to the container registry will be picked up by Flux an
 
 There are other types of pattern matching like semver, and regex. 
 
-There's a repo called \[helm-operator-get-started](<https://github.com/fluxcd/helm-operator-get-started>) that shows how to use each of the patterns.
+There's a repo called [helm-operator-get-started](https://github.com/fluxcd/helm-operator-get-started) that shows how to use each of the patterns.
