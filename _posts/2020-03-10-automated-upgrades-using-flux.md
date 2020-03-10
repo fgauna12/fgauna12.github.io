@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Automated Upgrades using Flux
+title: Automated upgrades using Flux
 tags:
   - devops
   - azure
