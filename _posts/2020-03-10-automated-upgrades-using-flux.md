@@ -65,4 +65,4 @@ Here, any new tags pushed to the container registry will be picked up by Flux an
 
 There are other types of pattern matching like semver, and regex. 
 
-There's a repo called [helm-operator-get-started](https://github.com/fluxcd/helm-operator-get-started) that shows how to use each of the patterns.
+Here's a repo called [helm-operator-get-started](https://github.com/fluxcd/helm-operator-get-started) that shows how to use each of the patterns.
