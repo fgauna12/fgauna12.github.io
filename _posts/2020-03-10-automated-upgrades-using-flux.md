@@ -59,7 +59,7 @@ spec:
 
 Here, any new tags pushed to the container registry will be picked up by Flux and commit an update back to the repository. But, the tag has to follow the *glob* pattern of starting with `stg-`. 
 
-![](/assets/uploads/flux_release.png "Flux operator committing back")
+![](/assets/uploads/flux_release.png#wide "Flux operator committing back")
 
 There are other types of pattern matching like semver, and regex. 
 
