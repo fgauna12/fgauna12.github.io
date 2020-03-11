@@ -11,7 +11,7 @@ comments: false
 ---
 Similar to a [previous post](https://gaunacode.com/installing-linkerd-using-azure-devops), this is a small guide on how to create some glue code to ensure Flagger is installed on a Kubernetes cluster.
 
-Flagger is a delivery tools that integrates with Service Meshes like Linkerd to enable progressive rollouts using techniques like canaries, A/B testing, and Blue/Green deployments. It also integrates with chat apps like Slack and Teams.
+Flagger is a delivery tool that integrates with service meshes like Linkerd to enable progressive rollouts using techniques like canaries, A/B testing, and Blue/Green deployments. It also integrates with chat apps like Slack and Teams.
 
 <!--more-->
 
@@ -79,6 +79,8 @@ If you were using Istio, it would look like this instead.
   displayName: "Installing Flagger"
 ```
 
-Then the installation process closely follows what's recommended by the [flagger documentation](https://docs.flagger.app/install/flagger-install-on-kubernetes). First, we add a helm repo so that we can use the flagger chart. 
+Then the installation process closely follows what's recommended by the [flagger documentation](https://docs.flagger.app/install/flagger-install-on-kubernetes). 
+
+First, we add a helm repo so that we can use the flagger chart. 
 Next, we install the CRDs for flagger. 
 Lastly, we install the flagger helm chart with various variables depending on your service mesh of choice.
