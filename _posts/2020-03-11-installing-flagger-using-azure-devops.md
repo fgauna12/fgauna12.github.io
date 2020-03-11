@@ -19,7 +19,7 @@ Flagger is a delivery tool that integrates with service meshes like Linkerd to e
 
 * A YAML pipeline using the `ubuntu-latest` pool
 * A pipeline that can issue kubectl commands. [This post](https://gaunacode.com/installing-fluxcd-using-azure-devops-and-helm-on-aks) has some clues on how to connect to an AKS cluster using the Azure CLI.
-* A service mesh installed on the cluster. Linkerd or Istio
+* A service mesh installed on the cluster. Linkerd or Istio.
 
 ## Installing Flagger
 
