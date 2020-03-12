@@ -47,7 +47,7 @@ Then, you'll want to use the `AzureAppServiceManage@0` to stop the web job.
 
 **Notice:** The Microsoft documentation has a mistake on it. The `action` parameter is <mark>case sensitive</mark>. Ensure that the value matches `Stop Azure App Service`.
 
-Next, you can deploy the webjob using the  task.
+Next, you can deploy the webjob using the `AzureRmWebAppDeployment@4` task.
 
 ```yaml
 - task: AzureRmWebAppDeployment@4
