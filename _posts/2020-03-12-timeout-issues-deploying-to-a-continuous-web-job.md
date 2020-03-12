@@ -15,9 +15,9 @@ In this post, I will speak to a problem I had to troubleshoot. The Azure Pipelin
 
 <!--more-->
 
-![](/assets/uploads/2020-03-11_21-01-35.png#center "Build minutes timing out")
+![](/assets/uploads/2020-03-11_21-01-35.png#wide"Build minutes timing out")
 
-![](/assets/uploads/2020-03-11_21-01-23.png#left "Deploy step is taking over an hour")
+![](/assets/uploads/2020-03-11_21-01-23.png#center "Deploy step is taking over an hour")
 
 My problem was that the continuous webjob had the binaries locked and therefore I could not upload new binaries while the webjob was running. 
 
