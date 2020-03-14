@@ -14,8 +14,6 @@ One of the last sections of the 2019 State of DevOps report is how to spread the
 
 Turns out, commonly methods like big bang initiatives, mashups, and Centers of Excellence (CoE) are favored by low performing organizations. I was surprised about the Center of Excellence. 
 
-![]( "Heatmap of devops transformation by state of devops report")
-
 {% include image-caption.html imageurl="/assets/uploads/2020-03-13_20-49-10.png#wide" title="Heatmap of devops transformation by state of devops report" caption="Credits to 2019 State of DevOps Report. Page 74." %}
 
 Here's the breakdown. The assumption and association by proxy is that elites and high performers have been more effective at their transformation. I'll highlight the most effective approaches. 
