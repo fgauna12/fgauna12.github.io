@@ -29,3 +29,5 @@ Here's the breakdown. The assumption and association by proxy is that elites and
 ### PoC as a Seed
 
 "Starting with a small Proof of Concept (PoC), then spreading PoC knowledge to other groups. This is done by breaking up PoC (either the first PoC group or subsequent/ parallel PoC groups) and sending them to other"
+
+Here's a copy of the <a href="https://devops-workshop.newsignature.com/slides/state-of-devops-2019.pdf" download> 2019 State of DevOps Report</a>.
