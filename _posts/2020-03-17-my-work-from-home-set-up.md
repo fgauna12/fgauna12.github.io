@@ -16,7 +16,7 @@ I believe in spending good money in some key areas. A proper posture and work-se
 
 My home office was pretty echoey. When I would hop on calls with co-workers, it annoyed me how I used to hear my own echo. It threw me off. 
 
-I tried several things to reduce the echo. The sound bounces off hard surfaces much more easily than cloth or other softer surfaces. First, I hanged some curtains and I bought a small rug to put in the middle of the room. I got them from Target. It wasn't a huge improvement. 
+The sound bounces off hard surfaces much more easily than cloth or other softer surfaces. So, I tried many things to reduce the echo. First, I hanged some curtains and I bought a small rug to put in the middle of the room. I got them from Target. It wasn't a huge improvement. 
 
 Then, what helped the most, was buying these [foam soundproofing wall tiles](https://www.amazon.com/gp/product/B00TP7C9YY/ref=ppx_yo_dt_b_search_asin_image?ie=UTF8&psc=1). I also bought some double sided tape to tape them to the wall. Very cheap fix. I placed them around my monitor so that my voice goes *at them* when I'm on video calls.
 
