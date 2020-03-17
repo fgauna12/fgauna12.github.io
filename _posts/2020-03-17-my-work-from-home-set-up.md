@@ -14,7 +14,7 @@ I believe in spending good money in some key areas. A proper posture and work-se
 
 #### The sound
 
-My home office is pretty echoey. When I would hop on calls with co-workers, it annoying how I used to hear my own echo when talking. It threw me off. 
+My home office was pretty echoey. When I would hop on calls with co-workers, it annoyed me how I used to hear my own echo. It threw me off. 
 
 I tried several things to reduce the echo. The sound bounces off hard surfaces much more easily than cloth or other softer surfaces. First, I hanged some curtains and I bought a small rug to put in the middle of the room. I got them from Target. It wasn't a huge improvement. 
 
