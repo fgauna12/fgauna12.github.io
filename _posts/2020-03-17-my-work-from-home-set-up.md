@@ -24,13 +24,13 @@ Then, what helped the most, was buying these [foam soundproofing wall tiles](htt
 
 ### My desk
 
-![](/assets/uploads/microsoftteams-image-1-.jpg "Standing desk")
-
-I bought my desk from fully.com. It's a programmable sit-stand desk. Yes, I stand often. When I notice myself slouching, it's time to hit the button!
+I bought my desk from [fully.com](https://fully.com). It's a programmable sit-stand desk. Yes, I stand often. When I notice myself slouching, it's time to hit the button!
 
 My experience from using the website is great and I highly recommend it. It's a 72 x 30 [Jarvis Laminate Desktop](https://www.fully.com/standing-desks/jarvis-adjustable-height-desk-laminate.html) with a Walnut finish and steel alloy legs. It's large enough that I can have my huge monitor and my desktop on it. 
 
 I chose to get a powered grommet. I love it. I no longer have to do yoga whenever I want to unplug my laptop charger to go on travel. I simply unplug it from the top of my desk. The same is true for my headphones.
+
+![](/assets/uploads/microsoftteams-image-1-.jpg "Standing desk")
 
 ### My monitor
 
