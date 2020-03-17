@@ -34,7 +34,7 @@ I chose to get a powered grommet. I love it. I no longer have to do yoga wheneve
 
 ### My monitor
 
-My monitor is expensive and phenomenal. It's a [Dell U3818DW](https://www.amazon.com/gp/product/B073FHWTPL/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1). Here's a [YouTube review](https://www.youtube.com/watch?v=AS5aJxhNrF0) on it that pushed me over the edge. They do have a *3-year warranty*. I <mark>actually put it to use because my first monitor had a strange glitch.</mark> The support from Dell was great and they shipped me a new monitor right away without receiving the old one. 
+My monitor is expensive and phenomenal. It's a [Dell U3818DW](https://www.amazon.com/gp/product/B073FHWTPL/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1). Here's a [YouTube review](https://www.youtube.com/watch?v=AS5aJxhNrF0) on it that pushed me over the edge. It came with a *3-year warranty*. I <mark>actually put it to use because my first monitor had a strange glitch.</mark> The support from Dell was great and they shipped me a new monitor right away without receiving the old one. 
 
 It's massive. Almost a bit too large. I love it though.
 
