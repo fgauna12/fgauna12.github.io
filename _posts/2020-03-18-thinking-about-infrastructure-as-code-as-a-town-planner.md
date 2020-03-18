@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Thinking about Infrastructure as Code as a town planner
+title: Thinking about Infrastructure as Code
 tags:
   - devops
   - azure
