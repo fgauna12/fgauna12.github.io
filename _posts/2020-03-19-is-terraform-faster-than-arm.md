@@ -15,7 +15,7 @@ Based on *feeling* and experiencing the differences of heavy usage with Terrafor
 
 ### The Test
 
-I created a simple test. The test created **10 app services** and their app service plans. There were four cases:
+The test created **10 app services** and their app service plans. There were four cases:
 
 1. Terraform - When resources don't already exist
 2. Terraform - When resources already exist
