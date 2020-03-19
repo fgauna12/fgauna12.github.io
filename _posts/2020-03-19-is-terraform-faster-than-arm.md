@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Is Terraform faster than ARM?
+title: Is Terraform faster than ARM templates?
 tags:
   - azure
   - devops
