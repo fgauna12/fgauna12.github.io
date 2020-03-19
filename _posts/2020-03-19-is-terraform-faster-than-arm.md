@@ -38,6 +38,6 @@ Why 10 app services? For simple deployments I didn't find much of a significant 
 * ARM Creation (2 minutes 11 seconds)
 * ARM Update (2 minute 10 seconds)
 
-There we go. It's not definite proof that Terraform is faster but it's strong evidence and definitely worth exploring. 
+There we go. It's not definite proof that Terraform is faster but it's strong evidence. Definitely worth exploring. 
 
 The significance is that more complex deployments run more quickly. This helps improve lead time of deployments. Also, it doesn't discourage people from using pipelines to deploy. Half hour deployments are no fun.
