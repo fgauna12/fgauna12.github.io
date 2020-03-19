@@ -31,7 +31,7 @@ Here's the [source code](https://github.com/fgauna12/TerraformVsArmSpeedTest) of
 * ARM Creation (5 minutes 10 seconds)
 * ARM Update (4 minute 44 seconds)
 
-Why 10 app services? For simple deployments I didn't find much of a difference. When deploying one app service, here are the results.
+Why 10 app services? For simple deployments I didn't find much of a significant difference. When deploying one app service, here are the results.
 
 * Terraform Creation (1 minute 30 seconds)
 * Terraform Update (1 minute 40 seconds)
