@@ -169,3 +169,79 @@ permalink: /talks/
  </tbody>
 </table>
 
+#### [Modernize Your Application: Breaking Apart the Monolith](https://newsignature.com/event/burlington-devops-workshop/){:target="_blank"}
+
+<table>
+ <tbody>
+  <tr>
+   <td width="150px">Date</td>
+   <td>January 15th, 2020</td>
+  </tr>
+  <tr>
+   <td>Location</td>
+   <td>Boston, MA</td>
+  </tr>
+ </tbody>
+</table>
+
+#### [Modernize Your Application: Breaking Apart the Monolith](https://newsignature.com/event/tampa-devops-workshop/){:target="_blank"}
+
+<table>
+ <tbody>
+  <tr>
+   <td width="150px">Date</td>
+   <td>January 21th, 2020</td>
+  </tr>
+  <tr>
+   <td>Location</td>
+   <td>Tampa, FL</td>
+  </tr>
+ </tbody>
+</table>
+
+#### [Modernize Your Application: Breaking Apart the Monolith](https://newsignature.com/event/atlanta-devops-workshop/){:target="_blank"}
+
+<table>
+ <tbody>
+  <tr>
+   <td width="150px">Date</td>
+   <td>February 18th, 2020</td>
+  </tr>
+  <tr>
+   <td>Location</td>
+   <td>Atlanta, GA</td>
+  </tr>
+ </tbody>
+</table>
+
+#### [Modernize Your Application: Breaking Apart the Monolith](https://newsignature.com/event/charlotte-devops-workshop/){:target="_blank"}
+
+<table>
+ <tbody>
+  <tr>
+   <td width="150px">Date</td>
+   <td>February 20th, 2020</td>
+  </tr>
+  <tr>
+   <td>Location</td>
+   <td>Charlotte, NC</td>
+  </tr>
+ </tbody>
+</table>
+
+#### [Modernize Your Application: Breaking Apart the Monolith](https://newsignature.com/event/chevy-chase-devops-workshop/){:target="_blank"}
+
+<table>
+ <tbody>
+  <tr>
+   <td width="150px">Date</td>
+   <td>March 6th, 2020</td>
+  </tr>
+  <tr>
+   <td>Location</td>
+   <td>Washington D.C</td>
+  </tr>
+ </tbody>
+</table>
+
+
