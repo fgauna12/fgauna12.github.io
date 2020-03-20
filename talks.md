@@ -134,7 +134,7 @@ permalink: /talks/
   </tr>
   <tr>
    <td>Location</td>
-   <td>ONETUG Meetup - Orl`ando</td>
+   <td>ONETUG Meetup - Orlando</td>
   </tr>
  </tbody>
 </table>
