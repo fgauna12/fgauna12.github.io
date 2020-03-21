@@ -10,8 +10,8 @@ comments: false
 ---
 I used to be dogmatic. I used to think that there was a "right" way and a "wrong" way of doing things. I also used to think that for the sake of the "truth" I had to shut people down when they were doing something "wrong".  It was the "right" thing to do. \
 \
-Retrospectively, I was probably not an easy person to work with. Now, I think it's fairly difficult to be positively collaborative with someone who will jump at me at the hint of something unclear or inaccurate. But, there's other types of difficult relationships. One dynamic I find quite interesting is the dynamic of a consultant and client. Clients have pain points that they find painful enough to warrant hiring a consultant. \
-\
+Retrospectively, I was probably not an easy person to work with. Now, I think it's fairly difficult to be positively collaborative with someone who will jump at me at the hint of something unclear or inaccurate. But, there's other types of difficult relationships. One dynamic I find quite interesting is the dynamic of a consultant and client. Clients have pain points that they find painful enough to warrant hiring a consultant. 
+
 <!--more--> 
 
 Especially after having made a big investments, it's difficult to change a client's mind about their goals and objectives. Why? Because [different people](https://seths.blog/2019/10/if-you-want-to-change-minds/) value different things. It's a fine art of speaking to a person's values, moving the needle, showing them a better path forward, without insulting them, and while keeping or gaining their trust. Tough.\
