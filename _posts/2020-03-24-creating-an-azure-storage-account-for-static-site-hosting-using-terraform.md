@@ -72,6 +72,10 @@ For those of you new to Azure Storage accounts with static site hosting, it's es
 
 ![](/assets/uploads/2020-03-23_21-45-29.jpg#wide "Static website hosted by azure storage account in static websites")
 
+<br /> 
+<br /> 
+<br /> 
+
 The URL of your website will be under the Static website blade in Azure.
 
 ![](/assets/uploads/2020-03-23_21-41-44.jpg "Static website blade in azure")
