@@ -70,7 +70,7 @@ That's it!
 
 For those of you new to Azure Storage accounts with static site hosting, it's essentially a storage account with a container named `$web`. This `$web` container will be where the static site is hosted from. Simply, upload your site to this location and you're done.
 
-![](/assets/uploads/2020-03-23_21-45-29.jpg "Static website hosted by azure storage account in static websites")
+![](/assets/uploads/2020-03-23_21-45-29.jpg#wide "Static website hosted by azure storage account in static websites")
 
 The URL of your website will be under the Static website blade in Azure.
 
