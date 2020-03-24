@@ -58,12 +58,13 @@ resource "azurerm_storage_account" "storage_account" {
   account_kind             = "StorageV2"
 
   static_website {
-
+    index_document = "index.html"
   }
 }
 ```
 
-Notice how we enable static file hosting by declaring the `static_website` block. In this block, there are some other options like `index_document` and 'error_404_document`.
+Notice how we enable static file hosting by declaring the `static_website` block. In this block, there are some other options like `index_document` and `error_404_document`. By setting `index_document`, Azure Storage will redirect requests to the index page. 
+Otherwise, people would have to hit your URL at `/index.html` to see the website and would potentially make routes not work.
 
 That's it!
 
