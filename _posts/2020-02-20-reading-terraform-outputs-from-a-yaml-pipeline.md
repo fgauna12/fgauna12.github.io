@@ -14,11 +14,14 @@ When using Terraform and YAML pipelines in Azure DevOps, it's not clear how to r
 
 ### The basics
 
-First, you have to name the task.
+First, you have to **name** the task that you're using to _apply_.
 
 ``` yaml
 - task: TerraformTaskV1@0
   name: TerraformOutputs
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
 ```
 
 Then, the task will store the output variables in a _json_ file in a certain file path. You can get this path through the `jsonOutputVariablesPath` variable. 
