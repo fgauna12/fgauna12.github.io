@@ -83,8 +83,6 @@ stages:
     displayName: Deploy Some Infrastructure
     steps:
     - bash: |
-        echo "this is some build job"
-        echo "creating a pipeline variable"
         SOMEVALUE="bleh"
         echo "##vso[task.setvariable variable=someName;isOutput=true;]$SOMEVALUE"
         echo "variable value is $(someName)"
