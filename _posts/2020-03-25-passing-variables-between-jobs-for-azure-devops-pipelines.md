@@ -44,7 +44,7 @@ powershell: |
   Write-Host "The value of the pipeline variable is $(someName)"
 ```
 
-But, you won't be able to use this variable from a different job... yet.
+But, you won't be able to use this variable from a different job... yet. By default, it's scoped to the _job_.
 
 ## Variables from another job
 
