@@ -37,7 +37,7 @@ bash: |
   echo "##vso[task.setvariable variable=someName;]someValue"
 ```
 
-Then, you will be able to use this like a regular pipeline variable.
+Now, you will be able to use this like a regular pipeline variable.
 
 ``` yaml
 powershell: |
