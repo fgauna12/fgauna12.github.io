@@ -48,7 +48,7 @@ But, you won't be able to use this variable from a different job... yet.
 
 ## Variables from another job
 
-To make a variable accessible from another job, there's a couple of things you want to do. 
+To make a variable accessible from another job, there's a couple of things you want to do. Microsoft also has some documentation on this feature called [output variables](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch#use-output-variables-from-tasks).
 
 First, when creating the dynamic pipeline variable, specify that it's an output variable. 
 
