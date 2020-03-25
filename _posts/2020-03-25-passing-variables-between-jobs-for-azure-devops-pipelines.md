@@ -8,7 +8,7 @@ featured: false
 hidden: false
 comments: false
 ---
-Using Azure DevOps, you can create pipeline variables dynamically. When using Azure DevOps YAML pipelines, you can reference pipeline variables defined in other jobs. For example, if you have a stage that has multiple jobs because you need something done in Linux and something in Windows, then this quick guide will help you understand how to pass data between jobs. 
+Using Azure DevOps, you can create pipeline variables dynamically. Out of the box, most dynamic variables are scoped to the job. But, if you need to, you can reference pipeline variables defined in other jobs. For example, if you have a stage that has multiple jobs because you need something done in Linux and something in Windows, then you can consume a dynamic pipeline variable created by another job.
 
 <!--more-->
 
@@ -21,7 +21,7 @@ variables:
   someName: someValue
 ```
 
-But, what if you want to make the value a result from a task that runs? For example, you want to dynamically provision Azure resources using a Terraform or ARM Template task. Then, you also want to set pipeline variables to represent the names of the resources.
+But, what if you want to create this variable using data from a task? For example, you want to dynamically provision Azure resources using a Terraform or ARM Template task. Then, you also want to set pipeline variables to represent the names of the resources so that you can deploy to that infrastructure. 
 
 You can set a dynamic pipeline variable by writing to the host console. 
 
