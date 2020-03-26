@@ -8,7 +8,7 @@ featured: false
 hidden: false
 comments: false
 ---
-Long pipelines take a while. The longer they take, the more it incentivizes developers to bypass them. The longer they take, the more they want to batch work so that they have to wait less.
+Pipelines can take a while. The longer they take, the more it incentivizes developers to bypass them. The longer they take, the more they want to batch work so that they have to wait less.
 
 Here's a list of quick tips to improve build times in Azure DevOps. Collectively, they could shave several minutes. Several minutes could add up significantly over the course of a workday.
 
