@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Azure App Service '
+title: Minimum TLS version with Azure App Services
 tags:
   - azure
 date: 2020-03-27T03:20:13.847Z
