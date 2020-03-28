@@ -61,3 +61,5 @@ I'll show a quick example a CI pipeline for a Vue app. This app was generated us
     artifact: frontend
       displayName: Publish Frontend Artifacts
 ```
+
+That's it!
