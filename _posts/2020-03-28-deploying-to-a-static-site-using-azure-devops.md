@@ -28,7 +28,7 @@ Assuming you have created an Azure Storage account with static websites enabled,
 
 As you may notice, the files are copied to a `$web` container in the storage account. This example also relies on the front-end files to be published as an artifact. 
 
-I'll show a quick example a CI pipeline for a Vue app. This app was generated using the Vue CLI.
+I'll show a quick example a CI pipeline for a Vue app. This app was generated using the Vue CLI. The built app gets published as an artifact called `frontend`.
 
 ```yaml
 - job: job_build_front_end
