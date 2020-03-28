@@ -8,11 +8,11 @@ featured: false
 hidden: false
 comments: false
 ---
-Without getting into the nitty gritty of how to build a single page app, I'll showcase a simple process how to deploy a Vue app to an Azure Storage Account leveraging the *static website* feature. 
+Without getting into the nitty gritty of how to build a single page app, I'll showcase a simple process how to deploy a Vue app to an Azure Storage Account leveraging the [static website](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website) feature. 
 
 <!--more-->
 
-Assuming you have created an Azure Storage account with static websites enabled, then you can copy the files to the appropriate container. Here's [a blogpost](https://gaunacode.com/creating-an-azure-storage-account-for-static-site-hosting-using-terraform) of how to create this storage account with Terraform.
+Assuming you have created an Azure Storage account with static websites enabled, then you can copy the files to the appropriate container. Here's [a blogpost](https://gaunacode.com/creating-an-azure-storage-account-for-static-site-hosting-using-terraform) of how to create one using Terraform.
 
 ```yaml
 - download: current
