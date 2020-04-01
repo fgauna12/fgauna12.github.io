@@ -18,7 +18,7 @@ I anticipate that there is anywhere from 100-500 ms latency added by simply choo
 
 ## The experiment
 
-For the experiment, I'll test three cases. First, I'll measure the performance of an Azure App Service hosting an API that issues requests to another API. This other API will be hosted on a VM through IIS and listening on port 80. In this case, this other API will be publicly accessible from the internet. 
+For the experiment, I'll test three cases. First, I'll measure the performance of an Azure App Service hosting an API that issues requests to another API. This other API will be hosted on a VM through IIS and listening on port `80`. In this case, this other API will be publicly accessible from the internet. 
 
 {% include image-caption.html imageurl="/assets/uploads/2020-04-01_0-00-44.jpg" title="Experiment Test Case #1" caption="Using a direct connection through internet" %}
 
