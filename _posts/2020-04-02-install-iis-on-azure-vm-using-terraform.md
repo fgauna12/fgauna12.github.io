@@ -21,11 +21,11 @@ To invoke this custom script with Terraform, it's quite simple.
 
 ```hcl
 resource "azurerm_virtual_machine_extension" "vm_extension_install_iis" {
-  name                 = "vm_extension_install_iis"
-  virtual_machine_id   = azurerm_windows_virtual_machine.vm.id
-  publisher            = "Microsoft.Azure.Extensions"
-  type                 = "CustomScript"
-  type_handler_version = "1.10"
+  name                       = "vm_extension_install_iis"
+  virtual_machine_id         = azurerm_windows_virtual_machine.vm.id
+  publisher                  = "Microsoft.Compute"
+  type                       = "CustomScriptExtension"
+  type_handler_version       = "1.8"
   auto_upgrade_minor_version = true
 
   settings = <<SETTINGS
@@ -42,11 +42,11 @@ You can also provide `protectedSettings`. They are for more sensitive items like
 
 ```hcl
 resource "azurerm_virtual_machine_extension" "vm_extension_install_iis" {
-  name                 = "vm_extension_install_iis"
-  virtual_machine_id   = azurerm_windows_virtual_machine.vm.id
-  publisher            = "Microsoft.Azure.Extensions"
-  type                 = "CustomScript"
-  type_handler_version = "1.10"
+  name                       = "vm_extension_install_iis"
+  virtual_machine_id         = azurerm_windows_virtual_machine.vm.id
+  publisher                  = "Microsoft.Compute"
+  type                       = "CustomScriptExtension"
+  type_handler_version       = "1.8"
   auto_upgrade_minor_version = true
 
   settings = <<SETTINGS
