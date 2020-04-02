@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Provisioning a VM with an Azure DevOps deployment group agent with Terraform
+title: Create a VM with an deployment group agent using Terraform
 tags:
   - devops
   - azure
