@@ -9,7 +9,7 @@ featured: false
 hidden: false
 comments: false
 ---
-Creating a blank VM on Azure is easy, especially from the portal. Installing software and enabling features on each new VM can be time consuming, not to mention error-prone. Similar to [yesterday](https://gaunacode.com/provisioning-a-vm-with-an-azure-devops-deployment-group-agent-with-terraform), I will show how to install IIS to a VM or VMSS using Terraform.
+Creating a blank VM on Azure is easy, especially from the portal. Installing software and enabling features on each new VM can be time consuming, not to mention error-prone. Similar to [yesterday](https://gaunacode.com/provisioning-a-vm-with-an-azure-devops-deployment-group-agent-with-terraform), I will show how to install IIS on a Windows VM or VMSS using Terraform.
 
 <!--more-->
 
