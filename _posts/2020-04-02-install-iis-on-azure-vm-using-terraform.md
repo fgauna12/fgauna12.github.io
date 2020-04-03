@@ -68,4 +68,4 @@ PROTECTED_SETTINGS
 
 That's it!
 
-If you're having errors troubleshooting the extension because it didn't work, there's a set of [troubleshooting tips](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-windows#troubleshoot-and-support) published by Microsoft.
+If you're get errors with the custom script extension, there's a set of [troubleshooting tips](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-windows#troubleshoot-and-support) published by Microsoft.
