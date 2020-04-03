@@ -9,7 +9,7 @@ featured: false
 hidden: false
 comments: false
 ---
-Creating a blank VM on Azure is easy, especially from the portal. Installing software and enabling features on each new VM can be time consuming, not to mention error-prone. Similar to [yesterday](https://gaunacode.com/provisioning-a-vm-with-an-azure-devops-deployment-group-agent-with-terraform), I will show how to install IIS on a Windows VM or VMSS using Terraform.
+Creating a blank VM on Azure is easy, especially from the portal. Installing software and enabling features on each new VM can be time consuming, not to mention error-prone. Similar to [yesterday](https://gaunacode.com/provisioning-a-vm-with-an-azure-devops-deployment-group-agent-with-terraform), I will show how to install IIS on a Windows VM using Terraform.
 
 <!--more-->
 
@@ -21,7 +21,7 @@ Install-WindowsFeature -Name Web-Server -IncludeAllSubFeature -IncludeManagement
 
 This Powershell command installs IIS, all it's sub features, and IIS Management tools. 
 
-We can execute this script from an Azure VM as it's being provisioned using the [virtual machine custom script extension](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-windows). As the VM is being provisioned, this script will be run and the state of the VM won't show as "running" until the custom script finishes. This custom script extension also applies for virtual machine scale sets (VMSS).
+We can execute this script from an Azure VM as it's being provisioned using the [virtual machine custom script extension](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-windows). As the VM is being provisioned, this script will be run and the state of the VM won't show as "running" until the custom script finishes.
 
 To invoke this custom script with Terraform, it's quite simple.
 
