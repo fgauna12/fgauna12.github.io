@@ -9,7 +9,7 @@ featured: false
 hidden: false
 comments: false
 ---
-Creating a VM can be easy. Installing software and enabling features on each new VM can be time consuming. Similar to yesterday, I will show how to install IIS to a VM or VMSS using Terraform.
+Creating a VM can be easy. Installing software and enabling features on each new VM can be time consuming. Similar to [yesterday](https://gaunacode.com/provisioning-a-vm-with-an-azure-devops-deployment-group-agent-with-terraform), I will show how to install IIS to a VM or VMSS using Terraform.
 
 <!--more-->
 
