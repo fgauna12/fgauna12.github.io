@@ -30,7 +30,7 @@ variables:
   someVariable: '$(SomeConnectionString)'
 ```
 
-Assuming that `SomeConnectionString` is a pipeline variable stored as a secret, 
+Assuming that `SomeConnectionString` is a pipeline variable stored as a secret, it will not get mapped to the pipeline variable. Therefore, there will be no environment variable to use.
 
 ## Terraform
 
