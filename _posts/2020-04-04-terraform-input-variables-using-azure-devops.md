@@ -23,7 +23,7 @@ variables:
 
 The variable `someVariable` becomes an environment variable named `SOMEVARIABLE`.
 
-There is also another catch. Secrets won't get mapped to environment variables for security reasons. For example, 
+There is also another catch. Secrets won't get mapped to environment variables for security reasons.
 
 ```yaml
 variables:
