@@ -34,7 +34,7 @@ Assuming that `SomeConnectionString` is a pipeline variable stored as a secret, 
 
 ## Terraform
 
-Let's say you have the following variables.
+Let's say you have the following input variables defined in Terraform.
 
 ```hcl
 variable "app_name" {
