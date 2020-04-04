@@ -8,7 +8,7 @@ featured: false
 hidden: false
 comments: false
 ---
-Did you know pipeline variables in Azure DevOps YAML pipelines get mapped to environment variables in the pipeline agent? On the other hand, any input variable that starts with `TF_VAR_` will get mapped to an input variable in Terraform. Combining the two can mean more succinct pipelines.
+Pipeline variables in Azure DevOps YAML pipelines get mapped to environment variables in the pipeline agent. With Terraform, if there's an environment variable that starts with `TF_VAR_` it will get mapped to an input variable. Combining the two can mean more succinct pipelines.
 
 <!--more-->
 
