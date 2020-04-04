@@ -72,7 +72,9 @@ variables:
   TF_VAR_APP_NAME: 'someapp'
 ```
 
-Then, in your Terraform configuration, you have to define the variables with <mark>capital letters</mark>. Why? Because Azure DevOps will always transform pipeline variables to uppercase environment variables.
+Then, in your Terraform configuration, you have to define the variables with <mark>capital letters</mark>. 
+
+Why? Because Azure DevOps will always transform pipeline variables to uppercase environment variables.
 
 ```hcl
 variable "APP_NAME" {
@@ -80,7 +82,7 @@ variable "APP_NAME" {
 }
 ```
 
-Except, this won't work for Azure DevOps pipeline variables saved as secrets.  For secrets, you will still have to pass them as variables. For example:
+Except, this won't work for Azure DevOps pipeline variables saved as secrets. For secrets, you will still have to pass them as variables. For example:
 
 ```yaml
 - task: TerraformTaskV1@0
