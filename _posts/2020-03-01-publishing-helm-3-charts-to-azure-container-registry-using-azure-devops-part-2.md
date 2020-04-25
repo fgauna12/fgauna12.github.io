@@ -151,7 +151,7 @@ steps:
     inputs:
       azureSubscription: $(Azure.ServiceConnection)
       scriptLocation: inlineScript
-      inlineScript: 'az acr helm push -n $(ACR.Name) $(Build.ArtifactStagingDirectory)/realworld-backend-0.1.0.tgz'
+      inlineScript: 'az acr helm push -n $(ACR.Name) $(Build.ArtifactStagingDirectory)/*.tgz'
 ```
 
 `realworld-backend` is the name of my Helm chart. It resides under the `k8s/realworld-backend/` subdirectory in my repo. It lives on the same repo as the source code. Replace those two things with your respective helm chart name and the relative location on your repo. 
