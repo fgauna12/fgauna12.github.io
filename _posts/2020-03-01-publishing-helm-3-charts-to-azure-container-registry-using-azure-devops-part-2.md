@@ -1,8 +1,7 @@
 ---
 layout: post
-title: >-
-  Publishing Helm 3 charts to Azure Container Registry using Azure DevOps - Part
-  2
+title: Publishing Helm 3 charts to Azure Container Registry using Azure DevOps -
+  Part 2
 tags:
   - devops
   - azure
@@ -146,13 +145,13 @@ steps:
       helmVersionToInstall: 'latest'
   - bash: |
       helm package k8s/realworld-backend/ --app-version $(Build.BuildNumber)
-      mv realworld-backend-$(Build.BuildNumber).tgz $(Build.ArtifactStagingDirectory)/
+      mv *.tgz $(Build.ArtifactStagingDirectory)/
   - task: AzureCLI@1
     displayName: 'Push helm chart'
     inputs:
       azureSubscription: $(Azure.ServiceConnection)
       scriptLocation: inlineScript
-      inlineScript: 'az acr helm push -n $(ACR.Name) $(Build.ArtifactStagingDirectory)/realworld-backend-$(Build.BuildNumber).tgz'
+      inlineScript: 'az acr helm push -n $(ACR.Name) $(Build.ArtifactStagingDirectory)/realworld-backend-0.1.0.tgz'
 ```
 
 `realworld-backend` is the name of my Helm chart. It resides under the `k8s/realworld-backend/` subdirectory in my repo. It lives on the same repo as the source code. Replace those two things with your respective helm chart name and the relative location on your repo. 
@@ -161,7 +160,7 @@ But, this is what happens here.
 
 First, we package the Helm chart using Helm 2 commands. We also override the app version with the build number. It would be useful to know from which build this chart was generated. For the chart version, it would be up to the authors to change it using a SemVer version.
 
-Secondly, we move the packaged helm chart to the staging directory. Then, we push the Helm chart using the Azure CLI ACR Helm commands. 
+Secondly, we move the packaged helm chart to the staging directory. Then, we push the Helm chart using the Azure CLI ACR Helm commands. Upon pushing to ACR, you'll have to follow the format `[chart name]-[chart version].tgz`.
 
 So, although it looks easy, you might run into some snags because of the preview nature. 
 
