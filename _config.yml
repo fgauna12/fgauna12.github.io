@@ -39,8 +39,6 @@ rsslink: 'https://gaunacode.com/feed.xml'
 navigation:
   - text: About
     url: /about/
-  - text: Talks
-    url: /talks/
 
 # Required Plugins
 plugins_dir:
