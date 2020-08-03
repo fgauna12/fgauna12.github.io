@@ -23,7 +23,7 @@ author:
   image: 'myface.jpg'
   greetings: 'Facundo Gauna'
   description: "Azure. DevOps. Kubernetes"
-  bio: 'Facundo is Cloud Solutions Architect at New Signature. He specializes in building cloud-native apps on Azure.'
+  bio: 'Facundo is Cloud Solutions Architect at BoxBoat. He specializes in building cloud-native apps on Azure.'
 # Contact form setings
 email: 
 contact_page_description: ""
