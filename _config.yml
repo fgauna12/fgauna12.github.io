@@ -1,14 +1,14 @@
 # Site setings
-name: 'gauna.blog'
-description: "Hello, I'm Facundo. I help .NET Teams build cloud-native apps."
+name: 'GaunaCode'
+description: "Hello, I'm Facundo Gauna. I help teams build cloud-native apps on Azure."
 meta_description: ''
-# logo: 'assets/images/GaunaLogo.png'
+logo: 'assets/images/GaunaLogo.png'
 favicon: 'assets/favicon/favicon.ico'
 baseurl: 
 production_url: https://gaunacode.com/
 #disqus: 'GaunaCode'
 mailchimp_url: 'https://gmail.us20.list-manage.com/subscribe/post?u=c3b64d95e96a96aad7ceabf79&amp;id=d425788096'
-cover_image: bc_1.jpg
+cover_image: trimmed-juan-pablo-daniel-MvNfMRw3I5k-unsplash.jpg
 # Add your GA Tracking Id
 ga_analytics: UA-80721031-1
 
@@ -22,8 +22,8 @@ author:
   short_name: 'Facundo'
   image: 'myface.jpg'
   greetings: 'Facundo Gauna'
-  description: "Azure. DevOps. Kubernetes"
-  bio: 'Facundo is Cloud Solutions Architect at New Signature. He specializes in building cloud-native apps on Azure.'
+  description: 'Building <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/architecture/cloud-native/definition">cloud-native</a> apps on Azure'
+  bio: 'Facundo is Solutions Architect at BoxBoat. He specializes in building cloud-native apps on Azure.'
 # Contact form setings
 email: 
 contact_page_description: ""
@@ -33,7 +33,7 @@ thankyou_page_description: ""
 twitter: 'gaunacode'
 github: 'fgauna12'
 linkedin: 'facundo-gauna-601b8a47'
-rsslink: 'https://gauna.blog/feed.xml'
+rsslink: 'https://gaunacode.com/feed.xml'
 
 # Navigation
 navigation:
