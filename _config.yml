@@ -1,6 +1,6 @@
 # Site setings
-name: 'gauna.blog'
-description: "Hello, I'm Facundo. I help .NET Teams build cloud-native apps."
+name: 'GaunaCode'
+description: "Hello, I'm Facundo. I help teams build cloud-native apps on Azure."
 meta_description: ''
 logo: 'assets/images/GaunaLogo.png'
 favicon: 'assets/favicon/favicon.ico'
@@ -23,7 +23,7 @@ author:
   image: 'myface.jpg'
   greetings: 'Facundo Gauna'
   description: "Putting containers on Azure"
-  bio: 'Facundo is Cloud Solutions Architect at BoxBoat. He specializes in building cloud-native apps on Azure.'
+  bio: 'Facundo is Solutions Architect at BoxBoat. He specializes in building cloud-native apps on Azure.'
 # Contact form setings
 email: 
 contact_page_description: ""
@@ -33,7 +33,7 @@ thankyou_page_description: ""
 twitter: 'gaunacode'
 github: 'fgauna12'
 linkedin: 'facundo-gauna-601b8a47'
-rsslink: 'https://gauna.blog/feed.xml'
+rsslink: 'https://gaunacode.com/feed.xml'
 
 # Navigation
 navigation:
