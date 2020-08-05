@@ -5,7 +5,7 @@ permalink: /about/
 ---
 My name is Facundo Gauna. Sometimes I go by Frank. 
 
-I'm a Cloud Solutions Architect at New Signature. I help companies with various projects centered around Azure, DevOps, and Architecture. Continuous Delivery usually gets companies only so far. Architecture and Cloud are essential to enable DevOps as well. 
+I'm a Solutions Architect at BoxBoat. I help teams create [cloud-native](https://www.cncf.io/) systems on Azure. I used to be a .NET developer and avid ping pong player. 
 
 ## Where's that name from?
 
