@@ -17,6 +17,8 @@ layout: default
         </article>
         {% if site.mailchimp_url %}
         {% include newsletter-box.html %}
+        {% else %}
+            {% include convertkit-big.html %}
         {% endif %}
     </main>
 </div>

@@ -66,6 +66,8 @@
 
         {% if site.mailchimp_url and page.class == 'tag-template' %}
         {% include newsletter-box.html %}
+        {% else %}
+        {% include convertkit-big.html %}
         {% endif %}
 
         <footer id="colophon" class="site-footer outer">

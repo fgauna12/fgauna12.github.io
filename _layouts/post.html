@@ -119,6 +119,8 @@ post_class: post-template
         </section><!-- .read-next -->
         {% if site.mailchimp_url %}
         {% include newsletter-box.html %}
+        {% else %}
+            {% include convertkit-big.html %}
         {% endif %}
         <section>
             {% include disqus.html %}
