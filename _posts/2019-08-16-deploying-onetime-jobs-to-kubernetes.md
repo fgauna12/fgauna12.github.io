@@ -79,7 +79,7 @@ spec:
     spec:
       containers:
       - name: hellokubernetesjob
-        image: nebbiaregistry.azurecr.io/samples/hellokubernetesjob
+        image: myregistry.azurecr.io/samples/hellokubernetesjob
       restartPolicy: OnFailure
   backoffLimit: 4
 
@@ -215,7 +215,7 @@ spec:
     spec:
       containers:
       - name: hellokubernetesjob
-        image: nebbiaregistry.azurecr.io/samples/hellokubernetesjob
+        image: myregistry.azurecr.io/samples/hellokubernetesjob
       restartPolicy: OnFailure
   backoffLimit: 4
 

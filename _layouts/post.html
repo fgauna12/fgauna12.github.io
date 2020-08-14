@@ -40,6 +40,11 @@ post_class: post-template
                         href="https://www.facebook.com/sharer/sharer.php?u={{ site.production_url }}{{ page.url | remove_first: '/' }}">Facebook</a>
                 </div><!-- .share-post -->
             </footer>
+            {% if site.mailchimp_url %}
+            {% include newsletter-box.html %}
+            {% else %}
+                {% include convertkit-boxb.html %}
+            {% endif %}
             <div class="author-box">
                 <div class="author-avatar"><img src="{{ site.baseurl }}/assets/images/{{ site.author.image }}"
                         alt="{{ site.author.name }}'s Picture" class="avatar"></div>
@@ -117,9 +122,6 @@ post_class: post-template
             </article>
             {% endif %}
         </section><!-- .read-next -->
-        {% if site.mailchimp_url %}
-        {% include newsletter-box.html %}
-        {% endif %}
         <section>
             {% include disqus.html %}
         </section>

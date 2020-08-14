@@ -28,7 +28,10 @@ title: Home
 {% include pagination.html %}
 {% if site.mailchimp_url %}
     {% include newsletter-box.html %}
+{% else %}
+    {% include convertkit-boxa.html %}
 {% endif %}
+
 
 
 
