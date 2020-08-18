@@ -6,9 +6,9 @@ tags:
   - architecture
   - azure
 date: 2020-02-05T03:09:18.760Z
-featured: true
-hidden: true
-featured_image_thumbnail: ''
+featured: false
+hidden: false
+featured_image_thumbnail: ""
 featured_image: /assets/uploads/fidget-cube-2746300_640.jpg
 comments: false
 ---
