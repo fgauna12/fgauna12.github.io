@@ -14,7 +14,7 @@ Last week, I got the great news that I passed the Certified Kubernetes Administr
 
 <!--more-->
 
-I think prepping for the CKA or CKA without any past Linux experience will be hard - harder than most other types of developers/admins. <mark>So, be patient.</mark> I love Kubernetes and I think it's the future. Yeah, I think it's worth it.
+I think prepping for the CKA or CKA without any past Linux experience will be hard - harder than most other types of developers/admins. <mark>So, be patient and diligent.</mark> I love Kubernetes and I think it's the future. Yeah, I think it's worth it.
 
 ## Background
 
