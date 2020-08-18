@@ -61,7 +61,7 @@ I received the CKAD test results within two hours. But, for the CKA, it was a fu
 
 <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="4782ece5-1f6b-4399-9800-e395455b0a9c" data-share-badge-host="https://www.youracclaim.com"></div><script type="text/javascript" async src="//cdn.youracclaim.com/assets/utilities/embed.js"></script>
 
-As part of taking the exams, I had to sign an agreement that I would not discuss the questions in the exam. But, during Mumshad's courses, he explains a lot of useful tips when taking the exam like using _imperative_ commands instead of bothering with creating YAML files to save time.
+As part of taking the exams, I had to sign an agreement that I would not discuss the questions in the exam. But, during Mumshad's courses, he explains a lot of useful tips when taking the exam like using *imperative* commands instead of bothering with creating YAML files to save time.
 
 ## Conclusion
 
@@ -69,6 +69,6 @@ Both exams are very challenging and rewarding. Please note, as part of my day jo
 
 If you're a traditional .NET developer and want to jump on the cloud-native/Kubernetes bandwagon, you have a lot of work to do. This is especially true if you don't have Linux/scripting/Docker skills. Personally, I think it's one of the best things you could do for your career. Take it slow.
 
-<mark>Too many times have I seen teams adopt too much at once</mark>. Teams that once been stagnant with old tech now all the suddenly use Azure, Kubernetes, DevOps, microservices, OpenID connect, .NET core. It doesn't end well. You can only learn so much in a given time. You either cut corners or learn things superficially. Just because you deployed a cluster with `az aks create` doesn't mean you're reading to run things in production. There's a lot more to it than that and you will run into gaping holes that you can't address. `</soapbox>`
+<mark>Too many times have I seen teams adopt too much at once</mark>. Teams that were once  stagnant with old tech _now all the suddenly_ use Azure, Kubernetes, DevOps, microservices, OpenID connect, and .NET core. It doesn't end well. You can only learn so much in a given time. You either cut corners or learn things superficially. Just because you deployed a cluster with `az aks create`, doesn't mean you're ready to run things in production. There's a lot to it and you will run into gaping holes that you can't address. `</soapbox>`
 
-Reach out if you want help with your prep. :point_down:
+Reach out if you want help with your prep. Happy to help.
