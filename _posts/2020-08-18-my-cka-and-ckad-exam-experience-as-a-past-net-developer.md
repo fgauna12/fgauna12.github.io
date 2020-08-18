@@ -1,6 +1,6 @@
 ---
 layout: post
-title: My CKA and CKAD exam experience as a past .NET developer
+title: Taking CKA/CKAD as a previous .NET developer
 tags:
   - devops
   - kubernetes
