@@ -24,7 +24,7 @@ I was once a traditional .NET developer working at an enterprise. I used Windows
 
 It was invaluable to be comfortable with the **command line** and with Docker well before taking the exam. Years before taking the exams, I have been using Docker and PowerShell in production. I highly recommend [this course](https://app.pluralsight.com/library/courses/everyday-ps/table-of-contents) to get you acquainted to using PowerShell in every day workflows.
 
-What's also useful is an understanding of **Unix basics**. Windows and Unix/Linux have very different methodologies. Having a context around Unix/Linux is extremely beneficial to understand - even if you just want to be a developer building app on Kubernetes. A friend of mine gave me this book, it's a warm introduction into this world.
+What's also useful is an understanding of **Unix basics**. Windows and Unix/Linux have very different methodologies. Having a context around Unix/Linux is extremely beneficial to understand - even if you just want to be a developer building app on Kubernetes. A friend of mine gave me [this book](https://www.amazon.com/Linux-Command-Line-2nd-Introduction/dp/1593279523/ref=sr_1_3?crid=1WSGF5Q0OO0V0&dchild=1&keywords=the+linux+command+line&qid=1597757164&sprefix=The+Linux+Command%2Caps%2C163&sr=8-3), it's a warm introduction into this world.
 
 Lastly, having a strong understanding of Docker is fundamental. It will only be useful in building containerized apps. I recommend all of Nigel's courses, including the Kubernetes ones:
 
