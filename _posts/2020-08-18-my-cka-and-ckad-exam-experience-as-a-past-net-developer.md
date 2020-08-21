@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Taking CKA/CKAD as a past .NET developer
+title: Taking CKA/CKAD as a previous .NET developer
 tags:
   - devops
   - kubernetes
