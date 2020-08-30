@@ -2,19 +2,45 @@
     <div class="site-header-inside">
         <div class="site-branding">
             {% if site.logo != null %}
-                <p class="site-logo"><a href="{{ site.baseurl }}/" rel="home"><img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}" /></a></p>
-                <!-- <h1 class="site-title screen-reader-text"><a href="{{ site.baseurl }}" rel="home">{{site.title}}</a></h1> -->
+            <p class="site-logo"><a href="{{ site.baseurl }}/" rel="home"><img src="{{ site.baseurl }}/{{ site.logo }}"
+                        alt="{{ site.name }}" /></a></p>
+            <!-- <h1 class="site-title screen-reader-text"><a href="{{ site.baseurl }}" rel="home">{{site.title}}</a></h1> -->
             {% else %}
-                <h1 class="site-title"><a href="{{ site.baseurl }}/" rel="home">{{site.name}}</a></h1>
+            <h1 class="site-title"><a href="{{ site.baseurl }}/" rel="home">{{site.name}}</a></h1>
             {% endif %}
         </div><!-- .site-branding -->
         <nav id="main-navigation" class="site-navigation" aria-label="Primary Navigation">
             <ul class="menu">
-            {% for link in site.navigation %}
+                {% for link in site.navigation %}
                 <li class="menu-item"><a href="{{ link.url }}">{{ link.text }}</a></li>
-            {% endfor %}
+                {% endfor %}
             </ul>
-            <button id="sidebar-show" class="sidebar-toggle"><span class="screen-reader-text">Open Sidebar</span><span class="icon-more" aria-hidden="true"></span></button>
+            <button id="myBtn" class="sidebar-toggle search-icon"><span class="icon-search" aria-hidden="true"><img src="{{'/assets/images/search.png' | relative_urll}}" alt="search-icon"></span></button>
+            <button id="sidebar-show" class="sidebar-toggle more-icon"><span class="screen-reader-text">Open Sidebar</span><span
+                    class="icon-more" aria-hidden="true"></span></button>
+
+           
         </nav><!-- .site-navigation -->
+        <!-- Modal content -->
+        <!-- Trigger/Open The Modal -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form action="#" id="gh-search-input" method="get" target="_top">
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Type to search" id="search-input"
+                            name="q" />
+                    </div>
+                </form>
+                <div id="results-container">
+                </div>
+            </div>
+
+        </div>
+
     </div><!-- .site-header-inside -->
 </header><!-- .site-header -->

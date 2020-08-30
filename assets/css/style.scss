@@ -1,7 +1,4 @@
---- 
-# Only the essential Sass file needs front matter. The dashes are enough. 
----
-
+--- # Only the essential Sass file needs front matter. The dashes are enough. ---
 /**
  * Horace 1.2.0
  * By Just Good Themes
@@ -24,8 +21,7 @@
  * 9. Media Queries
 */
 
-@import
-"variables", 
+@import "variables",
 "icons",
 "reset",
 "general",
@@ -243,7 +239,7 @@
 .author-avatar .avatar {
   border: 2px solid $color-accent;
   border-radius: 100%;
-  box-shadow: 0 0 1px 7px rgba($color-accent,.1);
+  box-shadow: 0 0 1px 7px rgba($color-accent, .1);
   display: inline-block;
   height: 70px;
   width: 70px;
@@ -266,7 +262,7 @@
   line-height: 1.5;
   margin-bottom: 1.66667em;
   padding-top: 1%;
-  text-align: center; 
+  text-align: center;
 }
 
 /* Featured Posts */
@@ -454,7 +450,7 @@
 .hero-avatar .avatar {
   border: 4px solid $color-accent;
   border-radius: 100%;
-  box-shadow: 0 0 1px 11px rgba($color-accent,.15), 0 0 1px 22px rgba($color-accent,.1);
+  box-shadow: 0 0 1px 11px rgba($color-accent, .15), 0 0 1px 22px rgba($color-accent, .1);
   display: inline-block;
   height: 130px;
   width: 130px;
@@ -867,7 +863,7 @@
     margin-right: 6px;
   }
 
-  .social-links + .site-info + .back-to-top {
+  .social-links+.site-info+.back-to-top {
     margin: 0;
     position: absolute;
     right: 0;
@@ -894,6 +890,7 @@
     flex: 1 1 auto;
   }
 }
+
 @media only screen and (min-width: 601px) {
   .post-content img[src$='#left'] {
     float: left;
@@ -927,7 +924,9 @@
     text-align: right;
   }
 }
+
 @media only screen and (min-width: 785px) {
+
   blockquote,
   .post-content img[src$='#left'] {
     margin-left: calc(360px - 47vw);
@@ -947,7 +946,9 @@
     width: 94vw;
   }
 }
+
 @media only screen and (min-width: 1141px) {
+
   blockquote,
   .post-content img[src$='#left'] {
     margin-left: -180px;
@@ -999,6 +1000,7 @@
     margin-bottom: 0;
   }
 }
+
 @media only screen and (max-width: 800px) {
   .site-branding {
     -ms-flex: 0 1 auto;
@@ -1014,6 +1016,7 @@
     display: block;
   }
 }
+
 @media only screen and (max-width: 600px) {
   html {
     font-size: 100%;
@@ -1093,6 +1096,7 @@
   }
 
 }
+
 @media only screen and (max-width: 360px) {
   .featured-posts {
     margin-bottom: 3.75em;
@@ -1112,8 +1116,84 @@
   .newsletter-box-title {
     font-size: 1.5rem;
   }
+
   .contact-form {
     padding: 10px;
+  }
+}
+
+div#myModal {
+  overflow: hidden;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content/Box */
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 8% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  max-width: 650px;
+  border-radius: 4px;
+}
+
+div#results-container {
+  margin: 15px 0px;
+  max-height: 320px;
+  overflow-y: scroll;
+}
+
+.search-results a h5 {
+  font-size: 16px;
+  padding: 3px 0px;
+
+  &:hover {
+    color: #1B75BB;
+  }
+}
+
+.search-icon {
+  margin-right: 15px;
+
+  img {
+    width: 22px;
+  }
+}
+
+.more-icon {
+  margin-left: 0px !important;
+}
+
+.search-results img {
+  float: left;
+}
+
+/* The Close Button */
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+
+  &:hover,
+  &:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
   }
 }
 
