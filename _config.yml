@@ -12,7 +12,7 @@ cover_image: trimmed-juan-pablo-daniel-MvNfMRw3I5k-unsplash.jpg
 # Add your GA Tracking Id
 ga_analytics: UA-80721031-1
 
-url: "https://gaunacode.com" # the base hostname & protocol for your site
+url: "https://gunnacode.netlify.app" # the base hostname & protocol for your site
 plugins:
   - jekyll-sitemap
 
