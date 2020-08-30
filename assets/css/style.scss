@@ -1116,5 +1116,72 @@
     padding: 10px;
   }
 }
+div#myModal {
+  overflow: hidden;
+}
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 8% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  max-width: 650px;
+  border-radius: 4px;
+}
+
+div#results-container {
+  margin: 15px 0px;
+  max-height: 320px;
+  overflow-y: scroll;
+}
+
+.search-results a h5 {
+  font-size: 16px;
+  padding: 3px 0px;
+}
+.search-results a h5:hover {
+  color: #1B75BB;
+}
+
+.search-icon {
+  margin-right: 15px;
+}
+.search-icon img {
+  width: 22px;
+}
+
+.more-icon {
+  margin-left: 0px !important;
+}
+
+.search-results img {
+  float: left;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover, .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 /*# sourceMappingURL=style.css.map */
