@@ -98,3 +98,7 @@ spec:
 ```
 
 In addition, you can use [sealed secrets](https://github.com/bitnami-labs/sealed-secrets) to also define information you don't necessarily want committed to source control. Then, you can reference this secrets from Flux's `HelmRelease` resource through a `secretKeyRef`.
+
+## What about alerting?
+
+In a future posts, I'll explore how to integrate Kured with Prometheus.
