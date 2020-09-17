@@ -44,10 +44,10 @@ Through a Helm chart, this becomes:
 
 ```
 helm install kured kured/kured -n [some namespace for kured]\
---set "configuration.rebootDays=mon,tue,wed,thu,fri" \
---set "configuration.startTime=5pm" \
---set "configuration.endTime=11:59pm" \
---set "configuration.timeZone=America/New_York"
+--set configuration.rebootDays="{mon,tue,wed,thu,fri}" \
+--set configuration.startTime=5pm \
+--set configuration.endTime=11:59pm \
+--set configuration.timeZone=America/New_York
 ```
 
 ## Setting up Slack notifications
@@ -56,9 +56,9 @@ A good use of the Slack username is the name of the environment. In this example
 
 ```
 helm install kured kured/kured -n [some namespace for kured]\
---set "configuration.slackChannel=environments" \
---set "configuration.slackHookUrl=https://hooks.slack.com/services/blahblah" \
---set "configuration.slackUsername=staging"
+--set configuration.slackChannel=environments \
+--set configuration.slackHookUrl=https://hooks.slack.com/services/blahblah \
+--set configuration.slackUsername=staging
 ```
 
 ## Testing Kured
