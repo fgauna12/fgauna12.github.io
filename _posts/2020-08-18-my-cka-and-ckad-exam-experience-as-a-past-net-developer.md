@@ -5,8 +5,8 @@ tags:
   - devops
   - kubernetes
 date: 2020-08-18T10:30:25.663Z
-featured: true
-hidden: true
+featured: false
+hidden: false
 featured_image: /assets/uploads/photo-1504639725590-34d0984388bd.jfif
 comments: false
 ---
