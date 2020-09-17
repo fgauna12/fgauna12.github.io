@@ -4,7 +4,7 @@ title: "AKS Cluster Security: Process Linux node updates/reboots using Kured"
 tags:
   - azure
   - kubernetes
-date: 2020-09-17T11:24:00.000Z
+date: 2020-09-17T19:33:28.205Z
 featured: true
 hidden: true
 featured_image_thumbnail: /assets/uploads/bernard-hermant-ihcshrzxfs4-unsplash.jpg
