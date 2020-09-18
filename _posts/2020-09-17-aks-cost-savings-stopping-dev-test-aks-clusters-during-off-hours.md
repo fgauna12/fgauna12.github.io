@@ -16,9 +16,12 @@ Today, it's possible to stop the virtual machine scale set (vmss) driving an AKS
 You can do this in many ways, including the Azure CLI. In this post, I'll guide you through running an Azure CLI script to stop the vmss of an AKS cluster for dev/test purposes. We'll use Azure DevOps pipelines for the scheduling portion since Azure Automation Accounts do not support Azure CLI.
 
 Based on rough calculations, this approach could save you roughly <mark>46% on a typical 3 node cluster.</mark>
+
 <!--more--> 
+
 ## Beware
-:warning: Looks like the AKS team is working on a more elegant solution through the Azure CLI. So parts of this post will become irrelevant in the future. 
+
+The AKS team is working on a [more elegant solution](https://github.com/Azure/AKS/issues/52) through the Azure CLI. So parts of this post will become irrelevant in the future. 
 
 Also, only use this for <mark>dev/test purposes</mark> please.
 
@@ -26,7 +29,7 @@ Also, only use this for <mark>dev/test purposes</mark> please.
 
 Create a bash script called `aks-stop.sh`. 
 
-``` sh
+```sh
 #!/bin/bash
 
 CLUSTER_NAME=$1
@@ -45,35 +48,34 @@ To test it, login to Azure (`az login`) and the correct subscription (`az accoun
 
 Invoke the script. 
 
-``` sh
+```sh
 CLUSTER_NAME="[your cluster name]"
 RESOURCE_GROUP="[resource group name]"
 
 source ./aks-stop.sh "$CLUSTER_NAME" "$RESOURCE_GROUP"
 ```
 
-### What does it do?
+Once the script runs, a `kubectl` command will show that the nodes are not ready.
 
-It looks up the AKS cluster and gets the resource group where the underlying vmss are. Then it iterates through all the vmss in the resource group and deallocates them.
-
-<mark>If you have more than one node pool, it will stop all the node pools.</mark>
-
-Once the vmss is deallocated, a `kubectl` command will show that the nodes are not ready.
-
-``` console
+```console
 $ kubectl get nodes
 NAME                       STATUS     ROLES   AGE    VERSION
 aks-default-1-vmss000000   NotReady   agent   5d2h   v1.18.6
 aks-default-2-vmss000001   NotReady   agent   5d2h   v1.18.6
 aks-default-3-vmss000002   NotReady   agent   5d2h   v1.18.6
-
 ```
+
+#### What does it do?
+
+It finds the resource group where the underlying vmss are for the AKS cluster. Then it iterates through all the vmss in the resource group and deallocates them.
+
+<mark>If you have more than one node pool, it will stop all the node pools.</mark>
 
 ## Start the vmss
 
 Create a bash script called `aks-start.sh`.
 
-``` sh
+```sh
 #!/bin/bash
 
 CLUSTER_NAME=$1
@@ -90,15 +92,15 @@ done
 
 Invoke the script. 
 
-``` sh
+````sh
 CLUSTER_NAME="[your cluster name]"
 RESOURCE_GROUP="[resource group name]"
 
 source ./aks-start.sh "$CLUSTER_NAME" "$RESOURCE_GROUP"
 
-### What does it do?
+```
 
-Similarly to the first script, it will start all the vmss. If you have more than one node pool, it will do so as well. 
+Then you will see shortly that the nodes are ready.
 
 ``` console
 $ kubectl get nodes
@@ -106,7 +108,7 @@ NAME                       STATUS   ROLES   AGE    VERSION
 aks-default-1-vmss000000   Ready    agent   5d2h   v1.18.6
 aks-default-2-vmss000001   Ready    agent   5d2h   v1.18.6
 aks-default-3-vmss000002   Ready    agent   5d2h   v1.18.6
-```
+````
 
 ## Scheduling for off-hours
 
@@ -115,7 +117,7 @@ Azure Automation accounts unfortunately don't support the Azure CLI. It is possi
 For example, this is how to trigger a pipeline starting at 6 pm EST. (Note: Azure Pipeline schedules have to be in UTC).
 For more information on the format, [here's the detailed documentation](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/scheduled-triggers?view=azure-devops&tabs=yaml).
 
-``` yaml
+```yaml
 pr: none 
 trigger: none
 schedules:
@@ -129,7 +131,7 @@ schedules:
 
 Another example, to trigger pipelines at 7 am EST:
 
-``` yaml
+```yaml
 pr: none 
 trigger: none
 schedules:
@@ -145,8 +147,7 @@ schedules:
 
 Here's an example of a pipeline **starting** the cluster each morning at 7 am EST.
 
-``` yaml
-
+```yaml
 pr: none 
 trigger: none
 schedules:
@@ -169,12 +170,11 @@ steps:
       scriptLocation: 'scriptPath'
       scriptPath: './aks-start.sh'
       arguments: '"$(ClusterName)" "$(ResourceGroup)"'
-
 ```
 
 Here's an example of a pipeline **stopping** the cluster each morning at 7 pm EST.
 
-``` yaml
+```yaml
 pr: none 
 trigger: none
 schedules:
@@ -197,5 +197,4 @@ steps:
       scriptLocation: 'scriptPath'
       scriptPath: './aks-stop.sh'
       arguments: '"$(ClusterName)" "$(ResourceGroup)"'
-
 ```
