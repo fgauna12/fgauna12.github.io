@@ -5,14 +5,17 @@ tags:
   - devops
   - azure
   - kubernetes
-date: 2020-09-18T21:43:12.131Z
+date: 2020-09-18T19:03:54.760Z
 featured: false
 hidden: false
+featured_image_thumbnail: /assets/uploads/coins.jpg
+featured_image: /assets/uploads/coins.jpg
 comments: false
 ---
 Today, it's possible to stop the virtual machine scale set (vmss) driving an AKS cluster. 
-You can do this in many ways, including the Azure CLI. In this post, I'll guide you through running an Azure CLI script to stop an AKS' cluster vmss for dev/test purposes. We'll use Azure DevOps pipelines for the scheduling portion since Azure Automation Accounts do not support Azure CLI.
+You can do this in many ways, including the Azure CLI. In this post, I'll guide you through running an Azure CLI script to stop the vmss of an AKS cluster for dev/test purposes. We'll use Azure DevOps pipelines for the scheduling portion since Azure Automation Accounts do not support Azure CLI.
 
+Based on rough calculations, this approach could save you roughly <mark>46% on a typical 3 node cluster.</mark>
 <!--more--> 
 ## Beware
 :warning: Looks like the AKS team is working on a more elegant solution through the Azure CLI. So parts of this post will become irrelevant in the future. 
@@ -57,7 +60,7 @@ It looks up the AKS cluster and gets the resource group where the underlying vms
 
 Once the vmss is deallocated, a `kubectl` command will show that the nodes are not ready.
 
-```
+``` console
 $ kubectl get nodes
 NAME                       STATUS     ROLES   AGE    VERSION
 aks-default-1-vmss000000   NotReady   agent   5d2h   v1.18.6
@@ -97,17 +100,102 @@ source ./aks-start.sh "$CLUSTER_NAME" "$RESOURCE_GROUP"
 
 Similarly to the first script, it will start all the vmss. If you have more than one node pool, it will do so as well. 
 
-```
+``` console
 $ kubectl get nodes
 NAME                       STATUS   ROLES   AGE    VERSION
 aks-default-1-vmss000000   Ready    agent   5d2h   v1.18.6
 aks-default-2-vmss000001   Ready    agent   5d2h   v1.18.6
 aks-default-3-vmss000002   Ready    agent   5d2h   v1.18.6
-
 ```
 
 ## Scheduling for off-hours
 
 Azure Automation accounts unfortunately don't support the Azure CLI. It is possible to run Python. I find using Azure DevOps very good for this since YAML pipelines support cron-style scheduled triggers.
 
+For example, this is how to trigger a pipeline starting at 6 pm EST. (Note: Azure Pipeline schedules have to be in UTC).
+For more information on the format, [here's the detailed documentation](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/scheduled-triggers?view=azure-devops&tabs=yaml).
 
+``` yaml
+pr: none 
+trigger: none
+schedules:
+- cron: "0 23 * * 1-5"
+  displayName: "After-hours (11 pm UTC)"
+  always: true
+  branches:
+    include:
+    - master
+```
+
+Another example, to trigger pipelines at 7 am EST:
+
+``` yaml
+pr: none 
+trigger: none
+schedules:
+- cron: "0 11 * * 1-5"
+  displayName: "Mornings (11 am UTC)"
+  always: true
+  branches:
+    include:
+    - master
+```
+
+### Putting it together
+
+Here's an example of a pipeline **starting** the cluster each morning at 7 am EST.
+
+``` yaml
+
+pr: none 
+trigger: none
+schedules:
+- cron: "0 11 * * 1-5"
+  displayName: "Mornings (11 am UTC)"
+  always: true
+  branches:
+    include:
+    - master
+
+variables:
+  ClusterName: [name of cluster]
+  ResourceGroup: [name of resource group]
+
+steps:
+  - task: AzureCLI@2
+    inputs:
+      azureSubscription: '[subscription service connection]'
+      scriptType: 'bash'
+      scriptLocation: 'scriptPath'
+      scriptPath: './aks-start.sh'
+      arguments: '"$(ClusterName)" "$(ResourceGroup)"'
+
+```
+
+Here's an example of a pipeline **stopping** the cluster each morning at 7 pm EST.
+
+``` yaml
+pr: none 
+trigger: none
+schedules:
+- cron: "0 23 * * 1-5"
+  displayName: "After-hours (11 pm UTC)"
+  always: true
+  branches:
+    include:
+    - master
+
+variables:
+  ClusterName: [name of cluster]
+  ResourceGroup: [name of resource group]
+
+steps:
+  - task: AzureCLI@2
+    inputs:
+      azureSubscription: '[subscription service connection]'
+      scriptType: 'bash'
+      scriptLocation: 'scriptPath'
+      scriptPath: './aks-stop.sh'
+      arguments: '"$(ClusterName)" "$(ResourceGroup)"'
+
+```
