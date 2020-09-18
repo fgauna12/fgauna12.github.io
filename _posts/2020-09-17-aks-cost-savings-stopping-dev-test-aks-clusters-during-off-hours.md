@@ -15,7 +15,7 @@ comments: false
 Today, it's possible to stop the virtual machine scale set (vmss) driving an AKS cluster. 
 You can do this in many ways, including the Azure CLI. In this post, I'll guide you through running an Azure CLI script to stop the vmss of an AKS cluster for dev/test purposes. We'll use Azure DevOps pipelines for the scheduling portion since Azure Automation Accounts do not support Azure CLI.
 
-Based on rough calculations, this approach could save you roughly <mark>46% on a typical 3 node cluster.</mark>
+Based on rough calculations, this approach could save you roughly <mark>46%</mark>
 
 <!--more--> 
 
