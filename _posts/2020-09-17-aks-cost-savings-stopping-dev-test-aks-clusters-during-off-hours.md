@@ -92,12 +92,11 @@ done
 
 Invoke the script. 
 
-````sh
+```sh
 CLUSTER_NAME="[your cluster name]"
 RESOURCE_GROUP="[resource group name]"
 
 source ./aks-start.sh "$CLUSTER_NAME" "$RESOURCE_GROUP"
-
 ```
 
 Then you will see shortly that the nodes are ready.
@@ -108,7 +107,7 @@ NAME                       STATUS   ROLES   AGE    VERSION
 aks-default-1-vmss000000   Ready    agent   5d2h   v1.18.6
 aks-default-2-vmss000001   Ready    agent   5d2h   v1.18.6
 aks-default-3-vmss000002   Ready    agent   5d2h   v1.18.6
-````
+```
 
 ## Scheduling for off-hours
 
