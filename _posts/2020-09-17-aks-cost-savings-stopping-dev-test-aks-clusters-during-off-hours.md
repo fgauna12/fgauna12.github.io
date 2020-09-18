@@ -111,6 +111,8 @@ aks-default-3-vmss000002   Ready    agent   5d2h   v1.18.6
 
 ## Scheduling for off-hours
 
+Here's how to "stop" your AKS cluster after-hours and then start it in the morning.
+
 Azure Automation accounts unfortunately don't support the Azure CLI. I find using Azure DevOps very good for this since YAML pipelines support cron-style scheduled triggers.
 
 For example, this is how to trigger a pipeline starting at 6 pm EST. (Note: Azure Pipeline schedules have to be in UTC).
