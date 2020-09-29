@@ -23,7 +23,7 @@ Edit: As suspected, Microsoft released a way to start/stop AKS clusters through 
 
 ## Option A (Preferred)
 
-Microsoft released the preview feature as an Azure CLI extension. Follow the steps on this Microsoft docs on how to install this extension. <mark>You can come back to this page to see how to schedule a script</mark> to start/stop a cluster during off hours using Azure Pipelines.
+Microsoft released the preview feature as an Azure CLI extension. Follow the steps on [this Microsoft docs page](https://docs.microsoft.com/en-us/azure/aks/start-stop-cluster) on how to install this extension. <mark>You can come back to this page to see how to schedule a script</mark> to start/stop a cluster during off hours using Azure Pipelines.
 
 ## Option B (DIY)
 ### Stopping the cluster
