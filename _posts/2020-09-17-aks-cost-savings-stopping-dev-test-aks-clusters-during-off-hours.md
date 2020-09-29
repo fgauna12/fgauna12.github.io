@@ -17,15 +17,16 @@ You can do this in many ways, including the Azure CLI. In this post, I'll guide 
 
 Based on rough calculations, this approach could save you roughly <mark>46%</mark> on costs.
 
+Edit: As suspected, Microsoft released a way to start/stop AKS clusters through the CLI, you no longer need to stop the AKS scale sets yourself.
+
 <!--more--> 
 
-## Beware
+## Option A (Preferred)
 
-The AKS team is working on a [more elegant solution](https://github.com/Azure/AKS/issues/52) through the Azure CLI. So parts of this post will become irrelevant in the future. 
+Microsoft released the preview feature as an Azure CLI extension. Follow the steps on this Microsoft docs on how to install this extension. <mark>You can come back to this page to see how to schedule a script</mark> to start/stop a cluster during off hours using Azure Pipelines.
 
-Also, only use this for <mark>dev/test purposes</mark> please.
-
-## Stopping the vmss
+## Option B (DIY)
+### Stopping the cluster
 
 Create a bash script called `aks-stop.sh`. 
 
