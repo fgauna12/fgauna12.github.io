@@ -24,7 +24,7 @@ Although you might have everything automated, from the cluster creation using in
 
 During a disaster, recreating new infrastructure and <mark>re-deploying all components can take time</mark>. Depending on the criticality of the incident and the importance of the app, this can feel like an *eternity*. 
 
-By using a tool like Velero to backup all Kubernetes resources, a cluster can be quickly restored to a certain state, lessening recovery time from ~45 minutes to ~15 minutes.
+By using a tool like Velero to backup all Kubernetes resources, a cluster can be quickly restored to a certain state, lessening recovery time from \~45 minutes to \~15 minutes.
 
 #### Avoiding Data Loss
 
@@ -69,22 +69,22 @@ AZURE_RESOURCE_GROUP=$(az aks show -n mycluster -g myresourcegroup --query "node
 
 Then, get the Azure subscription and Azure AD tenant information.
 
-``` bash
+```bash
 AZURE_SUBSCRIPTION_ID=$(az account list --query '[?isDefault].id' -o tsv)
 AZURE_TENANT_ID=$(az account list --query '[?isDefault].tenantId' -o tsv)
 ```
 
-Now create an Azure service principal for Velero to authenticate. <mark>I like to name the service principal with the name of the cluster</mark> so that I know _which Velero_ identity belongs to which cluster. 
+Now create an Azure service principal for Velero to authenticate. <mark>I like to name the service principal with the name of the cluster</mark> so that I know *which Velero* identity belongs to which cluster. 
 
 Note: you can also limit the scope of the service principal to certain resource groups `--scopes` so that it doesn't have access to the entire subscription.
 
-``` bash
+```bash
 AZURE_CLIENT_SECRET=$(az ad sp create-for-rbac --name "mycluster-velero" --role "Contributor" --query 'password' -o tsv)
 ```
 
 Almost there... now, get the Client Id for the service principal just created. 
 
-``` bash
+```bash
 AZURE_CLIENT_ID=$(az ad sp list --display-name "mycluster-velero" --query '[0].appId' -o tsv)
 ```
 
@@ -103,7 +103,7 @@ EOF
 
 Using `kubectl`, upload the credentials to a kubernetes secret in a new `velero` namespace.
 
-``` bash
+```bash
 kubectl create ns velero
 kubectl create secret generic velero-credentials -n velero --from-literal="cloud=$(cat ./credentials-velero)"
 ```
@@ -125,7 +125,7 @@ STORAGE_CONTAINER_NAME='backups-mycluster'
 az storage container create --account-name $STORAGE_ACCOUNT -n $STORAGE_CONTAINER_NAME
 ```
 
-### Putting it all together 
+#### Putting it all together
 
 Now, we install Velero using Helm and using Velero's Azure plugin.
 
@@ -136,6 +136,7 @@ helm repo add vmware-tanzu https://vmware-tanzu.github.io/helm-charts
 ```
 
 Lastly, install the helm chart.
+
 ```
 helm install velero vmware-tanzu/velero --namespace velero --version 2.13.2 \
 --set "initContainers[0].image=velero/velero-plugin-for-microsoft-azure:v1.1.0" \
@@ -156,7 +157,7 @@ helm install velero vmware-tanzu/velero --namespace velero --version 2.13.2 \
 
 You should see Velero's pods come up. 
 
-``` bash
+```bash
 kubectl get pods -n velero
 ```
 
@@ -170,6 +171,10 @@ velero backup create my-backup
 velero backup logs my-backup
 ```
 
+![Test backup screenshot with Velero against AKS cluster](/assets/uploads/velero-aks-test-backup.png "Test backup screenshot with Velero against AKS cluster")
+
+\
+\
 If it works, you can go ahead and create a schedule.
 
 ### Setting up the schedule
@@ -179,3 +184,5 @@ If it works, you can go ahead and create a schedule.
 ```bash
 velero schedule create every-day-at-7 --schedule "0 7 * * *"
 ```
+
+That's it!
