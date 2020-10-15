@@ -173,8 +173,6 @@ velero backup logs my-backup
 
 ![Test backup screenshot with Velero against AKS cluster](/assets/uploads/velero-aks-test-backup.png "Test backup screenshot with Velero against AKS cluster")
 
-\
-\
 If it works, you can go ahead and create a schedule.
 
 ### Setting up the schedule
