@@ -17,9 +17,9 @@ You can do this in many ways, including the Azure CLI. In this post, I'll guide 
 
 Based on rough calculations, this approach could save you roughly <mark>46%</mark> on costs.
 
-Edit: As suspected, Microsoft released a way to start/stop AKS clusters through the CLI, you no longer need to stop the AKS scale sets yourself.
-
 <!--more--> 
+
+Edit: As suspected, Microsoft released a way to start/stop AKS clusters through the CLI, you no longer need to stop the AKS scale sets yourself.
 
 ## Option A (Preferred)
 
