@@ -18,7 +18,7 @@ Backing up AKS clusters is really important. Even if you're using Infrastructure
 
 ## Why?
 
-### Mean Time To Recover (MTTR)
+#### Mean Time To Recover (MTTR)
 
 Although you might have everything automated, from the cluster creation using infrastructure as code to the applications being deployed on the cluster, in my experience all this automation can take a long time. For example, without backups it's taken upwards of 45 minutes for this automation to restore state of the cluster. This was with a completely stateless microservices-based application, meaning, we didn't use any persistent volumes to store data.
 
@@ -26,7 +26,7 @@ During a disaster, recreating new infrastructure and <mark>re-deploying all comp
 
 By using a tool like Velero to backup all Kubernetes resources, a cluster can be quickly restored to a certain state, lessening recovery time from ~45 minutes to ~15 minutes.
 
-### Avoiding Data Loss
+#### Avoiding Data Loss
 
 If you have *stateful* applications deployed on your clusters, you will likely use persistent volumes to store the data. For example, deploying a MySQL database on the cluster. Tools like Velero can also help backup the data in persistent volumes as well. 
 
@@ -34,17 +34,17 @@ If you have *stateful* applications deployed on your clusters, you will likely u
 
 Velero is an open source tool that helps backup and restore Kubernetes resources. It also helps with migrating Kubernetes resources from one cluster to another. Also, it can help backup/restore data in persistent volumes.
 
-## How it will work
+#### How it will work
 
 Velero will have a pod running on the cluster, taking backups against an Azure Storage account (Although you can use other backends). You can take ad-hoc backups or create a schedule for them. But to do so, it has to be able to authenticate against the Azure API with enough permissions to be able to write to the storage account. 
 
 Velero has a CLI and a server side component to it. Either way, you're going to have to install the CLI. 
 
-### The CLI
+#### The CLI
 
 Here are the [basic steps](https://velero.io/docs/v1.5/basic-install/) on how to install the CLI on MacOs, Windows, or Linux. 
 
-### The Server Side
+#### The Server Side
 
 For the server side component, there's two main methods of installation: 
 
@@ -108,7 +108,7 @@ kubectl create ns velero
 kubectl create secret generic velero-credentials -n velero --from-literal="cloud=$(cat ./credentials-velero)"
 ```
 
-### The Storage Account
+#### The Storage Account
 
 First, create a storage account, this will store the backups.
 
@@ -160,7 +160,7 @@ You should see Velero's pods come up.
 kubectl get pods -n velero
 ```
 
-### Testing the backup
+#### Testing the backup
 
 Assuming you installed Velero's CLI, you can simply create a test backup.
 
