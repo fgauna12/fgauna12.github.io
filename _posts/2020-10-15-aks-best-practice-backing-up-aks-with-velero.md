@@ -175,7 +175,7 @@ velero backup logs my-backup
 
 If it works, you can go ahead and create a schedule.
 
-### Setting up the schedule
+#### Setting up the schedule
 
 "Back up my cluster every day at 7 am"
 
