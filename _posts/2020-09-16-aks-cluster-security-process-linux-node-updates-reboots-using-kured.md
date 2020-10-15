@@ -5,8 +5,8 @@ tags:
   - azure
   - kubernetes
 date: 2020-09-17T19:33:28.205Z
-featured: true
-hidden: true
+featured: false
+hidden: false
 featured_image_thumbnail: /assets/uploads/bernard-hermant-ihcshrzxfs4-unsplash.jpg
 featured_image: /assets/uploads/bernard-hermant-ihcshrzxfs4-unsplash.jpg
 comments: false
