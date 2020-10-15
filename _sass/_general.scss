@@ -37,33 +37,42 @@ h6 {
 }
 
 h1 {
-    font-size: 2.22222rem;
+    font-size: 44px;
     margin: 0.75em 0 0.375em;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 32px;
     margin: 0.83333em 0 0.41667em;
 }
 
 h3 {
-    font-size: 1.66667rem;
-    margin: 1em 0 0.5em;
+    font-weight: bold;
+	line-height: 24px;
+    margin: 0 0 24px;
+    padding: 12px 0 0;
+	text-transform: uppercase;
 }
 
 h4 {
-    font-size: 1.33333rem;
-    margin: 1.25em 0 0.625em;
+    font-weight: bold;
+	line-height: 24px;
+    margin: 0 0 24px;
+    padding: 12px 0 0;
 }
 
 h5 {
-    font-size: 1.11111rem;
-    margin: 1.5em 0 0.75em;
+    font-weight: bold;
+	line-height: 24px;
+    margin: 0 0 24px;
+    padding: 12px 0 0;
 }
 
 h6 {
-    font-size: 1rem;
-    margin: 1.66667em 0 0.83333em;
+    font-weight: bold;
+	line-height: 24px;
+    margin: 0 0 24px;
+    padding: 12px 0 0;
 }
 
 h1:first-child,
