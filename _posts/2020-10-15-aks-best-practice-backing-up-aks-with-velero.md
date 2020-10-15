@@ -14,6 +14,8 @@ comments: false
 ---
 Backing up AKS clusters is really important. Even if you're using Infrastructure as Code and all deployments are automated, you will benefit from taking backups of AKS clusters. It's also stated as a best-practice by Microsoft on the AKS production checklist.
 
+<!--more-->
+
 ## Why?
 
 ### Mean Time To Recover (MTTR)
