@@ -7,8 +7,8 @@ tags:
 date: 2020-09-17T19:33:28.205Z
 featured: false
 hidden: false
-featured_image_thumbnail: /assets/uploads/bernard-hermant-ihcshrzxfs4-unsplash.jpg
-featured_image: /assets/uploads/bernard-hermant-ihcshrzxfs4-unsplash.jpg
+featured_image_thumbnail: /assets/uploads/camera.jpg
+featured_image: /assets/uploads/camera.jpg
 comments: false
 ---
 Microsoft does download and install security patches automatically and transparently on AKS worker nodes. But, by design it's your responsibility to restart them. Once you do so, these patches will take effect. So it's really important that you do so to keep clusters up-date. It's considered [best-practice](https://docs.microsoft.com/en-us/azure/aks/operator-best-practices-cluster-security#process-linux-node-updates-and-reboots-using-kured).
