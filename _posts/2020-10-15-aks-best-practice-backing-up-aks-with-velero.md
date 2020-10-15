@@ -12,7 +12,7 @@ featured_image_thumbnail: /assets/uploads/velero.jpg
 featured_image: /assets/uploads/velero.jpg
 comments: false
 ---
-Backing up AKS clusters is really important. Even if you're using Infrastructure as Code and all deployments are automated, you will benefit from taking backups of AKS clusters. It's also stated as a best-practice by Microsoft on the AKS production checklist.
+Backing up AKS clusters is really important. Even if you're using Infrastructure as Code and all deployments are automated, you will benefit from taking backups of AKS clusters. It's also stated as a [best-practice by Microsoft](https://docs.microsoft.com/en-us/azure/aks/operator-best-practices-storage#secure-and-back-up-your-data).
 
 <!--more-->
 
@@ -20,15 +20,15 @@ Backing up AKS clusters is really important. Even if you're using Infrastructure
 
 #### Mean Time To Recover (MTTR)
 
-Although you might have everything automated, from the cluster creation using infrastructure as code to the applications being deployed on the cluster, in my experience all this automation can take a long time. For example, without backups it's taken upwards of 45 minutes for this automation to restore state of the cluster. This was with a completely stateless microservices-based application, meaning, we didn't use any persistent volumes to store data.
+You might have everything automated. From the cluster creation to the applications being deployed on the cluster. But, in my experience, this automation can take a long time. For example, it took me 45 minutes for all pipelines to deploy each of ~15 microservices to a cluster.
 
-During a disaster, recreating new infrastructure and <mark>re-deploying all components can take time</mark>. Depending on the criticality of the incident and the importance of the app, this can feel like an *eternity*. 
+During a disaster, recreating new infrastructure and <mark>re-deploying all components can take time</mark>. Depending on the criticality of the incident and the importance of the app, *it can feel like an eternity*. 
 
 By using a tool like Velero to backup all Kubernetes resources, a cluster can be quickly restored to a certain state, lessening recovery time from \~45 minutes to \~15 minutes.
 
 #### Avoiding Data Loss
 
-If you have *stateful* applications deployed on your clusters, you will likely use persistent volumes to store the data. For example, deploying a MySQL database on the cluster. Tools like Velero can also help backup the data in persistent volumes as well. 
+If you have *stateful* applications deployed on your clusters, you will likely use persistent volumes to store data. For example, running a database on Kubernetes. So, tools like Velero can also help backup the data in persistent volumes as well. 
 
 ## Velero
 
