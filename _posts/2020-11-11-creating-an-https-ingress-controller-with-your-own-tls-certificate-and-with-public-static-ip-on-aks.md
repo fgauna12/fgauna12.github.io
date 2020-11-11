@@ -109,12 +109,12 @@ Create an A record from your domain to the public IP. For example, I am using Ne
 Next, let's verify that verify that ingress works with a two sample applications.
 
 Create a namespace for the sample app we will use.
-```
+``` bash
 kubectl create ns ingress-test
 ```
 
-Deploy the SSL certificate on the namespace. Notice how it's deployed on the same namespace as the application to be deployed.
-```
+Deploy the SSL certificate on the namespace as a Kubernetes secret. Notice how it's deployed on the same namespace as the application to be deployed.
+``` bash
 kubectl create secret tls aks-ingress-tls \
     --namespace ingress-test \
     --key my-app-gaunacode.key \
@@ -122,7 +122,7 @@ kubectl create secret tls aks-ingress-tls \
 ```
 
 Deploy the first sample application on the `ingress-test` namespace.
-```
+``` bash
 cat <<EOF | kubectl apply -f -
 apiVersion: apps/v1
 kind: Deployment
@@ -163,7 +163,7 @@ EOF
 ```
 
 Now, deploy the second sample application also on the same namespace.
-```
+``` bash
 cat <<EOF | kubectl apply -f -
 apiVersion: apps/v1
 kind: Deployment
