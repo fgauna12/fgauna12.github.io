@@ -10,15 +10,16 @@ featured: false
 hidden: false
 comments: false
 ---
-There's already good documentation by Microsoft on how to configure an NGINX ingress controller with Let's Encrypt or your own SSL certificate. But, there's no guidance on creating an HTTPS ingress with your own certificate _and_ using a public static IP for the ingress controller. This is important because many companies/enterprises already have certificates for applications and/or are not quite ready for Let's Encrypt. Also, in some organizations requesting an A record on a DNS provider can take some time, so it's more convenient to have static IPs for assurance that environments won't break if AKS clusters have to be re-created.
+There's already good documentation by Microsoft on how to configure an NGINX ingress controller with Let's Encrypt or your own SSL certificate. But, there's no guidance on creating an HTTPS ingress with your own certificate *and* using a public static IP for the ingress controller. This is important because many companies/enterprises already have certificates for applications and/or are not quite ready for Let's Encrypt. Also, in some organizations requesting an A record on a DNS provider can take some time, so it's more convenient to have static IPs for assurance that environments won't break if AKS clusters have to be re-created.
 
 <!--more-->
 
 In this post, I'll guide you through acquiring a free certificate, then uploading it to Kubernetes, setting up the ingress controller with a static IP, then defining the ingress route for a sample application, then verifying everything works.
 
-## Pre-requisites 
-- You have a domain or access to one
-- You can verify the ownership or the domain or you have an SSL certificate and its private key
+## Pre-requisites
+
+* You have a domain or access to one
+* You can verify the ownership or the domain or you have an SSL certificate and its private key
 
 ## First, the certificate
 
@@ -26,19 +27,19 @@ If you don't have a certificate, you can either use a self-signed certificate or
 
 Here's how you can get a free certificate from Comodo, a popular certificate authority. 
 
-Go to [https://ssl.comodo.com/free-ssl-certificate](https://ssl.comodo.com/free-ssl-certificate).
+Go to <https://ssl.comodo.com/free-ssl-certificate>.
 
 Choose the domain for your application. In my case, I will be using `https://my-app.gaunacode.com`.
 
 Sign up for an account and fill out your information. You shouldn't have to provide your credit card.
 
-Go view the certificate and choose **"Setup ssl.comodo.com SSL Certificate"**.
+View the certificate and choose **"Setup ssl.comodo.com SSL Certificate"**.
 
 You will be asked for a Certificate Signing Request (CSR).
 
 Here's how to create one with Open SSL. 
 
-``` bash
+```bash
 # Create the private key. You will need this later.
 openssl genrsa -out my-app-gaunacode.key 2048
 
@@ -49,11 +50,15 @@ openssl req -new -key my-app-gaunacode.key -out my-app-gaunacode.csr
 cat my-app-gaunacode.csr
 ```
 
-Copy the CSR and paste into the textbox from Comodo.
+Copy the CSR and paste it into the textbox from Comodo.
 
-Then, Comodo will ask you to choose a method to verify the ownership. I chose email verification. I had trouble with setting up the CNAME verification. With email verification, I had to [set-up an email distro](https://optimwise.com/create-email-distribution-lists-with-google-apps/) at `admin@gaunacode.com` using my GSuite account. 
+Then, Comodo will ask you to choose a method to verify the ownership. I chose email verification. If you try CNAME verification, you might have trouble with it like I did. With email verification, I had to [set-up an email distro](https://optimwise.com/create-email-distribution-lists-with-google-apps/) at `admin@gaunacode.com` using my GSuite account. 
+
+![Choosing domain verification](/assets/uploads/choosing-comodo-validation.png "Choosing domain verification")
 
 Then, I verified my domain and received an email from Sectigo (Comodo).
+
+![Example email from Comodo to verify email](/assets/uploads/comodo-email-sample.png "Example email from Comodo to verify email")
 
 Once I verified, I received my SSL certificate in an email.
 
@@ -62,22 +67,24 @@ Once I verified, I received my SSL certificate in an email.
 Now, that you have a certificate, you can get to the fun part.
 First, create a public static IP using the Azure CLI. Create it on the same resource group where the node pools reside so that AKS has enough permissions to modify the resource. Alternatively, you can grant **Network Contributor** rights to the AKS service principal and create the public ip in any resource group of your choice.
 
-``` bash
+```bash
 az aks show --resource-group my-resource-group --name my-cluster --query nodeResourceGroup -o tsv
 
 az network public-ip create --resource-group MC_my_nodepool_resource_group --name my-ip-name --sku Standard --allocation-method static --query publicIp.ipAddress -o tsv
 ```
+
 The last command will give you the static public ip address. Copy it.
 In my case, it was `52.146.67.3`.
 
 Now, create a namespace to place the NGINX ingress controller.
-``` bash
+
+```bash
 kubectl create ns ingress
 ```
 
 Then, deploy NGINX using a Helm chart. If your cluster is RBAC enabled with Azure AD, then set `rbac.create=true`. Choose a name for the DNS label on the public static IP address, I chose the same name as the Azure public ip resource. Set this DNS label on the last parameter (`controller.service.annotations."service\.beta\.kubernetes\.io/azure-dns-label-name"`)
 
-``` bash
+```bash
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 
 helm install nginx-ingress ingress-nginx/ingress-nginx \
@@ -88,7 +95,6 @@ helm install nginx-ingress ingress-nginx/ingress-nginx \
     --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux \
     --set controller.service.loadBalancerIP="[your public static ip address]" \
     --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-dns-label-name"="[dns label]"
-
 ```
 
 Once the ingress controller deploys, it shouldn't take long because you can check the deployment. 
@@ -106,15 +112,19 @@ nginx-ingress-ingress-nginx-controller   LoadBalancer   10.0.64.221   52.146.67.
 
 Create an A record from your domain to the public IP. For example, I am using Netlify DNS. Give it some time for the DNS change to propagate.
 
-Next, let's verify that verify that ingress works with a two sample applications.
+![Example of setting up A record](/assets/uploads/netlify-sample.png "Example of setting up A record")
+
+Next, let's verify that ingress works with two sample applications.
 
 Create a namespace for the sample app we will use.
-``` bash
+
+```bash
 kubectl create ns ingress-test
 ```
 
 Deploy the SSL certificate on the namespace as a Kubernetes secret. Notice how it's deployed on the same namespace as the application to be deployed.
-``` bash
+
+```bash
 kubectl create secret tls aks-ingress-tls \
     --namespace ingress-test \
     --key my-app-gaunacode.key \
@@ -122,7 +132,8 @@ kubectl create secret tls aks-ingress-tls \
 ```
 
 Deploy the first sample application on the `ingress-test` namespace.
-``` bash
+
+```bash
 cat <<EOF | kubectl apply -f -
 apiVersion: apps/v1
 kind: Deployment
@@ -163,7 +174,8 @@ EOF
 ```
 
 Now, deploy the second sample application also on the same namespace.
-``` bash
+
+```bash
 cat <<EOF | kubectl apply -f -
 apiVersion: apps/v1
 kind: Deployment
@@ -244,3 +256,7 @@ EOF
 
 That's it! Open the browser and navigate to the first app. 
 The second application can be visited by adding `/hello-world-two` to the path.
+
+![Screenshot of Sample App 1](/assets/uploads/sample-app-1-real-screenshot.png "Screenshot of Sample App 1")
+
+![Screenshot of Sample App 2](/assets/uploads/sample-app-1-screenshot.png "Screenshot of Sample App 2")
