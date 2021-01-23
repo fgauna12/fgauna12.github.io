@@ -49,6 +49,7 @@ Then, I also spent significant time re-doing the wiring at my desk to have more 
 I flashed all the SD cards with **Rasberry Pi OS Lite 32-bit**. I used the [Raspberry Pi Imager](https://www.raspberrypi.org/software/). 
 
 ![The Raspberry Pi Imager Example](/assets/uploads/pi-imager.png "The Raspberry Pi Imager")
+<br/>
 ![Choosing the right image on the Raspberry Pi Imager](/assets/uploads/pi-imager-2.png "Choosing the right image on the Raspberry Pi Imager")
 
 It was really easy. However, as each SD card was flashed, I would re-plug it. I would make the following two changes:
@@ -80,7 +81,7 @@ sudo reboot
 
 Once all the nodes rebooted, they had new DNS labels to the private IPs. 
 
-![An example of the Pis with the private IPs](/assets/uploads/raspberry-pi-ips.png "An example of the Pis with the private IPs")
+![An example of the Pis with the private IPs](/assets/uploads/raspberry-pi-ips.png#wide "An example of the Pis with the private IPs")
 
 If you are OCD like me, you can make the `pi-master` DNS label/IP be the top pi of the stack and each of the worker Pis increment top to bottom.
 
@@ -113,7 +114,7 @@ k3sup join --ip 192.168.1.221 --server-ip $MASTER --user pi
 
 Then, verified that they registered properly.
 
-![Testing the new pi cluster](/assets/uploads/raspberry-pi-cluster-kubectl.png "Testing the new pi cluster")
+![Testing the new pi cluster](/assets/uploads/raspberry-pi-cluster-kubectl.png#wide "Testing the new pi cluster")
 
 ## Installing inlets for ingress with a little Azure
 
@@ -240,7 +241,7 @@ kubectl apply -f test-application.yaml
 
 Give it a few, and you should have a test app running on your Kubernetes Raspberry Pi cluster! It will be addressable at the root of the custom domain you chose *without* `https`. In my case, `http://pi.gaunacode.com`. 
 
-![Example app screenshot](/assets/uploads/example-app.png "Example app screenshot")
+![Example app screenshot](/assets/uploads/example-app.png#wide "Example app screenshot")
 
 This example app is a dockerized version of [this React front-end](https://github.com/gothinkster/realworld). It's simply a static website driven by data from an API hosted by someone else. 
 
