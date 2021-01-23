@@ -6,8 +6,8 @@ tags:
   - azure
   - kubernetes
 date: 2020-10-03T11:26:40.677Z
-featured: true
-hidden: true
+featured: false
+hidden: false
 featured_image_thumbnail: /assets/uploads/velero.jpg
 featured_image: /assets/uploads/velero.jpg
 comments: false
