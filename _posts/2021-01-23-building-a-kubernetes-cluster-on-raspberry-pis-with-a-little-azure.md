@@ -6,8 +6,10 @@ tags:
   - azure
   - kubernetes
 date: 2021-01-23T12:55:59.779Z
-featured: false
-hidden: false
+featured: true
+hidden: true
+featured_image_thumbnail: /assets/uploads/facundo-pi.jpg
+featured_image: /assets/uploads/facundo-pi.jpg
 comments: false
 ---
 Recently I finished something I've been wanting to do for a long time: to create a Kubernetes cluster running on some Raspberry Pis. I mostly followed a recent post from [Alex Ellis](https://blog.alexellis.io/self-hosting-kubernetes-on-your-raspberry-pi/). This post will talk about specifics like the bill of materials, kinks, and some tips.
@@ -38,15 +40,22 @@ Allex Ellis recommended to use the power supply. He mentioned there's several ac
 
 ## The assembly
 
-It took me about 1.5 - 2 hours to put everything together. I stacked the Pis on the cluster case and tediously placed the fans. The fans are highly recommended and I configured them to be in _quiet_ mode. They're _really_ quiet. 
+It took me about 1.5 - 2 hours to put everything together. I stacked the Pis on the cluster case and tediously placed the fans. The fans are highly recommended and I configured them to be in *quiet* mode. They're *really* quiet. 
 
 Then, I also spent significant time re-doing my wiring on my desk to have more outlets. This allowed me to have the cluster on my desk.
 
 ## Flashing the SD cards
 
-I flashed all the SD cards with **Rasberry Pi OS Lite 32-bit**. I used the [Raspberry Pi Imager]. It was really easy. However, as I each SD card was flashed, I would re-plug it. I would make the following two changes:
-- Enabled SSH by creating an empty file in the `/boot` directory called `ssh`. [Read more here]()
-- I modified the `cmdline.txt` file in the `/boot` directory. I appended the `cgroup_memory=1 cgroup_enable=memory` commands . [This is a requirement for k3s to run on Raspberry Pis](https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster).
+![The Raspberry Pi Imager Example](/assets/uploads/pi-imager.png "The Raspberry Pi Imager")
+
+\
+\
+I flashed all the SD cards with **Rasberry Pi OS Lite 32-bit**. I used the [Raspberry Pi Imager](https://www.raspberrypi.org/software/). It was really easy. However, as I each SD card was flashed, I would re-plug it. I would make the following two changes:
+
+* Enabled SSH by creating an empty file in the `/boot` directory called `ssh`. [Read more here](<>)
+* I modified the `cmdline.txt` file in the `/boot` directory. I appended the `cgroup_memory=1 cgroup_enable=memory` commands . [This is a requirement for k3s to run on Raspberry Pis](https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster).
+
+![Choosing the right image on the Raspberry Pi Imager](/assets/uploads/pi-imager-2.png "Choosing the right image on the Raspberry Pi Imager")
 
 ## Shaving the Yak
 
@@ -55,7 +64,7 @@ After each SD card was flashed and some of the pre-requisites were taken care of
 First, I booted up the Pis and observed that the blinky lights looked healthy. 
 I then used `nmap` to find the private IPs for these new Pis.
 
-``` shell
+```shell
 nmap -sn 192.168.1.0/24
 ```
 
@@ -63,37 +72,46 @@ If they are working fine, you should see the Pis with a default hostname that st
 
 Then, I would SSH into each Pi and change the default password. I would also change the default hostname in `/etc/hostname` and the matching entry in the hosts file at `/etc/hosts`. As I was SSH'd into the Pi, I would also enable `iptables` since [it's another pre-requisite for k3s](https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster). The command was:
 
-``` shell
+```shell
 sudo iptables -F
 sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
 sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
 sudo reboot
 ```
-Lastly, I would also copy my SSH key into each Pi through `ssh-copy-id`.
+
+Once all the nodes rebooted, they had new DNS labels to the private IPs. 
+Note: I chose to go the extra mile and make my top Pi on the cluster stack the `pi-master`. Then each Pi underneath was a node *in order*. 
+
+![An example of the Pis with the private IPs](/assets/uploads/raspberry-pi-ips.png "An example of the Pis with the private IPs")
+
+Lastly, I would also copy my SSH key into each Pi via `ssh-copy-id`.
 
 ## Installing k3s
 
 I had limited success trying to install k3s through the official instructions. It was time consuming and I had issues with the master node coming online. Unfortunately, I don't recall the issues and I did not have enough time to look for the root cause of the issue (kids). I started over by re-flashing the SD cards and used the [k3sup](https://github.com/alexellis/k3sup) project by Alex Ellis.
 
-Assuming you installed k3sup, then it was really simple to create a k3s _server_ node. A server node is the Kubernetes master.  
-``` bash
+Assuming you installed k3sup, then it was really simple to create a k3s *server* node. A server node is the Kubernetes master.  
+
+```bash
 export MASTER="[your private ip of the master pi]"
 k3sup install --ip $MASTER --user pi
 ```
 
 After installation, I would ensure that the master was up and healthy by attempting a simple `kubectl` command. k3sup was also nice enough to place the Kubernetes config file into my working directory.
 
-``` shell
+```shell
 kubectl get nodes --kubeconfig k3s.yaml
 ```
 
 After the master node was up, I moved on to the worker nodes. 
 
-``` shell
+```shell
 k3sup join --ip 192.168.1.217 --server-ip $MASTER --user pi
 k3sup join --ip 192.168.1.213 --server-ip $MASTER --user pi
 k3sup join --ip 192.168.1.221 --server-ip $MASTER --user pi
 ```
+
+![Testing the new pi cluster](/assets/uploads/raspberry-pi-cluster-kubectl.png "Testing the new pi cluster")
 
 ## Installing inlets for ingress with a little Azure
 
@@ -103,21 +121,20 @@ So there's other open source project, [inlets](https://github.com/inlets/inlets)
 
 To install inlets, the easiest way and documented way is using [arkade](https://github.com/alexellis/arkade). To be honest, I don't quite understand the value proposition of arkade. I haven't found a strong use-case for it in the real world. 
 
-
 Begin by logging into Azure through the Azure CLI and creating an Azure service principal. 
 Ensure you have the proper subscription selected, if not, use `az account set -s [subscription id]`. 
 Save the authentication info for the service principal into a temporary file outside of source control. 
 
-``` bash
+```bash
 az login
 az ad sp create-for-rbac --sdk-auth > /tmp/az_client_credentials.json
 
 SUBSCRIPTION_ID=$(az account show | jq '.id' -r)
-```
+```
 
 Then, create a Kubernetes cluster in your Pi cluster. It will contain the contents of the service principal authentication file.
 
-``` shell
+```shell
 kubectl create secret generic inlets-access-key --from-file=inlets-access-key=/tmp/az_client_credentials.json
 ```
 
@@ -129,7 +146,7 @@ Then, install "inlets" through "arkade".
 arkade install inlets-operator \
  --provider azure \
  --region eastus \
- --subscription-id=$SUBSCRIPTION_ID
+ --subscription-id=$SUBSCRIPTION_ID
 ```
 
 Notice, how I used the Azure provider. The default "inlets" provider is Digital Ocean. 
@@ -141,6 +158,8 @@ kubectl get svc -n kube-system
 
 You should see a `traefik` service in the `kube-system` namespace. This `LoadBalancer` service is used by the ingress controller. If everything worked fine, "inlets" should have provided a public IP to this service. Make note of it.
 
+![Fidning Inlet public IP](/assets/uploads/raspberry-pi-inlets.png "Inlet public IP")
+
 ## Deploying the test application
 
 Once "inlets" was set-up, then I moved onto deploying a test application. One caveat with Raspberry Pi k8s clusters is the CPU architecture. Most Docker images support the default architectures of `amd64`. Raspberry Pis need the `arm64` architecture; therefore, Docker images have to be built to target that architecture. 
@@ -150,7 +169,7 @@ I won't got into how do this, but if you want to build your own Docker image tha
 If you want, you can use the test application I created. The image is public on Docker Hub. 
 Start by creating a `test-application.yaml` with the following contents:
 
-``` yaml
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -201,21 +220,26 @@ spec:
             backend:
               serviceName: realworld-svc
               servicePort: 80
-``` 
+```
 
 You'll need a custom domain. Use that instead of mine in the `Ingress.spec.rules[0].host` portion.
 
 Next, create an A record to point to the `traefik` service's public IP.
+
 ```
 A record -> [Azure Public IP created by inlets and used by Traefik service]
 ```
 
 Once you created the A record, you're ready to deploy the test app.
-``` shell
+
+```shell
 kubectl apply -f test-application.yaml
 ```
 
-Give it a few, and you should have a test app running on your Kubernetes Raspberry Pi cluster! It will be addressable at the root of the custom domain you chose _without_ `https`. In my case, `http://pi.gaunacode.com`. 
+Give it a few, and you should have a test app running on your Kubernetes Raspberry Pi cluster! It will be addressable at the root of the custom domain you chose *without* `https`. In my case, `http://pi.gaunacode.com`. 
 
-Hope that helped. Don't hesitate to reach out if you need help. 
+![Example app screenshot](/assets/uploads/example-app.png "Example app screenshot")
 
+This example app is a dockerized version of [this React front-end](https://github.com/gothinkster/realworld). It's simply a static website driven by data from an API hosted by someone else. \
+\
+Hope that helped. Don't hesitate to reach out if you need help.
