@@ -36,7 +36,7 @@ What's the power strip for? I ran out of plugs in my old power strip. That one h
 I did not buy: an ethernet cable to connect the Pis to my network. I already had some. Also, I did not buy a switch, I already had one too. If you need one, [something like this would work](https://www.amazon.com/NETGEAR-5-Port-Gigabit-Ethernet-Unmanaged/dp/B07S98YLHM/ref=sr_1_3?dchild=1&keywords=5+switch&qid=1611407266&s=electronics&sr=1-3).
 
 Why not using a USB charging hub? 
-Allex Ellis recommended to use the power supply. He mentioned there's several accounts of people experiencing their charging hubs to be "browning out."
+Allex Ellis recommended using the power supply. He mentioned there are several accounts of people experiencing their charging hubs to be "browning out."
 
 ## The assembly
 
@@ -48,9 +48,7 @@ Then, I also spent significant time re-doing my wiring on my desk to have more o
 
 ![The Raspberry Pi Imager Example](/assets/uploads/pi-imager.png "The Raspberry Pi Imager")
 
-\
-\
-I flashed all the SD cards with **Rasberry Pi OS Lite 32-bit**. I used the [Raspberry Pi Imager](https://www.raspberrypi.org/software/). It was really easy. However, as I each SD card was flashed, I would re-plug it. I would make the following two changes:
+I flashed all the SD cards with **Rasberry Pi OS Lite 32-bit**. I used the [Raspberry Pi Imager](https://www.raspberrypi.org/software/). It was really easy. However, as each SD card was flashed, I would re-plug it. I would make the following two changes:
 
 * Enabled SSH by creating an empty file in the `/boot` directory called `ssh`. [Read more here](<>)
 * I modified the `cmdline.txt` file in the `/boot` directory. I appended the `cgroup_memory=1 cgroup_enable=memory` commands . [This is a requirement for k3s to run on Raspberry Pis](https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster).
@@ -59,7 +57,7 @@ I flashed all the SD cards with **Rasberry Pi OS Lite 32-bit**. I used the [Rasp
 
 ## Shaving the Yak
 
-After each SD card was flashed and some of the pre-requisites were taken care of, it was time do more prep work. 
+After each SD card was flashed and some of the pre-requisites were taken care of, it was time to do more prep work. 
 
 First, I booted up the Pis and observed that the blinky lights looked healthy. 
 I then used `nmap` to find the private IPs for these new Pis.
@@ -88,7 +86,7 @@ Lastly, I would also copy my SSH key into each Pi via `ssh-copy-id`.
 
 ## Installing k3s
 
-I had limited success trying to install k3s through the official instructions. It was time consuming and I had issues with the master node coming online. Unfortunately, I don't recall the issues and I did not have enough time to look for the root cause of the issue (kids). I started over by re-flashing the SD cards and used the [k3sup](https://github.com/alexellis/k3sup) project by Alex Ellis.
+I had limited success trying to install k3s through the official instructions. It was time-consuming and I had issues with the master node coming online. Unfortunately, I don't recall the issues and I did not have enough time to look for the root cause of the issue (kids). I started over by re-flashing the SD cards and used the [k3sup](https://github.com/alexellis/k3sup) project by Alex Ellis.
 
 Assuming you installed k3sup, then it was really simple to create a k3s *server* node. A server node is the Kubernetes master.  
 
@@ -115,11 +113,11 @@ k3sup join --ip 192.168.1.221 --server-ip $MASTER --user pi
 
 ## Installing inlets for ingress with a little Azure
 
-Once I verified that my cluster was healthy, I wanted to try deploying my first test application. There were a few gotchas with this. Typically, in a cloud environment you'll probably use a `LoadBalancer` service to expose to public IPs for your ingress controller to allow traffic into the cluster and direct it to some applications. In a homelab set-up, unless you buy public static IPs by your ISP, then you have dynamic public IPs that change without any control. So, if you pointed your custom domain to your public IPs of your home router, then it'd likely not work in the future. This is especially true if you wanted to take your Pis into the office or a presentation for a Meetup. 
+Once I verified that my cluster was healthy, I wanted to try deploying my first test application. There were a few gotchas with this. Typically, in a cloud environment, you'll probably use a `LoadBalancer` service to expose to public IPs for your ingress controller to allow traffic into the cluster to direct it to some applications. In a home lab set-up, unless you buy public static IPs by your ISP, then you have dynamic public IPs that change outside your control. So, if you point your custom domain to the public IPs of your home router, then your custom domain might not work in the future. This is especially true if you wanted to take your Pis into the office or a presentation for a Meetup. 
 
-So there's other open source project, [inlets](https://github.com/inlets/inlets), that essentially helps you create some cheap VMs on the cloud-provider of choice, create/associate some public static IPs, then install an agent that talks to an operator running on your k8s cluster - effectively providing you with a public static IP for your cluster, securely. 
+So there's another open source project, [inlets](https://github.com/inlets/inlets), that essentially helps you create some cheap VMs on the cloud provider of choice, create/associate some public static IPs, then install an agent that talks to an operator running on your k8s cluster - effectively providing you with a public static IP for your cluster, securely. 
 
-To install inlets, the easiest way and documented way is using [arkade](https://github.com/alexellis/arkade). To be honest, I don't quite understand the value proposition of arkade. I haven't found a strong use-case for it in the real world. 
+To install inlets, the easiest way and the documented way is using [arkade](https://github.com/alexellis/arkade). To be honest, I don't quite understand the value proposition of `arkade`. I haven't found a strong use-case for it in the real world. 
 
 Begin by logging into Azure through the Azure CLI and creating an Azure service principal. 
 Ensure you have the proper subscription selected, if not, use `az account set -s [subscription id]`. 
@@ -164,7 +162,7 @@ You should see a `traefik` service in the `kube-system` namespace. This `LoadBal
 
 Once "inlets" was set-up, then I moved onto deploying a test application. One caveat with Raspberry Pi k8s clusters is the CPU architecture. Most Docker images support the default architectures of `amd64`. Raspberry Pis need the `arm64` architecture; therefore, Docker images have to be built to target that architecture. 
 
-I won't got into how do this, but if you want to build your own Docker image that runs on Pis, then I found [this blog post really useful](https://www.docker.com/blog/multi-arch-images/). 
+I won't get into how to do this, but if you want to build your own Docker image that runs on Pis, then I found [this blog post useful](https://www.docker.com/blog/multi-arch-images/). 
 
 If you want, you can use the test application I created. The image is public on Docker Hub. 
 Start by creating a `test-application.yaml` with the following contents:
@@ -240,6 +238,6 @@ Give it a few, and you should have a test app running on your Kubernetes Raspber
 
 ![Example app screenshot](/assets/uploads/example-app.png "Example app screenshot")
 
-This example app is a dockerized version of [this React front-end](https://github.com/gothinkster/realworld). It's simply a static website driven by data from an API hosted by someone else. \
-\
+This example app is a dockerized version of [this React front-end](https://github.com/gothinkster/realworld). It's simply a static website driven by data from an API hosted by someone else. 
+
 Hope that helped. Don't hesitate to reach out if you need help.
