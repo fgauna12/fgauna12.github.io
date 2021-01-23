@@ -44,6 +44,57 @@ Then, I also spent significant time re-doing my wiring on my desk to have more o
 
 ## Flashing the SD cards
 
-I flashed all the SD cards with **Rasberry Pi OS Lite 32-bit**. I used the [Raspberry Pi Imager]. It was really easy. However, as I was moving from SD card to SD card, I did two things: 
+I flashed all the SD cards with **Rasberry Pi OS Lite 32-bit**. I used the [Raspberry Pi Imager]. It was really easy. However, as I each SD card was flashed, I would re-plug it. I would make the following two changes:
 - Enabled SSH by creating an empty file in the `/boot` directory called `ssh`. [Read more here]()
-- I modified the `commandline.txt` file in the `/boot` directory. I appended the `` commands . This is a requirement for k3s to run on Raspberry Pis.
+- I modified the `cmdline.txt` file in the `/boot` directory. I appended the `cgroup_memory=1 cgroup_enable=memory` commands . [This is a requirement for k3s to run on Raspberry Pis](https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster).
+
+## Shaving the Yak
+
+After each SD card was flashed and some of the pre-requisites were taken care of, it was time do more prep work. 
+
+First, I booted up the Pis and observed that the blinky lights looked healthy. 
+I then used `nmap` to find the private IPs for these new Pis.
+
+``` shell
+nmap -sn 192.168.1.0/24
+```
+
+If they are working fine, you should see the Pis with a default hostname that starts with `raspberry`. 
+
+Then, I would SSH into each Pi and change the default password. I would also change the default hostname in `/etc/hostname` and the matching entry in the hosts file at `/etc/hosts`. As I was SSH'd into the Pi, I would also enable `iptables` since [it's another pre-requisite for k3s](https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster). The command was:
+
+``` shell
+sudo iptables -F
+sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
+sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
+sudo reboot
+```
+Lastly, I would also copy my SSH key into each Pi through `ssh-copy-id`.
+
+## Installing k3s
+
+I had limited success trying to install k3s through the official instructions. It was time consuming and I had issues with the master node coming online. Unfortunately, I don't recall the issues and I did not have enough time to look for the root cause of the issue (kids). I started over by re-flashing the SD cards and used the [k3sup](https://github.com/alexellis/k3sup) project by Alex Ellis.
+
+Assuming you installed k3sup, then it was really simple to create a k3s _server_ node. A server node is the Kubernetes master.  
+``` bash
+export MASTER="[your private ip of the master pi]"
+k3sup install --ip $MASTER --user pi
+```
+
+After installation, I would ensure that the master was up and healthy by attempting a simple `kubectl` command. k3sup was also nice enough to place the Kubernetes config file into my working directory.
+
+``` shell
+kubectl get nodes --kubeconfig k3s.yaml
+```
+
+After the master node was up, I would move on to the worker nodes. 
+
+``` shell
+k3sup join --ip 192.168.1.217 --server-ip $MASTER --user pi
+k3sup join --ip 192.168.1.213 --server-ip $MASTER --user pi
+k3sup join --ip 192.168.1.221 --server-ip $MASTER --user pi
+```
+
+
+
+
