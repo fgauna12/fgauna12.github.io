@@ -22,17 +22,28 @@ What I have running is a 4-node (1 master, 3 workers) Kubernetes cluster hosted 
 
 Here's the list of things I got. 
 
-- 1x [wall-mountable power strip](https://www.amazon.com/gp/product/B08GG8814S/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1)
-- 4x [patch ethernet cables](https://www.amazon.com/gp/product/B008F0YD46/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1)
-- 4x [Raspberry Pis Model B w/ 4 GB RAM](https://www.amazon.com/gp/product/B07TC2BK1X/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1)
-- 4x [power supplies for the Raspberry Pis](https://www.amazon.com/gp/product/B07TYQRXTK/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1)
-- 1x [Raspberry Pi cluster case](https://www.amazon.com/gp/product/B07CTG5N3V/ref=ppx_yo_dt_b_asin_title_o08_s01?ie=UTF8&psc=1)
-- 4x [Samsung SD cards](https://www.amazon.com/gp/product/B06XWN9Q99/ref=ppx_od_dt_b_asin_title_s00?ie=UTF8&psc=1)
+* 1x [wall-mountable power strip](https://www.amazon.com/gp/product/B08GG8814S/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1)
+* 4x [patch ethernet cables](https://www.amazon.com/gp/product/B008F0YD46/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1)
+* 4x [Raspberry Pis Model B w/ 4 GB RAM](https://www.amazon.com/gp/product/B07TC2BK1X/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1)
+* 4x [power supplies for the Raspberry Pis](https://www.amazon.com/gp/product/B07TYQRXTK/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1)
+* 1x [Raspberry Pi cluster case](https://www.amazon.com/gp/product/B07CTG5N3V/ref=ppx_yo_dt_b_asin_title_o08_s01?ie=UTF8&psc=1)
+* 4x [Samsung SD cards](https://www.amazon.com/gp/product/B06XWN9Q99/ref=ppx_od_dt_b_asin_title_s00?ie=UTF8&psc=1)
 
-What's the power strip for? I ran out of plugs in my old power strip. That one had 12 outlets and I could also mount it _underneath_ my desk to hide most of the cables.
+What's the power strip for? I ran out of plugs in my old power strip. That one had 12 outlets and I could also mount it *underneath* my desk to hide most of the cables.
 
-I did not buy: an ethernet cable to connect the Pis to my network. I already had some. Also, I did not buy a switch, I already had one too. If you need one, [something like this would work](https://www.amazon.com/NETGEAR-5-Port-Gigabit-Ethernet-Unmanaged/dp/B07S98YLHM/ref=sr_1_3?dchild=1&keywords=5+switch&qid=1611407266&s=electronics&sr=1-3)
+I did not buy: an ethernet cable to connect the Pis to my network. I already had some. Also, I did not buy a switch, I already had one too. If you need one, [something like this would work](https://www.amazon.com/NETGEAR-5-Port-Gigabit-Ethernet-Unmanaged/dp/B07S98YLHM/ref=sr_1_3?dchild=1&keywords=5+switch&qid=1611407266&s=electronics&sr=1-3).
 
+Why not using a USB charging hub? 
+Allex Ellis recommended to use the power supply. He mentioned there's several accounts of people experiencing their charging hubs to be "browning out."
 
+## The assembly
 
+It took me about 1.5 - 2 hours to put everything together. I stacked the Pis on the cluster case and tediously placed the fans. The fans are highly recommended and I configured them to be in _quiet_ mode. They're _really_ quiet. 
 
+Then, I also spent significant time re-doing my wiring on my desk to have more outlets. This allowed me to have the cluster on my desk.
+
+## Flashing the SD cards
+
+I flashed all the SD cards with **Rasberry Pi OS Lite 32-bit**. I used the [Raspberry Pi Imager]. It was really easy. However, as I was moving from SD card to SD card, I did two things: 
+- Enabled SSH by creating an empty file in the `/boot` directory called `ssh`. [Read more here]()
+- I modified the `commandline.txt` file in the `/boot` directory. I appended the `` commands . This is a requirement for k3s to run on Raspberry Pis.
