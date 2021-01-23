@@ -87,7 +87,7 @@ After installation, I would ensure that the master was up and healthy by attempt
 kubectl get nodes --kubeconfig k3s.yaml
 ```
 
-After the master node was up, I would move on to the worker nodes. 
+After the master node was up, I moved on to the worker nodes. 
 
 ``` shell
 k3sup join --ip 192.168.1.217 --server-ip $MASTER --user pi
@@ -95,6 +95,127 @@ k3sup join --ip 192.168.1.213 --server-ip $MASTER --user pi
 k3sup join --ip 192.168.1.221 --server-ip $MASTER --user pi
 ```
 
+## Installing inlets for ingress with a little Azure
+
+Once I verified that my cluster was healthy, I wanted to try deploying my first test application. There were a few gotchas with this. Typically, in a cloud environment you'll probably use a `LoadBalancer` service to expose to public IPs for your ingress controller to allow traffic into the cluster and direct it to some applications. In a homelab set-up, unless you buy public static IPs by your ISP, then you have dynamic public IPs that change without any control. So, if you pointed your custom domain to your public IPs of your home router, then it'd likely not work in the future. This is especially true if you wanted to take your Pis into the office or a presentation for a Meetup. 
+
+So there's other open source project, [inlets](https://github.com/inlets/inlets), that essentially helps you create some cheap VMs on the cloud-provider of choice, create/associate some public static IPs, then install an agent that talks to an operator running on your k8s cluster - effectively providing you with a public static IP for your cluster, securely. 
+
+To install inlets, the easiest way and documented way is using [arkade](https://github.com/alexellis/arkade). To be honest, I don't quite understand the value proposition of arkade. I haven't found a strong use-case for it in the real world. 
 
 
+Begin by logging into Azure through the Azure CLI and creating an Azure service principal. 
+Ensure you have the proper subscription selected, if not, use `az account set -s [subscription id]`. 
+Save the authentication info for the service principal into a temporary file outside of source control. 
+
+``` bash
+az login
+az ad sp create-for-rbac --sdk-auth > /tmp/az_client_credentials.json
+
+SUBSCRIPTION_ID=$(az account show | jq '.id' -r)
+```
+
+Then, create a Kubernetes cluster in your Pi cluster. It will contain the contents of the service principal authentication file.
+
+``` shell
+kubectl create secret generic inlets-access-key --from-file=inlets-access-key=/tmp/az_client_credentials.json
+```
+
+If you want, you can delete your authentication file now. 
+
+Then, install "inlets" through "arkade".
+
+```
+arkade install inlets-operator \
+ --provider azure \
+ --region eastus \
+ --subscription-id=$SUBSCRIPTION_ID
+```
+
+Notice, how I used the Azure provider. The default "inlets" provider is Digital Ocean. 
+But after a few minutes, check the status on the "traefik" ingress controller. Traefik comes installed by default with k3s as opposed to the more common NGINX ingress controller. 
+
+```
+kubectl get svc -n kube-system
+```
+
+You should see a `traefik` service in the `kube-system` namespace. This `LoadBalancer` service is used by the ingress controller. If everything worked fine, "inlets" should have provided a public IP to this service. Make note of it.
+
+## Deploying the test application
+
+Once "inlets" was set-up, then I moved onto deploying a test application. One caveat with Raspberry Pi k8s clusters is the CPU architecture. Most Docker images support the default architectures of `amd64`. Raspberry Pis need the `arm64` architecture; therefore, Docker images have to be built to target that architecture. 
+
+I won't got into how do this, but if you want to build your own Docker image that runs on Pis, then I found [this blog post really useful](https://www.docker.com/blog/multi-arch-images/). 
+
+If you want, you can use the test application I created. The image is public on Docker Hub. 
+Start by creating a `test-application.yaml` with the following contents:
+
+``` yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: realworld-deploy
+  labels:
+    app: realworld
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: realworld
+  template:
+    metadata:
+      labels:
+        app: realworld
+    spec:
+      containers:
+      - name: realworld
+        image: fgauna12/realworld-react:latest
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: realworld
+  name: realworld-svc
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: realworld
+---
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: "realworld-ingress"
+spec:
+  rules:
+    - host: pi.gaunacode.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: realworld-svc
+              servicePort: 80
+``` 
+
+You'll need a custom domain. Use that instead of mine in the `Ingress.spec.rules[0].host` portion.
+
+Next, create an A record to point to the `traefik` service's public IP.
+```
+A record -> [Azure Public IP created by inlets and used by Traefik service]
+```
+
+Once you created the A record, you're ready to deploy the test app.
+``` shell
+kubectl apply -f test-application.yaml
+```
+
+Give it a few, and you should have a test app running on your Kubernetes Raspberry Pi cluster! It will be addressable at the root of the custom domain you chose _without_ `https`. In my case, `http://pi.gaunacode.com`. 
+
+Hope that helped. Don't hesitate to reach out if you need help. 
 
