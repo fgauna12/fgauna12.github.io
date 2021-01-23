@@ -12,17 +12,17 @@ featured_image_thumbnail: /assets/uploads/facundo-pi.jpg
 featured_image: /assets/uploads/facundo-pi.jpg
 comments: false
 ---
-Recently I finished something I've been wanting to do for a long time: to create a Kubernetes cluster running on some Raspberry Pis. I mostly followed a recent post from [Alex Ellis](https://blog.alexellis.io/self-hosting-kubernetes-on-your-raspberry-pi/). This post will build on that like the bill of materials, kinks, and some tips. 
+Recently I finished something I've been wanting to do for a long time: creating a Kubernetes cluster running on some Raspberry Pis. I mostly followed a recent post from [Alex Ellis](https://blog.alexellis.io/self-hosting-kubernetes-on-your-raspberry-pi/). So, this post will build on that and speak about my experience with the bill of materials, some kinks, and how to save some time. 
 
 <!--more-->
 
 ## Overview
 
-What I have running is a 4-node (1 master, 3 workers) Kubernetes cluster hosted on 4 Raspberry Pis 4 Model B with 4 GM of RAM. The nodes are running [k3s](https://k3s.io/) - a lightweight distribution of Kubernetes for the edge. On my cluster, I am using the [inlets](https://github.com/inlets/inlets) project to expose some test web applications to the public internet without requiring public static IPs from my ISP. 
+I have a 4-node (1 master, 3 workers) Kubernetes cluster hosted on 4 Raspberry Pis 4 Model B with 4 GM of RAM. The nodes are running [k3s](https://k3s.io/) - a lightweight distribution of Kubernetes for the edge. On my cluster, I am using the [inlets](https://github.com/inlets/inlets) project to expose some test web applications to the public internet without requiring public static IPs from my ISP. 
 
 ## The bill of materials
 
-Here's the list of things I got. It all cost me **$389.42**.
+Here's the list of things I bought. It all cost me **$389.42.**
 
 * 1x [wall-mountable power strip](https://www.amazon.com/gp/product/B08GG8814S/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1)
 * 4x [patch ethernet cables](https://www.amazon.com/gp/product/B008F0YD46/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1)
@@ -33,23 +33,25 @@ Here's the list of things I got. It all cost me **$389.42**.
 
 What's the power strip for? I ran out of plugs in my old power strip. This one has 12 outlets and I could also mount it *underneath* my desk to hide most of the cables.
 
-What I _did_ not buy? An ethernet cable to connect the Pis to my network. I already had some. Also, I did not buy a switch, I already had one too. If you need one, [something like this would work](https://www.amazon.com/NETGEAR-5-Port-Gigabit-Ethernet-Unmanaged/dp/B07S98YLHM/ref=sr_1_3?dchild=1&keywords=5+switch&qid=1611407266&s=electronics&sr=1-3).
+What I *did* not buy? An ethernet cable to connect the Pis to my network. I already had some. Also, I did not buy a switch, I already had one too. If you need one, [something like this would work](https://www.amazon.com/NETGEAR-5-Port-Gigabit-Ethernet-Unmanaged/dp/B07S98YLHM/ref=sr_1_3?dchild=1&keywords=5+switch&qid=1611407266&s=electronics&sr=1-3).
 
 Why not using a [USB charging hub](https://www.amazon.com/Anker-Charger-PowerPort-iPhone-Galaxy/dp/B00P936188/ref=sr_1_3?dchild=1&keywords=usb+charging+hub&qid=1611421817&sr=8-3)? 
 Allex Ellis recommended using the power supply. He mentioned there are several accounts of people experiencing their charging hubs to be "browning out."
 
 ## The assembly
 
-It took me about 1.5 - 2 hours to put everything together. I stacked the Pis on the cluster case and tediously placed the fans. The fans are highly recommended and I configured them to be in *quiet* mode. They're *really* quiet. 
+It took me about 1.5 - 2 hours to put everything together. I stacked the Pis on the cluster case and tediously placed the fans. The fans are highly recommended and I configured them to be in *quiet* mode. They're *really* quiet.  
 
-Then, I also spent significant time re-doing the wiring at my desk to have more outlets. This allowed me to have the cluster on my desk.
+Then, I also spent significant time re-doing the wiring at my desk to have more outlets. This allowed me to have the cluster on my desk. 
+
+So plan accordingly and take your time.
 
 ## Flashing the SD cards
 
 I flashed all the SD cards with **Rasberry Pi OS Lite 32-bit**. I used the [Raspberry Pi Imager](https://www.raspberrypi.org/software/). 
 
 ![The Raspberry Pi Imager Example](/assets/uploads/pi-imager.png "The Raspberry Pi Imager")
-<br/>
+<br>
 ![Choosing the right image on the Raspberry Pi Imager](/assets/uploads/pi-imager-2.png "Choosing the right image on the Raspberry Pi Imager")
 
 It was really easy. However, as each SD card was flashed, I would re-plug it. I would make the following two changes:
@@ -59,7 +61,7 @@ It was really easy. However, as each SD card was flashed, I would re-plug it. I 
 
 ## Shaving the Yak
 
-After each SD card was flashed and some of the pre-requisites were taken care of, it was time to do more _even more_ prep work. 
+After each SD card was flashed and some of the pre-requisites were taken care of, it was time to do more *even more* prep work. 
 
 First, I booted up the Pis and observed that the blinky lights looked healthy. 
 I then used `nmap` to find the private IPs for these new Pis.
@@ -68,9 +70,9 @@ I then used `nmap` to find the private IPs for these new Pis.
 nmap -sn 192.168.1.0/24
 ```
 
-If they are working fine, you should see the Pis with a default hostname that starts with `raspberry`. 
+If they were working fine, the default hostname started with `raspberry`. 
 
-Then, I would SSH into each Pi and change the default password. I would also change the default hostname in `/etc/hostname` and the matching entry in the hosts file at `/etc/hosts`. As I was SSH'd into the Pi, I would also enable `iptables` since [it's another pre-requisite for k3s](https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster). 
+Then, I would SSH into each Pi and change the default password. I would also change the default hostname in `/etc/hostname` and the matching entry in the hosts file at `/etc/hosts`. I would also enable `iptables` since [it's another pre-requisite for k3s](https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster). 
 
 ```shell
 sudo iptables -F
@@ -79,11 +81,11 @@ sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
 sudo reboot
 ```
 
-Once all the nodes rebooted, they had new DNS labels to the private IPs. 
+Once all the nodes rebooted, they had new hostnames and new DNS labels.
 
 ![An example of the Pis with the private IPs](/assets/uploads/raspberry-pi-ips.png#wide "An example of the Pis with the private IPs")
 
-If you are OCD like me, you can make the `pi-master` DNS label/IP be the top pi of the stack and each of the worker Pis increment top to bottom.
+If you are OCD like me, you can make the `pi-master` DNS label/IP be the top pi of the stack, and each of the worker Pis can increment top to bottom. (i.e. from top to bottom of the stack: `pi-master`, `pi-worker-1`, `pi-worker-2`, and `pi-worker-3`).
 
 Lastly, I would also copy my SSH key into each Pi via `ssh-copy-id`.
 
@@ -91,14 +93,14 @@ Lastly, I would also copy my SSH key into each Pi via `ssh-copy-id`.
 
 I had limited success trying to install k3s through the official instructions. It was time-consuming and I had issues with the master node coming online. Unfortunately, I don't recall the issues and I did not have enough time to look for the root cause of the issue (unhappy kids). I started over by re-flashing the SD cards and used the [k3sup](https://github.com/alexellis/k3sup) project by Alex Ellis.
 
-Assuming you installed `k3sup`, then it was really simple to create a k3s *server* node. A server node is the Kubernetes master.  
+Once `k3sup` was installed, then it was really simple to create a k3s *server* node. A server node is the Kubernetes master.  
 
 ```bash
 export MASTER="[your private ip of the master pi]"
 k3sup install --ip $MASTER --user pi
 ```
 
-After installation, I would ensure that the master was up and healthy by attempting a simple `kubectl` command. k3sup was also nice enough to place the Kubernetes config file into my working directory.
+After installation, I would ensure that the master was up and healthy by attempting a simple `kubectl` command. `k3sup` was also nice enough to place the Kubernetes config file into my working directory.
 
 ```shell
 kubectl get nodes --kubeconfig k3s.yaml
@@ -118,15 +120,14 @@ Then, verified that they registered properly.
 
 ## Installing inlets for ingress with a little Azure
 
-I wanted to try deploying my first test application. There were a few gotchas with this. Typically, in a cloud environment, you'll probably use a `LoadBalancer` service to expose to public IPs for your ingress controller to allow traffic into the cluster to direct it to some applications. In a home lab set-up, unless you buy public static IPs from your ISP, then you have dynamic public IPs that change outside your control. So, if you point your custom domain to the public IPs of your home router, then your custom domain might not work in the future. This is especially true if you wanted to take your Pis into the office or a presentation for a Meetup. 
+I wanted to deploy _something_ on my new cluster. But, there were a few gotchas with this. Typically, in a cloud environment, you'll probably use a `LoadBalancer` service to expose to public IPs for your ingress controller to allow traffic into the cluster to direct it to some applications. In a home lab set-up, unless you buy public static IPs from your ISP, then you have dynamic public IPs that change outside your control. So, if you point your custom domain to the public IPs of your home router, then your custom domain might not work in the future. This is especially true if you wanted to take your Pis into the office or a presentation for a Meetup. 
 
-So there's another open source project, [inlets](https://github.com/inlets/inlets), that essentially helps you create some cheap VMs on the cloud provider of choice, create/associate some public static IPs to those VMs, then install an agent that talks to an operator running on your k8s cluster - effectively providing you with a public static IP for your cluster, securely. 
+So there's another open-source project, [inlets](https://github.com/inlets/inlets), that essentially helps you create some cheap VMs on the cloud provider of choice, create/associate some public static IPs to those VMs, then install an agent on those VMs that talks to an operator running on your k8s cluster - effectively providing you with a public static IP for your cluster, securely. 
 
 To install `inlets`, the easiest way and the documented way is using [arkade](https://github.com/alexellis/arkade). To be honest, I don't quite understand the value proposition of `arkade`. I haven't found a strong use-case for it in the real world. 
 
-Begin by logging into Azure through the Azure CLI and creating an Azure service principal. 
-Ensure you have the proper subscription selected, if not, use `az account set -s [subscription id]`. 
-Save the authentication info for the service principal into a temporary file outside of source control. 
+I had to log in to Azure and create an Azure service principal with the CLI.
+I saved the authentication info for the service principal into a temporary file outside of source control. 
 
 ```bash
 az login
@@ -141,9 +142,7 @@ Then, create a Kubernetes cluster in your Pi cluster. It will contain the conten
 kubectl create secret generic inlets-access-key --from-file=inlets-access-key=/tmp/az_client_credentials.json
 ```
 
-If you want, you can delete your authentication file now. 
-
-Then, install "inlets" through "arkade".
+Then, I installed "inlets" through "arkade".
 
 ```
 arkade install inlets-operator \
@@ -153,7 +152,8 @@ arkade install inlets-operator \
 ```
 
 Notice, how I used the Azure provider. The default `inlets` provider is Digital Ocean. 
-But after a few minutes, check the status on the "traefik" ingress controller. Traefik comes installed by default with k3s as opposed to the more common NGINX ingress controller. 
+
+After a few minutes, I checked the status on the "traefik" ingress controller. Traefik comes installed by default with k3s.
 
 ```
 kubectl get svc -n kube-system
@@ -227,10 +227,10 @@ spec:
 
 You'll need a custom domain. Use that instead of mine in the `Ingress.spec.rules[0].host` portion.
 
-Next, create an A record to point to the `traefik` service's public IP.
+Next, I create an A record to point to the `traefik` service's public IP.
 
 ```
-A record -> [Azure Public IP created by inlets and used by Traefik service]
+A record on pi.gaunacode.com -> [Azure Public IP created by inlets and used by Traefik service]
 ```
 
 Once you created the A record, you're ready to deploy the test app.
@@ -239,7 +239,7 @@ Once you created the A record, you're ready to deploy the test app.
 kubectl apply -f test-application.yaml
 ```
 
-Give it a few, and you should have a test app running on your Kubernetes Raspberry Pi cluster! It will be addressable at the root of the custom domain you chose *without* `https`. In my case, `http://pi.gaunacode.com`. 
+In a few minutes, I had my app running on my cluster and available on the internet! It will be addressable at the root domain *without* `https`. In my case, `http://pi.gaunacode.com`. 
 
 ![Example app screenshot](/assets/uploads/example-app.png#wide "Example app screenshot")
 
