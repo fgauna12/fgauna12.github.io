@@ -42,18 +42,19 @@ Allex Ellis recommended using the power supply. He mentioned there are several a
 
 It took me about 1.5 - 2 hours to put everything together. I stacked the Pis on the cluster case and tediously placed the fans. The fans are highly recommended and I configured them to be in *quiet* mode. They're *really* quiet. 
 
-Then, I also spent significant time re-doing my wiring on my desk to have more outlets. This allowed me to have the cluster on my desk.
+Then, I also spent significant time re-doing the wiring at my desk to have more outlets. This allowed me to have the cluster on my desk.
 
 ## Flashing the SD cards
 
-![The Raspberry Pi Imager Example](/assets/uploads/pi-imager.png "The Raspberry Pi Imager")
+I flashed all the SD cards with **Rasberry Pi OS Lite 32-bit**. I used the [Raspberry Pi Imager](https://www.raspberrypi.org/software/). 
 
-I flashed all the SD cards with **Rasberry Pi OS Lite 32-bit**. I used the [Raspberry Pi Imager](https://www.raspberrypi.org/software/). It was really easy. However, as each SD card was flashed, I would re-plug it. I would make the following two changes:
+![The Raspberry Pi Imager Example](/assets/uploads/pi-imager.png "The Raspberry Pi Imager")
+![Choosing the right image on the Raspberry Pi Imager](/assets/uploads/pi-imager-2.png "Choosing the right image on the Raspberry Pi Imager")
+
+It was really easy. However, as each SD card was flashed, I would re-plug it. I would make the following two changes:
 
 * Enabled SSH by creating an empty file in the `/boot` directory called `ssh`. [Read more here](<>)
 * I modified the `cmdline.txt` file in the `/boot` directory. I appended the `cgroup_memory=1 cgroup_enable=memory` commands . [This is a requirement for k3s to run on Raspberry Pis](https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster).
-
-![Choosing the right image on the Raspberry Pi Imager](/assets/uploads/pi-imager-2.png "Choosing the right image on the Raspberry Pi Imager")
 
 ## Shaving the Yak
 
