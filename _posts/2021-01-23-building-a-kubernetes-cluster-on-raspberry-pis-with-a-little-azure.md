@@ -53,7 +53,7 @@ I flashed all the SD cards with **Rasberry Pi OS Lite 32-bit**. I used the [Rasp
 
 It was really easy. However, as each SD card was flashed, I would re-plug it. I would make the following two changes:
 
-* Enabled SSH by creating an empty file in the `/boot` directory called `ssh`. [Read more here](<>)
+* Enabled SSH by creating an empty file in the `/boot` directory called `ssh`. [Read more here](https://www.raspberrypi.org/documentation/remote-access/ssh/).
 * I modified the `cmdline.txt` file in the `/boot` directory. I appended the `cgroup_memory=1 cgroup_enable=memory` commands . [This is a requirement for k3s to run on Raspberry Pis](https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster).
 
 ## Shaving the Yak
