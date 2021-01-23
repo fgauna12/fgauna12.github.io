@@ -244,4 +244,4 @@ Give it a few, and you should have a test app running on your Kubernetes Raspber
 
 This example app is a dockerized version of [this React front-end](https://github.com/gothinkster/realworld). It's simply a static website driven by data from an API hosted by someone else. 
 
-Hope that helped. Don't hesitate to reach out if you need help.
+Hope that helped. Don't hesitate to reach out if you need help. Happy hacking.
