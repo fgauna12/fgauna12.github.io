@@ -159,7 +159,7 @@ After a few minutes, I checked the status on the "traefik" ingress controller. T
 kubectl get svc -n kube-system
 ```
 
-You should see a `traefik` service in the `kube-system` namespace. This `LoadBalancer` service is used by the ingress controller. If everything worked fine, `inlets` should have provided a public IP to this service. Make note of it.
+There's a `traefik` service in the `kube-system` namespace. This `LoadBalancer` service is used by the ingress controller. If everything worked fine, `inlets` should have provided a public IP to this service. Make note of it.
 
 ![Fidning Inlet public IP](/assets/uploads/raspberry-pi-inlets.png#wide "Inlet public IP")
 
