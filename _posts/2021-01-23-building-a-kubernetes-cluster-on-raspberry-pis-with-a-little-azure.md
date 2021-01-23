@@ -58,7 +58,7 @@ It was really easy. However, as each SD card was flashed, I would re-plug it. I 
 
 ## Shaving the Yak
 
-After each SD card was flashed and some of the pre-requisites were taken care of, it was time to do more prep work. 
+After each SD card was flashed and some of the pre-requisites were taken care of, it was time to do more _even more_ prep work. 
 
 First, I booted up the Pis and observed that the blinky lights looked healthy. 
 I then used `nmap` to find the private IPs for these new Pis.
@@ -69,7 +69,7 @@ nmap -sn 192.168.1.0/24
 
 If they are working fine, you should see the Pis with a default hostname that starts with `raspberry`. 
 
-Then, I would SSH into each Pi and change the default password. I would also change the default hostname in `/etc/hostname` and the matching entry in the hosts file at `/etc/hosts`. As I was SSH'd into the Pi, I would also enable `iptables` since [it's another pre-requisite for k3s](https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster). The command was:
+Then, I would SSH into each Pi and change the default password. I would also change the default hostname in `/etc/hostname` and the matching entry in the hosts file at `/etc/hosts`. As I was SSH'd into the Pi, I would also enable `iptables` since [it's another pre-requisite for k3s](https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster). 
 
 ```shell
 sudo iptables -F
@@ -79,17 +79,18 @@ sudo reboot
 ```
 
 Once all the nodes rebooted, they had new DNS labels to the private IPs. 
-Note: I chose to go the extra mile and make my top Pi on the cluster stack the `pi-master`. Then each Pi underneath was a node *in order*. 
 
 ![An example of the Pis with the private IPs](/assets/uploads/raspberry-pi-ips.png "An example of the Pis with the private IPs")
+
+If you are OCD like me, you can make the `pi-master` DNS label/IP be the top pi of the stack and each of the worker Pis increment top to bottom.
 
 Lastly, I would also copy my SSH key into each Pi via `ssh-copy-id`.
 
 ## Installing k3s
 
-I had limited success trying to install k3s through the official instructions. It was time-consuming and I had issues with the master node coming online. Unfortunately, I don't recall the issues and I did not have enough time to look for the root cause of the issue (kids). I started over by re-flashing the SD cards and used the [k3sup](https://github.com/alexellis/k3sup) project by Alex Ellis.
+I had limited success trying to install k3s through the official instructions. It was time-consuming and I had issues with the master node coming online. Unfortunately, I don't recall the issues and I did not have enough time to look for the root cause of the issue (unhappy kids). I started over by re-flashing the SD cards and used the [k3sup](https://github.com/alexellis/k3sup) project by Alex Ellis.
 
-Assuming you installed k3sup, then it was really simple to create a k3s *server* node. A server node is the Kubernetes master.  
+Assuming you installed `k3sup`, then it was really simple to create a k3s *server* node. A server node is the Kubernetes master.  
 
 ```bash
 export MASTER="[your private ip of the master pi]"
@@ -110,15 +111,17 @@ k3sup join --ip 192.168.1.213 --server-ip $MASTER --user pi
 k3sup join --ip 192.168.1.221 --server-ip $MASTER --user pi
 ```
 
+Then, verified that they registered properly.
+
 ![Testing the new pi cluster](/assets/uploads/raspberry-pi-cluster-kubectl.png "Testing the new pi cluster")
 
 ## Installing inlets for ingress with a little Azure
 
-Once I verified that my cluster was healthy, I wanted to try deploying my first test application. There were a few gotchas with this. Typically, in a cloud environment, you'll probably use a `LoadBalancer` service to expose to public IPs for your ingress controller to allow traffic into the cluster to direct it to some applications. In a home lab set-up, unless you buy public static IPs by your ISP, then you have dynamic public IPs that change outside your control. So, if you point your custom domain to the public IPs of your home router, then your custom domain might not work in the future. This is especially true if you wanted to take your Pis into the office or a presentation for a Meetup. 
+I wanted to try deploying my first test application. There were a few gotchas with this. Typically, in a cloud environment, you'll probably use a `LoadBalancer` service to expose to public IPs for your ingress controller to allow traffic into the cluster to direct it to some applications. In a home lab set-up, unless you buy public static IPs from your ISP, then you have dynamic public IPs that change outside your control. So, if you point your custom domain to the public IPs of your home router, then your custom domain might not work in the future. This is especially true if you wanted to take your Pis into the office or a presentation for a Meetup. 
 
-So there's another open source project, [inlets](https://github.com/inlets/inlets), that essentially helps you create some cheap VMs on the cloud provider of choice, create/associate some public static IPs, then install an agent that talks to an operator running on your k8s cluster - effectively providing you with a public static IP for your cluster, securely. 
+So there's another open source project, [inlets](https://github.com/inlets/inlets), that essentially helps you create some cheap VMs on the cloud provider of choice, create/associate some public static IPs to those VMs, then install an agent that talks to an operator running on your k8s cluster - effectively providing you with a public static IP for your cluster, securely. 
 
-To install inlets, the easiest way and the documented way is using [arkade](https://github.com/alexellis/arkade). To be honest, I don't quite understand the value proposition of `arkade`. I haven't found a strong use-case for it in the real world. 
+To install `inlets`, the easiest way and the documented way is using [arkade](https://github.com/alexellis/arkade). To be honest, I don't quite understand the value proposition of `arkade`. I haven't found a strong use-case for it in the real world. 
 
 Begin by logging into Azure through the Azure CLI and creating an Azure service principal. 
 Ensure you have the proper subscription selected, if not, use `az account set -s [subscription id]`. 
@@ -148,20 +151,20 @@ arkade install inlets-operator \
  --subscription-id=$SUBSCRIPTION_ID
 ```
 
-Notice, how I used the Azure provider. The default "inlets" provider is Digital Ocean. 
+Notice, how I used the Azure provider. The default `inlets` provider is Digital Ocean. 
 But after a few minutes, check the status on the "traefik" ingress controller. Traefik comes installed by default with k3s as opposed to the more common NGINX ingress controller. 
 
 ```
 kubectl get svc -n kube-system
 ```
 
-You should see a `traefik` service in the `kube-system` namespace. This `LoadBalancer` service is used by the ingress controller. If everything worked fine, "inlets" should have provided a public IP to this service. Make note of it.
+You should see a `traefik` service in the `kube-system` namespace. This `LoadBalancer` service is used by the ingress controller. If everything worked fine, `inlets` should have provided a public IP to this service. Make note of it.
 
-![Fidning Inlet public IP](/assets/uploads/raspberry-pi-inlets.png "Inlet public IP")
+![Fidning Inlet public IP](/assets/uploads/raspberry-pi-inlets.png#wide "Inlet public IP")
 
 ## Deploying the test application
 
-Once "inlets" was set-up, then I moved onto deploying a test application. One caveat with Raspberry Pi k8s clusters is the CPU architecture. Most Docker images support the default architectures of `amd64`. Raspberry Pis need the `arm64` architecture; therefore, Docker images have to be built to target that architecture. 
+Once `inlets` was set-up, then I moved onto deploying a test application. One caveat with Raspberry Pi k8s clusters is the CPU architecture. Most Docker images support the default architectures of `amd64`. Raspberry Pis need the `arm64` architecture; therefore, Docker images have to be built to target that architecture. 
 
 I won't get into how to do this, but if you want to build your own Docker image that runs on Pis, then I found [this blog post useful](https://www.docker.com/blog/multi-arch-images/). 
 
