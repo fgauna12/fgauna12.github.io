@@ -18,7 +18,7 @@ Recently I finished something I've been wanting to do for a long time: creating 
 
 ## Overview
 
-I have a 4-node (1 master, 3 workers) Kubernetes cluster hosted on 4 Raspberry Pis 4 Model B with 4 GM of RAM. The nodes are running [k3s](https://k3s.io/) - a lightweight distribution of Kubernetes for the edge. On my cluster, I am using the [inlets](https://github.com/inlets/inlets) project to expose some test web applications to the public internet without requiring public static IPs from my ISP. 
+I have a 4-node (1 master, 3 workers) Kubernetes cluster hosted on 4 Raspberry Pis 4 Model B with 4 GB of RAM. The nodes are running [k3s](https://k3s.io/) - a lightweight distribution of Kubernetes for the edge. On my cluster, I am using the [inlets](https://github.com/inlets/inlets) project to expose some test web applications to the public internet without requiring public static IPs from my ISP. 
 
 ## The bill of materials
 
@@ -36,7 +36,7 @@ What's the power strip for? I ran out of plugs in my old power strip. This one h
 What I *did* not buy? An ethernet cable to connect the Pis to my network. I already had some. Also, I did not buy a switch, I already had one too. If you need one, [something like this would work](https://www.amazon.com/NETGEAR-5-Port-Gigabit-Ethernet-Unmanaged/dp/B07S98YLHM/ref=sr_1_3?dchild=1&keywords=5+switch&qid=1611407266&s=electronics&sr=1-3).
 
 Why not using a [USB charging hub](https://www.amazon.com/Anker-Charger-PowerPort-iPhone-Galaxy/dp/B00P936188/ref=sr_1_3?dchild=1&keywords=usb+charging+hub&qid=1611421817&sr=8-3)? 
-Allex Ellis recommended using the power supply. He mentioned there are several accounts of people experiencing their charging hubs to be "browning out."
+Alex Ellis recommended using the power supply. He mentioned there are several accounts of people experiencing their charging hubs to be "browning out."
 
 ## The assembly
 
