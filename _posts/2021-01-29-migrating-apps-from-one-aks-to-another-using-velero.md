@@ -139,6 +139,8 @@ Restore PVs:  auto
 
 ```
 
-It took only about a minute or two. For me, there were a few issues. It tried to restore itself, therefore, there were some errors related to that. Another one was the container registry. In my case, I <mark>did not add the ACR integration with my new cluster</mark> so many of the images failed to pull down. 
+It took only about a minute or two. For me, there were a few warnings and some errors. It tried to restore itself, therefore, there were some warnings related to that. But, most of the deployments did not work because of the container registry. In my case, I <mark>did not add the ACR integration with my new cluster</mark> so many of the images failed to pull down. Once I "attached" the ACR to AKS,  the deployments self-healed. 
+
+Also, my NGINX ingress controller seemed to be having issues. It could not launch. It's probably a good idea to use the same methods that you used to create the initial cluster. Otherwise, your mileage may vary.
 
 
