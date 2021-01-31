@@ -4,6 +4,7 @@ title: Migrating apps from one AKS cluster to another using Velero
 tags:
   - devops
   - azure
+  - kubernetes
 date: 2021-01-29T20:24:52.230Z
 featured: true
 hidden: true
