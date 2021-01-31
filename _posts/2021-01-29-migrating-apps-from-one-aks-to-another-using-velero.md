@@ -13,9 +13,11 @@ comments: false
 ---
 Assuming you already set-up Velero on your primary cluster, you can restore all the configuration and applications in a similar cluster using Velero. This can be really useful for scenarios where you want to test dangerous changes without impacting app dev teams using a cluster. 
 
-I recently had this scenario where I wanted to experiment with far fetched ideas on a cluster. However, I needed to use all the existing configurations. Because I was not using GitOps or extensive re-hydration CI/CD pipelines, I was able to use Velero to restore my Kubernetes configuration onto a 1-node "sandbox" cluster.
+I recently had this scenario where I wanted to experiment with far fetched ideas on a cluster. However, I needed to use all the existing configurations. Because I was not using GitOps or extensive re-hydration CI/CD pipelines, I was able to use Velero to restore my Kubernetes configuration onto a new 1-node "sandbox" cluster.
 
 <!--more--> 
+
+## Install Velero on new cluster
 
 Assuming you already configured Velero on your main cluster, [like this](https://gaunacode.com/aks-best-practice-backing-up-aks-with-velero), then start by creating a namespace.
 
@@ -65,7 +67,9 @@ helm install velero vmware-tanzu/velero --namespace velero --version 2.13.2 \
 
 This also assumes that you're using Azure as the provider/backend for Velero.
 
-Now, find the backup location configured. It's probably default
+## Modify Velero's backend to read-only
+
+Find the backup location configured. It's probably `default`.
 ``` shell
 # Against new cluster (cluster #2)
 $ kubectl -n velero get backupstoragelocation.velero.io
@@ -87,6 +91,8 @@ $ velero get backup-locations
 NAME      PROVIDER   BUCKET/PREFIX                          PHASE       LAST VALIDATED                  ACCESS MODE
 default   azure      backups-azaks-blah-blahh-staging-001   Available   2021-01-29 12:57:49 -0800 PST   ReadOnly
 ```
+
+## Try a restore
 
 Great! Now let's try restoring from a _scheduled_ backup. This is assuming that you have some scheduled backups on your main cluster (cluster #1). If not, you'll have to skip this and create a manual backup.
 
@@ -143,7 +149,9 @@ Restore PVs:  auto
 
 It took only about a minute or two. For me, there were a few warnings and some errors. It tried to restore itself, therefore, there were some warnings related to that. But, most of the deployments did not work because of the container registry. In my case, I <mark>did not add the ACR integration with my new cluster</mark> so many of the images failed to pull down. Once I "attached" the ACR to AKS,  the deployments self-healed. 
 
-Also, <mark>expect some of the Kubernetes deployments to not work</mark>. In my case, the Rancher agent was not working because one with the same name and secret was already running in my main cluster (cluster #1). Therefore, Rancher server was denying my second agent.
+## There might be unhealthy deployments
+
+<mark>Expect some of the Kubernetes deployments to not work</mark>. In my case, the Rancher agent was not working because one with the same name and secret was already running in my main cluster (cluster #1). Therefore, Rancher server was denying my second agent.
 
 Also, my NGINX ingress controller was not healthy. This was because when I configured it on my main cluster, I tied it to a public static IP on Azure. The new cluster's identity did not have permissions to modify that static IP nor did I want it to.
 
