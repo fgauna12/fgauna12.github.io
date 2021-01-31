@@ -11,7 +11,7 @@ featured_image_thumbnail: /assets/uploads/baby_yoda.jpg
 featured_image: /assets/uploads/baby_yoda.jpg
 comments: false
 ---
-Assumming you already set-up Velero on your primary cluster, you can restore all the configuration and applications in a similar cluster using Velero. This can be really useful for scenarios where you want to test dangerous changes without impacting app dev teams using a cluster. 
+Assuming you already set-up Velero on your primary cluster, you can restore all the configuration and applications in a similar cluster using Velero. This can be really useful for scenarios where you want to test dangerous changes without impacting app dev teams using a cluster. 
 
 I recently had this scenario where I wanted to experiment with far fetched ideas on a cluster. However, I needed to use all the existing configurations. Because I was not using GitOps or extensive re-hydration CI/CD pipelines, I was able to use Velero to restore my Kubernetes configuration onto a 1-node "sandbox" cluster.
 
@@ -143,9 +143,9 @@ Restore PVs:  auto
 
 It took only about a minute or two. For me, there were a few warnings and some errors. It tried to restore itself, therefore, there were some warnings related to that. But, most of the deployments did not work because of the container registry. In my case, I <mark>did not add the ACR integration with my new cluster</mark> so many of the images failed to pull down. Once I "attached" the ACR to AKS,  the deployments self-healed. 
 
-Also, expect some of the Kubernetes deployments to not work. In my case, the Rancher agent was not working because one with the same name and secret was already running in my main cluster (cluster #1). Therefore, Rancher server was denying my second agent.
+Also, <mark>expect some of the Kubernetes deployments to not work</mark>. In my case, the Rancher agent was not working because one with the same name and secret was already running in my main cluster (cluster #1). Therefore, Rancher server was denying my second agent.
 
-Also, my NGINX ingress controller was not healthy. This was because when I configured it on my main cluster, I tied to a public static IP on Azure. The new cluster's identity did not have permissions to modify that static IP nor did I want it to.
+Also, my NGINX ingress controller was not healthy. This was because when I configured it on my main cluster, I tied it to a public static IP on Azure. The new cluster's identity did not have permissions to modify that static IP nor did I want it to.
 
 That's it. Thanks for reading.
 
