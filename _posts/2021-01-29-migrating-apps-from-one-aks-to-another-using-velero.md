@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Migrating apps from one AKS to another using velero
+title: Migrating apps from one AKS cluster to another using Velero
 tags:
   - devops
   - azure
