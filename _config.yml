@@ -20,7 +20,7 @@ plugins:
 author:
   name: 'Facundo Gauna'
   short_name: 'Facundo'
-  image: 'myface.jpg'
+  image: 'my_face_2.jpg'
   greetings: 'Facundo Gauna'
   description: 'Building <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/architecture/cloud-native/definition">cloud-native</a> apps on Azure'
   bio: 'Facundo is Solutions Architect at BoxBoat. He specializes in building cloud-native apps on Azure.'
