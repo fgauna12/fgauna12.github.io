@@ -9,11 +9,15 @@ tags:
 date: 2021-02-24T17:48:26.994Z
 featured: true
 hidden: true
+featured_image_thumbnail: /assets/uploads/markus-winkler-sz98vfix0pw-unsplash.jpg
+featured_image: /assets/uploads/markus-winkler-sz98vfix0pw-unsplash.jpg
 comments: false
 ---
 There are many ways to add a Web Application Firewall (WAF) in front of applications hosted on Azure Kubernetes Service (AKS). In this post, we'll cover how to set-up an NGINX ingress controller on AKS, then create an Azure Application Gateway to front the traffic from a Public IP, terminate TLS, then forward traffic to the NGINX ingress controller listening on a Private IP, unencrypted.
 
 <!--more-->
+
+![](/assets/uploads/ingress-test-diagram.png#wide)
 
 ## Pre-Requisites
 
@@ -161,7 +165,7 @@ EOF
 ```
 
 Okay, create the ingress definition to verify part of the ingress controller.
-This will create an ingress rule to map requests for that domain to the appropiate service in Kubernetes.
+This will create an ingress rule to map requests for that domain to the appropriate service in Kubernetes.
 
 ```bash
 export DOMAIN_NAME="ingress.gaunacode.com"
@@ -197,7 +201,7 @@ spec:
 EOF
 ```
 
-**Notice:** how there's an annotation of `nginx.ingress.kubernetes.io/ssl-redirect: "false"`. This will ensure that if we ever assign a TLS certificate to the ingress definition, NGINX won't start re-routing `http` traffic to `https`. This is important for us since we are using an Application Gateway that will terminate SSL and we want this behavior to be enforced by the Application Gateway not the ingress controller. Otherwise, it might mess up with the health probes from the Application Gateway to Kubernetes cluster.
+**Notice:** how there's an annotation of `nginx.ingress.kubernetes.io/ssl-redirect: "false"`. <mark>This will ensure that if we ever assign a TLS certificate to the ingress definition, NGINX won't start re-routing `http` traffic to `https`.</mark> This is important for us since we are using an Application Gateway that will terminate SSL and we want this behavior to be enforced by the Application Gateway, not the ingress controller. Otherwise, it might mess up with the health probes from the Application Gateway to  the Kubernetes cluster.
 
 ## Testing the ingress controller from a test container
 
@@ -213,7 +217,7 @@ You will be inside the container at this point. Then install curl, we're going t
 apt-get update && apt-get install -y curl
 ```
 
-Once curl is installed on the container, then let's that our ingress is working.
+Once `curl` is installed on the container, then let's make sure that our ingress is working.
 
 ```bash
 curl -L -H "Host: ingress.gaunacode.com" http://10.0.0.100
@@ -221,9 +225,9 @@ curl -L -H "Host: ingress.gaunacode.com" http://10.0.0.100
 
 Notice how we're changing the `Host` header to ensure that our ingress route is used. We haven't created an external DNS record and we haven't configured the application gateway yet.
 
-If everyting works well, you should see HTML with "Welcome to Kubernetes". That's one of our sample applications.
+If everything works well, you should see HTML with "Welcome to Kubernetes". That's one of our sample applications.
 
-```shell
+```
 root@aks-ingress-test:/# curl -L -H "Host: ingress.gaunacode.com" http://10.0.0.100
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -264,7 +268,7 @@ az network application-gateway create --name azappg-appg-ingress-test -g rg-appg
 
 Next, grab the public IP of the application gateway and create an external DNS record. 
 
-![Where to find the Public IP on the App Gateway from the portal](/assets/uploads/appg-public-ip.png "Where to find the Public IP on the App Gateway from the portal")
+![Where to find the Public IP on the App Gateway from the portal](/assets/uploads/appg-public-ip.png#wide "Where to find the Public IP on the App Gateway from the portal")
 
 In my case, 
 
@@ -286,11 +290,12 @@ Next, create a "Rule" to tie the HTTPS listener to the backend.
 
 ![Creating an App Gateway Rule for HTTPS - Part 1](/assets/uploads/appg-rule-2-1.png "Creating an App Gateway Rule for HTTPS - Part 1")
 
-\
-Then the "Backend Targets"...
+Then the "Backend Targets"
 
 ![App Gateway Rule 2](/assets/uploads/appg-rule-2.png "Creating an App Gateway Rule for HTTPS - Part 2")
 
 Once the "Rule" is created, then the App Gateway should accept traffic from the public IP, through the HTTP listener, tied to a "backend" using the Rule and `http` settings. The App Gateway creates a new connection to the NGINX ingress controller through a private static IP and overriding the "hostname" so that the Ingress rule kicks in.
 
 ![Browser showing it works](/assets/uploads/appg-tada.png#wide "Browser showing it works")
+
+That's it! Hope that helped.
