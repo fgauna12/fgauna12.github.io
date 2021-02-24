@@ -17,13 +17,13 @@ There are many ways to add a Web Application Firewall (WAF) in front of applicat
 
 <!--more-->
 
-![](/assets/uploads/ingress-test-diagram.png#wide)
-
 ## Pre-Requisites
 
 * An AKS cluster using Azure CNI as the network plugin
 * A virtual network with two subnets `asg` and `aks`. The `asg` subnet will hold the Application Gateway, and the `aks` subnet will hold the AKS cluster.
 * A resource group, in this case `rg-appg-ingress-test`
+
+![](/assets/uploads/ingress-test-diagram.png#wide)
 
 ## Deploying NGINX ingress controller with a private IP
 
