@@ -7,8 +7,8 @@ tags:
   - azure
   - kubernetes
 date: 2021-02-24T17:48:26.994Z
-featured: false
-hidden: false
+featured: true
+hidden: true
 comments: false
 ---
 There are many ways to add a Web Application Firewall (WAF) in front of applications hosted on Azure Kubernetes Service (AKS). In this post, we'll cover how to set-up an NGINX ingress controller on AKS, then create an Azure Application Gateway to front the traffic from a Public IP, terminate TLS, then forward traffic to the NGINX ingress controller listening on a Private IP, unencrypted.
