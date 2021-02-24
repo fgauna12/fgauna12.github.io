@@ -264,6 +264,8 @@ az network application-gateway create --name azappg-appg-ingress-test -g rg-appg
 
 Next, grab the public IP of the application gateway and create an external DNS record. 
 
+![Where to find the Public IP on the App Gateway from the portal](/assets/uploads/appg-public-ip.png "Where to find the Public IP on the App Gateway from the portal")
+
 In my case, 
 
 ```
@@ -271,16 +273,24 @@ In my case,
 ```
 
 Modify the default HTTP settings and override the hostname. This will ensure that our ingress rule is used in the NGINX ingress controller.
-\[screenshot]
+
+![Creating an HTTP listener on the app gateway](/assets/uploads/appg-http-setting.png "Creating an HTTP listener on the app gateway")
 
 Verify that ingress works. I'm my case, `http://ingress.gaunacode.com`. HTTPS should not work yet.
 
 Create an HTTPS listener. I am using a trial certificate for the `ingress.gaunacode.com` domain.
-\[screenshot]
+
+![Creating an HTTPS listener on the app gateway](/assets/uploads/appg-https-listener.png "Creating an HTTPS listener on the app gateway")
 
 Next, create a "Rule" to tie the HTTPS listener to the backend.
-\[screenshot]
+
+![Creating an App Gateway Rule for HTTPS - Part 1](/assets/uploads/appg-rule-2-1.png "Creating an App Gateway Rule for HTTPS - Part 1")
+
+\
+Then the "Backend Targets"...
+
+![App Gateway Rule 2](/assets/uploads/appg-rule-2.png "Creating an App Gateway Rule for HTTPS - Part 2")
 
 Once the "Rule" is created, then the App Gateway should accept traffic from the public IP, through the HTTP listener, tied to a "backend" using the Rule and `http` settings. The App Gateway creates a new connection to the NGINX ingress controller through a private static IP and overriding the "hostname" so that the Ingress rule kicks in.
 
-\[screenshot]
+![Browser showing it works](/assets/uploads/appg-tada.png#wide "Browser showing it works")
