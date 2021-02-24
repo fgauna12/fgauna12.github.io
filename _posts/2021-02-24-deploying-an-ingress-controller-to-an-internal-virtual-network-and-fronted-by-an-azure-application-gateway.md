@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Deploying an ingress controller to an internal virtual network and
-  fronted by an Azure Application Gateway
+  fronted by an Azure Application Gateway with WAF
 tags:
   - devops
   - azure
