@@ -29,7 +29,7 @@ There are many ways to add a Web Application Firewall (WAF) in front of applicat
 
 During this section, we'll borrow instructions from this [MSFT docs page](https://docs.microsoft.com/en-us/azure/aks/ingress-internal-ip).
 
-First, choose a private IP address and verify that it's available. In this case, the IP address I chose is `10.0.0.100`.
+First, we need a private IP address that the NGINX ingress controller will accept requests from. So, choose a private IP address and verify that it's available. In this case, the IP address I chose is `10.0.0.100`.
 
 ```bash
 az network vnet check-ip-address --name vnet-ingress-test -g rg-appg-ingress-test --ip-address 10.0.0.100
@@ -201,7 +201,7 @@ spec:
 EOF
 ```
 
-**Notice:** how there's an annotation of `nginx.ingress.kubernetes.io/ssl-redirect: "false"`. <mark>This will ensure that if we ever assign a TLS certificate to the ingress definition, NGINX won't start re-routing `http` traffic to `https`.</mark> This is important for us since we are using an Application Gateway that will terminate SSL and we want this behavior to be enforced by the Application Gateway, not the ingress controller. Otherwise, it might mess up with the health probes from the Application Gateway to  the Kubernetes cluster.
+**Notice:** how there's an annotation of `nginx.ingress.kubernetes.io/ssl-redirect: "false"`. <mark>This will ensure that if we ever assign a TLS certificate to the ingress definition, NGINX won't start re-routing http traffic to https.</mark> This is important for us since we are using an Application Gateway that will terminate SSL and we want this behavior to be enforced by the Application Gateway, not the ingress controller. Otherwise, it might mess up with the health probes from the Application Gateway to  the Kubernetes cluster.
 
 ## Testing the ingress controller from a test container
 
