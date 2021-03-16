@@ -173,6 +173,12 @@ velero backup logs my-backup
 
 ![Test backup screenshot with Velero against AKS cluster](/assets/uploads/velero-aks-test-backup.png "Test backup screenshot with Velero against AKS cluster")
 
+**Note:** you might run into [this issue](https://github.com/vmware-tanzu/velero/issues/3160). If so, then you have to exclude the admission webhook configuration when creating the backup.
+
+```bash
+velero backup create my-backup --exclude-resources MutatingWebhookConfiguration.admissionregistration.k8s.io
+``
+
 If it works, you can go ahead and create a schedule.
 
 #### Setting up the schedule
@@ -181,6 +187,12 @@ If it works, you can go ahead and create a schedule.
 
 ```bash
 velero schedule create every-day-at-7 --schedule "0 7 * * *"
+```
+
+**Note**: again, you might run into [this issue](https://github.com/vmware-tanzu/velero/issues/3160) and if so then you'll have to exclude the webhook admission configuration.
+
+```bash
+velero schedule create every-day-at-7 --schedule "0 7 * * *" --exclude-resources MutatingWebhookConfiguration.admissionregistration.k8s.io
 ```
 
 That's it!
