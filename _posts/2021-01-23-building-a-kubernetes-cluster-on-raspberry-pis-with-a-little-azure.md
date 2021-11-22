@@ -6,8 +6,8 @@ tags:
   - azure
   - kubernetes
 date: 2021-01-23T12:55:59.779Z
-featured: true
-hidden: true
+featured: false
+hidden: false
 featured_image_thumbnail: /assets/uploads/facundo-pi.jpg
 featured_image: /assets/uploads/facundo-pi.jpg
 comments: false
