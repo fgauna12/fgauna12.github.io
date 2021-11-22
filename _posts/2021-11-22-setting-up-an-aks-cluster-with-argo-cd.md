@@ -27,9 +27,9 @@ You'll need:
 
 ## NGINX Ingress Controller with Let's Encrypt
 
-Inspired by [this](https://docs.microsoft.com/en-us/azure/aks/ingress-tls) page on the Microsoft docs. We're going to install the NGINX ingress controller with Let's Encrypt.
+I was inspired by [this](https://docs.microsoft.com/en-us/azure/aks/ingress-tls) page on the Microsoft docs. We're going to install the NGINX ingress controller with Let's Encrypt.
 
-**Note:** To make things more simple, I will use the NGINX image from Docker Hub. In the Microsoft Docs, they walk you through importing the NGINX image into your own container registry, and... for good reason.
+**Note:** To simplify things, I will use the NGINX image from Docker Hub. The Microsoft Docs walk you through importing the NGINX image into your own container registry, and... for good reason.
 
 ### Install NGINX Ingress Controller
 
@@ -164,7 +164,7 @@ Open your browser with your custom address for Argo. For example: `https://argoc
 
 Congrats 🎉
 
-![Argo Login Example](/assets/uploads/2021-11-22_16-04-38.png#wide "Argo Login Example")
+![Argo Login Example](/assets/uploads/2021-11-22_16-04-38.png "Argo Login Example")
 
 To login, get the initial password via a Kubernetes secret. The username is `admin`
 
@@ -174,6 +174,6 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 Login to Argo. Then change the default password.
 
-![To change password, first select "User Info", then "Update Password".](/assets/uploads/2021-11-22_16-11-01.gif#wide "How to change password in ArgoCD")
+![To change password, first select "User Info", then "Update Password".](/assets/uploads/2021-11-22_16-11-01.gif "How to change password in ArgoCD")
 
-Hope that helped! 🎊
+I hope that helped! 🎊
