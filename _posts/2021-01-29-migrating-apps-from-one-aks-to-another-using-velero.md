@@ -6,8 +6,8 @@ tags:
   - azure
   - kubernetes
 date: 2021-01-29T20:24:52.230Z
-featured: true
-hidden: true
+featured: false
+hidden: false
 featured_image_thumbnail: /assets/uploads/baby_yoda.jpg
 featured_image: /assets/uploads/baby_yoda.jpg
 comments: false
