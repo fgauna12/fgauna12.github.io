@@ -8,8 +8,8 @@ tags:
 date: 2021-11-22T20:45:14.361Z
 featured: true
 hidden: true
-featured_image_thumbnail: /assets/uploads/masaaki-komori-lu9z9qs8i_q-unsplash.jpg
-featured_image: /assets/uploads/masaaki-komori-lu9z9qs8i_q-unsplash.jpg
+featured_image_thumbnail: /assets/uploads/tentacle.jpg
+featured_image: /assets/uploads/tentacle.jpg
 comments: false
 ---
 In this post, I'll walk through the essentials of configuring an AKS cluster to use Argo CD with an NGINX Ingress Controller. 
