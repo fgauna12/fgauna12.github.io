@@ -7,8 +7,8 @@ tags:
   - azure
   - kubernetes
 date: 2021-02-24T17:48:26.994Z
-featured: true
-hidden: true
+featured: false
+hidden: false
 featured_image_thumbnail: /assets/uploads/markus-winkler-sz98vfix0pw-unsplash.jpg
 featured_image: /assets/uploads/markus-winkler-sz98vfix0pw-unsplash.jpg
 comments: false
