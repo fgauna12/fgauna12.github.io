@@ -14,6 +14,8 @@ comments: false
 ---
 In this post, I'll walk through the essentials of configuring an AKS cluster to use Argo CD with an NGINX Ingress Controller. 
 
+<!--more--> 
+
 ## Pre-Requisites
 
 You'll need:
