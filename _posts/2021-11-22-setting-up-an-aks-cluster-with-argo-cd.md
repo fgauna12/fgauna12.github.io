@@ -86,7 +86,7 @@ metadata:
 spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
-    email: facundo@boxboat.com
+    email: you@mydomain.com
     privateKeySecretRef:
       name: letsencrypt
     solvers:
@@ -154,7 +154,7 @@ spec:
               name: https
   tls:
   - hosts:
-    - argocd.azure.boxboat.io
+    - argocd.mydomain.com
     secretName: argocd-secret # do not change, this is provided by Argo CD
 EOF
 ```
